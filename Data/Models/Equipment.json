@@ -1,0 +1,555 @@
+{
+  "repository": [
+    {
+      "id": "dagger",
+      "damage": 8,
+      "armorDamage": 0.4,
+      "buildingDamage": 0.2,
+      "attackSpeed": 3,
+      "meleeCover": 0.02,
+      "coverAngle": 15,
+      "hitEffectorGroupIDs": [
+        "WoundsPiercing"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsPiercingHead"
+      ]
+    },
+    {
+      "id": "short_sword",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 5
+        }
+      ],
+      "damage": 15,
+      "attackSpeed": 3.2,
+      "meleeCover": 0.06,
+      "coverAngle": 30,
+      "hitEffectorGroupIDs": [
+        "WoundsCutting"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsCuttingHead"
+      ]
+    },
+    {
+      "id": "falchion",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 10
+        }
+      ],
+      "damage": 20,
+      "precision": 0.95
+    },
+    {
+      "id": "knightly_sword",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 15
+        }
+      ],
+      "damage": 25
+    },
+    {
+      "id": "longsword",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 20
+        }
+      ],
+      "beautyInputEquipped": 1130,
+      "ignoresArmor": 0.75,
+      "buildingDamage": 0.5,
+      "attackSpeed": 3.9
+    },
+    {
+      "id": "greatsword",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 25
+        }
+      ],
+      "ignoresArmor": 0.75,
+      "armorDamage": 0.8,
+      "buildingDamage": 0.6,
+      "range": 0.3,
+      "attackSpeed": 3.9,
+      "meleeCover": 0.14,
+      "coverAngle": 110
+    },
+    {
+      "id": "mace",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 5
+        }
+      ],
+      "beautyInputEquipped": 5,
+      "weaponType": 3,
+      "ignoresArmor": 0.6,
+      "armorDamage": 1,
+      "buildingDamage": 1,
+      "precision": 0.9,
+      "meleeCover": 0.06,
+      "coverAngle": 45,
+      "hitEffectorGroupIDs": [
+        "WoundsBlunt"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsBluntHead"
+      ]
+    },
+    {
+      "id": "two_handed_mace",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 15
+        }
+      ],
+      "beautyInputEquipped": 8,
+      "weaponType": 4,
+      "damage": 30,
+      "ignoresArmor": 0.6,
+      "armorDamage": 1.5,
+      "buildingDamage": 1.5,
+      "precision": 0.85,
+      "attackSpeed": 4.1,
+      "meleeCover": 0.1,
+      "hitEffectorGroupIDs": [
+        "WoundsBlunt"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsBluntHead"
+      ]
+    },
+    {
+      "id": "two_handed_flanged_mace",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 20
+        }
+      ],
+      "beautyInputEquipped": 5,
+      "weaponType": 4,
+      "damage": 30,
+      "armorDamage": 1.7,
+      "buildingDamage": 1.7,
+      "precision": 0.9,
+      "attackSpeed": 3.9,
+      "coverAngle": 90
+    },
+    {
+      "id": "military_pick",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 10
+        }
+      ],
+      "beautyInputEquipped": 5,
+      "damage": 20,
+      "ignoresArmor": 1.2,
+      "armorDamage": 1.2,
+      "buildingDamage": 0.4,
+      "precision": 0.85,
+      "attackSpeed": 3.6,
+      "ladderCritMod": 1.2,
+      "coverAngle": 30,
+      "hitEffectorGroupIDs": [
+        "WoundsPiercing"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsPiercingHead"
+      ]
+    },
+    {
+      "id": "hatchet",
+      "beautyInputEquipped": 3,
+      "weaponType": 7,
+      "damage": 18,
+      "ignoresArmor": 0.6,
+      "armorDamage": 0.6,
+      "buildingDamage": 0.6,
+      "precision": 0.95,
+      "attackSpeed": 3.2,
+      "coverAngle": 30,
+      "hitEffectorGroupIDs": [
+        "WoundsCutting"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsCuttingHead"
+      ]
+    },
+    {
+      "id": "greataxe",
+      "equipmentSlots": 3,
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 15
+        }
+      ],
+      "beautyInputEquipped": 10,
+      "weaponType": 8,
+      "damage": 36,
+      "ignoresArmor": 0.8,
+      "armorDamage": 1.2,
+      "precision": 0.95,
+      "range": 0.7,
+      "attackSpeed": 4.1,
+      "meleeCover": 0.12,
+      "coverAngle": 80,
+      "hitEffectorGroupIDs": [
+        "WoundsCutting"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsCuttingHead"
+      ]
+    },
+    {
+      "id": "warhammer",
+      "equipmentSlots": 1,
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 10
+        }
+      ],
+      "beautyInputEquipped": 8,
+      "weaponType": 3,
+      "damage": 25,
+      "ignoresArmor": 0.7,
+      "armorDamage": 1.7,
+      "precision": 0.9,
+      "attackSpeed": 3.6,
+      "meleeCover": 0.06,
+      "coverAngle": 30
+    },
+    {
+      "id": "two_handed_warhammer",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 20
+        }
+      ],
+      "beautyInputEquipped": 10,
+      "damage": 32,
+      "ignoresArmor": 0.7,
+      "armorDamage": 2,
+      "buildingDamage": 2,
+      "precision": 0.9,
+      "range": 0.3,
+      "attackSpeed": 3.9,
+      "meleeCover": 0.12
+    },
+    {
+      "id": "berdiche",
+      "equipmentSlots": 3,
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 15
+        }
+      ],
+      "beautyInputEquipped": 7,
+      "weaponType": 6,
+      "damage": 32,
+      "ignoresArmor": 0.8,
+      "armorDamage": 1.2,
+      "buildingDamage": 0.5,
+      "precision": 0.9,
+      "range": 0.7,
+      "attackSpeed": 4.1,
+      "meleeCover": 0.14,
+      "coverAngle": 110,
+      "hitEffectorGroupIDs": [
+        "WoundsCutting"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsCuttingHead"
+      ]
+    },
+    {
+      "id": "billhook",
+      "requiredSkills": [
+        {
+          "key": 9,
+          "value": 5
+        }
+      ],
+      "beautyInputEquipped": 5,
+      "damage": 20,
+      "ignoresArmor": 0.8,
+      "armorDamage": 0.9,
+      "buildingDamage": 0.4,
+      "precision": 0.85,
+      "precisionFalloff": 0,
+      "attackSpeed": 4.1,
+      "ladderCritMod": 1.3,
+      "meleeCover": 0.1,
+      "hitEffectorGroupIDs": [
+        "WoundsCutting"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsCuttingHead"
+      ]
+    },
+    {
+      "id": "staff",
+      "beautyInputEquipped": 1,
+      "weaponType": 5,
+      "damage": 22,
+      "ignoresArmor": 0.5,
+      "armorDamage": 1,
+      "buildingDamage": 0.5,
+      "precisionFalloff": 0,
+      "range": 0.3,
+      "attackSpeed": 4.5,
+      "ladderCritMod": 1.1,
+      "coverAngle": 110,
+      "hitEffectorGroupIDs": [
+        "WoundsBlunt"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsBluntHead"
+      ]
+    },
+    {
+      "id": "cudgel",
+      "equipmentSlots": 1,
+      "beautyInputEquipped": 1,
+      "weaponType": 3,
+      "damage": 12,
+      "ignoresArmor": 0.5,
+      "armorDamage": 1,
+      "buildingDamage": 1,
+      "precision": 1,
+      "precisionFalloff": 0,
+      "range": 0,
+      "attackSpeed": 5.4,
+      "meleeCover": 0.06,
+      "coverAngle": 45,
+      "hitEffectorGroupIDs": [
+        "WoundsBlunt"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsBluntHead"
+      ]
+    },
+    {
+      "id": "bludgeon",
+      "equipmentSlots": 1,
+      "beautyInputEquipped": 1,
+      "weaponType": 3,
+      "damage": 18,
+      "ignoresArmor": 0.5,
+      "armorDamage": 1,
+      "buildingDamage": 1,
+      "precision": 1,
+      "precisionFalloff": 0,
+      "range": 0,
+      "attackSpeed": 5.4,
+      "meleeCover": 0.06,
+      "coverAngle": 45
+    },
+    {
+      "id": "spear",
+      "beautyInputEquipped": 2,
+      "damage": 13,
+      "armorDamage": 0.55,
+      "attackSpeed": 4.1,
+      "meleeCover": 0.08,
+      "coverAngle": 60
+    },
+    {
+      "id": "reinforced_spear",
+      "beautyInputEquipped": 5,
+      "weaponType": 6,
+      "damage": 21,
+      "ignoresArmor": 0.9,
+      "armorDamage": 0.65,
+      "buildingDamage": 0.3,
+      "precisionFalloff": 0.03,
+      "range": 0.7,
+      "attackSpeed": 4.1,
+      "ladderCritMod": 1.2,
+      "meleeCover": 0.1,
+      "coverAngle": 90,
+      "hitEffectorGroupIDs": [
+        "WoundsPiercing"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsPiercingHead"
+      ]
+    },
+    {
+      "id": "warfork",
+      "beautyInputEquipped": 3,
+      "weaponType": 6,
+      "damage": 18,
+      "ignoresArmor": 0.9,
+      "armorDamage": 0.6,
+      "buildingDamage": 0.2,
+      "precision": 0.95,
+      "precisionFalloff": 0.03,
+      "range": 0.7,
+      "attackSpeed": 4.1,
+      "ladderCritMod": 1.2,
+      "hitEffectorGroupIDs": [
+        "WoundsPiercing"
+      ],
+      "criticalHitEffectorGroupIDs": [
+        "WoundsPiercingHead"
+      ]
+    },
+    {
+      "id": "flail",
+      "armorDamage": 1,
+      "buildingDamage": 1,
+      "precision": 0.9,
+      "attackSpeed": 3.6
+    },
+    {
+      "id": "reinforced_flail",
+      "damage": 14,
+      "armorDamage": 1,
+      "buildingDamage": 1,
+      "precision": 0.9,
+      "attackSpeed": 3.6
+    },
+    {
+      "id": "two_handed_flail",
+      "damage": 21,
+      "armorDamage": 1.2,
+      "precision": 0.9,
+      "attackSpeed": 4.1
+    },
+    {
+      "id": "short_bow",
+      "damage": 9,
+      "range": 19.5652,
+      "attackSpeed": 4.62,
+      "precision": 0.94,
+      "precisionFalloff": 0.026,
+      "ignoresArmor": 0.8
+    },
+    {
+      "id": "war_bow",
+      "damage": 17,
+      "range": 19.5652,
+      "attackSpeed": 4.82,
+      "precision": 0.96,
+      "precisionFalloff": 0.0225,
+      "ignoresArmor": 0.8,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "curved_bow",
+      "damage": 19,
+      "range": 22,
+      "attackSpeed": 5.06,
+      "precision": 0.99,
+      "precisionFalloff": 0.057,
+      "ignoresArmor": 0.8,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "long_bow",
+      "damage": 20,
+      "range": 26,
+      "attackSpeed": 5.65,
+      "precision": 1,
+      "precisionFalloff": 0.045,
+      "ignoresArmor": 0.8,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "light_crossbow",
+      "damage": 33,
+      "range": 15,
+      "attackSpeed": 11.25,
+      "precision": 0.98,
+      "precisionFalloff": 0.011,
+      "ignoresArmor": 0.9
+    },
+    {
+      "id": "crossbow",
+      "damage": 38,
+      "range": 18,
+      "attackSpeed": 12.6,
+      "precision": 0.99,
+      "precisionFalloff": 0.011,
+      "ignoresArmor": 0.9,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "heavy_crossbow",
+      "damage": 46,
+      "range": 20,
+      "attackSpeed": 13.5,
+      "precision": 1,
+      "precisionFalloff": 0.006,
+      "ignoresArmor": 0.92,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "sling",
+      "damage": 16,
+      "range": 13,
+      "attackSpeed": 5.4,
+      "precision": 0.97,
+      "precisionFalloff": 0.02,
+      "ignoresArmor": 0.3
+    },
+    {
+      "id": "sling_staff",
+      "damage": 21,
+      "range": 16,
+      "attackSpeed": 6.8,
+      "precision": 0.97,
+      "precisionFalloff": 0.02,
+      "ignoresArmor": 0.35
+    },
+    {
+      "id": "kettle_helmet",
+      "beautyInputEquipped": 20,
+      "armorRating": 0.2
+    }
+  ]
+}

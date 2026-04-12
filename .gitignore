@@ -1,0 +1,4 @@
+tools/*
+scripts/*
+quality_charts/q3_ranged_summary.json
+quality_charts/__pycache__/*

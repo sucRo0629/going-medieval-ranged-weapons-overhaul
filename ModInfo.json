@@ -1,0 +1,11 @@
+{
+    "id": "sucro.RangedWeaponsOverhaul",
+    "name": "Ranged Weapons Overhaul",
+    "description": "Ranged weapon balance: overrides vanilla Equipment (primary stats + Marksman gates) from a vanilla baseline. Optional WeaponQualitySettings (e.g. TwoHandBow) for quality-curve tweaks. Does not change research or production unlocks.",
+    "author": "sucRo",
+    "modVersion": "0.1",
+    "gameVersion": "1.0.72",
+    "tags": [
+        "General", "Combat"
+    ]
+}
