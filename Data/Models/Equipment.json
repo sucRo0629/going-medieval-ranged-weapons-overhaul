@@ -530,19 +530,19 @@
     },
     {
       "id": "sling",
-      "damage": 16,
-      "range": 13,
-      "attackSpeed": 5.4,
-      "precision": 0.97,
+      "damage": 15,
+      "range": 12,
+      "attackSpeed": 5.85,
+      "precision": 0.95,
       "precisionFalloff": 0.02,
       "ignoresArmor": 0.3
     },
     {
       "id": "sling_staff",
-      "damage": 21,
-      "range": 16,
-      "attackSpeed": 6.8,
-      "precision": 0.97,
+      "damage": 20,
+      "range": 15,
+      "attackSpeed": 7.2,
+      "precision": 0.95,
       "precisionFalloff": 0.02,
       "ignoresArmor": 0.35
     },
