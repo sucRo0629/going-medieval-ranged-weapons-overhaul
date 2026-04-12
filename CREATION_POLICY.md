@@ -1,22 +1,22 @@
 # Ranged Weapons Overhaul — 作成方針
 
-射撃武器のバランス用 Mod。数値の上書きは主にこのフォルダの `Data/Models` で行う。
+> **このファイルの役割** — Mod の目的・**スコープ**（バニラ `Items/Equipment.json` を全体とし、差分のみ本 Mod に書く）・バニラ／環境変数／ツールの参照先・スリング・素体×品質の読み方。弓／クロスの**長所分担・Q3 鎖・門限・被弾メタ前提・変更時チェック**は **[`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md)** を開く。
 
-**スコープ** — 主に `Data/Models/Equipment.json` の部分上書き。`Research.json` / `Production.json` は置かない（解禁・レシピはバニラのまま）。品質曲線を触るときだけ `WeaponQualitySettings.json` を任意で同梱・編集する。プレイはこの Mod 単体推奨。
+射撃武器のデータオーバーホール Mod。数値の上書きは主にこのフォルダの `Data/Models` で行う。**武器素体の基準は常にバニラ `Items/Equipment.json`** であり、本 Mod には **バニラと異なる `id`・フィールドだけ**を置く。
 
-## 弓とクロスボウの差別化（役割）
+## 大きな変更点
 
-- **弓（TwoHandBow）**: **届く距離を取る**（上級弓はクロスより長い射程帯）。**試行回数**は `attackSpeed`（数値が小さいほど速い）で表現。遠距離では外れやすくするため **`precisionFalloff` はクロスより大きめ**にしがち。単発 `damage` は押し上げず（長弓はバニラ上限を超えない想定）、**射程・命中曲線・品質**で実効を取る。
-- **クロスボウ（TwoHandCrossbow）**: **中射程の階段**（いずれも長弓より短く、ライト〜ヘビーで段差）。**据え撃ち・一発**向けに `attackSpeed` は遅め（数値大）、**`precisionFalloff` は小さめ**で距離減衰を緩め、`damage` / `ignoresArmor` で鎧向きの顔を出す。**素体 `attackSpeed` はバニラのライト／標準／ヘビーと同値に寄せる**（据え撃ちの手触りをバニラに揃える）。**短射程・高精度・`ignoresArmor` の代償**として単発 `damage` はバニラ素体より上げてよいが、**過剰インフレは避け**、チャートとプレイで確認する。
-- **本体の Marksman**: 命中・威力などへの補正は弓とクロスに**同様に掛かる**前提。違いは **`Equipment` の静特性**（＋任意で `WeaponQualitySettings`・`requiredSkills`）で出す。
-- **調整の見方**: カタログ上の「期待 DPS」だけで裁かない。**届く距離・減衰・門限・品質**を並べ、プレイで確認する。対応ランク同士では弓の素体期待をクロスよりやや低めに寄せる、などの**相対**がありうる（具体数値は都度 `Equipment` と検証で決める）。
-- **順序の約束**: 上級ラインでは `range` / `damage` / `ignoresArmor` / `attackSpeed` の **`<` 連鎖**（クロスと上級弓の段差）を崩さないこと。詳細の鎖は変更方針ドキュメント（弓 mod 統合・変更方針）に従う。
-- **装備中の移動（本職の長射程のコスト）**: バニラ鎧と同系の **`onEquipEffectors`** で **移動速度低下**を段階付けする。**射程・火力を削らず**に立ち回りコストを置き、**片手スリング・投擲（`OneHandThrow`）**との差を付ける。鎧の `ImpairedMovement` と**重ね掛け**されうるのでプレイで確認する。
-  - **低下なし**: **`short_bow`**（軽量弓）、**`light_crossbow`**（ライト）。
-  - **弱い（`ImpairedMovementLow`）**: **`war_bow`**、**`curved_bow`**、**`long_bow`**、**`crossbow`**（標準）。
-  - **中程度（`ImpairedMovementMed`）**: **`heavy_crossbow` のみ**。**最重の代償に火力素体をライト／標準より余計には盛らない**（`damage` / `range` / `ignoresArmor` は段差の連鎖内に留める）。**`ImpairedMovementMed` の報いは掩体性能**（主に **`meleeCover` / `coverAngle`**。**`rangedCover`** はバニラが 0 が多いため、効果が確認できてから足す）で出し、据え撃ち時の生存を厚くする。具体は常に `Equipment` が正。
-  - **掩体（`meleeCover` / `coverAngle` / `rangedCover`）**: クロス段差で **ヘビィはライト・標準より掩体を厚く**（**Med 移動**とセット）。**ライト**は機動枠として掩体は中程度（バニラ比でやや上げてもよい）、**標準**はバニラ相当でよい。**`rangedCover`** を 0 以外にする場合は本体挙動を確認する。
-- **近接（`secondaryWeaponMode`）**: 弓・クロスボウも同一 `Equipment` エントリに **`TwoHandBowMelee`**（本体を振るストック殴り）が付く。戦闘中の武器持ち替えとは別に、**一装備のセカンダリ**として存在する。
+- 射撃武器も近接武器のように品質と素材でダメージが増加するように変更する。
+- ヘビィクロスボウ一択になるのを避けるため、弓を長射程、クロスボウを中射程として数値を調整する。
+
+**スコープ** — **`Items/Equipment.json`（バニラ）をスコープの全体**とみなし、**変更が必要な武器だけ**を **本 Mod フォルダ**の `Data/Models/Equipment.json` に載せる。各エントリは **部分上書き**（変えたいキーだけ。バニラと同じままにしたい `id` は **本 Mod に書かない**）。`Research.json` / `Production.json` は置かない（解禁・レシピはバニラのまま）。品質曲線を触るときだけ `WeaponQualitySettings.json` を任意で同梱・編集する。武器のデータを変更する Mod とは競合する可能性が高いため単体推奨。**Steam ワークショップや別 Mod の `Equipment.json` は参照しない**。突き合わせ・レビューでは **バニラ `Items/Equipment.json`** と **本 Mod の差分**を見る（本 Mod 単体をフル定義として読まない）。
+
+## 弓とクロスボウ（概要）
+
+弓を**長射程・高回転**、クロスボウを**中射程・据え撃ち・鎧向き**に棲み分ける。**長所・短所の列挙、カタログ DPS の見方、Q3 の狭義連鎖、装備中の移動・掩体、Marksman 門限、近接との検証**はすべて **[`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md)** に集約している。
+
+- **Marksman**: 本体の命中・威力補正は弓・クロス共通。装備門限（`requiredSkills`）のドラフト表と実装の正は **BOW** の「装備門限」節。
+- **`secondaryWeaponMode`**: 弓・クロスは同一 `Equipment` エントリに **`TwoHandBowMelee`**（ストック殴り）がある。戦闘中の武器持ち替えとは別に、**一装備のセカンダリ近接**として存在する。
 
 ## スリングの差別化（役割）
 
@@ -27,7 +27,7 @@
 
 ## バニラを基に調整する
 
-本体の **`Going Medieval_Data/StreamingAssets/`** 以下を参照の起点にする。
+本体の **`Going Medieval_Data/StreamingAssets/`** 以下を参照の起点にする（**インストール済みゲームのバニラ**のみ。他 Mod の同梱 JSON は読まない）。
 
 - **`Items/Equipment.json`** — 各 `id` の `primaryWeaponMode`（`damage` / `range` / `attackSpeed` / `precision` / `precisionFalloff` / `ignoresArmor` など）が素体の基準。弓・クロス等は同一エントリに **`secondaryWeaponMode`**（例: `TwoHandBowMelee`）もある。
 - **`Items/WeaponQualitySettings.json`** — 製作品質ごとの乗算の基準。Mod 側で上書きする場合も、まずここを開いて差分だけに留める。
@@ -40,24 +40,18 @@
 
 変数を設定しない場合は、エクスプローラやエディタで上記フォルダを直接開き、バニラ JSON と Mod の `Data/Models` を手で突き合わせる。
 
-環境変数 **`GOING_MEDIEVAL_ITEMS`** に、バニラの **`Items` フォルダそのもの**のパスを設定すると、[`tools/plot_weapon_quality_comparison.py`](tools/plot_weapon_quality_comparison.py) が Steam レジストリに頼らず `Equipment.json` を解決できる（未設定時は Steam インストールから推測）。
+環境変数 **`GOING_MEDIEVAL_ITEMS`** に、バニラの **`Items` フォルダそのもの**のパスを設定すると、[tools/plot_weapon_quality_comparison.py](tools/plot_weapon_quality_comparison.py) が Steam レジストリに頼らず `Equipment.json` を解決できる（未設定時は Steam インストールから推測）。
 
 ## 素体と製作品質（Q1–Q6）
 
-- `Data/Models/Equipment.json` に書く数値は **素体（テンプレ）**。ゲーム内や比較グラフの **Q1–Q6** は、素体に **`Items/WeaponQualitySettings.json` の該当 `weaponType` ブロック**（Mod 同梱ならそちら）の **該当 `productQuality` 行の各 `*Multiplier`** を掛けたあとの実効値。
-- 「品質 _n_ で射程（や命中など）を _X_ にしたい」ときは **素体 = _X_ ÷ その品質行の乗算** で逆算する。弓の `TwoHandBow` では低品質の `rangeMultiplier` が 1 未満のため、素体だけ動かしても **チャート左端（低品質）の射程**が意図とずれることがある。変更時は品質行ごとに確認する。
+- `Data/Models/Equipment.json` に書く数値は **バニラ素体に対する上書き分**（省略したキーはバニラの値のまま）。**合成後の素体**をテンプレとして、ゲーム内や比較グラフの **Q1–Q6** は、それに **`Items/WeaponQualitySettings.json` の該当 `weaponType` ブロック**（Mod 同梱ならそちら）の **該当 `productQuality` 行の各 `*Multiplier`** を掛けたあとの実効値。
+- 「品質 *n* で射程（や命中など）を *X* にしたい」ときは **素体 = *X* ÷ その品質行の乗算** で逆算する。弓の `TwoHandBow` では低品質の `rangeMultiplier` が 1 未満のため、素体だけ動かしても **チャート左端（低品質）の射程**が意図とずれることがある。変更時は品質行ごとに確認する。
 
 ## Mod の WeaponQualitySettings で触っている範囲
 
 - **`TwoHandBow`**: 弓の品質曲線（ダメージ等）。弓の射程は品質別 `rangeMultiplier` があり得る。差分はバニラ `Items/WeaponQualitySettings.json` と突き合わせ、必要最小限に留める。
 - **`TwoHandCrossbow`**: Mod 同梱で、バニラでは 1 固定の **`rangeMultiplier` を品質に応じて段階的に上げる**（高品質ほど届く距離が伸びる）。クロスだけ「品質で射程が伸びる」挙動の根拠はここ。
 
-## 命中・装甲無視（調整の整理）
-
-- **弓**: 段階は短 ＜ 戦 ＜ 曲 ＜ 長。曲弓の素体 `precision` は **最大 0.99**、長弓は品質乗算後に **Q3 以降で実効 1** になるよう素体を置く、といった整理でよい（具体数値は常に `Equipment` が正）。
-- **クロスボウ**: 素体 `precision` はライト → 標準 → ヘビーで段を付け、ヘビーは高品質で頭打ち寄りにできる。**`ignoresArmor` はクロス系が弓より高い**前提で調整する。
-- **曲弓 `ignoresArmor`**: バニラ `curved_bow` と同じ **0.8** に合わせる（バニラを正）。
-
 ## 新しいセッション
 
-作業を再開するときは、このファイルを `@` 参照してから `Data/Models/Equipment.json` を開くとよい。
+作業を再開するときは、このファイルを `@` 参照してから、**本 Mod リポジトリ内**の `Data/Models/Equipment.json` を開くとよい（別 Mod の `Equipment.json` と取り違えない）。弓／クロス数値を触るときは **`BOW_MOD_INTEGRATION_POLICY.md`** も併せて開く。
