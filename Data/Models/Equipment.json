@@ -457,6 +457,9 @@
           "key": "Marksman",
           "value": 10
         }
+      ],
+      "onEquipEffectors": [
+        "ImpairedMovementLow"
       ]
     },
     {
@@ -472,6 +475,9 @@
           "key": "Marksman",
           "value": 10
         }
+      ],
+      "onEquipEffectors": [
+        "ImpairedMovementLow"
       ]
     },
     {
@@ -487,6 +493,9 @@
           "key": "Marksman",
           "value": 10
         }
+      ],
+      "onEquipEffectors": [
+        "ImpairedMovementLow"
       ]
     },
     {
@@ -496,7 +505,10 @@
       "attackSpeed": 11.25,
       "precision": 0.98,
       "precisionFalloff": 0.011,
-      "ignoresArmor": 0.9
+      "ignoresArmor": 0.9,
+      "meleeCover": 0.2,
+      "rangedCover": 0,
+      "coverAngle": 48
     },
     {
       "id": "crossbow",
@@ -511,7 +523,13 @@
           "key": "Marksman",
           "value": 5
         }
-      ]
+      ],
+      "onEquipEffectors": [
+        "ImpairedMovementLow"
+      ],
+      "meleeCover": 0.2,
+      "rangedCover": 0,
+      "coverAngle": 45
     },
     {
       "id": "heavy_crossbow",
@@ -526,7 +544,13 @@
           "key": "Marksman",
           "value": 15
         }
-      ]
+      ],
+      "onEquipEffectors": [
+        "ImpairedMovementMed"
+      ],
+      "meleeCover": 0.32,
+      "rangedCover": 0,
+      "coverAngle": 54
     },
     {
       "id": "sling",

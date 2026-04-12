@@ -11,6 +11,11 @@
 - **本体の Marksman**: 命中・威力などへの補正は弓とクロスに**同様に掛かる**前提。違いは **`Equipment` の静特性**（＋任意で `WeaponQualitySettings`・`requiredSkills`）で出す。
 - **調整の見方**: カタログ上の「期待 DPS」だけで裁かない。**届く距離・減衰・門限・品質**を並べ、プレイで確認する。対応ランク同士では弓の素体期待をクロスよりやや低めに寄せる、などの**相対**がありうる（具体数値は都度 `Equipment` と検証で決める）。
 - **順序の約束**: 上級ラインでは `range` / `damage` / `ignoresArmor` / `attackSpeed` の **`<` 連鎖**（クロスと上級弓の段差）を崩さないこと。詳細の鎖は変更方針ドキュメント（弓 mod 統合・変更方針）に従う。
+- **装備中の移動（本職の長射程のコスト）**: バニラ鎧と同系の **`onEquipEffectors`** で **移動速度低下**を段階付けする。**射程・火力を削らず**に立ち回りコストを置き、**片手スリング・投擲（`OneHandThrow`）**との差を付ける。鎧の `ImpairedMovement` と**重ね掛け**されうるのでプレイで確認する。
+  - **低下なし**: **`short_bow`**（軽量弓）、**`light_crossbow`**（ライト）。
+  - **弱い（`ImpairedMovementLow`）**: **`war_bow`**、**`curved_bow`**、**`long_bow`**、**`crossbow`**（標準）。
+  - **中程度（`ImpairedMovementMed`）**: **`heavy_crossbow` のみ**。**最重の代償に火力素体をライト／標準より余計には盛らない**（`damage` / `range` / `ignoresArmor` は段差の連鎖内に留める）。**`ImpairedMovementMed` の報いは掩体性能**（主に **`meleeCover` / `coverAngle`**。**`rangedCover`** はバニラが 0 が多いため、効果が確認できてから足す）で出し、据え撃ち時の生存を厚くする。具体は常に `Equipment` が正。
+  - **掩体（`meleeCover` / `coverAngle` / `rangedCover`）**: クロス段差で **ヘビィはライト・標準より掩体を厚く**（**Med 移動**とセット）。**ライト**は機動枠として掩体は中程度（バニラ比でやや上げてもよい）、**標準**はバニラ相当でよい。**`rangedCover`** を 0 以外にする場合は本体挙動を確認する。
 - **近接（`secondaryWeaponMode`）**: 弓・クロスボウも同一 `Equipment` エントリに **`TwoHandBowMelee`**（本体を振るストック殴り）が付く。戦闘中の武器持ち替えとは別に、**一装備のセカンダリ**として存在する。
 
 ## スリングの差別化（役割）
