@@ -1,7 +1,7 @@
 # 装備オーバーホール各論（防具・盾・近接メタ）
 
 > **このファイルの役割** — 防具・盾・近接メタ・スリングの詳細方針を定義する。  
-> 弓／クロスの既存詳細は **[`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md)** を正とする。
+> 弓／クロスの設計詳細は **[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)**、実装・現状・チェックリストは **[`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md)**。入口は **[`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md)**。
 
 ## 防具・盾の再定義
 
@@ -41,7 +41,7 @@
 
 ## 実装時の注意（データ編集）
 
-- 変更は `Data/Models/Equipment.json` の部分上書きで実施。
+- 変更は `Data/Models/Equipment.json` の部分上書きで実施（構造は `Items/Equipment.json` 準拠）。
 - 防具・盾・近接武器を触る際も、基準はバニラ `Items/Equipment.json`。
 - 参照は「バニラ + 本 Mod 差分」に限定し、他 Mod 定義は判断基準に使わない。
 
