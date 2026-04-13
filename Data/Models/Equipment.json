@@ -437,25 +437,25 @@
     },
     {
       "id": "short_bow",
-      "damage": 9,
-      "range": 19.5652,
-      "attackSpeed": 4.62,
-      "precision": 0.94,
-      "precisionFalloff": 0.026,
+      "damage": 12,
+      "range": 19.82,
+      "attackSpeed": 4.78,
+      "precision": 1,
+      "precisionFalloff": 0.052,
       "ignoresArmor": 0.8
     },
     {
       "id": "war_bow",
-      "damage": 17,
-      "range": 19.5652,
-      "attackSpeed": 4.82,
-      "precision": 0.96,
-      "precisionFalloff": 0.0225,
+      "damage": 21,
+      "range": 20.38,
+      "attackSpeed": 4.95,
+      "precision": 0.93,
+      "precisionFalloff": 0.042,
       "ignoresArmor": 0.8,
       "requiredSkills": [
         {
           "key": "Marksman",
-          "value": 10
+          "value": 5
         }
       ],
       "onEquipEffectors": [
@@ -464,11 +464,11 @@
     },
     {
       "id": "curved_bow",
-      "damage": 19,
-      "range": 22,
-      "attackSpeed": 5.06,
-      "precision": 0.99,
-      "precisionFalloff": 0.057,
+      "damage": 20,
+      "range": 23.8,
+      "attackSpeed": 5.1,
+      "precision": 0.88,
+      "precisionFalloff": 0.03,
       "ignoresArmor": 0.8,
       "requiredSkills": [
         {
@@ -482,16 +482,16 @@
     },
     {
       "id": "long_bow",
-      "damage": 20,
+      "damage": 17,
       "range": 26,
       "attackSpeed": 5.65,
       "precision": 1,
-      "precisionFalloff": 0.045,
-      "ignoresArmor": 0.8,
+      "precisionFalloff": 0.024,
+      "ignoresArmor": 0.75,
       "requiredSkills": [
         {
           "key": "Marksman",
-          "value": 10
+          "value": 15
         }
       ],
       "onEquipEffectors": [
@@ -503,8 +503,8 @@
       "damage": 33,
       "range": 15,
       "attackSpeed": 11.25,
-      "precision": 0.98,
-      "precisionFalloff": 0.011,
+      "precision": 0.95,
+      "precisionFalloff": 0.012,
       "ignoresArmor": 0.9,
       "meleeCover": 0.2,
       "rangedCover": 0,
@@ -512,11 +512,11 @@
     },
     {
       "id": "crossbow",
-      "damage": 38,
+      "damage": 39,
       "range": 18,
-      "attackSpeed": 12.6,
-      "precision": 0.99,
-      "precisionFalloff": 0.011,
+      "attackSpeed": 12.2,
+      "precision": 0.92,
+      "precisionFalloff": 0.012,
       "ignoresArmor": 0.9,
       "requiredSkills": [
         {
@@ -533,16 +533,16 @@
     },
     {
       "id": "heavy_crossbow",
-      "damage": 46,
-      "range": 20,
-      "attackSpeed": 13.5,
+      "damage": 48,
+      "range": 20.8,
+      "attackSpeed": 13.8,
       "precision": 1,
-      "precisionFalloff": 0.006,
+      "precisionFalloff": 0.012,
       "ignoresArmor": 0.92,
       "requiredSkills": [
         {
           "key": "Marksman",
-          "value": 15
+          "value": 10
         }
       ],
       "onEquipEffectors": [
@@ -551,24 +551,6 @@
       "meleeCover": 0.32,
       "rangedCover": 0,
       "coverAngle": 54
-    },
-    {
-      "id": "sling",
-      "damage": 15,
-      "range": 12,
-      "attackSpeed": 5.85,
-      "precision": 0.95,
-      "precisionFalloff": 0.02,
-      "ignoresArmor": 0.3
-    },
-    {
-      "id": "sling_staff",
-      "damage": 20,
-      "range": 15,
-      "attackSpeed": 7.2,
-      "precision": 0.95,
-      "precisionFalloff": 0.02,
-      "ignoresArmor": 0.35
     },
     {
       "id": "kettle_helmet",
