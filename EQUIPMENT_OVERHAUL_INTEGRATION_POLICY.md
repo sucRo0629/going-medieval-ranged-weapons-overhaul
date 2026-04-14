@@ -37,7 +37,7 @@
 **正本**: `scripts/apply_ranged_equipment_delta.py` の `SLING_COMBAT`（`apply_sling_overlays` が `primaryWeaponMode` の該当キーのみマージ）と **`Data/Models/Equipment.json`** の `sling` / `sling_staff`。弓 7 種の再生成のあと **同スクリプト**でスリングも上書きされる。
 
 - **`sling`**: `ignoresArmor` をやや抑え、**弓・クロス的な「装甲越え主役」読みに寄せない**（鈍弾レーン）。`attackSpeed` をわずかに上げ、**近中の撹乱**寄りの手触りにする。
-- **`sling_staff`**: 片手より **射程・単発は維持**しつつ、`attackSpeed` をわずかに遅くし、**持続弾幕の主砲感**を抑える。
+- **`sling_staff`**: 現状の強さに問題が見えないため、**攻速などの弱体は入れない**（片手との射程・単発差は従来どおりバニラ土台＋必要なら別途のみ）。
 - **UI**: 弓と同様、**装甲貫通の段表記は `ignoresArmor` と必ずしも一致しない**前提。数値判断は JSON と実戦。
 
 ## 全装備の整合チェック

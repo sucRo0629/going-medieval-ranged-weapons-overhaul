@@ -1565,7 +1565,7 @@
         "precision": 0.97,
         "precisionFalloff": 0.02,
         "range": 16,
-        "attackSpeed": 7.0,
+        "attackSpeed": 6.8,
         "projectilePrefabAddress": "StoneProjectile",
         "projectileOffset": {
           "x": 0,
