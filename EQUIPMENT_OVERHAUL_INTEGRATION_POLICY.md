@@ -32,6 +32,14 @@
 - **スタッフスリング（`sling_staff` / `TwoHandSling`）**: 片手より射程と圧力を持たせるが、主砲化は避ける。
 - **Stagger 付与の検討**: 盾持ち前衛の足を止める補助武器としての価値を重点評価する。
 
+### Mod 数値（スリング微調整・2026-04）
+
+**正本**: `scripts/apply_ranged_equipment_delta.py` の `SLING_COMBAT`（`apply_sling_overlays` が `primaryWeaponMode` の該当キーのみマージ）と **`Data/Models/Equipment.json`** の `sling` / `sling_staff`。弓 7 種の再生成のあと **同スクリプト**でスリングも上書きされる。
+
+- **`sling`**: `ignoresArmor` をやや抑え、**弓・クロス的な「装甲越え主役」読みに寄せない**（鈍弾レーン）。`attackSpeed` をわずかに上げ、**近中の撹乱**寄りの手触りにする。
+- **`sling_staff`**: 片手より **射程・単発は維持**しつつ、`attackSpeed` をわずかに遅くし、**持続弾幕の主砲感**を抑える。
+- **UI**: 弓と同様、**装甲貫通の段表記は `ignoresArmor` と必ずしも一致しない**前提。数値判断は JSON と実戦。
+
 ## 全装備の整合チェック
 
 1. **単独カテゴリ強化をしない**: 武器・防具・盾のいずれかだけが一方的に得をしないか確認する。

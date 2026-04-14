@@ -1,10 +1,10 @@
 # 実戦検証ポリシー（弓・クロス）
 
-> **このファイルの役割** — 弓・クロス調整の**実戦検証シナリオと評価観点**のみ。数値方針・階層化指標・門限・コンセプトは **[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)**、変更手順・実効命中の下限・再生成は **[`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md)**、入口・Precedence は **[`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md)**。
+> **このファイルの役割** — 弓・クロス調整の**実戦検証シナリオと評価観点**のみ。数値方針・階層化指標・門限・コンセプトは `**[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`**、変更手順・実効命中の下限・再生成は `**[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)**`、入口・Precedence は `**[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)**`。
 
 ## 共通ルール
 
-- **ゲームログの場所（Windows）**: `%USERPROFILE%\AppData\LocalLow\Foxy Voxel\Going Medieval\Player.log`（直前セッションは `Player-prev.log`）。早見の表にも記載あり → [`POLICY_SESSION_QUICK.md`](POLICY_SESSION_QUICK.md)「ゲームログ」。
+- **ゲームログの場所（Windows）**: `%USERPROFILE%\AppData\LocalLow\Foxy Voxel\Going Medieval\Player.log`（直前セッションは `Player-prev.log`）。早見の表にも記載あり → `[POLICY_SESSION_QUICK.md](POLICY_SESSION_QUICK.md)`「ゲームログ」。
 - 同一セーブ・同一地形条件で比較する（環境差分を減らす）。
 - 1 ケースで変更する要素は 1 つだけ（原因切り分け）。
 - **戦闘開始位置は全武器の射程外で固定**し、敵接近を待つ実戦導線で比較する。
@@ -14,7 +14,7 @@
 
 ## DevTools と製作品質（観察・読み替え）
 
-`WeaponQualitySettings.json` の各行は **`productQuality` 1（最悪）～ 6（最高）** であり、本 Mod のチャート・表の **Q1–Q6** はこの数値と対応する（**データの正**）。
+`WeaponQualitySettings.json` の各行は `**productQuality` 1（最悪）～ 6（最高）** であり、本 Mod のチャート・表の **Q1–Q6** はこの数値と対応する（**データの正**）。
 
 一方、DevTools で装備・アイテムをスポーンするときの挙動・表示について、次の**観察**がある（ビルドで差があり得る）。
 
@@ -31,16 +31,18 @@
 
 ## 敵 NPC 早見（`spawnNPC` 想定）
 
-**ID の正**はインストール済みゲームの **`Going Medieval_Data/StreamingAssets/`** 配下にある **NPC 定義 JSON**（フォルダ名はアップデートで変わり得る）の **`id`（および variant）** で確認する。DevTools 左上のプリセットだけに依存せず、**同じ敵を再現したいときは `id` + variant をメモ**する。
+**ID の正**はインストール済みゲームの `**Going Medieval_Data/StreamingAssets/`** 配下にある **NPC 定義 JSON**（フォルダ名はアップデートで変わり得る）の `**id`（および variant）** で確認する。DevTools 左上のプリセットだけに依存せず、**同じ敵を再現したいときは `id` + variant をメモ**する。
 
 汎用の人型（襲撃・一般系のブループリント名に多い `general_*` など）は、**装備が定義に依存**する。盾なし／軽装で撃ち比べたいときは **スポーン後に装備を確認**するか、定義上ランダムな行は**複数回試して典型を掴む**。
 
-| `id` | variant | 備考 | 向いているテスト |
-|------|---------|------|------------------|
-| `general_basic_easy` | `0` | 易しめの汎用人型（命中・時間の素朴比較で使用実績あり） | **平地・高台なし・一方的射撃**、序盤弓、Marksman 低〜中带、討伐時間のざっくり比較 |
-| （追記用） | | 同じ JSON から **`general_*` / `raid_*` / レイド関連**の `id` を転記していく | 重装・盾ありは **該当装備のブループリント**を選ぶ。カタログ指標が防具を含まないときは「無盾・軽装」と明記して揃える |
 
-コンソールの **`spawnNPC` の引数順・省略規則**はゲーム内 `help spawnNPC` を正とする。
+| `id`                 | variant | 備考                                                          | 向いているテスト                                                     |
+| -------------------- | ------- | ----------------------------------------------------------- | ------------------------------------------------------------ |
+| `general_basic_easy` | `0`     | 易しめの汎用人型（命中・時間の素朴比較で使用実績あり）                                 | **平地・高台なし・一方的射撃**、序盤弓、Marksman 低〜中带、討伐時間のざっくり比較              |
+| （追記用）                |         | 同じ JSON から `**general_*` / `raid_*` / レイド関連**の `id` を転記していく | 重装・盾ありは **該当装備のブループリント**を選ぶ。カタログ指標が防具を含まないときは「無盾・軽装」と明記して揃える |
+
+
+コンソールの `**spawnNPC` の引数順・省略規則**はゲーム内 `help spawnNPC` を正とする。
 
 ## 敵装備のランダム性と討伐タイム
 
@@ -82,7 +84,7 @@
 - **敵側の軽減率表示**は **数％程度**に見え、**「装甲を無視する割合」を直読みする UI ではない**と判断してよい。
 - **攻撃指示**: 「この武器ではこの敵にダメージを与えられない」系のメッセージで **射撃自体が不可**。`ignoresArmor` が **0 のときだけ本体が「与えられる HP ダメージなし」と判定する分岐**があり得る（本体コードは未参照のため仮説だが、データ差分と観察は一致）。
 
-**方針**: `ignoresArmor` の切り分けは **`0` を避け**、**正の値同士**で戦闘挙動を見る。`Equipment.json` の **`short_bow` 素体は設計上 `0.35` を正**とする（プレイテスト用の一時 `0.0` / 極端な単発値はコミットしない）。
+**方針**: `ignoresArmor` の切り分けは **0 を避け**、**正の値同士**で戦闘挙動を見る。`Equipment.json` の **`short_bow` 素体は設計上 `0.35` を正**とする（プレイテスト用の一時 `0.0` / 極端な単発値はコミットしない）。
 
 ### `ignoresArmor` を 0.1 にした追試（2026-04）
 
@@ -117,7 +119,7 @@
 ## 今回固定する条件
 
 - 味方は **ランダム生成されたキャラ 3 人** を使用する。
-- 敵は DevTools 左上の **強奪者 1 人** から盾を持っていない相手を 3 人で攻撃する、**または**上記「**敵 NPC 早見**」のとおり **`spawnNPC`** で **`general_basic_easy` `0`** などを出して揃える（**再現性が必要なら後者を推奨**）。
+- 敵は DevTools 左上の **強奪者 1 人** から盾を持っていない相手を 3 人で攻撃する、**または**上記「**敵 NPC 早見**」のとおり `**spawnNPC`** で `**general_basic_easy` `0**` などを出して揃える（**再現性が必要なら後者を推奨**）。
 - **「もろい」相当はスポーン不可**のため、Dev だけで揃える場合は **それより上の段**からになる（上節の仮説では **Q1/Q2 は Dev では出せない**可能性）。**比較は可能な最下スポーン帯から**行い、結果メモに **実際に選んだ表示名** を書く。
 
 ## 検証対象から除外する項目
@@ -130,21 +132,21 @@
 
 ### 2026-04-13 — `short_bow` vs `war_bow`（Q3・3v1 集中・約 16m・Marksman 10）
 
-- **詳細**: [`playtest_results/2026-04-13_01.md`](playtest_results/2026-04-13_01.md) のチャット追記メモ。ゲーム **1.0.75**、マップ `339940720` 谷、平地／拠点遮蔽。
+- **詳細**: `[playtest_results/2026-04-13_01.md](playtest_results/2026-04-13_01.md)` のチャット追記メモ。ゲーム **1.0.75**、マップ `339940720` 谷、平地／拠点遮蔽。
 - **条件**: 味方 **3** で敵 **1** に集中射撃して撃破時間を計測。開始距離 **約 16m**（mid 18m に近い）。品質 **Q3**。敵装備はランダム（盾なしを狙う）。装備制限が解除されておらず味方は全員 **Marksman 10**。データは当該セッションで **バニラ素体＋バニラ WQS** に揃えていた旨の前チャット報告あり（再現時は `Equipment.json` / `WeaponQualitySettings.json` の状態をメモ推奨）。
 - **撃破時間（秒）**: `short_bow`: **29.9 / 40.0 / 39.6**、`war_bow`: **30.2 / 23.6 / 21.4**。
-- **観察**: **パヴィース**相手ではほぼ歯が立たない。攻速はショートがやや速い体感だが、ショートは**命中しづらい体感**。この条件（Q3・Marksman 10）では **`war_bow` が短時間で撃破しやすい**暫定。
+- **観察**: **パヴィース**相手ではほぼ歯が立たない。攻速はショートがやや速い体感だが、ショートは**命中しづらい体感**。この条件（Q3・Marksman 10）では `**war_bow` が短時間で撃破しやすい**暫定。
 
 ### 2026-04-14 — `short_bow` vs `war_bow`、品質「可」、平地・高台なし・一方的射撃
 
 - **敵**: `general_basic_easy` variant `0`
-- **味方 Marksman**: まず全員 **5**。`war_bow` は当時の Mod が **`Marksman` `value: 0`（マージで無効）** のため **バニラ門限 10 が残り装備不可** → 住民を **10** に上げて再試行。以降は **`Equipment.json` を本節の門限どおり修正済み**（`value: 0` を使わない）。
-- **18m**: アイテム値では届かないが **実機では射程加算（上節）で届く**範囲。**`short_bow` はほぼ命中せず**、15m でも困難、2分以上で計測中断。**バニラ短弓より明確に弱い**との比較所感あり。
+- **味方 Marksman**: まず全員 **5**。`war_bow` は当時の Mod が `**Marksman` `value: 0`（マージで無効）** のため **バニラ門限 10 が残り装備不可** → 住民を **10** に上げて再試行。以降は `**Equipment.json` を本節の門限どおり修正済み**（`value: 0` を使わない）。
+- **18m**: アイテム値では届かないが **実機では射程加算（上節）で届く**範囲。`**short_bow` はほぼ命中せず**、15m でも困難、2分以上で計測中断。**バニラ短弓より明確に弱い**との比較所感あり。
 - **10m・Marksman 5・`short_bow`**: ゲーム内 **最終命中率表示 ~78%**（スキル 5 の **100% −22%** 文脈と併記）。**3分経過でも討伐できず**。
 - **10m・Marksman 10・`war_bow`**: 表示は **100% −20% ≈ 80%** 付近（**武器別の命中補正がこの表示にさらに乗るか**は未整理。深掘りするときは UI 説明または本体挙動で要確認）。討伐 **約 48 秒**。攻速の遅さは `short_bow` と比べて分かる程度。
 - **10m・Marksman 10・`short_bow` 再試行**: 命中は高いはずだが**あまり当たらず**、1分以上で中断。
 
-**設計への反映**: 上記より **「可」品質・10m・一方的射撃**でも実用になるよう **命中系を修正する必要**がある。**バニラより命中を下げない**ことは **[`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md)** の「**実効命中のバニラ下限**」に拘束として書いた。
+**設計への反映**: 上記より **「可」品質・10m・一方的射撃**でも実用になるよう **命中系を修正する必要**がある。**バニラより命中を下げない**ことは `**[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`** の「**実効命中のバニラ下限**」に拘束として書いた。
 
 ### 2026-04-15 — `curved_bow` vs `long_bow`（**データ変更なし**、品質「**良**」、Marksman **15**、**22m**）
 
@@ -161,19 +163,18 @@
 - **仮説（メモ）**:
   - **命中**: 武器 `precision` が高くても **Marksman が低いと実弾は外れやすい**のは、**バニラでも同様**かもしれない（**同条件バニラ短弓と並べて**要確認）。
   - **討伐できない主因**: **Mod 側で単発威力（`damage` 等）をバニラより下げている**ため、**命中が改善しても DPS 不足で削り切れない**可能性（**バニラ同条件での秒数比較**で切り分け）。
-
-- **追試（短弓バニラ素体）**: `short_bow` の **`primaryWeaponMode` のみ**、バニラ `Items/Equipment.json` と同値に戻した（`precisionFalloff` **0.02**、`range` **18**、`attackSpeed` **4.95**。他 id・`WeaponQualitySettings.json` は据え置き）。**品質乗算**は引き続き Mod の `TwoHandBow` 行が掛かる点に注意。
+- **追試（短弓バニラ素体）**: `short_bow` の `**primaryWeaponMode` のみ**、バニラ `Items/Equipment.json` と同値に戻した（`precisionFalloff` **0.02**、`range` **18**、`attackSpeed` **4.95**。他 id・`WeaponQualitySettings.json` は据え置き）。**品質乗算**は引き続き Mod の `TwoHandBow` 行が掛かる点に注意。
   - **実施結果（可・Marksman 5・10m）**: 討伐 **36.2 秒**。**さきほど（Mod 素体・同条件に近い試行）より当たっていた感**との所感。**素体の射程・減衰・間隔**が討伐時間と体感命中に強く効いていた**示唆**（敵装備の抽選差は別要因のため、厳密比較では **鎧有無メモ**を推奨）。
 - **通り結論（短弓 A/B）**: **Mod 素体の数値で弱くし過ぎた**ことは、バニラ素体に戻した試行と対比して**ほぼ確定**。**今回の主軸が 10m**である点に注意: この距離帯では **距離による命中減衰は実質 0 に近い**ため、**素体 `range` が体感・討伐秒数にどう効いたかは本試行だけでは不明**。**18m / 22m 等**で射程の効きを切り分ける。
-- **Mod データ再同期（2026-04）**: 方針どおり **`Equipment.json` の 7 種弓クロス素体**と **`WeaponQualitySettings.json` の `TwoHandBow`/`TwoHandCrossbow`** を**バニラに戻し**、差分は主に **`requiredSkills`（門限表）** のみとした。手順は **`scripts/apply_ranged_equipment_delta.py`**（または **`tools/regenerate_ranged_from_vanilla.py`** のみ）。
+- **Mod データ再同期（2026-04）**: 方針どおり `**Equipment.json` の 7 種弓クロス素体**と `**WeaponQualitySettings.json` の `TwoHandBow`/`TwoHandCrossbow`** を**バニラに戻し**、差分は主に `**requiredSkills`（門限表）** のみとした。手順は `**scripts/apply_ranged_equipment_delta.py`**（または `**tools/regenerate_ranged_from_vanilla.py**` のみ）。
 
 ## 射撃メモ（`meleeCover`・耐久・「矢損失」表示）
 
-- **`meleeCover`（射手の弓アイテム）**: データ上は装備エントリの**射手側**の値であり、**遠隔で敵を撃っているだけの局面では、敵の被弾率やダメージに弓の `meleeCover` が乗る想定は薄い**。敵が**近接武器だけ**を持っていて「近接カバーしかない」場合、そのカバーは**敵装備側**の話であり、**こちらの弓の `meleeCover` とは別**（以前のメモの結び付けは誤り）。
-- **`hpLossPerUse` / `loseHpOnMiss`（`primaryWeaponMode`）**: JSON 上は**弓（武器）アイテムの耐久が射撃ごとに減る**ためのフィールド。**「矢が折れた」表示＝インベントリの矢が本数減る専用ルール」**とは限らず、**武器耐久の警告**や別 UI レイヤの可能性がある。**矢スタック消費があるか**は本体挙動・ツールチップで要確認。
+- `**meleeCover`（射手の弓アイテム）**: データ上は装備エントリの**射手側**の値であり、**遠隔で敵を撃っているだけの局面では、敵の被弾率やダメージに弓の `meleeCover` が乗る想定は薄い**。敵が**近接武器だけ**を持っていて「近接カバーしかない」場合、そのカバーは**敵装備側**の話であり、**こちらの弓の `meleeCover` とは別**（以前のメモの結び付けは誤り）。
+- `**hpLossPerUse` / `loseHpOnMiss`（`primaryWeaponMode`）**: JSON 上は**弓（武器）アイテムの耐久が射撃ごとに減る**ためのフィールド。**「矢が折れた」表示＝インベントリの矢が本数減る専用ルール」**とは限らず、**武器耐久の警告**や別 UI レイヤの可能性がある。**矢スタック消費があるか**は本体挙動・ツールチップで要確認。
 - **命中率 UI と素体 `precision`**: 画面上の「射撃武器の命中率」が **78%** のまま等でも、**武器の `precision` が 1 に近いことと一致しない**ことがある。表示は **Marksman 等のスキル天井**を含む合成かもしれない（**バニラ同 UI 文言で比較**）。
 - **ゲーム内 DPS 表記（観察・`short_bow`・可）**: 装備パネル等に出る DPS が **約 0.9** のとき、分解表示が次の形で読めた例がある（数値は当該装備・スキル帯の**一例**）:  
-  **`(装備武器 7.0 × スキルによる補正 0.8) ÷ (攻撃時間 5.8 × スキルによる補正 1.1) ≈ 0.88 → 表記 0.9 DPS`**。ここでの **「攻撃時間」は JSON の `attackSpeed` と同じ桁とは限らない**（秒間隔・別丸め等の可能性）。**チャートのノミナル DPS**と **UI の分解**はそのまま突き合わせず、検証メモに **UI の生数字**を残す。
+`**(装備武器 7.0 × スキルによる補正 0.8) ÷ (攻撃時間 5.8 × スキルによる補正 1.1) ≈ 0.88 → 表記 0.9 DPS`**。ここでの **「攻撃時間」は JSON の `attackSpeed` と同じ桁とは限らない**（秒間隔・別丸め等の可能性）。**チャートのノミナル DPS**と **UI の分解**はそのまま突き合わせず、検証メモに **UI の生数字**を残す。
 
 ## 実戦検証シナリオ（難所集中）
 
@@ -184,17 +185,17 @@
 
 ### B. 調整難所の主確認（6 ケース）
 
-3. `heavy_crossbow` / `crossbow` / `curved_bow` 比較（Q3）@ mid（18m）
-4. `heavy_crossbow` / `crossbow` / `curved_bow` 比較（Q4）@ mid（18m）
-5. `heavy_crossbow` / `curved_bow` / `long_bow` 比較（Q3）@ far（22m）
-6. `heavy_crossbow` / `curved_bow` / `long_bow` 比較（Q4）@ far（22m）
-7. `heavy_crossbow` / `curved_bow` / `long_bow` 比較（Q5）@ far（22m）
-8. `heavy_crossbow` / `curved_bow` / `long_bow` 比較（Q6）@ far（22m）
+1. `heavy_crossbow` / `crossbow` / `curved_bow` 比較（Q3）@ mid（18m）
+2. `heavy_crossbow` / `crossbow` / `curved_bow` 比較（Q4）@ mid（18m）
+3. `heavy_crossbow` / `curved_bow` / `long_bow` 比較（Q3）@ far（22m）
+4. `heavy_crossbow` / `curved_bow` / `long_bow` 比較（Q4）@ far（22m）
+5. `heavy_crossbow` / `curved_bow` / `long_bow` 比較（Q5）@ far（22m）
+6. `heavy_crossbow` / `curved_bow` / `long_bow` 比較（Q6）@ far（22m）
 
 ### C. 超遠距離の最終確認（2 ケース）
 
-9. `curved_bow` / `long_bow` / `heavy_crossbow` 比較（Q5）@ ultra-far（25m）
-10. `curved_bow` / `long_bow` / `heavy_crossbow` 比較（Q6）@ ultra-far（25m）
+1. `curved_bow` / `long_bow` / `heavy_crossbow` 比較（Q5）@ ultra-far（25m）
+2. `curved_bow` / `long_bow` / `heavy_crossbow` 比較（Q6）@ ultra-far（25m）
 
 ## 各ケースで見る項目（5 つだけ）
 

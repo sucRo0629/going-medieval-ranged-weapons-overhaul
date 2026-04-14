@@ -41,15 +41,15 @@ SLING_COMBAT: dict[str, dict[str, float]] = {
     "sling": {
         "damage": 16,
         "range": 13,
-        "attackSpeed": 5.4,
+        "attackSpeed": 5.25,
         "precision": 0.97,
         "precisionFalloff": 0.02,
-        "ignoresArmor": 0.3,
+        "ignoresArmor": 0.25,
     },
     "sling_staff": {
         "damage": 21,
         "range": 16,
-        "attackSpeed": 6.8,
+        "attackSpeed": 7.0,
         "precision": 0.97,
         "precisionFalloff": 0.02,
         "ignoresArmor": 0.35,
