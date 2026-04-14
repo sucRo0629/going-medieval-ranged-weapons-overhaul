@@ -11,7 +11,7 @@
 **以降の番号付きは省略せず守る。** 数値目標・再生成チェックリスト・プレイ検証シナリオの**本文**は [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) / [`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md) / [`COMBAT_PLAYTEST_POLICY.md`](COMBAT_PLAYTEST_POLICY.md) に分離している。**本節だけでは弓の詳細バランスを新規に決めない**（設計ファイルを読む）。
 
 1. **セッション開始**: 先に [`POLICY_SESSION_QUICK.md`](POLICY_SESSION_QUICK.md) を読む（正本の表・タスク→ファイル）。
-2. **矛盾時の正本順**: [`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md) の **Precedence**（実装 JSON ＞ 設計 MD のドラフト表）。
+2. **矛盾時の正本順**: [`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md) の **Precedence**（実装 JSON ＞ 設計 MD のドラフト表）。**7 種の合成 `range` の狭義順序**は [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の **Q3／Q4 で厳守**、Q1・Q2・Q5・Q6 は同ファイルの**ティア緩和**に従う。
 3. **`requiredSkills`**: 門限なしは **キー省略**。**`Marksman` の `value: 0` は禁止**（バニラ門限が残る）。空配列 `[]` もマージで意図とずれることがある — 下記「スコープと編集原則」の箇条書きに従う。
 4. **弓／クロス再生成のエントリ**: 本 Mod の `Equipment.json` を書き戻す通常手順は **[`scripts/apply_ranged_equipment_delta.py`](scripts/apply_ranged_equipment_delta.py)**（続けてスリング）。**[`tools/regenerate_ranged_from_vanilla.py`](tools/regenerate_ranged_from_vanilla.py) 単体**は 7 種＋WQS のみで、**スリング上書きは行わない**。
 5. **参照範囲**: 装備の突き合わせは **バニラ `Items/Equipment.json` と本 Mod `Data/Models/Equipment.json` のみ**（他 Mod の `Equipment.json` は参照しない）。
@@ -63,7 +63,7 @@
 `D:\SteamLibrary\steamapps\common\Going Medieval\Going Medieval_Data\StreamingAssets`
 
 - `GM_STREAMING_ASSETS`: `StreamingAssets` フォルダを指す。
-- `GOING_MEDIEVAL_ITEMS`: `Items` フォルダを指す（`tools/plot_weapon_quality_comparison.py` が利用）。
+- `GOING_MEDIEVAL_ITEMS`: `Items` フォルダを指す（`tools/plot_weapon_quality_comparison.py` が利用）。同ツールの **層 1 補完**は `quality_charts/ranged_layer1_eval_bundle.md` を入口にする（[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の帯域・階層節）。
 
 ## 素体と製作品質（Q1–Q6）
 
@@ -86,7 +86,7 @@ Mod に明示する **浮動小数の装備パラメータ**（例: `primaryWeap
 
 ## Mod の WeaponQualitySettings 編集範囲（現状）
 
-弓／クロスの WQS は **`tools/regenerate_ranged_from_vanilla.py`** に集約（再生成で Mod の `WeaponQualitySettings.json` に反映）。**`TwoHandBow`** … **`TWO_HAND_BOW_QUALITY_DELTAS`**。**`TwoHandCrossbow`** … 命中系はバニラのまま、**`TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`** で damage／攻速のみ平坦化。意図・「大きく押し上げない」の解釈は [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)（決定背景・弓／クロスのデータ差分・WQS 明文化）。
+弓／クロスの WQS は **`tools/regenerate_ranged_from_vanilla.py`** に集約（再生成で Mod の `WeaponQualitySettings.json` に反映）。**`TwoHandBow`** … **`TWO_HAND_BOW_QUALITY_DELTAS`**。**`TwoHandCrossbow`** … 命中系はバニラのまま、**`TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`** で damage／攻速を平坦化し、**`rangeMultiplier` で品質に応じた射程の微増**（素体は `ROLE_RANGE`）。意図は [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)（決定背景・弓／クロスのデータ差分・WQS 明文化）。
 
 ## 新しいセッション
 

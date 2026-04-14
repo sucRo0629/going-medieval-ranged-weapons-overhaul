@@ -7,7 +7,7 @@
 
 ## Repository phase（実装の現状）
 
-**現状（2026-04 以降の再生成パイプライン）**: 7 種はバニラ装備の完全コピーを土台に、**門限**・**`ROLE_RANGE` / `BOW_ATTACK_SPEED` / `CROSSBOW_RANGED_COVER`**・**`TWO_HAND_BOW_QUALITY_DELTAS`**・**`TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`** を適用する（[`scripts/apply_ranged_equipment_delta.py`](scripts/apply_ranged_equipment_delta.py) / [`tools/regenerate_ranged_from_vanilla.py`](tools/regenerate_ranged_from_vanilla.py)）。**設計上の数値目標**（Q3 鎖・距離別 DPS 順・「弓を長射程にする場合」等）がすべて満たされているとは限らない。再チューン時は [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の **評価基準の階層**の層 1 から合わせ、層 3・4 で採否する。
+**現状（2026-04 以降の再生成パイプライン）**: 7 種はバニラ装備の完全コピーを土台に、**門限**・**`ROLE_RANGE` / `BOW_ATTACK_SPEED` / `CROSSBOW_RANGED_COVER`**・**`TWO_HAND_BOW_QUALITY_DELTAS`**・**`TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`**（damage／攻速＋**射程の品質微増**）を適用する（[`scripts/apply_ranged_equipment_delta.py`](scripts/apply_ranged_equipment_delta.py) / [`tools/regenerate_ranged_from_vanilla.py`](tools/regenerate_ranged_from_vanilla.py)）。**設計上の数値目標**（Q3 鎖・距離別 DPS 順・「弓を長射程にする場合」等）がすべて満たされているとは限らない。再チューン時は [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の **評価基準の階層**の層 1 から合わせ、層 3・4 で採否する。
 
 ---
 
@@ -30,8 +30,8 @@
 ## 変更するとき
 
 1. **Q3 四種鎖**（`crossbow` / `heavy_crossbow` / `curved_bow` / `long_bow`）と **Equipment** の両方を意識し、矛盾が出ないよう往復する（鎖の定義は [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)）。
-2. 数値を変えたら、`tools/plot_weapon_quality_comparison.py` でグラフを生成し、品質込みの性能を確認する（**期待DPS**・**距離別期待DPS** の `ranged_expected_dps*.png` / `ranged_distance_expected_dps_*.png`。単体の `ranged_dps_*.png` は出さない）。**チャートだけで採否しない** — [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の **評価基準の階層**の **層 3・4**（プレイテスト／バニラ差分）を通す。
-   - あわせて `ranged_distance_expected_dps_band_summary.csv` と `ranged_distance_expected_dps_decision_summary.md` を確認し、帯域の平均/最小値と主要ペアの勝敗推移を記録する。
+2. 数値を変えたら、`tools/plot_weapon_quality_comparison.py` でグラフを生成し、品質込みの性能を確認する（**期待DPS**・**距離別期待DPS** の `ranged_expected_dps*.png` / `ranged_distance_expected_dps_*.png`。単体の `ranged_dps_*.png` は出さない）。**合成 `range`** は [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の **Q3／Q4 厳守順**を `ranged_range_*` で確認（Q1・Q2・Q5・Q6 はティア緩和あり）。**チャートだけで採否しない** — 同ファイルの **評価基準の階層**の **層 3・4**（プレイテスト／バニラ差分）を通す。
+   - あわせて `ranged_distance_expected_dps_band_summary.csv` を確認し、帯域の平均/最小値を記録する。**層 1 の補完（対鎧プロキシ距離 DPS・帯域単発期待ダメ・Q3 四鎖・掩体/バックラー比較・移動目標/`onEquipEffectors`・門限メモ）**は [`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md) と同時生成の `ranged_layer1_*_band_summary.csv` 2 本に任せ、再生成のたびに当該 MD を確認する。
 3. 移動ペナルティ・掩体（[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)「弓とクロスボウの差別化」の共通箇所）は鎖とは独立に触ってよいが、**素体の火力をヘビィだけ突出**させて鎖や役割説明と矛盾させないこと。
 4. **同ティア近接との比較・被弾メタ**を検証に含め、**高品質弓一択**にならないよう帯域・曲線・WQS を確認する。実戦手順は `COMBAT_PLAYTEST_POLICY.md` に従う。
 5. **`requiredSkills`（Marksman）**を変えたら、[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の「装備門限」節と **Q3 総合強さの検証水準**と整合するか確認する。

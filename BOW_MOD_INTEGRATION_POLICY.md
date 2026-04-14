@@ -10,7 +10,7 @@
 次の **上から順**に従う。下位の Markdown の記述が上位と矛盾する場合は **上位を正**にし、ドキュメントかデータを追随する。
 
 1. **本 Mod の** [`Data/Models/Equipment.json`](Data/Models/Equipment.json) — 装備ブロックの数値・`requiredSkills`・`primaryWeaponMode` / `secondaryWeaponMode` の**実装の正**。
-2. **本 Mod の** [`Data/Models/WeaponQualitySettings.json`](Data/Models/WeaponQualitySettings.json) — 品質乗算。定数は **`tools/regenerate_ranged_from_vanilla.py`** の **`TWO_HAND_BOW_QUALITY_DELTAS`**（弓）と **`TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`**（クロス・damage／攻速のみ）。
+2. **本 Mod の** [`Data/Models/WeaponQualitySettings.json`](Data/Models/WeaponQualitySettings.json) — 品質乗算。定数は **`tools/regenerate_ranged_from_vanilla.py`** の **`TWO_HAND_BOW_QUALITY_DELTAS`**（弓）と **`TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`**（クロス・damage／攻速の平坦化＋**`rangeMultiplier` の微増**）。
 3. **バニラ** `Items/Equipment.json` / `Items/WeaponQualitySettings.json` — 再同期・比較・「バニラ下限」の基準。
 4. **設計意図・検証手順** — [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)、[`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md)、[`COMBAT_PLAYTEST_POLICY.md`](COMBAT_PLAYTEST_POLICY.md)。  
    - 表の **ドラフト門限** と JSON が食い違うときは **JSON を正**にし、その後ドキュメントを更新する。
