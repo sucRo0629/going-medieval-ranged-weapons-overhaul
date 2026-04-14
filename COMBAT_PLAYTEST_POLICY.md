@@ -93,6 +93,12 @@
 
 **解釈（データだけからは確定不可）**: 当該の **大／中／小表記が `Equipment.json` の素体 `ignoresArmor` を閾値で読んでいない**、**別ソース（武器種既定・バニラ参照・合成後の別フィールド等）**の可能性が高い。UI を JSON だけで追従させたい場合は **ローカライズ／別データ**の調査が別途必要。
 
+### 装甲貫通の UI とデータ（採用方針・2026-04）
+
+- **戦闘に効く数値**は **`Equipment.json` / `WeaponQualitySettings.json` の合成を正**とする（`ignoresArmor` の変更は挙動に反映され得る、という前提でバランスする）。
+- **アイテムの「装甲貫通」大中小表記**は上記のとおり **データとずれることがある**。**気持ち悪さは許容し、表記に合わせて JSON を曲げない**。
+- **弓／クロスボウ**のラインは **当面ここで区切り**（再開時は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` と `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)` の Repository phase から）。
+
 ## テスト前処理（毎回）
 
 1. 実戦比較で **装備門限を無視**したい場合、`Data/Models/Equipment.json` の該当武器について **`requiredSkills` を一時的に省略**するか、**`Marksman` の `value` を 1 など極小に下げる**（**`value: 0` はバニラ門限が残る**ため使わない。終了後は **[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)** の門限表へ戻す）。

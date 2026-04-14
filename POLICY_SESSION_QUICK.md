@@ -4,6 +4,8 @@
 
 **Mod 名・スコープ**: ゲーム内表示名は **`ModInfo.json` の `name`（Equipment Overhaul）**。ローカルの **リポジトリ／Mod フォルダ名**は環境ごとに異なってよい（ドキュメントでは **リポジトリ相対パス**を正とする）。装備全体（遠距離に限らず防具・盾・近接メタ・スリング）の概論と禁則は **[`CREATION_POLICY.md`](CREATION_POLICY.md)**。遠距離を変える作業でもそれらに触れる想定なら **[`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)** を必ず併読する。
 
+**弓・クロス（2026-04 一区切り）**: 装甲貫通の **アイテム表記は JSON とずれることがある**が、**戦闘は `Equipment.json` / WQS を正**とし、表記に合わせて数値を曲げない。詳細は **`[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`** / **`[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`**。
+
 ---
 
 ## 正本（数値・マージ）
