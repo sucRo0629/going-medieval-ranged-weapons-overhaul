@@ -247,6 +247,7 @@ python scripts/vanilla_equipment_audit.py --items-dir "$GOING_MEDIEVAL_ITEMS" --
 
 - `StreamingAssets` は `Items` の親ディレクトリ。スクリプトは `Combat/` と `StatsSystem/` を兄弟として読む。
 - 本ファイルの **問題点の断定**は、上記バニラ `Equipment.json` を正に再生成した表で置き換えること。
+- ビルドや配布形態によって、**`Equipment.json` の正本がかつて `Items/` 直下にあった／パスが異なっていた**という経緯メモもある。**実インストールのツリーを正**に `GOING_MEDIEVAL_ITEMS` を取る。
 
 ## 2. 防具（`itemType` 3、盾以外）
 
@@ -276,19 +277,24 @@ python scripts/vanilla_equipment_audit.py --items-dir "$GOING_MEDIEVAL_ITEMS" --
 
 | # | 観察・構造 | 根拠（データ） | 方針ファイルでの位置づけ |
 | --- | --- | --- | --- |
-| 1 | ギャンベゾン等でも装備時 `ImpairedMovementLow` があり、**軽装でも移動ペナ**が乗る | 上表 `gambeson_armor` / `forest_light_armor` 等 | [EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md) 「ギャンベゾンは移動をほぼ殺さない」とのギャップ |
+| 1 | データ上、`gambeson_armor` 等に `ImpairedMovementLow`。**体感で足が重いかは実機要検証**。方針「ギャンベゾンは移動をほぼ殺さない」との**真のギャップは体感・バニラ正本照合のあと**に判定。栽培**麻のコスト対 mid 性能**はバニラ意図の一説として検証メモに含める | 上表 + [EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md) | 防具方針・経済文脈 |
 | 2 | 鎖・板金は `ImpairedMovementLow/Med`。**負傷由来の減速と二重**になり退却が厳しい | 上表 + 近接不遇メモ | 退却可能性・負傷の肩代わし |
 | 3 | 盾に `ShieldCombatSpeed*`。**盾＋近接の攻速・機動トレード**が重い | 上表 | カイトシールド方針・循環 |
 | 4 | 武器 `ignoresArmor` が種別によって高帯。**鎧軽減が読みにくい** | 武器表（バニラ再抽出で検証） | 重装キラー主軸にしない／循環 |
-| 5 | 鎧残量と軽減の関係は **Equipment 単体ではキー未確認** | [COMBAT_PLAYTEST_POLICY.md](../COMBAT_PLAYTEST_POLICY.md) | 運ゲー・安定軽減の設計 |
+| 5 | 鎧残量〜軽減の連続／階段調整は **Equipment 単体ではキー未確認**。**「軽減が確率で発動する」専用フィールドは未検出**（誤要約の可能性） | [COMBAT_PLAYTEST_POLICY.md](../COMBAT_PLAYTEST_POLICY.md) | 運ゲー・安定軽減の設計 |
 | 6 | **味方誤射・流れ弾**は接敵近接のリスク要因になり得る | `DamageTakingAgentSettings` の accident/hit 系キー（存在時に要約） | 退却可能性・運ゲー |
+
+## 8a. プレイ観察メモ（JSON 外・要同定）
+
+- **盾と退却**: 敵に盾面と `coverAngle` を向けたままでは下がりづらく、**退却時は背を見せてカバー角から外れる**ことが多い。防衛で有利でも、**退く局面では遠隔に背中を晒しやすい**。
+- **攻城兵器周辺 AI**: 敵が**攻城兵器建設中**などの局面で、一定以上兵器から離れると**兵器へ退却**する挙動がある場合、**距離を釣って繰り返し背中を弓で削る**戦術が成立しやすく、**高 `rangedCover` 盾だけでは遠隔対策に乏しい**メタのカウンターになり得る（条件はバージョンで要再確認）。
 
 ## 9. 改善レバー（方針マッピング）
 
 | 方針（EQUIPMENT_OVERHAUL） | あり得るレバー（バニラ JSON） | 注意 |
 | --- | --- | --- |
 | 負傷の肩代わし | `armorRating` / `armorType`、`ArmorQualitySettings` の倍率、命中デバフは `HitEffectorGroups` | Mod 独自 Effector はマージ不確実 |
-| 退却可能性 | 防具の `onEquipEffectors` の段階見直し、軽装から `ImpairedMovement*` を外す検討 | 盾 `ShieldCombatSpeed*` との兼ね合い |
+| 退却可能性 | 防具の `onEquipEffectors` の段階見直し、軽装から `ImpairedMovement*` を外す検討 | 盾 `ShieldCombatSpeed*`、**退却時の背中・カバー角**（観察）との兼ね合い |
 | 運ゲー低減 | `Combat/*.json` に確率系があれば調整、なければ実戦検証のみ | キー未同定を明記 |
 | 勝ち筋の複線化 | 遠隔の `ignoresArmor` 帯、近接の `armorDamage`（斧ルート） | 単独カテゴリ強化を避ける |
 
