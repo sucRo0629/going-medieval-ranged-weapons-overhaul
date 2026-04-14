@@ -1,0 +1,12 @@
+---
+description: Ranged Weapons Overhaul — policy routing and canonical data
+globs: Ranged Weapons Overhaul/**/*
+alwaysApply: false
+---
+
+# Ranged Weapons Overhaul
+
+- 方針の入口は `Ranged Weapons Overhaul/POLICY_SESSION_QUICK.md` を優先。続けてタスクに応じ `BOW_MOD_INTEGRATION_POLICY.md`（Precedence）／`BOW_DESIGN_TARGETS.md`（設計）／`BOW_IMPLEMENTATION_STATUS.md`（実装・チェック）／`CREATION_POLICY.md`（Mod 共通）／`COMBAT_PLAYTEST_POLICY.md`（プレイテスト）／`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`（防具・近接）。
+- 数値の正は `Ranged Weapons Overhaul/Data/Models/Equipment.json` と `WeaponQualitySettings.json`。ドキュメントのドラフト表と食い違う場合は JSON／`tools/regenerate_ranged_from_vanilla.py`（`TWO_HAND_BOW_QUALITY_DELTAS`）を正にし、後から MD を追随。
+- `requiredSkills`: 門限なしはキー省略。`Marksman` の `value: 0` は使わない（マージでバニラ門限が残る）。
+- 武器性能は `primaryWeaponMode` / `secondaryWeaponMode` 配下のみ（旧トップレベル `range`/`damage`/`attackSpeed` は禁止）。再生成の正本は `scripts/apply_ranged_equipment_delta.py`。
