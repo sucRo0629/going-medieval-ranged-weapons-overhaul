@@ -1,7 +1,8 @@
 # 弓・クロス データ変更方針（入口）
 
 > **このファイルの役割** — 弓／クロス方針の **入口** と **正本の優先順位（Precedence）** を示す。詳細本文は子ファイルに分割している。  
-> Mod の目的・スコープ・バニラの開き方・スリング・素体 × 品質の一般論は **[`CREATION_POLICY.md`](CREATION_POLICY.md)**。
+> Mod の目的・スコープ・バニラの開き方・スリング・素体 × 品質の一般論は **[`CREATION_POLICY.md`](CREATION_POLICY.md)**。  
+> **防具・盾・近接メタ・スリング**（遠距離変更がメタに波及する場合を含む）は **[`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)** と整合させる。
 
 ---
 

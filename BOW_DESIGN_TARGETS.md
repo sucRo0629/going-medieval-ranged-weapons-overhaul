@@ -3,7 +3,7 @@
 > **このファイルの役割** — **四弓のコンセプト（`id` 別）**・**弓／クロス役割の決定背景（歴史イメージとバニラとの立脚）**・役割分担・射程順・DPS 指標の定義・Q3 鎖・命中／装甲・近接比較・高 Q ガード・門限（ドラフト表）など、**バランス上の目標**を書く。
 > **実装フェーズ・スクリプト・変更チェックリスト・実効命中の拘束**は `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`。Mod 全体のスコープ・禁則は `[CREATION_POLICY.md](CREATION_POLICY.md)`。入口と **正本の優先順位** は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。
 
-`[CREATION_POLICY.md](CREATION_POLICY.md)` の **スコープ**・**素体と製作品質**・ネスト規約に従う。**Precedence・参照範囲・実装の正の順序**は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。
+`[CREATION_POLICY.md](CREATION_POLICY.md)` の **スコープ**・**素体と製作品質**・ネスト規約に従う。**Precedence・参照範囲・実装の正の順序**は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。防具・盾・近接メタ・スリングと整合する変更は `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)`。
 
 ---
 

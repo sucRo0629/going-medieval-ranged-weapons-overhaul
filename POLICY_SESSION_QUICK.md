@@ -1,6 +1,8 @@
-# Ranged Weapons Overhaul — セッション早見（`POLICY_SESSION_QUICK.md`）
+# Equipment Overhaul — セッション早見（`POLICY_SESSION_QUICK.md`）
 
 > **役割** — Cursor／人間が **最初に `@` する 1 枚**。タスク別の参照ファイルと **正本** を固定する。詳細は各リンク先のみ読む。
+
+**Mod 名・スコープ**: ゲーム内表示名は **`ModInfo.json` の `name`（Equipment Overhaul）**。ローカルの **リポジトリ／Mod フォルダ名**は環境ごとに異なってよい（ドキュメントでは **リポジトリ相対パス**を正とする）。装備全体（遠距離に限らず防具・盾・近接メタ・スリング）の概論と禁則は **[`CREATION_POLICY.md`](CREATION_POLICY.md)**。遠距離を変える作業でもそれらに触れる想定なら **[`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)** を必ず併読する。
 
 ---
 

@@ -1,7 +1,7 @@
 # 弓・クロス — 実装・現状・作業手順
 
 > **このファイルの役割** — リポジトリの**実装フェーズ**、再生成スクリプト、**変更時チェックリスト**、実戦・実効命中の**拘束**。  
-> **バランス目標・数式・Q3 鎖・門限ドラフト**は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`。入口と **正本の優先順位** は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。
+> **バランス目標・数式・Q3 鎖・門限ドラフト**は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`。入口と **正本の優先順位** は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。防具・盾・近接メタ・スリングは `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)`。
 
 ---
 
@@ -40,7 +40,7 @@
 ## 変更するとき
 
 1. **Q3 四種鎖**（`crossbow` / `heavy_crossbow` / `curved_bow` / `long_bow`）と **Equipment** の両方を意識し、矛盾が出ないよう往復する（鎖の定義は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`）。`**ignoresArmor`** は同ファイル「命中・装甲無視」の **確定目標**（短弓 `short_bow` 上限 **0.60**、長弓三種上限 **0.80**、四弓内段・クロス未満）を満たすか確認する。
-2. 数値を変えたら、`tools/plot_weapon_quality_comparison.py` でグラフを生成し、品質込みの性能を確認する（**期待DPS**・**距離別期待DPS** の `ranged_expected_dps*.png` / `ranged_distance_expected_dps_*.png`。単体の `ranged_dps_*.png` は出さない）。**合成 `range`** は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` の **Q3／Q4 厳守順**を `ranged_range_*` で確認（Q1・Q2・Q5・Q6 はティア緩和あり）。**チャートだけで採否しない** — 同ファイルの **評価基準の階層**の **層 3・4**（プレイテスト／バニラ差分）を通す。
+2. 数値を変えたら、`tools/plot_weapon_quality_comparison.py` でグラフを生成し、品質込みの性能を確認する（**期待DPS**・**距離別期待DPS** の `ranged_expected_dps*.png` / `ranged_distance_expected_dps_*.png`。単体の `ranged_dps_*.png` は出さない）。**合成 `range`** は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` の **Q3／Q4 厳守順**を `ranged_range_`* で確認（Q1・Q2・Q5・Q6 はティア緩和あり）。**チャートだけで採否しない** — 同ファイルの **評価基準の階層**の **層 3・4**（プレイテスト／バニラ差分）を通す。
   - あわせて `ranged_distance_expected_dps_band_summary.csv` を確認し、帯域の平均/最小値を記録する。**層 1 の補完（対鎧プロキシ距離 DPS・帯域単発期待ダメ・Q3 四鎖・`ignoresArmor` 方針 CSV／チャート・掩体/バックラー比較・移動目標（ドキュメント）・門限メモ）**は `[quality_charts/ranged_layer1_eval_bundle.md](quality_charts/ranged_layer1_eval_bundle.md)` と同時生成の `ranged_layer1_*_band_summary.csv` 2 本＋`ranged_layer1_ignores_armor_policy_summary.csv` に任せ、再生成のたびに当該 MD を確認する。
 3. 移動ペナルティ・掩体（`[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`「弓とクロスボウの差別化」の共通箇所）は鎖とは独立に触ってよいが、**素体の火力をヘビィだけ突出**させて鎖や役割説明と矛盾させないこと。**装備時移動（`onEquipEffectors`）は現状データに含めない**（設計目標の倍率は `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` のみ）。
 4. **同ティア近接との比較・被弾メタ**を検証に含め、**高品質弓一択**にならないよう帯域・曲線・WQS を確認する。実戦手順は `COMBAT_PLAYTEST_POLICY.md` に従う。

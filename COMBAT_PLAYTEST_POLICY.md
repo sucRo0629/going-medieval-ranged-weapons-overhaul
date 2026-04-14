@@ -51,6 +51,27 @@
 - **母集団の切り方**: 「**鎧なし**」「**盾なし**」を確認できた試行だけを比較表に載せる、または **中央値・レンジ**（最短〜最長）で書く。
 - **Dev で装備を固定／剥がす**コマンドがあるバージョンでは `help` を検索して追記する（現行リストには未転記）。
 
+## 鎧・装甲軽減と確率（検証メモ・2026-04）
+
+**狙い**: `ignoresArmor` の有無を実機で切り分けるとき、**鎧軽減が確率的に外れる**と比較がブレる。そこで「軽減が適用されるロールを常に成功（確率 100%）にしたい」「鎧 HP が減ると軽減が落ちる減衰をオフにしたい」という要望が出た場合の、**データ側で分かっていること**を固定する。
+
+### `StreamingAssets` を見た範囲での結論
+
+- **防具エントリ**（`Items/Equipment.json`・`itemType` が防具系）では、主に **`armorRating`** と **`armorType`**、耐火系などが載る。**「鎧軽減がこの確率で発動する」ような 0〜1 の専用フィールドは見当たらない**（少なくとも防具ブロックの素データとしては未検出）。
+- **`Items/ArmorQualitySettings.json`** は品質ごとの **`armorRatingMultiplier`** 等であり、**「軽減必中」スイッチではない**。
+- **`Combat/DamageTakingAgentSettings.json`**（General Mod では `Data/Combat/DamageTakingAgentSettings.json` として上書き可能。Foxy [Modding Guide](https://foxyvoxel.io/2025/03/13/modding-guide-policy/) の Supported json 一覧）には **`accidentallyHitChance`** / **`absoluteHitChance`** がある。**名称からは誤射・命中扱い寄り**で、**鎧軽減のロールと同一とは未同定**（コメント無し JSON のため、本体コードまたは実験で要確認）。
+- **「鎧 HP が減ると軽減率が下がる」挙動**をオフにするキーは、上記 JSON スキャンでは**見つけていない**（**本体ロジック**の可能性が高い）。
+
+### 本 Mod リポジトリでの扱い
+
+- **現状の Equipment Overhaul リポジトリは `Data/Models/` の弓・クロス中心**であり、**鎧軽減の確率を 100% に固定する変更は未実装**（根拠フィールドが JSON に無い／未特定のため）。
+- 将来キーが判明したら **`Data/Combat/` または `Data/Items/`** に差分を置くのが公式の置き場（同 Guide の **Supported json files** を正とする）。
+
+### 検証の妥協案（データを触れない間）
+
+- **同一ターゲット・同一防具・満 HP に近い状態**で撃ち、試行回数を増やして **分布**を見る（`ignoresArmor` 0 と正の値の差は、鎧が効く条件ほど出やすい）。
+- **参照用**: バニラで **`ignoresArmor` が 0.35** なのは **`light_javelins`**・**`sling_staff`** の `primaryWeaponMode` など（UI の装甲無視段の見比べ用。数値はゲーム UI に出ない前提）。
+
 ## テスト前処理（毎回）
 
 1. 実戦比較で **装備門限を無視**したい場合、`Data/Models/Equipment.json` の該当武器について **`requiredSkills` を一時的に省略**するか、**`Marksman` の `value` を 1 など極小に下げる**（**`value: 0` はバニラ門限が残る**ため使わない。終了後は **[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)** の門限表へ戻す）。
