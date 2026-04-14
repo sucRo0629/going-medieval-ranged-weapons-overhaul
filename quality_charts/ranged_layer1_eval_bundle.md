@@ -48,6 +48,7 @@ Weak order: each stat must be `<=` the next (ties allowed; eps 1e-6). Values are
 
 装備中の移動倍率の**設計目標**は `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` 「弓・クロスの反映状況」。**低下の量**を JSON で追う場合は `onEquipEffectors` 等の装備時効果を確認する。 本表はマージ後ブロックをそのまま列挙する（無ければ `—`）。
 
+**実装メモ（2026-04-16）**: 弓／クロスに **`onEquipEffectors` は付けない**（移動特徴付けはデータに含めない）。設計目標の倍率は [`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](../EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md) のみ。
 
 | weapon_id      | doc target move mult | `onEquipEffectors` (merged) |
 | -------------- | -------------------- | --------------------------- |

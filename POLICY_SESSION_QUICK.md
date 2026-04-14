@@ -46,4 +46,4 @@
 
 弓／クロス 7 種＋門限・WQS: `[scripts/apply_ranged_equipment_delta.py](scripts/apply_ranged_equipment_delta.py)`。チャート: `tools/plot_weapon_quality_comparison.py`。環境変数 `GOING_MEDIEVAL_ITEMS`。
 
-**層 1 の補完評価（対鎧プロキシ・帯域単発期待ダメ・Q3 四鎖・`rangedCover`/バックラー比較・移動目標/`onEquipEffectors`・門限メモ）**は、同スクリプトが `quality_charts/` に出す **[`ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)** と同時生成の CSV 2 本に**任せる**（式と限界はその MD 先頭）。再生成のたびに当該 MD を開き、必要なら CSV を突き合わせる。
+**層 1 の補完評価（対鎧プロキシ・帯域単発期待ダメ・Q3 四鎖・`rangedCover`/バックラー比較・移動目標（ドキュメント）・門限メモ）**は、同スクリプトが `quality_charts/` に出す **[`ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)** と同時生成の CSV 2 本に**任せる**（式と限界はその MD 先頭）。再生成のたびに当該 MD を開き、必要なら CSV を突き合わせる。

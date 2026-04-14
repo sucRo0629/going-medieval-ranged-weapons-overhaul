@@ -98,7 +98,7 @@
 - **順序の約束**: 上級ラインでは `range` / `damage` / `ignoresArmor` / `attackSpeed` の **順序鎖**（クロスと上級弓の段差）を崩さないこと。詳細の鎖は**下記「Q3 素体での相対チェーン」**（矢印表記）。
 - **装備中の移動（本職の長射程のコスト）**: 移動速度はできるだけ **明示倍率**で管理し、射程・火力とセットでトレードオフを作る。鎧デバフとの重ね掛け前提でプレイ確認する。
   - **弓の目標倍率（確定方針）**: **`short_bow` = 1.00**, **`curved_bow` = 0.95**, **`war_bow` = 0.85**, **`long_bow` = 0.75**。
-    （本 Mod の `Equipment.json` は現在 `onEquipEffectors` による段階適用が中心。実装時はこの倍率目標に合わせてエフェクタまたは同等手段を選ぶ。）
+    （**データ実装（2026-04-16）**: 弓／クロスに `onEquipEffectors` による移動特徴付けは**行わない**。上記倍率は設計目標として [`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md) に残し、機動コストは `range` / `attackSpeed` / 掩体などで表現する。）
   - **クロスの目標倍率（確定方針）**: **`light_crossbow` = 0.85**（`war_bow` 相当）、**`crossbow` = 0.75**、**`heavy_crossbow` = 0.70**。
     （標準〜ヘビィは **`long_bow`（0.75）以上の鈍重**を基準にしつつ、実戦で過度な操作不能感が出る場合は微調整する。）
   - **掩体（`meleeCover` / `coverAngle` / `rangedCover`）**: クロス段差で **ヘビィはライト・標準より掩体を厚く**する。**`rangedCover` はバックラー（最も遠距離カバーが低い盾）を基準に、常にバックラー未満**で設定する。加えて、**`rangedCover` が存在するだけで中射程武器でも遠距離の撃ち合いに強くなりうる**ため、射程の短さだけを理由に過大設定しない。
@@ -168,7 +168,7 @@
 比較・バランス検討では **期待 DPS** と **距離別期待 DPS** を主に用い、射程・減衰の差は mid（18）／far（22）／ultra-far（25）チャートで見る。
 
 - **帯域評価の出力（推奨）** … 点比較だけでなく、各基準点の前後 1m を含む**3 点帯域**（例: near=9/10/11, mid=17/18/19, far=21/22/23, ultra=24/25/26）を併記し、**平均値（mean）**と**最小値（min）**を並べて判断する。
-- **層 1 補完バンドル（自動生成）** … `tools/plot_weapon_quality_comparison.py` は [`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md) と CSV 2 本（`ranged_layer1_armored_distance_dps_band_summary.csv` / `ranged_layer1_per_shot_expected_damage_band_summary.csv`）を出す。**距離期待 DPS の帯域 CSVに加え、対鎧プロキシ・単発期待・Q3 四鎖・`rangedCover`/バックラー比較・移動目標/`onEquipEffectors`・門限メモなどの層 1 確認はこのバンドルに任せる**（式・限界は同 MD）。**データ再生成のたびに当該 MD を確認**する。
+- **層 1 補完バンドル（自動生成）** … `tools/plot_weapon_quality_comparison.py` は [`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md) と CSV 2 本（`ranged_layer1_armored_distance_dps_band_summary.csv` / `ranged_layer1_per_shot_expected_damage_band_summary.csv`）を出す。**距離期待 DPS の帯域 CSVに加え、対鎧プロキシ・単発期待・Q3 四鎖・`rangedCover`/バックラー比較・移動目標（ドキュメント）・門限メモなどの層 1 確認はこのバンドルに任せる**（式・限界は同 MD）。**データ再生成のたびに当該 MD を確認**する。
 
 ### 評価基準の階層（期待 DPS の限界と補助指標）
 
@@ -176,7 +176,7 @@
 
 | 層    | 指標・手段                                                                         | 役割                                                      | 限界・注意                                                                                                         |
 | ----- | ---------------------------------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **1** | **距離別期待 DPS**（上式）・帯域 CSV・[`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)（+ 同生成 CSV） | 素体 × 品質の**広い順位**・射程／減衰の**相対**・**対鎧プロキシ／単発期待／Q3 鎖**・**`rangedCover` とバックラー基準／移動目標と `onEquipEffectors`** の機械メモを一括見る | **スキル補正・本体の射程加算・掩体の実戦合成・敵装備抽選・UI の「攻撃時間」**を含まない。`hit(d)` と鎧式は**プロキシ**。設計移動倍率はドキュメント正をスクリプト内定数で写す（JSON と二重管理に注意）。   |
+| **1** | **距離別期待 DPS**（上式）・帯域 CSV・[`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)（+ 同生成 CSV） | 素体 × 品質の**広い順位**・射程／減衰の**相対**・**対鎧プロキシ／単発期待／Q3 鎖**・**`rangedCover` とバックラー基準／移動目標（ドキュメント）**の機械メモを一括見る | **スキル補正・本体の射程加算・掩体の実戦合成・敵装備抽選・UI の「攻撃時間」**を含まない。`hit(d)` と鎧式は**プロキシ**。移動倍率の**データ実装は行わない**（[`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md) の設計目標のみ）。   |
 | **2** | **ゲーム内 UI**（射撃武器命中率、装備 DPS の分解表示など）                         | **プレイヤーが見える天井**の確認                          | JSON の `attackSpeed`／`precision` と**数値が一致しない**ことがある（**生数字をメモ**）。                          |
 | **3** | **標準化プレイテスト**（[`COMBAT_PLAYTEST_POLICY.md`](COMBAT_PLAYTEST_POLICY.md)） | **討伐秒数・体感命中**・バニラ素体との **A/B**            | 敵装備ランダム性あり。**鎧メモ**・同一敵の使い回し・**複数距離**（10m だけでは減衰が効かず射程を切り分けにくい）。 |
 | **4** | **バニラ同条件デルタ**                                                             | Mod が**弱くし過ぎ／強くし過ぎ**の検知                    | Mod OFF／ON または素体一時バニラ化で **TTK・UI** を並べる。                                                        |
