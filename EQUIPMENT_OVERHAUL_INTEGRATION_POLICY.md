@@ -3,6 +3,12 @@
 > **このファイルの役割** — 防具・盾・近接メタ・スリングの詳細方針を定義する。  
 > 弓／クロスの設計詳細は **[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)**、実装・現状・チェックリストは **[`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md)**。入口は **[`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md)**。
 
+## バニラ監査サマリ（2026-04）
+
+- **詳細レポート**: [`docs/VANILLA_ARMOR_AUDIT.md`](docs/VANILLA_ARMOR_AUDIT.md)（防具・盾・武器表、問題仮説チェックリスト、改善レバーと本書の対応）。
+- **再生成**: `GOING_MEDIEVAL_ITEMS` を `…/StreamingAssets/Items` に設定し、`python scripts/vanilla_equipment_audit.py --items-dir "$GOING_MEDIEVAL_ITEMS" -o docs/VANILLA_ARMOR_AUDIT.md`。`Combat/`・`StatsSystem/` は `Items` の親フォルダから自動読込。
+- **現状のファイル**: CI 環境ではフルバニラパスが無い場合があるため、**部分スナップショット**（Mod 同梱 `Data/Models/Equipment.json`）で表を生成している。**防具・盾はバニラ踏襲の可能性が高いが、武器は Mod 改変が混ざる**ため、断定前にバニラで再抽出すること。
+
 ## 防具・盾の再定義
 
 近接職の継戦性を上げ、退却を含む実戦的な防衛行動を成立させるための方針。
@@ -87,3 +93,4 @@
   - **補足（バニラ effector を使わない理由のメモ）**: `ImpairedMovementLow` / `Med` は移動以外に **`RangedSpeed`（射撃間隔）・`EvadeChance`** が乗り、素体で既に遅い `attackSpeed` と二重になりやすい。かつ Mod 独自の `Effectors.json` は現行ビルドでマージされにくい。**移動のみの段階付け**が必要になったら、本体側の Mod Effector 対応や別手段を検討する。
 3. **クロスボウの `rangedCover`**
   - **採用済み方針**: **バックラー（最も遠距離カバーが低い盾）を上限基準**とし、クロスの `rangedCover` は常にバックラー未満に置く。
+
