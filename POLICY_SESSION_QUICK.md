@@ -13,6 +13,14 @@
 | 品質乗算      | `Data/Models/WeaponQualitySettings.json`（`TWO_HAND_BOW_QUALITY_DELTAS` / `TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`＝`tools/regenerate_ranged_from_vanilla.py`） |
 | バニラ比較・再同期 | 本体 `Items/Equipment.json` / `Items/WeaponQualitySettings.json`（`[CREATION_POLICY.md](CREATION_POLICY.md)` のパス）                                                    |
 
+### ゲームログ（本体・Unity）
+
+Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
+
+- **現在セッション**: `%USERPROFILE%\AppData\LocalLow\Foxy Voxel\Going Medieval\Player.log`
+- **直前に終了したセッション**（容量が大きいことが多い）: 同フォルダの `Player-prev.log`
+
+テキストエディタで開き、`[ERR]` / `[WARN]` / `Exception` / 装備・NPC 関連の `id` などで検索する。プレイテスト手順との対応は [`COMBAT_PLAYTEST_POLICY.md`](COMBAT_PLAYTEST_POLICY.md) を参照。
 
 **Precedence（矛盾時）**: `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)` の順序に従う（JSON ＞ 設計 MD のドラフト表）。
 
@@ -28,7 +36,7 @@
 | 再生成・変更チェック・実装フェーズ・実効命中の下限                  | `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`                         |
 | 層 1 補完（対鎧プロキシ・単発期待・Q3 鎖・門限メモ）                    | [`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)（`plot_weapon_quality_comparison.py` 再生成で更新）        |
 | Mod 全体スコープ・部分上書き・丸め・素体×品質                  | `[CREATION_POLICY.md](CREATION_POLICY.md)`                                             |
-| プレイテスト手順                                   | `[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`                               |
+| プレイテスト手順                                   | `[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`（ログ場所は本ファイル「ゲームログ」）                               |
 | 防具・盾・近接・スリング                               | `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` |
 
 

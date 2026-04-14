@@ -2,355 +2,925 @@
   "name": "Equipment",
   "repository": [
     {
-      "id": "dagger",
-      "damage": 8,
-      "armorDamage": 0.4,
-      "buildingDamage": 0.2,
-      "attackSpeed": 3,
-      "meleeCover": 0.02,
-      "coverAngle": 15,
-      "hitEffectorGroupIDs": [
-        "WoundsPiercing"
+      "id": "example_weapon",
+      "hideInGame": true,
+      "devCommentItemType": "item type determines if the item is a: weapon (1), garment (2) or armour (3). Equipment slot is used to determine what sloth the item will use when equipmed: right hand(1), left hand (2), head (4), body (8), body armour (16). two handed weapons use 3 (1+2)",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.15,
+      "requiredSkills": [
+        {
+          "key": "Botanical",
+          "value": 20
+        },
+        {
+          "key": "Speechcraft",
+          "value": 5
+        }
       ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsPiercingHead"
+      "devCommentEquipEffectors": "Equip effectors are everlasting effectors that are active while the item is equipped. example is making a settler slower when an armour is equipped etc. On hit and on Critical hit effectors are effectors that are inflicted to the target. the threshold determines how likely one of these effectors (wounds) will be inflicted to the target. here you can add effects that make the target bleed, or slowly lose speed, or slowly loose HP as a poison effect",
+      "onEquipEffectors": [
+        "ImpairedMovementLow",
+        "ShieldCombatSpeedHigh"
+      ],
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "devCommentWeaponType": "Weapon type: None = 0,TwoHandBow = 1,TwoHandCrossbow = 2, OneHandMace = 3,TwoHandMace = 4,TwoHandStaff = 5,TwoHandSpear = 6 OneHandAxe = 7, TwoHandAxe = 8,OneHandSword = 9,TwoHandSword = 10,TwoHandRam = 11,Trap = 12. will determine animation among other things. see weaponTypeSettings.json for more info. carryHand can be 1 or 2. 1 is the right hand, 2 is the left one. determines what hand is the main hand for the animation",
+        "weaponType": "OneHandSword",
+        "damage": 2,
+        "ignoresArmor": 0.7,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.4,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.6,
+        "ladderDamageMod": 1,
+        "ladderCritMod": 2,
+        "ladderSpeedMod": 3,
+        "waterDamageMod ": 4,
+        "waterCritMod ": 5,
+        "waterSpeedMod ": 6,
+        "waterPrecisionPenalty ": 7,
+        "projectilePrefabAddress": "SimpleArrow",
+        "projectileArcHeight": 1,
+        "projectileSpeed": 1,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false
+      },
+      "secondaryWeaponMode": {
+        "weaponType": "OneHandSword",
+        "damage": 2,
+        "ignoresArmor": 0.7,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.4,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.6,
+        "ladderDamageMod": 1,
+        "ladderCritMod": 2,
+        "ladderSpeedMod": 3,
+        "waterDamageMod ": 4,
+        "waterCritMod ": 5,
+        "waterSpeedMod ": 6,
+        "waterPrecisionPenalty ": 7,
+        "projectilePrefabAddress": "SimpleArrow",
+        "projectileArcHeight": 1,
+        "projectileSpeed": 1,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ]
+      },
+      "additionalPrefabs": [
+        {
+          "key": 4,
+          "value": "Quiver_Long"
+        },
+        {
+          "key": 0,
+          "value": "Branches_left_shoulder_ornament"
+        }
       ]
+    },
+    {
+      "id": "dagger",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandSword",
+        "damage": 12,
+        "ignoresArmor": 0.7,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.4,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.15,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "KnifeSlash"
+      },
+      "meleeCover": 0.04,
+      "rangedCover": 0,
+      "coverAngle": 30
     },
     {
       "id": "short_sword",
-      "damage": 15,
-      "attackSpeed": 3.2,
-      "meleeCover": 0.06,
-      "coverAngle": 30,
-      "hitEffectorGroupIDs": [
-        "WoundsCutting"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsCuttingHead"
-      ]
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandSword",
+        "damage": 16,
+        "ignoresArmor": 0.7,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.4,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.15,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SwordSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 45
     },
     {
       "id": "falchion",
-      "damage": 20,
-      "precision": 0.95
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 8,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandSword",
+        "damage": 16,
+        "ignoresArmor": 0.7,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.4,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.15,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SwordSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 45
     },
     {
       "id": "knightly_sword",
-      "damage": 25
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 10
+        }
+      ],
+      "beautyInputEquipped": 10,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandSword",
+        "damage": 16,
+        "ignoresArmor": 0.75,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.4,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.15,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SwordSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 60
     },
     {
       "id": "longsword",
-      "beautyInputEquipped": 1130,
-      "ignoresArmor": 0.75,
-      "buildingDamage": 0.5,
-      "attackSpeed": 3.9
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 15
+        }
+      ],
+      "beautyInputEquipped": 14,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSword",
+        "damage": 32,
+        "ignoresArmor": 0.7,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.4,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.3,
+        "attackSpeed": 3.15,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SwordSlash"
+      },
+      "meleeCover": 0.2,
+      "rangedCover": 0,
+      "coverAngle": 90
     },
     {
       "id": "greatsword",
-      "ignoresArmor": 0.75,
-      "armorDamage": 0.8,
-      "buildingDamage": 0.6,
-      "range": 0.3,
-      "attackSpeed": 3.9,
-      "meleeCover": 0.14,
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 20
+        }
+      ],
+      "beautyInputEquipped": 18,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSword",
+        "damage": 40,
+        "ignoresArmor": 0.7,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.4,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.3,
+        "attackSpeed": 4.05,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SwordSlash"
+      },
+      "meleeCover": 0.25,
+      "rangedCover": 0,
       "coverAngle": 110
     },
     {
+      "id": "staff",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 1,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandStaff",
+        "damage": 28,
+        "ignoresArmor": 0.5,
+        "armorDamage": 1,
+        "buildingDamage": 1,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.2,
+        "attackSpeed": 4.95,
+        "ladderCritMod": 1.1,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1.5,
+        "loseHpOnMiss": false,
+        "weaponSound": "StaffSlash"
+      },
+      "meleeCover": 0.2,
+      "rangedCover": 0,
+      "coverAngle": 110
+    },
+    {
+      "id": "cudgel",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 1,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 12,
+        "ignoresArmor": 0.5,
+        "armorDamage": 1,
+        "buildingDamage": 1,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.95,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "MaceSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 45
+    },
+    {
+      "id": "bludgeon",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 1,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 12,
+        "ignoresArmor": 0.5,
+        "armorDamage": 1,
+        "buildingDamage": 1,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.95,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "MaceSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 45
+    },
+    {
       "id": "mace",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
       "beautyInputEquipped": 5,
-      "weaponType": 3,
-      "ignoresArmor": 0.6,
-      "armorDamage": 1,
-      "buildingDamage": 1,
-      "precision": 0.9,
-      "meleeCover": 0.06,
-      "coverAngle": 45,
-      "hitEffectorGroupIDs": [
-        "WoundsBlunt"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsBluntHead"
-      ]
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 16,
+        "ignoresArmor": 0.6,
+        "armorDamage": 2,
+        "buildingDamage": 1.5,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.15,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "MaceSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 45
     },
     {
       "id": "two_handed_mace",
-      "beautyInputEquipped": 8,
-      "weaponType": 4,
-      "damage": 30,
-      "ignoresArmor": 0.6,
-      "armorDamage": 1.5,
-      "buildingDamage": 1.5,
-      "precision": 0.85,
-      "attackSpeed": 4.1,
-      "meleeCover": 0.1,
-      "hitEffectorGroupIDs": [
-        "WoundsBlunt"
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 10
+        }
       ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsBluntHead"
-      ]
+      "beautyInputEquipped": 5,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandMace",
+        "damage": 30,
+        "ignoresArmor": 0.6,
+        "armorDamage": 1.9,
+        "buildingDamage": 1.5,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.95,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "MaceSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
     },
     {
       "id": "two_handed_flanged_mace",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 10
+        }
+      ],
       "beautyInputEquipped": 5,
-      "weaponType": 4,
-      "damage": 30,
-      "armorDamage": 1.7,
-      "buildingDamage": 1.7,
-      "precision": 0.9,
-      "attackSpeed": 3.9,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandMace",
+        "damage": 30,
+        "ignoresArmor": 0.6,
+        "armorDamage": 1.9,
+        "buildingDamage": 1.5,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.95,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "MaceSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
       "coverAngle": 90
     },
     {
       "id": "military_pick",
-      "beautyInputEquipped": 5,
-      "damage": 20,
-      "ignoresArmor": 1.2,
-      "armorDamage": 1.2,
-      "buildingDamage": 0.4,
-      "precision": 0.85,
-      "attackSpeed": 3.6,
-      "ladderCritMod": 1.2,
-      "coverAngle": 30,
-      "hitEffectorGroupIDs": [
-        "WoundsPiercing"
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 10
+        }
       ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsPiercingHead"
-      ]
+      "beautyInputEquipped": 4,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 16,
+        "ignoresArmor": 0.6,
+        "armorDamage": 1.9,
+        "buildingDamage": 1.5,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.95,
+        "ladderCritMod": 1.2,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "MaceSlash"
+      },
+      "meleeCover": 0.06,
+      "rangedCover": 0,
+      "coverAngle": 30
+    },
+    {
+      "id": "spear",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 2,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSpear",
+        "damage": 26,
+        "ignoresArmor": 0.9,
+        "armorDamage": 0.55,
+        "buildingDamage": 0.2,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.7,
+        "attackSpeed": 6.3,
+        "ladderCritMod": 1.2,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
+      "id": "reinforced_spear",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSpear",
+        "damage": 27,
+        "ignoresArmor": 0.9,
+        "armorDamage": 0.65,
+        "buildingDamage": 0.3,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.8,
+        "attackSpeed": 5.85,
+        "ladderCritMod": 1.2,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
+      "id": "berdiche",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 7,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSpear",
+        "damage": 27,
+        "ignoresArmor": 0.9,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.2,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.7,
+        "attackSpeed": 6.3,
+        "ladderCritMod": 1.2,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
+      "id": "billhook",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 6,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSpear",
+        "damage": 26,
+        "ignoresArmor": 0.9,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.2,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.7,
+        "attackSpeed": 6.3,
+        "ladderCritMod": 1.3,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
+      "id": "warfork",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSpear",
+        "damage": 26,
+        "ignoresArmor": 0.9,
+        "armorDamage": 0.6,
+        "buildingDamage": 0.2,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.7,
+        "attackSpeed": 6.3,
+        "ladderCritMod": 1.2,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
     },
     {
       "id": "hatchet",
-      "beautyInputEquipped": 3,
-      "weaponType": 7,
-      "damage": 18,
-      "ignoresArmor": 0.6,
-      "armorDamage": 0.6,
-      "buildingDamage": 0.6,
-      "precision": 0.95,
-      "attackSpeed": 3.2,
-      "coverAngle": 30,
-      "hitEffectorGroupIDs": [
-        "WoundsCutting"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsCuttingHead"
-      ]
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 4,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandAxe",
+        "damage": 18,
+        "ignoresArmor": 0.6,
+        "armorDamage": 1.1,
+        "buildingDamage": 0.6,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.6,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "AxeSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 30
     },
     {
       "id": "greataxe",
+      "itemType": 1,
       "equipmentSlots": 3,
-      "beautyInputEquipped": 10,
-      "weaponType": 8,
-      "damage": 36,
-      "ignoresArmor": 0.8,
-      "armorDamage": 1.2,
-      "precision": 0.95,
-      "range": 0.7,
-      "attackSpeed": 4.1,
-      "meleeCover": 0.12,
-      "coverAngle": 80,
-      "hitEffectorGroupIDs": [
-        "WoundsCutting"
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 15
+        }
       ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsCuttingHead"
-      ]
+      "beautyInputEquipped": 7,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandAxe",
+        "damage": 36,
+        "ignoresArmor": 0.6,
+        "armorDamage": 1.1,
+        "buildingDamage": 2,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 6.75,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "AxeSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 80
     },
     {
       "id": "warhammer",
+      "itemType": 1,
       "equipmentSlots": 1,
-      "beautyInputEquipped": 8,
-      "weaponType": 3,
-      "damage": 25,
-      "ignoresArmor": 0.7,
-      "armorDamage": 1.7,
-      "precision": 0.9,
-      "attackSpeed": 3.6,
-      "meleeCover": 0.06,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 16,
+        "ignoresArmor": 0.5,
+        "armorDamage": 1.7,
+        "buildingDamage": 1.5,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.05,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1.5,
+        "loseHpOnMiss": false,
+        "weaponSound": "WarhammerSmallSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
       "coverAngle": 30
     },
     {
       "id": "two_handed_warhammer",
-      "beautyInputEquipped": 10,
-      "damage": 32,
-      "ignoresArmor": 0.7,
-      "armorDamage": 2,
-      "buildingDamage": 2,
-      "precision": 0.9,
-      "range": 0.3,
-      "attackSpeed": 3.9,
-      "meleeCover": 0.12
-    },
-    {
-      "id": "berdiche",
+      "itemType": 1,
       "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 10
+        }
+      ],
       "beautyInputEquipped": 7,
-      "weaponType": 6,
-      "damage": 32,
-      "ignoresArmor": 0.8,
-      "armorDamage": 1.2,
-      "buildingDamage": 0.5,
-      "precision": 0.9,
-      "range": 0.7,
-      "attackSpeed": 4.1,
-      "meleeCover": 0.14,
-      "coverAngle": 110,
-      "hitEffectorGroupIDs": [
-        "WoundsCutting"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsCuttingHead"
-      ]
-    },
-    {
-      "id": "billhook",
-      "beautyInputEquipped": 5,
-      "damage": 20,
-      "ignoresArmor": 0.8,
-      "armorDamage": 0.9,
-      "buildingDamage": 0.4,
-      "precision": 0.85,
-      "precisionFalloff": 0,
-      "attackSpeed": 4.1,
-      "ladderCritMod": 1.3,
-      "meleeCover": 0.1,
-      "hitEffectorGroupIDs": [
-        "WoundsCutting"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsCuttingHead"
-      ]
-    },
-    {
-      "id": "staff",
-      "beautyInputEquipped": 1,
-      "weaponType": 5,
-      "damage": 22,
-      "ignoresArmor": 0.5,
-      "armorDamage": 1,
-      "buildingDamage": 0.5,
-      "precisionFalloff": 0,
-      "range": 0.3,
-      "attackSpeed": 4.5,
-      "ladderCritMod": 1.1,
-      "coverAngle": 110,
-      "hitEffectorGroupIDs": [
-        "WoundsBlunt"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsBluntHead"
-      ]
-    },
-    {
-      "id": "cudgel",
-      "equipmentSlots": 1,
-      "beautyInputEquipped": 1,
-      "weaponType": 3,
-      "damage": 12,
-      "ignoresArmor": 0.5,
-      "armorDamage": 1,
-      "buildingDamage": 1,
-      "precision": 1,
-      "precisionFalloff": 0,
-      "range": 0,
-      "attackSpeed": 5.4,
-      "meleeCover": 0.06,
-      "coverAngle": 45,
-      "hitEffectorGroupIDs": [
-        "WoundsBlunt"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsBluntHead"
-      ]
-    },
-    {
-      "id": "bludgeon",
-      "equipmentSlots": 1,
-      "beautyInputEquipped": 1,
-      "weaponType": 3,
-      "damage": 18,
-      "ignoresArmor": 0.5,
-      "armorDamage": 1,
-      "buildingDamage": 1,
-      "precision": 1,
-      "precisionFalloff": 0,
-      "range": 0,
-      "attackSpeed": 5.4,
-      "meleeCover": 0.06,
-      "coverAngle": 45
-    },
-    {
-      "id": "spear",
-      "beautyInputEquipped": 2,
-      "damage": 13,
-      "armorDamage": 0.55,
-      "attackSpeed": 4.1,
-      "meleeCover": 0.08,
-      "coverAngle": 60
-    },
-    {
-      "id": "reinforced_spear",
-      "beautyInputEquipped": 5,
-      "weaponType": 6,
-      "damage": 21,
-      "ignoresArmor": 0.9,
-      "armorDamage": 0.65,
-      "buildingDamage": 0.3,
-      "precisionFalloff": 0.03,
-      "range": 0.7,
-      "attackSpeed": 4.1,
-      "ladderCritMod": 1.2,
-      "meleeCover": 0.1,
-      "coverAngle": 90,
-      "hitEffectorGroupIDs": [
-        "WoundsPiercing"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsPiercingHead"
-      ]
-    },
-    {
-      "id": "warfork",
-      "beautyInputEquipped": 3,
-      "weaponType": 6,
-      "damage": 18,
-      "ignoresArmor": 0.9,
-      "armorDamage": 0.6,
-      "buildingDamage": 0.2,
-      "precision": 0.95,
-      "precisionFalloff": 0.03,
-      "range": 0.7,
-      "attackSpeed": 4.1,
-      "ladderCritMod": 1.2,
-      "hitEffectorGroupIDs": [
-        "WoundsPiercing"
-      ],
-      "criticalHitEffectorGroupIDs": [
-        "WoundsPiercingHead"
-      ]
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandMace",
+        "damage": 30,
+        "ignoresArmor": 0.5,
+        "armorDamage": 1.7,
+        "buildingDamage": 2,
+        "precision": 0.9,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 6.3,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1.5,
+        "loseHpOnMiss": false,
+        "weaponSound": "WarhammerBigSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
     },
     {
       "id": "flail",
-      "armorDamage": 1,
-      "buildingDamage": 1,
-      "precision": 0.9,
-      "attackSpeed": 3.6
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 0,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 10,
+        "ignoresArmor": 0.5,
+        "armorDamage": 2,
+        "buildingDamage": 1.5,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.6,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "FlailSlash"
+      },
+      "meleeCover": 0.05,
+      "rangedCover": 0,
+      "coverAngle": 30
     },
     {
       "id": "reinforced_flail",
-      "damage": 14,
-      "armorDamage": 1,
-      "buildingDamage": 1,
-      "precision": 0.9,
-      "attackSpeed": 3.6
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 0,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 11,
+        "ignoresArmor": 0.5,
+        "armorDamage": 2.1,
+        "buildingDamage": 1.6,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.6,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "FlailSlash"
+      },
+      "meleeCover": 0.05,
+      "rangedCover": 0,
+      "coverAngle": 30
     },
     {
       "id": "two_handed_flail",
-      "damage": 21,
-      "armorDamage": 1.2,
-      "precision": 0.9,
-      "attackSpeed": 4.1
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 0,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandMace",
+        "damage": 26,
+        "ignoresArmor": 0.5,
+        "armorDamage": 2,
+        "buildingDamage": 1.5,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 5.85,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "FlailSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 60
     },
     {
       "id": "short_bow",
@@ -664,7 +1234,7 @@
         "weaponSound": "StaffSlash"
       },
       "meleeCover": 0.15,
-      "rangedCover": 0,
+      "rangedCover": 0.1,
       "coverAngle": 45,
       "additionalPrefabs": [
         {
@@ -725,7 +1295,7 @@
         "weaponSound": "StaffSlash"
       },
       "meleeCover": 0.2,
-      "rangedCover": 0.04,
+      "rangedCover": 0.15,
       "coverAngle": 45,
       "additionalPrefabs": [
         {
@@ -798,7 +1368,7 @@
         "weaponSound": "StaffSlash"
       },
       "meleeCover": 0.25,
-      "rangedCover": 0.1,
+      "rangedCover": 0.2,
       "coverAngle": 45,
       "additionalPrefabs": [
         {
@@ -808,9 +1378,941 @@
       ]
     },
     {
-      "id": "kettle_helmet",
+      "id": "throwing_axes",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 5
+        }
+      ],
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandThrow",
+        "damage": 17,
+        "ignoresArmor": 0.4,
+        "armorDamage": 1.4,
+        "buildingDamage": 0.9,
+        "precision": 0.95,
+        "precisionFalloff": 0.02,
+        "range": 10,
+        "attackSpeed": 6.75,
+        "projectilePrefabAddress": "ThrowingAxesProjectile",
+        "projectileOffset": {
+          "x": 0,
+          "y": 0.4,
+          "z": 0.2
+        },
+        "projectileArcHeight": 1.4,
+        "projectileSpeed": 0.35,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 1.2,
+        "loseHpOnMiss": true,
+        "weaponSound": "ShootAxe"
+      },
+      "secondaryWeaponMode": {
+        "weaponType": "OneHandAxe",
+        "damage": 15,
+        "ignoresArmor": 0.4,
+        "armorDamage": 1,
+        "buildingDamage": 0.6,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.05,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "AxeSlash"
+      },
+      "meleeCover": 0.05,
+      "rangedCover": 0,
+      "coverAngle": 45,
+      "additionalPrefabs": [
+        {
+          "key": 4,
+          "value": "Throwing_axe_additional"
+        }
+      ]
+    },
+    {
+      "id": "light_javelins",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandThrow",
+        "damage": 16,
+        "ignoresArmor": 0.35,
+        "armorDamage": 1.2,
+        "buildingDamage": 0.15,
+        "precision": 1,
+        "precisionFalloff": 0.02,
+        "range": 10,
+        "attackSpeed": 6.3,
+        "projectilePrefabAddress": "JavelinProjectile",
+        "projectileOffset": {
+          "x": 0,
+          "y": 0.3,
+          "z": 0.1
+        },
+        "projectileArcHeight": 2,
+        "projectileSpeed": 0.4,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 1.2,
+        "loseHpOnMiss": true,
+        "weaponSound": "ShootJavelin"
+      },
+      "secondaryWeaponMode": {
+        "weaponType": "OneHandSpear",
+        "damage": 10,
+        "ignoresArmor": 0.8,
+        "armorDamage": 0.35,
+        "buildingDamage": 0.2,
+        "precision": 0.95,
+        "precisionFalloff": 0.03,
+        "range": 0.7,
+        "attackSpeed": 4.5,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.05,
+      "rangedCover": 0,
+      "coverAngle": 45,
+      "additionalPrefabs": [
+        {
+          "key": 2,
+          "value": "Light_javelins_additional"
+        }
+      ]
+    },
+    {
+      "id": "sling",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandSling",
+        "damage": 16,
+        "ignoresArmor": 0.3,
+        "armorDamage": 0.7,
+        "buildingDamage": 0.55,
+        "precision": 0.97,
+        "precisionFalloff": 0.02,
+        "range": 13,
+        "attackSpeed": 5.4,
+        "projectilePrefabAddress": "StoneProjectile",
+        "projectileOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0.3
+        },
+        "projectileArcHeight": 2,
+        "projectileSpeed": 0.55,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1.2,
+        "loseHpOnMiss": true,
+        "weaponSound": "ShootSling"
+      },
+      "meleeCover": 0,
+      "rangedCover": 0,
+      "coverAngle": 0
+    },
+    {
+      "id": "sling_staff",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSling",
+        "damage": 21,
+        "ignoresArmor": 0.35,
+        "armorDamage": 0.8,
+        "buildingDamage": 1,
+        "precision": 0.97,
+        "precisionFalloff": 0.02,
+        "range": 16,
+        "attackSpeed": 6.8,
+        "projectilePrefabAddress": "StoneProjectile",
+        "projectileOffset": {
+          "x": 0,
+          "y": 1.2,
+          "z": -0.2
+        },
+        "projectileArcHeight": 2,
+        "projectileSpeed": 0.6,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1.2,
+        "loseHpOnMiss": true,
+        "weaponSound": "ShootSling"
+      },
+      "secondaryWeaponMode": {
+        "weaponType": "TwoHandStaff",
+        "damage": 20,
+        "ignoresArmor": 0.45,
+        "armorDamage": 0.8,
+        "buildingDamage": 1,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.2,
+        "attackSpeed": 5.4,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "StaffSlash"
+      },
+      "meleeCover": 0.2,
+      "rangedCover": 0,
+      "coverAngle": 30
+    },
+    {
+      "id": "hand_ram",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 0,
+      "onEquipEffectors": [
+        "ImpairedMovementMed"
+      ],
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandRam",
+        "damage": 40,
+        "ignoresArmor": 0.4,
+        "armorDamage": 1,
+        "buildingDamage": 4,
+        "precision": 0.2,
+        "precisionFalloff": 0,
+        "range": 0.1,
+        "attackSpeed": 8.1,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "RamSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0.05,
+      "coverAngle": 45
+    },
+    {
+      "id": "metal_hand_ram",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 0,
+      "onEquipEffectors": [
+        "ImpairedMovementMed"
+      ],
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandRam",
+        "damage": 46,
+        "ignoresArmor": 0.4,
+        "armorDamage": 1,
+        "buildingDamage": 4,
+        "precision": 0.2,
+        "precisionFalloff": 0,
+        "range": 0.1,
+        "attackSpeed": 8.1,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "RamSlash"
+      },
+      "meleeCover": 0.18,
+      "rangedCover": 0.05,
+      "coverAngle": 45
+    },
+    {
+      "id": "shackles",
+      "itemType": 3,
+      "equipmentSlots": 2,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": -200,
+      "onEquipEffectors": [
+        "ChainedUp"
+      ],
+      "carryHand": 1,
+      "armorType": 3,
+      "hideHair": false,
+      "hideHead": false,
+      "additionalPrefabs": [
+        {
+          "key": 5,
+          "value": "Shackles_neck_additional"
+        },
+        {
+          "key": 6,
+          "value": "Shackles_wrist_additional"
+        },
+        {
+          "key": 7,
+          "value": "Shackles_wrist_additional"
+        },
+        {
+          "key": 8,
+          "value": "Shackles_wrist_additional"
+        },
+        {
+          "key": 9,
+          "value": "Shackles_wrist_additional"
+        }
+      ]
+    },
+    {
+      "id": "light_armor",
+      "itemType": 3,
+      "equipmentSlots": 16,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 25,
+      "armorType": 2,
+      "armorRating": 0.2,
+      "hideHair": false,
+      "hideHead": false,
+      "agentFlammability": 0.5,
+      "agentFireDamageMultiplier": 0.6
+    },
+    {
+      "id": "forest_light_armor",
+      "itemType": 3,
+      "equipmentSlots": 16,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 2,
+      "onEquipEffectors": [
+        "ImpairedMovementLow"
+      ],
+      "armorType": 2,
+      "armorRating": 0.05,
+      "hideHair": false,
+      "hideHead": false,
+      "agentFlammability": 1.2,
+      "agentFireDamageMultiplier": 0.7,
+      "additionalPrefabs": [
+        {
+          "key": 0,
+          "value": "Branches_left_shoulder_ornament"
+        },
+        {
+          "key": 1,
+          "value": "Branches_right_shoulder_ornament"
+        }
+      ]
+    },
+    {
+      "id": "mail_armor",
+      "itemType": 3,
+      "equipmentSlots": 16,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 45,
+      "onEquipEffectors": [
+        "ImpairedMovementLow"
+      ],
+      "armorType": 2,
+      "armorRating": 0.3,
+      "hideHair": false,
+      "hideHead": false,
+      "agentFlammability": 0.7,
+      "agentFireDamageMultiplier": 0.7
+    },
+    {
+      "id": "plate_armor",
+      "itemType": 3,
+      "equipmentSlots": 16,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 60,
+      "onEquipEffectors": [
+        "ImpairedMovementMed"
+      ],
+      "armorType": 2,
+      "armorRating": 0.4,
+      "hideHair": false,
+      "hideHead": false,
+      "agentFlammability": 0.4,
+      "agentFireDamageMultiplier": 2,
+      "additionalPrefabs": [
+        {
+          "key": 1,
+          "value": "RightShoulderPlateArmor"
+        },
+        {
+          "key": 0,
+          "value": "LeftShoulderPlateArmor"
+        }
+      ]
+    },
+    {
+      "id": "savage_heavy_armor",
+      "itemType": 3,
+      "equipmentSlots": 16,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "onEquipEffectors": [
+        "ImpairedMovementMed"
+      ],
+      "armorType": 2,
+      "armorRating": 0.15,
+      "hideHair": false,
+      "hideHead": false,
+      "agentFlammability": 0.4,
+      "agentFireDamageMultiplier": 2,
+      "additionalPrefabs": [
+        {
+          "key": 1,
+          "value": "RightShoulderPlateArmor"
+        },
+        {
+          "key": 0,
+          "value": "LeftShoulderPlateArmor"
+        }
+      ]
+    },
+    {
+      "id": "plate_helmet",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 25,
+      "armorType": 1,
+      "armorRating": 0.4,
+      "hideHair": true,
+      "hideHead": true
+    },
+    {
+      "id": "pigface_helmet",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 15,
+      "armorType": 1,
+      "armorRating": 0.3,
+      "hideHair": true,
+      "hideHead": true
+    },
+    {
+      "id": "light_helmet",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 15,
+      "armorType": 1,
+      "armorRating": 0.2,
+      "hideHair": true,
+      "hideHead": false
+    },
+    {
+      "id": "mail_helmet",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
       "beautyInputEquipped": 20,
-      "armorRating": 0.2
+      "armorType": 1,
+      "armorRating": 0.3,
+      "hideHair": true,
+      "hideHead": false,
+      "hideFacialHair": true,
+      "headMaskAmount": 0.6
+    },
+    {
+      "id": "forest_mask",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "armorType": 1,
+      "armorRating": 0.07,
+      "hideHair": false,
+      "hideHead": false
+    },
+    {
+      "id": "forest_horned_mask",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "armorType": 1,
+      "armorRating": 0.09,
+      "hideHair": false,
+      "hideHead": false
+    },
+    {
+      "id": "forest_horned_helmet",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "armorType": 1,
+      "armorRating": 0.1,
+      "hideHair": true,
+      "hideHead": true
+    },
+    {
+      "id": "gambeson_armor",
+      "itemType": 3,
+      "equipmentSlots": 16,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 15,
+      "onEquipEffectors": [
+        "ImpairedMovementLow"
+      ],
+      "armorType": 2,
+      "armorRating": 0.2,
+      "hideHair": false,
+      "hideHead": false,
+      "agentFlammability": 0.9,
+      "agentFireDamageMultiplier": 0.6
+    },
+    {
+      "id": "macabre_armor",
+      "itemType": 3,
+      "equipmentSlots": 16,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": -20,
+      "onEquipEffectors": [
+        "ImpairedMovementLow",
+        "WearingMorbidItem"
+      ],
+      "armorType": 2,
+      "armorRating": 0.07,
+      "hideHair": false,
+      "hideHead": false,
+      "additionalPrefabs": [
+        {
+          "key": 0,
+          "value": "Bone_left_shoulder_ornament"
+        },
+        {
+          "key": 1,
+          "value": "Bone_right_shoulder_ornament"
+        }
+      ]
+    },
+    {
+      "id": "macabre_helmet",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": -10,
+      "onEquipEffectors": [
+        "WearingMorbidItem"
+      ],
+      "armorType": 1,
+      "armorRating": 0.06,
+      "hideHair": true,
+      "hideHead": false
+    },
+    {
+      "id": "heretic_helmet",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "armorType": 1,
+      "armorRating": 0.06,
+      "hideHair": true,
+      "hideHead": false
+    },
+    {
+      "id": "kettle_helmet",
+      "itemType": 3,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "onEquipEffectors": [
+        "SunMaxProtectItem"
+      ],
+      "armorType": 1,
+      "armorRating": 0.11,
+      "hideHair": true,
+      "hideHead": false
+    },
+    {
+      "id": "buckler_shield",
+      "itemType": 3,
+      "equipmentSlots": 2,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "onEquipEffectors": [
+        "ShieldCombatSpeedLow"
+      ],
+      "armorType": 3,
+      "meleeCover": 0.4,
+      "rangedCover": 0.45,
+      "coverAngle": 90
+    },
+    {
+      "id": "kite_shield",
+      "itemType": 3,
+      "equipmentSlots": 2,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 20,
+      "onEquipEffectors": [
+        "ShieldCombatSpeedMed"
+      ],
+      "armorType": 3,
+      "meleeCover": 0.3,
+      "rangedCover": 0.75,
+      "coverAngle": 120
+    },
+    {
+      "id": "heater_shield",
+      "itemType": 3,
+      "equipmentSlots": 2,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 20,
+      "onEquipEffectors": [
+        "ShieldCombatSpeedMed"
+      ],
+      "armorType": 3,
+      "meleeCover": 0.25,
+      "rangedCover": 0.7,
+      "coverAngle": 120
+    },
+    {
+      "id": "tower_shield",
+      "itemType": 3,
+      "equipmentSlots": 2,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 30,
+      "onEquipEffectors": [
+        "ImpairedMovementLow",
+        "ShieldCombatSpeedHigh"
+      ],
+      "armorType": 3,
+      "meleeCover": 0.35,
+      "rangedCover": 0.95,
+      "coverAngle": 200
+    },
+    {
+      "id": "pavise_shield",
+      "itemType": 3,
+      "equipmentSlots": 2,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 2,
+      "onEquipEffectors": [
+        "ImpairedMovementLow",
+        "ShieldCombatSpeedLow"
+      ],
+      "armorType": 3,
+      "meleeCover": 0.32,
+      "rangedCover": 0.9,
+      "coverAngle": 170
+    },
+    {
+      "id": "macabre_shield",
+      "itemType": 3,
+      "equipmentSlots": 2,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": -20,
+      "onEquipEffectors": [
+        "ShieldCombatSpeedLow",
+        "WearingMorbidItem"
+      ],
+      "armorType": 3,
+      "meleeCover": 0.23,
+      "rangedCover": 0.6,
+      "coverAngle": 110
+    },
+    {
+      "id": "winter_clothes",
+      "itemType": 2,
+      "equipmentSlots": 8,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 10,
+      "hideHair": false,
+      "hideHead": false,
+      "agentFlammability": 1,
+      "agentFireDamageMultiplier": 0.8,
+      "garmentType": 2,
+      "warmthModifier": {
+        "min": -16,
+        "max": -2
+      }
+    },
+    {
+      "id": "summer_clothes",
+      "itemType": 2,
+      "equipmentSlots": 8,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 10,
+      "hideHair": false,
+      "hideHead": false,
+      "agentFlammability": 1,
+      "agentFireDamageMultiplier": 0.9,
+      "garmentType": 2,
+      "warmthModifier": {
+        "min": -4,
+        "max": 2
+      }
+    },
+    {
+      "id": "cap",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": -2
+      }
+    },
+    {
+      "id": "wide_hat",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 0,
+      "onEquipEffectors": [
+        "SunMaxProtectItem"
+      ],
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": 0,
+        "max": 2
+      }
+    },
+    {
+      "id": "macabre_crown",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": -5,
+      "onEquipEffectors": [
+        "WearingMorbidItem"
+      ],
+      "hideHair": false,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -0.5,
+        "max": 0.5
+      }
+    },
+    {
+      "id": "druid_crown",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "hideHair": false,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -0.5,
+        "max": 0.5
+      }
+    },
+    {
+      "id": "heretic_crown",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "hideHair": false,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -0.5,
+        "max": 0.5
+      }
+    },
+    {
+      "id": "sack_hood",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": -10,
+      "hideHair": true,
+      "hideHead": true,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": -2
+      }
+    },
+    {
+      "id": "headband",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "hideHair": false,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -2,
+        "max": 2
+      }
+    },
+    {
+      "id": "mouthpiece",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "hideHair": false,
+      "hideHead": false,
+      "hideFacialHair": true,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": 1
+      }
+    },
+    {
+      "id": "head_scarf",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 4,
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": 1
+      }
+    },
+    {
+      "id": "hood",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -4,
+        "max": 0
+      }
+    },
+    {
+      "id": "wolf_headpiece",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 10,
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": 1
+      }
+    },
+    {
+      "id": "boar_headpiece",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 10,
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": 2
+      }
+    },
+    {
+      "id": "stag_headpiece",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 10,
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": 3
+      }
+    },
+    {
+      "id": "hare_headpiece",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 10,
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": 4
+      }
+    },
+    {
+      "id": "chaperon",
+      "itemType": 2,
+      "equipmentSlots": 4,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 15,
+      "hideHair": true,
+      "hideHead": false,
+      "garmentType": 1,
+      "warmthModifier": {
+        "min": -3,
+        "max": 5
+      }
     }
   ]
 }

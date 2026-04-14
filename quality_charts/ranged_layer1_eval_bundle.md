@@ -39,9 +39,9 @@ Weak order: each stat must be `<=` the next (ties allowed; eps 1e-6). Values are
 | war_bow        | 0.00        | 0.20       | 30         | yes                       |
 | curved_bow     | 0.00        | 0.20       | 45         | yes                       |
 | long_bow       | 0.00        | 0.25       | 60         | yes                       |
-| light_crossbow | 0.00        | 0.15       | 45         | yes                       |
-| crossbow       | 0.04        | 0.20       | 45         | yes                       |
-| heavy_crossbow | 0.10        | 0.25       | 45         | yes                       |
+| light_crossbow | 0.10        | 0.15       | 45         | yes                       |
+| crossbow       | 0.15        | 0.20       | 45         | yes                       |
+| heavy_crossbow | 0.20        | 0.25       | 45         | yes                       |
 
 
 ## 移動: 設計目標倍率とマージ JSON の `onEquipEffectors`

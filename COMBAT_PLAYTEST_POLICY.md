@@ -4,6 +4,7 @@
 
 ## 共通ルール
 
+- **ゲームログの場所（Windows）**: `%USERPROFILE%\AppData\LocalLow\Foxy Voxel\Going Medieval\Player.log`（直前セッションは `Player-prev.log`）。早見の表にも記載あり → [`POLICY_SESSION_QUICK.md`](POLICY_SESSION_QUICK.md)「ゲームログ」。
 - 同一セーブ・同一地形条件で比較する（環境差分を減らす）。
 - 1 ケースで変更する要素は 1 つだけ（原因切り分け）。
 - **戦闘開始位置は全武器の射程外で固定**し、敵接近を待つ実戦導線で比較する。
