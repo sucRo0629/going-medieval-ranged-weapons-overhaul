@@ -19,6 +19,8 @@
 
 **現状（2026-04 以降の再生成パイプライン）**: 7 種はバニラ装備の完全コピーを土台に、**門限**・`ROLE_RANGE` / `BOW_ATTACK_SPEED` / `CROSSBOW_RANGED_COVER`・`TWO_HAND_BOW_QUALITY_DELTAS`・`TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`（damage／攻速＋**射程の品質微増**）を適用する。弓は四種とも `**weaponType` = `TwoHandBow`**（列挙型制約）。弓／クロスには `**onEquipEffectors` を付けない**（再生成時にキー削除。理由は `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` 弓・クロス節）。エントリ: `[scripts/apply_ranged_equipment_delta.py](scripts/apply_ranged_equipment_delta.py)` / `[tools/regenerate_ranged_from_vanilla.py](tools/regenerate_ranged_from_vanilla.py)`。**設計上の数値目標**（Q3 鎖・距離別 DPS 順・「弓を長射程にする場合」等）がすべて満たされているとは限らない。再チューン時は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` の **評価基準の階層**の層 1 から合わせ、層 3・4 で採否する。
 
+**一区切り（弓・クロス・2026-04）**: 装備 UI の **装甲貫通大中小は JSON と一致しないことがある**が、**戦闘は JSON を正**とし、**表記に合わせて数値を曲げない**（詳細は `[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`）。弓／クロスラインは **当面ここで区切り**；大きな追加は **装備オーバーホール全体**（`[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)`）側を優先する。
+
 ---
 
 ## 実戦検証（別ファイル）
