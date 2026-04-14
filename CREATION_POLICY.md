@@ -26,7 +26,7 @@
 
 - **セッション早見（最初に `@`）**: **[`POLICY_SESSION_QUICK.md`](POLICY_SESSION_QUICK.md)** — タスク別の参照先と正本の一行表。
 - **概論（本書）**: 全カテゴリ共通のルール、データの参照順、変更時チェック。
-- **各論 1（弓・クロス）**: 入口 **[`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md)**（Precedence）。設計本文 **[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)**（四弓コンセプト・数値目標）、実装・現状・チェックリスト **[`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md)**。
+- **各論 1（弓・クロス）**: 入口 **[`BOW_MOD_INTEGRATION_POLICY.md`](BOW_MOD_INTEGRATION_POLICY.md)**（Precedence）。設計本文 **[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md)**（四弓＝短弓＋長弓三種のコンセプト・数値目標）、実装・現状・チェックリスト **[`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md)**。
 - **各論 2（防具・盾・近接メタ）**: **[`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)**  
   鎧／盾の役割、スリング・斧の対メタ設計、全装備の整合チェック。
 
@@ -63,7 +63,7 @@
 `D:\SteamLibrary\steamapps\common\Going Medieval\Going Medieval_Data\StreamingAssets`
 
 - `GM_STREAMING_ASSETS`: `StreamingAssets` フォルダを指す。
-- `GOING_MEDIEVAL_ITEMS`: `Items` フォルダを指す（`tools/plot_weapon_quality_comparison.py` が利用）。同ツールの **層 1 補完**は `quality_charts/ranged_layer1_eval_bundle.md` を入口にする（[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の帯域・階層節）。
+- `GOING_MEDIEVAL_ITEMS`: `Items` フォルダを指す（`tools/plot_weapon_quality_comparison.py` が利用）。同ツールの **層 1 補完**は `quality_charts/ranged_layer1_eval_bundle.md` を入口にする（[`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) の帯域・階層節）。同バンドルに **`ignoresArmor` 方針 CSV**（`ranged_layer1_ignores_armor_policy_summary.csv`）と **Mod 参照線チャート**（`ranged_ignoresArmor_mod_policy_overlay.png`）が含まれる。
 
 ## 素体と製作品質（Q1–Q6）
 

@@ -24,7 +24,7 @@
 | やりたいこと | まず `@` するファイル |
 |--------------|------------------------|
 | セッション開始・タスク別の最小セット全体 | [`POLICY_SESSION_QUICK.md`](POLICY_SESSION_QUICK.md) |
-| 役割・四弓コンセプト・射程順・DPS 定義・Q3 鎖・門限ドラフト・ガード | [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) |
+| 役割・四弓（短弓＋長弓三種）コンセプト・射程順・DPS 定義・Q3 鎖・門限ドラフト・ガード | [`BOW_DESIGN_TARGETS.md`](BOW_DESIGN_TARGETS.md) |
 | 現状フェーズ・変更チェックリスト・実効命中の拘束・再生成手順 | [`BOW_IMPLEMENTATION_STATUS.md`](BOW_IMPLEMENTATION_STATUS.md) |
 | Mod 全体のスコープ・部分上書き・丸め・共通禁則 | [`CREATION_POLICY.md`](CREATION_POLICY.md) |
 | プレイテスト手順・敵 NPC・距離 | [`COMBAT_PLAYTEST_POLICY.md`](COMBAT_PLAYTEST_POLICY.md) |

@@ -32,9 +32,9 @@ Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
 | タスク                                        | `@`（この順で足す）                                                                            |
 | ------------------------------------------ | -------------------------------------------------------------------------------------- |
 | 何から読むか迷う                                   | 本ファイル → `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`               |
-| 弓・クロスの役割／**四弓コンセプト**／射程順／DPS 式／Q3 鎖／門限ドラフト | `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`（同一ファイル内の「四弓のコンセプト」節）                  |
+| 弓・クロスの役割／**四弓（短弓＋長弓三種）コンセプト**／射程順／DPS 式／Q3 鎖／門限ドラフト | `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`（同一ファイル内の「四弓のコンセプト」節）                  |
 | 再生成・変更チェック・実装フェーズ・実効命中の下限                  | `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`                         |
-| 層 1 補完（対鎧プロキシ・単発期待・Q3 鎖・門限メモ）                    | [`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)（`plot_weapon_quality_comparison.py` 再生成で更新）        |
+| 層 1 補完（対鎧プロキシ・単発期待・Q3 鎖・`ignoresArmor` 方針・門限メモ）       | [`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)（`plot_weapon_quality_comparison.py` 再生成で更新）        |
 | Mod 全体スコープ・部分上書き・丸め・素体×品質                  | `[CREATION_POLICY.md](CREATION_POLICY.md)`                                             |
 | プレイテスト手順                                   | `[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`（ログ場所は本ファイル「ゲームログ」）                               |
 | 防具・盾・近接・スリング                               | `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` |
@@ -54,4 +54,4 @@ Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
 
 弓／クロス 7 種＋門限・WQS: `[scripts/apply_ranged_equipment_delta.py](scripts/apply_ranged_equipment_delta.py)`。チャート: `tools/plot_weapon_quality_comparison.py`。環境変数 `GOING_MEDIEVAL_ITEMS`。
 
-**層 1 の補完評価（対鎧プロキシ・帯域単発期待ダメ・Q3 四鎖・`rangedCover`/バックラー比較・移動目標（ドキュメント）・門限メモ）**は、同スクリプトが `quality_charts/` に出す **[`ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)** と同時生成の CSV 2 本に**任せる**（式と限界はその MD 先頭）。再生成のたびに当該 MD を開き、必要なら CSV を突き合わせる。
+**層 1 の補完評価（対鎧プロキシ・帯域単発期待ダメ・Q3 四鎖・`ignoresArmor` 方針・`rangedCover`/バックラー比較・移動目標（ドキュメント）・門限メモ）**は、同スクリプトが `quality_charts/` に出す **[`ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)** と同時生成の CSV（`ranged_layer1_*_band_summary.csv` 2 本＋`ranged_layer1_ignores_armor_policy_summary.csv`）および **`ranged_ignoresArmor_mod_policy_overlay.png`** に**任せる**（式と限界はその MD 先頭）。再生成のたびに当該 MD を開き、必要なら CSV を突き合わせる。
