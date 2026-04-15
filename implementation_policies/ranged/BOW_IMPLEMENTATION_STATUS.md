@@ -41,7 +41,7 @@
 
 ## 変更するとき
 
-1. **Q3 四種鎖**（`crossbow` / `heavy_crossbow` / `curved_bow` / `long_bow`）と **Equipment** の両方を意識し、矛盾が出ないよう往復する（鎖の定義は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`）。`**ignoresArmor`** は同ファイル「命中・装甲無視」の **確定目標**（短弓 `short_bow` 上限 **0.60**、長弓三種上限 **0.80**、四弓内段・クロス未満）を満たすか確認する。
+1. **Q3 四種鎖**（`crossbow` / `heavy_crossbow` / `curved_bow` / `long_bow`）と **Equipment** の両方を意識し、矛盾が出ないよう往復する（鎖の定義は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`）。`**ignoresArmor`** は同ファイル「命中・装甲無視」の **確定目標**（弓四種上限 **0.70**、クロス三種上限 **0.85**、四弓内段・クロス未満）を満たすか確認する。
 2. 数値を変えたら、`tools/plot_weapon_quality_comparison.py` でグラフを生成し、品質込みの性能を確認する（**期待DPS**・**距離別期待DPS** の `expected_dps*.png` / `distance_expected_dps_*.png`。単体の `dps_*.png` は出さない）。**合成 `range`** は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` の **Q3／Q4 厳守順**を `range_`* で確認（Q1・Q2・Q5・Q6 はティア緩和あり）。**チャートだけで採否しない** — 同ファイルの **評価基準の階層**の **層 3・4**（プレイテスト／バニラ差分）を通す。
   - あわせて `quality_charts/ranged/script/distance_expected_dps_band_summary.csv` を確認し、帯域の平均/最小値を記録する。**層 1 の補完（対鎧プロキシ距離 DPS・帯域単発期待ダメ・Q3 四鎖・`ignoresArmor` 方針 CSV／チャート・掩体/バックラー比較・移動目標（ドキュメント）・門限メモ）**は `[quality_charts/ranged/layer1_eval_bundle.md](../../quality_charts/ranged/layer1_eval_bundle.md)` と同時生成の `quality_charts/ranged/script/layer1_*_band_summary.csv` 2 本＋`quality_charts/ranged/script/layer1_ignores_armor_policy_summary.csv` に任せ、再生成のたびに当該 MD を確認する。
 3. 移動ペナルティ・掩体（`[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`「弓とクロスボウの差別化」の共通箇所）は鎖とは独立に触ってよいが、**素体の火力をヘビィだけ突出**させて鎖や役割説明と矛盾させないこと。**装備時移動（`onEquipEffectors`）は現状データに含めない**（設計目標の倍率は `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` のみ）。

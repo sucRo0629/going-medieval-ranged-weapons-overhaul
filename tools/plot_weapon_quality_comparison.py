@@ -110,8 +110,8 @@ DESIGN_RANGED_MOVE_MULT: dict[str, float] = {
 }
 
 # BOW_DESIGN_TARGETS.md — post-WQS ignoresArmor caps (all qualities).
-IA_CAP_SHORT_BOW = 0.60
-IA_CAP_HEAVY_BOW_LINE = 0.80
+IA_CAP_BOW = 0.70
+IA_CAP_CROSSBOW = 0.85
 BOW_IDS_IA_POLICY = ("short_bow", "war_bow", "curved_bow", "long_bow")
 CROSSBOW_IDS_IA_POLICY = ("light_crossbow", "crossbow", "heavy_crossbow")
 IA_POLICY_EPS = 1e-6
@@ -580,10 +580,10 @@ def _weak_asc_chain_ok(
 
 
 def _ia_cap_for_weapon_id(wid: str) -> float | None:
-    if wid == "short_bow":
-        return IA_CAP_SHORT_BOW
-    if wid in ("war_bow", "curved_bow", "long_bow"):
-        return IA_CAP_HEAVY_BOW_LINE
+    if wid in BOW_IDS_IA_POLICY:
+        return IA_CAP_BOW
+    if wid in CROSSBOW_IDS_IA_POLICY:
+        return IA_CAP_CROSSBOW
     return None
 
 
@@ -654,8 +654,8 @@ def save_ignores_armor_mod_policy_overlay(
     out_dir: Path,
 ) -> Path:
     """
-    Mod-only ignoresArmor vs quality, with horizontal caps for bow lines
-    (BOW_DESIGN_TARGETS.md). Crossbows are uncapped on the chart.
+    Mod-only ignoresArmor vs quality, with horizontal caps for bows/crossbows
+    (BOW_DESIGN_TARGETS.md).
     """
     fig, ax = plt.subplots(figsize=(10, 6))
     for wid in WEAPON_IDS:
@@ -672,18 +672,18 @@ def save_ignores_armor_mod_policy_overlay(
             label=f"{wid} (mod)",
         )
     ax.axhline(
-        IA_CAP_SHORT_BOW,
+        IA_CAP_BOW,
         color="#6D4C41",
         linestyle="--",
         linewidth=1.2,
-        label=f"Cap 短弓 (short_bow) ≤ {IA_CAP_SHORT_BOW:.2f}",
+        label=f"Cap 弓 (all bows) ≤ {IA_CAP_BOW:.2f}",
     )
     ax.axhline(
-        IA_CAP_HEAVY_BOW_LINE,
+        IA_CAP_CROSSBOW,
         color="#5D4037",
         linestyle=":",
         linewidth=1.4,
-        label=f"Cap 長弓三種 (war/curved/long) ≤ {IA_CAP_HEAVY_BOW_LINE:.2f}",
+        label=f"Cap クロスボウ (all crossbows) ≤ {IA_CAP_CROSSBOW:.2f}",
     )
     ax.set_title(
         "Ignores armor (mod only) — policy caps (BOW_DESIGN_TARGETS.md)"
@@ -744,8 +744,8 @@ def write_layer1_eval_bundle_md(
         "## Chart outputs (this bundle)",
         "",
         f"- **[`{ia_policy_chart_name}`]({ia_policy_chart_name})** — Mod のみの "
-        "`ignoresArmor`（品質合成）と、弓ラインの **キャップ参照線**（短弓 ≤ "
-        f"{IA_CAP_SHORT_BOW:.2f}、長弓三種 ≤ {IA_CAP_HEAVY_BOW_LINE:.2f}）。",
+        "`ignoresArmor`（品質合成）と、弓/クロスの **キャップ参照線**（弓 ≤ "
+        f"{IA_CAP_BOW:.2f}、クロス ≤ {IA_CAP_CROSSBOW:.2f}）。",
         "",
         "## Q3 synthetic stats — order checks ([`BOW_DESIGN_TARGETS.md`](../../implementation_policies/ranged/BOW_DESIGN_TARGETS.md) four-way chains)",
         "",
@@ -872,8 +872,8 @@ def write_layer1_eval_bundle_md(
     all_caps_ok = all(r[3] for r in cap_rows if r[3] is not None)
     all_per_q_ok = all(ok for _, ok, _ in per_q_checks)
     lines.append(
-        f"| **All cap rows (bows only)** | {'yes' if all_caps_ok else 'no'} | "
-        f"短弓 ≤ {IA_CAP_SHORT_BOW:.2f}; 長弓三種 ≤ {IA_CAP_HEAVY_BOW_LINE:.2f} |"
+        f"| **All cap rows (bows + crossbows)** | {'yes' if all_caps_ok else 'no'} | "
+        f"弓 ≤ {IA_CAP_BOW:.2f}; クロス ≤ {IA_CAP_CROSSBOW:.2f} |"
     )
     lines.append(
         f"| **All per-quality ordering checks** | "

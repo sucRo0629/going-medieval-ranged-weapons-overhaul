@@ -220,15 +220,16 @@
 
 **理論レンジ（鈍器底・クロス未満の参照帯）** … 近接鈍器が `ignoresArmor` ≈ 0〜0.15 付近になる設計を正としたときの弓の棲み所の目安。
 
-- **短弓（`short_bow`）** … **0.35〜0.50** を「鎧には弱め」の中心帯とみなし、必要なら **上限まで 0.60** まで許容する。
-- **長弓三種（`war_bow` / `curved_bow` / `long_bow`）** … **0.55〜0.80**。常に **クロスボウ素体より低い**（下記 Q3 鎖・「装甲相性の帯域」節）。
+- **短弓（`short_bow`）** … **0.35〜0.50** を「鎧には弱め」の中心帯とみなす。
+- **長弓三種（`war_bow` / `curved_bow` / `long_bow`）** … **0.55〜0.70**。常に **クロスボウ素体より低い**（下記 Q3 鎖・「装甲相性の帯域」節）。
+- **クロスボウ三種（`light_crossbow` / `crossbow` / `heavy_crossbow`）** … **0.75〜0.85** を上限帯として維持する。
 
 **本 Mod で採用する確定目標（2026-04 合意）**
 
-- **短弓（`short_bow`）** … `ignoresArmor` の **上限 0.60**（素体および品質乗算後の合成のいずれでも、この方針と矛盾しないよう調整する）。
-- **長弓三種（`war_bow` / `curved_bow` / `long_bow`）** … いずれも **上限 0.80**（同上）。
+- **弓四種（`short_bow` / `war_bow` / `curved_bow` / `long_bow`）** … `ignoresArmor` の **上限 0.70**（素体および品質乗算後の合成のいずれでも、この方針と矛盾しないよう調整する）。
+- **クロスボウ三種（`light_crossbow` / `crossbow` / `heavy_crossbow`）** … いずれも **上限 0.85**（同上）。
 - **四弓内の段** … `**short_bow` を四弓で最も低い帯**に置く。`war_bow` の値は `**curved_bow` 未満**で、下記 **Q3 鎖**（`long_bow` < `curved_bow`）と矛盾しないよう `Equipment` で確定する（`war_bow` と `long_bow` の上下は Q3 鎖と四弓の他目標の両立で決める）。いずれも上記上限を超えないこと。
-- **バニラとの関係** … バニラ弓素体の **0.8 固定を正としない**。`**Data/Models/Equipment.json` / `WeaponQualitySettings.json` は本確定目標に追随**する（`[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)` の Precedence）。
+- **バニラとの関係** … バニラ弓素体の **0.8 固定を正としない**。`**Data/Models/Equipment.json` / `WeaponQualitySettings.json` は本確定目標（弓 0.70 / クロス 0.85 上限）に追随**する（`[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)` の Precedence）。
 
 ### 命中（`precision`）とクロスとの対比
 
