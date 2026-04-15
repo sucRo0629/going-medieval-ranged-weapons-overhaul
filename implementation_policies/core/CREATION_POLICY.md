@@ -65,7 +65,7 @@
 `D:\SteamLibrary\steamapps\common\Going Medieval\Going Medieval_Data\StreamingAssets`
 
 - `GM_STREAMING_ASSETS`: `StreamingAssets` フォルダを指す。
-- `GOING_MEDIEVAL_ITEMS`: `Items` フォルダを指す（`tools/plot_weapon_quality_comparison.py` が利用）。同ツールの **層 1 補完**は `quality_charts/ranged_layer1_eval_bundle.md` を入口にする（`[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)` の帯域・階層節）。同バンドルに `**ignoresArmor` 方針 CSV**（`ranged_layer1_ignores_armor_policy_summary.csv`）と **Mod 参照線チャート**（`ranged_ignoresArmor_mod_policy_overlay.png`）が含まれる。
+- `GOING_MEDIEVAL_ITEMS`: `Items` フォルダを指す（`tools/plot_weapon_quality_comparison.py` が利用）。同ツールの **層 1 補完**は `quality_charts/ranged/layer1_eval_bundle.md` を入口にする（`[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)` の帯域・階層節）。同バンドルに `**ignoresArmor` 方針 CSV**（`quality_charts/ranged/script/layer1_ignores_armor_policy_summary.csv`）と **Mod 参照線チャート**（`ignoresArmor_mod_policy_overlay.png`）が含まれる。
 
 ## 素体と製作品質（Q1–Q6）
 

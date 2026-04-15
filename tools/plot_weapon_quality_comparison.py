@@ -20,7 +20,7 @@ Nominal DPS (damage / attackSpeed) is used internally but **not** written as its
 - Charts use d in {10, 18, 22, 25} m as near / mid / far / ultra-far comparison distances (abstract units).
 
 Also writes an optional **layer-1 bundle** (flat-armor proxy CSVs + `ignoresArmor` policy CSV
-+ `ranged_layer1_eval_bundle.md`) with Q3 order checks, **`ignoresArmor` cap / bow-vs-cross ordering**
++ `layer1_eval_bundle.md`) with Q3 order checks, **`ignoresArmor` cap / bow-vs-cross ordering**
 (see `BOW_DESIGN_TARGETS.md`), cover vs buckler, move-mult doc vs `onEquipEffectors`, and Marksman memo.
 """
 
@@ -44,7 +44,8 @@ _UTIL_ROOT = _THIS.parent.parent
 
 MOD_EQUIPMENT = _UTIL_ROOT / "Data" / "Models" / "Equipment.json"
 MOD_WEAPON_QUALITY = _UTIL_ROOT / "Data" / "Models" / "WeaponQualitySettings.json"
-OUT_DIR = _UTIL_ROOT / "quality_charts"
+OUT_DIR = _UTIL_ROOT / "quality_charts" / "ranged"
+SCRIPT_OUT_DIR = OUT_DIR / "script"
 
 WEAPON_IDS = [
     "short_bow",
@@ -419,7 +420,7 @@ def write_layer1_armored_distance_dps_band_summary_csv(
         ("far", DPS_DISTANCE_FAR_M),
         ("ultra_far", DPS_DISTANCE_ULTRA_FAR_M),
     ]
-    out_path = out_dir / "ranged_layer1_armored_distance_dps_band_summary.csv"
+    out_path = out_dir / "layer1_armored_distance_dps_band_summary.csv"
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(
@@ -480,7 +481,7 @@ def write_layer1_per_shot_expected_damage_band_summary_csv(
         ("far", DPS_DISTANCE_FAR_M),
         ("ultra_far", DPS_DISTANCE_ULTRA_FAR_M),
     ]
-    out_path = out_dir / "ranged_layer1_per_shot_expected_damage_band_summary.csv"
+    out_path = out_dir / "layer1_per_shot_expected_damage_band_summary.csv"
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(
@@ -610,7 +611,7 @@ def write_layer1_ignores_armor_policy_csv(
     out_dir: Path,
 ) -> Path:
     """Per weapon × quality: mod ignoresArmor, design cap (if any), within_cap flag."""
-    out_path = out_dir / "ranged_layer1_ignores_armor_policy_summary.csv"
+    out_path = out_dir / "layer1_ignores_armor_policy_summary.csv"
     mat = _mod_ia_matrix(vmap=vmap, mmap=mmap, wqs_mod=wqs_mod)
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -693,7 +694,7 @@ def save_ignores_armor_mod_policy_overlay(
     ax.grid(True, alpha=0.3)
     ax.legend(bbox_to_anchor=(1.02, 1), loc="upper left", fontsize=7)
     plt.tight_layout()
-    out_path = out_dir / "ranged_ignoresArmor_mod_policy_overlay.png"
+    out_path = out_dir / "ignoresArmor_mod_policy_overlay.png"
     savefig_png(fig, out_path, dpi=150, tight=True)
     plt.close(fig)
     return out_path
@@ -713,7 +714,7 @@ def write_layer1_eval_bundle_md(
     ia_policy_chart_name: str,
 ) -> Path:
     """Draft layer-1 bundle: formulas, Q3 chains, ignoresArmor policy, cover, move, Marksman."""
-    out_path = out_dir / "ranged_layer1_eval_bundle.md"
+    out_path = out_dir / "layer1_eval_bundle.md"
     lines: list[str] = [
         "# Layer 1 — evaluation bundle (draft A)",
         "",
@@ -721,8 +722,8 @@ def write_layer1_eval_bundle_md(
         "**Policy**: layer-1 complementary checks (armor proxy, per-shot expectation, "
         "Q3 four-chain order, **`ignoresArmor` caps / bow ordering vs crossbows**, "
         "Marksman memo) are **delegated to this bundle** — see "
-        "[`POLICY_SESSION_QUICK.md`](../POLICY_SESSION_QUICK.md) (再生成) and "
-        "[`BOW_DESIGN_TARGETS.md`](../BOW_DESIGN_TARGETS.md) (帯域・階層・命中・装甲無視). "
+        "[`POLICY_SESSION_QUICK.md`](../../implementation_policies/core/POLICY_SESSION_QUICK.md) (再生成) and "
+        "[`BOW_DESIGN_TARGETS.md`](../../implementation_policies/ranged/BOW_DESIGN_TARGETS.md) (帯域・階層・命中・装甲無視). "
         "**Not** a substitute for in-game armor math, skills, cover, or UI timing.",
         "",
         "## Proxy formulas",
@@ -746,7 +747,7 @@ def write_layer1_eval_bundle_md(
         "`ignoresArmor`（品質合成）と、弓ラインの **キャップ参照線**（短弓 ≤ "
         f"{IA_CAP_SHORT_BOW:.2f}、長弓三種 ≤ {IA_CAP_HEAVY_BOW_LINE:.2f}）。",
         "",
-        "## Q3 synthetic stats — order checks ([`BOW_DESIGN_TARGETS.md`](../BOW_DESIGN_TARGETS.md) four-way chains)",
+        "## Q3 synthetic stats — order checks ([`BOW_DESIGN_TARGETS.md`](../../implementation_policies/ranged/BOW_DESIGN_TARGETS.md) four-way chains)",
         "",
         "**Mod の合成 Q3のみ**（マージ後素体 × WQS）。バニラ Q3 表は出さない。",
         "",
@@ -780,7 +781,7 @@ def write_layer1_eval_bundle_md(
     )
     lines.append("")
     lines.append(
-        "参照: [`BOW_DESIGN_TARGETS.md`](../BOW_DESIGN_TARGETS.md)「命中・装甲無視」確定目標。"
+        "参照: [`BOW_DESIGN_TARGETS.md`](../../implementation_policies/ranged/BOW_DESIGN_TARGETS.md)「命中・装甲無視」確定目標。"
     )
     lines.append("")
     lines.append(
@@ -975,7 +976,7 @@ def write_distance_band_summary_csv(
         ("far", DPS_DISTANCE_FAR_M),
         ("ultra_far", DPS_DISTANCE_ULTRA_FAR_M),
     ]
-    out_path = out_dir / "ranged_distance_expected_dps_band_summary.csv"
+    out_path = out_dir / "distance_expected_dps_band_summary.csv"
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(
@@ -1057,7 +1058,7 @@ def save_all_weapons_overlay(
     ax.grid(True, alpha=0.3)
     ax.legend(bbox_to_anchor=(1.02, 1), loc="upper left", fontsize=7)
     plt.tight_layout()
-    out_path = out_dir / f"ranged_{stat_key}_all_weapons_overlay.png"
+    out_path = out_dir / f"{stat_key}_all_weapons_overlay.png"
     savefig_png(fig, out_path, dpi=150, tight=True)
     plt.close(fig)
     return out_path
@@ -1105,7 +1106,7 @@ def save_all_weapons_overlay_metric(
     ax.grid(True, alpha=0.3)
     ax.legend(bbox_to_anchor=(1.02, 1), loc="upper left", fontsize=7)
     plt.tight_layout()
-    out_path = out_dir / f"ranged_{filename_base}_all_weapons_overlay.png"
+    out_path = out_dir / f"{filename_base}_all_weapons_overlay.png"
     savefig_png(fig, out_path, dpi=150, tight=True)
     plt.close(fig)
     return out_path
@@ -1190,7 +1191,7 @@ def plot_dps_grids(
         handles, labels = axes_flat[0].get_legend_handles_labels()
         fig.legend(handles, labels, loc="lower right", bbox_to_anchor=(0.98, 0.02))
         plt.tight_layout(rect=(0, 0.04, 1, 0.95))
-        out_path = out_dir / f"ranged_{file_key}_Q1_Q6_vanilla_vs_mod.png"
+        out_path = out_dir / f"{file_key}_Q1_Q6_vanilla_vs_mod.png"
         savefig_png(fig, out_path, dpi=150, tight=False)
         plt.close(fig)
         out_paths.append(out_path)
@@ -1218,6 +1219,7 @@ def main() -> None:
     ]
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    SCRIPT_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     for stat_key, stat_label in stats:
         fig, axes = plt.subplots(2, 4, figsize=(14, 7), sharex=True)
@@ -1257,7 +1259,7 @@ def main() -> None:
         handles, labels = axes_flat[0].get_legend_handles_labels()
         fig.legend(handles, labels, loc="lower right", bbox_to_anchor=(0.98, 0.02))
         plt.tight_layout(rect=(0, 0.04, 1, 0.95))
-        out_path = OUT_DIR / f"ranged_{stat_key}_Q1_Q6_vanilla_vs_mod.png"
+        out_path = OUT_DIR / f"{stat_key}_Q1_Q6_vanilla_vs_mod.png"
         savefig_png(fig, out_path, dpi=150, tight=False)
         plt.close(fig)
         print(out_path)
@@ -1362,7 +1364,7 @@ def main() -> None:
         mmap=mmap,
         wqs_vanilla=wqs_vanilla,
         wqs_mod=wqs_mod,
-        out_dir=OUT_DIR,
+        out_dir=SCRIPT_OUT_DIR,
     )
     print(band_csv_path)
     p_arm = write_layer1_armored_distance_dps_band_summary_csv(
@@ -1371,7 +1373,7 @@ def main() -> None:
         mmap=mmap,
         wqs_vanilla=wqs_vanilla,
         wqs_mod=wqs_mod,
-        out_dir=OUT_DIR,
+        out_dir=SCRIPT_OUT_DIR,
     )
     print(p_arm)
     p_ps = write_layer1_per_shot_expected_damage_band_summary_csv(
@@ -1380,7 +1382,7 @@ def main() -> None:
         mmap=mmap,
         wqs_vanilla=wqs_vanilla,
         wqs_mod=wqs_mod,
-        out_dir=OUT_DIR,
+        out_dir=SCRIPT_OUT_DIR,
     )
     print(p_ps)
     p_ia_csv = write_layer1_ignores_armor_policy_csv(
@@ -1388,7 +1390,7 @@ def main() -> None:
         vmap=vmap,
         mmap=mmap,
         wqs_mod=wqs_mod,
-        out_dir=OUT_DIR,
+        out_dir=SCRIPT_OUT_DIR,
     )
     print(p_ia_csv)
     p_ia_chart = save_ignores_armor_mod_policy_overlay(
@@ -1406,9 +1408,9 @@ def main() -> None:
             wqs_vanilla=wqs_vanilla,
             wqs_mod=wqs_mod,
             out_dir=OUT_DIR,
-            armored_csv_name=p_arm.name,
-            per_shot_csv_name=p_ps.name,
-            ia_policy_csv_name=p_ia_csv.name,
+            armored_csv_name=f"script/{p_arm.name}",
+            per_shot_csv_name=f"script/{p_ps.name}",
+            ia_policy_csv_name=f"script/{p_ia_csv.name}",
             qualities=qualities,
             ia_policy_chart_name=p_ia_chart.name,
         )
