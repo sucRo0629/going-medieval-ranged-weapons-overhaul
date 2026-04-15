@@ -147,7 +147,7 @@
 | command | メモ |
 |---------|------|
 | `spawnEnemy` | 敵をクリック位置に出す |
-| `spawnWorker` / `spawnNPC` | 味方・人型の追加（**テスト用の敵 `id`・variant の早見表**は [`../COMBAT_PLAYTEST_POLICY.md`](../COMBAT_PLAYTEST_POLICY.md) の「敵 NPC 早見」） |
+| `spawnWorker` / `spawnNPC` | 味方・人型の追加（**テスト用の敵 `id`・variant の早見表**は [`../COMBAT_PLAYTEST_POLICY.md`](../implementation_policies/core/COMBAT_PLAYTEST_POLICY.md) の「敵 NPC 早見」） |
 | `killEnemies` | マップ上の敵一掃 |
 | `setWorkerStat` / `addExperience` | 射撃スキルやステータス調整 |
 | `setHealth` / `setConsciousness` / `woundWorker` | 被弾・状態の操作 |
@@ -166,4 +166,4 @@
 
 - **「もろい」**だけスポーンできない例がある（それ以外は可能、という報告）。
 - UI に **「可・良・優秀・最高」** しか見えない例があり、**「最高」≒ `productQuality` 6（チャート Q6）** とみなすと、見えている 4 段は **Q3～Q6** に相当し得る。
-- **「もろい」は従来の「Q1」ではなく Q2（`productQuality` 2）の可能性** — データ上の Q1–Q6 と Dev 表示の対応は **[`../COMBAT_PLAYTEST_POLICY.md`](../COMBAT_PLAYTEST_POLICY.md)** の「DevTools と製作品質」を参照。
+- **「もろい」は従来の「Q1」ではなく Q2（`productQuality` 2）の可能性** — データ上の Q1–Q6 と Dev 表示の対応は **[`../COMBAT_PLAYTEST_POLICY.md`](../implementation_policies/core/COMBAT_PLAYTEST_POLICY.md)** の「DevTools と製作品質」を参照。

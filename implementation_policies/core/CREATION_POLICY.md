@@ -1,7 +1,7 @@
 # Equipment Overhaul — 作成方針（概論）
 
 > **このファイルの役割** — Mod 全体の設計哲学・データ編集スコープ・参照元・品質計算・実装時の共通チェックを定義する。  
-> 弓／クロスは入口 `**[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`**、設計 `**[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)**`、実装・現状 `**[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)**`。早見は `**[POLICY_SESSION_QUICK.md](POLICY_SESSION_QUICK.md)**`。防具／盾／近接メタ／スリングは `**[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)**` を参照する。
+> 弓／クロスは入口 `**[BOW_MOD_INTEGRATION_POLICY.md](../ranged/BOW_MOD_INTEGRATION_POLICY.md)`**、設計 `**[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)`**、実装・現状 `**[BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)**`。早見は `**[POLICY_SESSION_QUICK.md](POLICY_SESSION_QUICK.md)**`。防具／盾／近接メタ／スリングは `**[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)**` を参照する。
 
 **表示名とフォルダ名**: ゲーム・Workshop での Mod 名は `**ModInfo.json` の `name`（Equipment Overhaul）**。開発マシン上の **フォルダ名**は任意で、**ドキュメント・ルールではリポジトリルートからの相対パス**のみを正とする（古いフォルダ名に依存した記述は避ける）。
 
@@ -10,11 +10,11 @@
 
 ## 生成 AI 向け（取り違え防止・固定ルール）
 
-**以降の番号付きは省略せず守る。** 数値目標・再生成チェックリスト・プレイ検証シナリオの**本文**は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` / `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)` / `[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)` に分離している。**本節だけでは弓の詳細バランスを新規に決めない**（設計ファイルを読む）。
+**以降の番号付きは省略せず守る。** 数値目標・再生成チェックリスト・プレイ検証シナリオの**本文**は `[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)` / `[BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)` / `[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)` に分離している。**本節だけでは弓の詳細バランスを新規に決めない**（設計ファイルを読む）。
 
 1. **セッション開始**: 先に `[POLICY_SESSION_QUICK.md](POLICY_SESSION_QUICK.md)` を読む（正本の表・タスク→ファイル）。
-2. **矛盾時の正本順**: `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)` の **Precedence**（実装 JSON ＞ 設計 MD のドラフト表）。**7 種の合成 `range` の狭義順序**は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` の **Q3／Q4 で厳守**、Q1・Q2・Q5・Q6 は同ファイルの**ティア緩和**に従う。
-3. `**requiredSkills`**: 門限なしは **キー省略**。`**Marksman` の `value: 0` は禁止**（バニラ門限が残る）。空配列 `[]` もマージで意図とずれることがある — 下記「スコープと編集原則」の箇条書きに従う。
+2. **矛盾時の正本順**: `[BOW_MOD_INTEGRATION_POLICY.md](../ranged/BOW_MOD_INTEGRATION_POLICY.md)` の **Precedence**（実装 JSON ＞ 設計 MD のドラフト表）。**7 種の合成 `range` の狭義順序**は `[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)` の **Q3／Q4 で厳守**、Q1・Q2・Q5・Q6 は同ファイルの**ティア緩和**に従う。
+3. `**requiredSkills`**: 門限なしは キー省略。`**Marksman` の `value: 0` は禁止**（バニラ門限が残る）。空配列 `[]` もマージで意図とずれることがある — 下記「スコープと編集原則」の箇条書きに従う。
 4. **弓／クロス再生成のエントリ**: 本 Mod の `Equipment.json` を書き戻す通常手順は `**[scripts/apply_ranged_equipment_delta.py](scripts/apply_ranged_equipment_delta.py)`**（続けてスリング）。`**[tools/regenerate_ranged_from_vanilla.py](tools/regenerate_ranged_from_vanilla.py)` 単体**は 7 種＋WQS のみで、**スリング上書きは行わない**。
 5. **参照範囲**: 装備の突き合わせは **バニラ `Items/Equipment.json` と本 Mod `Data/Models/Equipment.json` のみ**（他 Mod の `Equipment.json` は参照しない）。
 
@@ -28,8 +28,8 @@
 
 - **セッション早見（最初に `@`）**: `**[POLICY_SESSION_QUICK.md](POLICY_SESSION_QUICK.md)`** — タスク別の参照先と正本の一行表。
 - **概論（本書）**: 全カテゴリ共通のルール、データの参照順、変更時チェック。
-- **各論 1（弓・クロス）**: 入口 `**[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`**（Precedence）。設計本文 `**[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)**`（四弓＝短弓＋長弓三種のコンセプト・数値目標）、実装・現状・チェックリスト `**[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)**`。
-- **各論 2（防具・盾・近接メタ）**: `**[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)`**  
+- **各論 1（弓・クロス）**: 入口 `**[BOW_MOD_INTEGRATION_POLICY.md](../ranged/BOW_MOD_INTEGRATION_POLICY.md)`**（Precedence）。設計本文 `**[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)`**（四弓＝短弓＋長弓三種のコンセプト・数値目標）、実装・現状・チェックリスト `**[BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)**`。
+- **各論 2（防具・盾・近接メタ）**: `**[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)`**  
 鎧／盾の役割、スリング・斧の対メタ設計、全装備の整合チェック。
 
 ## スコープと編集原則
@@ -44,7 +44,7 @@
 - `Research.json` / `Production.json` は原則置かない（解禁・レシピはバニラ準拠）。
 - 品質曲線を触るときだけ `WeaponQualitySettings.json` を任意同梱。
 - 参照対象は **バニラ + 本 Mod 差分のみ**（他 Mod の `Equipment.json` は参照しない）。
-- **弓／クロスをバニラから再同期する**: 7 種はバニラ装備の**完全ブロック**を土台に、`**requiredSkills`（門限表は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`）**・射程／弓攻速／掩体の**ポストパス**・`**TwoHandBow` / `TwoHandCrossbow` の WQS 方針**（`[tools/regenerate_ranged_from_vanilla.py](tools/regenerate_ranged_from_vanilla.py)` の定数）を適用する。語り・バニラとの立脚の**理由**は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` の「役割方針の決定背景」。実行の手順・チェックは `**[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`** の「再生成・ツール」。エントリポイントは `**[scripts/apply_ranged_equipment_delta.py](scripts/apply_ranged_equipment_delta.py)**`（続けてスリング）。環境変数 `**GOING_MEDIEVAL_ITEMS**` で `Items` を指定可能。
+- **弓／クロスをバニラから再同期する**: 7 種はバニラ装備の**完全ブロック**を土台に、`**requiredSkills`（門限表は `[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)`）**・射程／弓攻速／掩体の**ポストパス**・`**TwoHandBow` / `TwoHandCrossbow` の WQS 方針**（`[tools/regenerate_ranged_from_vanilla.py](tools/regenerate_ranged_from_vanilla.py)` の定数）を適用する。語り・バニラとの立脚の**理由**は `[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)` の「役割方針の決定背景」。実行の手順・チェックは `**[BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)`** の「再生成・ツール」。エントリポイントは `**[scripts/apply_ranged_equipment_delta.py](scripts/apply_ranged_equipment_delta.py)`**（続けてスリング）。環境変数 `**GOING_MEDIEVAL_ITEMS`** で `Items` を指定可能。
 
 ## 実装ガイド（全カテゴリ共通）
 
@@ -65,7 +65,7 @@
 `D:\SteamLibrary\steamapps\common\Going Medieval\Going Medieval_Data\StreamingAssets`
 
 - `GM_STREAMING_ASSETS`: `StreamingAssets` フォルダを指す。
-- `GOING_MEDIEVAL_ITEMS`: `Items` フォルダを指す（`tools/plot_weapon_quality_comparison.py` が利用）。同ツールの **層 1 補完**は `quality_charts/ranged_layer1_eval_bundle.md` を入口にする（`[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` の帯域・階層節）。同バンドルに `**ignoresArmor` 方針 CSV**（`ranged_layer1_ignores_armor_policy_summary.csv`）と **Mod 参照線チャート**（`ranged_ignoresArmor_mod_policy_overlay.png`）が含まれる。
+- `GOING_MEDIEVAL_ITEMS`: `Items` フォルダを指す（`tools/plot_weapon_quality_comparison.py` が利用）。同ツールの **層 1 補完**は `quality_charts/ranged_layer1_eval_bundle.md` を入口にする（`[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)` の帯域・階層節）。同バンドルに `**ignoresArmor` 方針 CSV**（`ranged_layer1_ignores_armor_policy_summary.csv`）と **Mod 参照線チャート**（`ranged_ignoresArmor_mod_policy_overlay.png`）が含まれる。
 
 ## 素体と製作品質（Q1–Q6）
 
@@ -88,7 +88,7 @@ Mod に明示する **浮動小数の装備パラメータ**（例: `primaryWeap
 
 ## Mod の WeaponQualitySettings 編集範囲（現状）
 
-弓／クロスの WQS は `**tools/regenerate_ranged_from_vanilla.py`** に集約（再生成で Mod の `WeaponQualitySettings.json` に反映）。`**TwoHandBow**` … `**TWO_HAND_BOW_QUALITY_DELTAS**`。`**TwoHandCrossbow**` … 命中系はバニラのまま、`**TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES**` で damage／攻速を平坦化し、`**rangeMultiplier` で品質に応じた射程の微増**（素体は `ROLE_RANGE`）。意図は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`（決定背景・弓／クロスのデータ差分・WQS 明文化）。
+弓／クロスの WQS は `**tools/regenerate_ranged_from_vanilla.py`** に集約（再生成で Mod の `WeaponQualitySettings.json` に反映）。`**TwoHandBow`** … `**TWO_HAND_BOW_QUALITY_DELTAS`**。`**TwoHandCrossbow`** … 命中系はバニラのまま、`**TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES**` で damage／攻速を平坦化し、`**rangeMultiplier` で品質に応じた射程の微増**（素体は `ROLE_RANGE`）。意図は `[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)`（決定背景・弓／クロスのデータ差分・WQS 明文化）。
 
 ## 新しいセッション
 

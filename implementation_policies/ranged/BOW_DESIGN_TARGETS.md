@@ -1,9 +1,9 @@
 # 弓・クロス — 設計目標（Design targets）
 
 > **このファイルの役割** — **四弓のコンセプト（`id` 別）**・**弓／クロス役割の決定背景（歴史イメージとバニラとの立脚）**・役割分担・射程順・DPS 指標の定義・Q3 鎖・命中／装甲・近接比較・高 Q ガード・門限（ドラフト表）など、**バランス上の目標**を書く。
-> **実装フェーズ・スクリプト・変更チェックリスト・実効命中の拘束**は `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`。Mod 全体のスコープ・禁則は `[CREATION_POLICY.md](CREATION_POLICY.md)`。入口と **正本の優先順位** は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。
+> **実装フェーズ・スクリプト・変更チェックリスト・実効命中の拘束**は `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`。Mod 全体のスコープ・禁則は `[CREATION_POLICY.md](../core/CREATION_POLICY.md)`。入口と **正本の優先順位** は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。
 
-`[CREATION_POLICY.md](CREATION_POLICY.md)` の **スコープ**・**素体と製作品質**・ネスト規約に従う。**Precedence・参照範囲・実装の正の順序**は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。防具・盾・近接メタ・スリングと整合する変更は `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)`。
+`[CREATION_POLICY.md](../core/CREATION_POLICY.md)` の **スコープ**・**素体と製作品質**・ネスト規約に従う。**Precedence・参照範囲・実装の正の順序**は `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`。防具・盾・近接メタ・スリングと整合する変更は `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)`。
 
 ---
 
@@ -32,8 +32,8 @@
 - **立ち位置**: 序盤・低脅威帯の**短弓**。門限なし（バニラ同様）。
 - **強み**: 四弓の中で**最も速い**素体 `attackSpeed`。機動デバフ目標 **1.00**（下記「弓とクロスボウの差別化」共通箇所の弓の目標倍率）。
 - **弱み・トレード**: 届きは長弓三種より短く、`precision` / `damage` はウォー等より控えめに置ける（下記ペア目安・チャートで確認）。
-- **品質 WQS**: 四弓とも `**weaponType` = `TwoHandBow`**（本体列挙に無い名前は `Player.log` で拒否される）。**品質による射程伸び**は長弓三種と同じ `TwoHandBow` の `rangeMultiplier`（`TWO_HAND_BOW_QUALITY_DELTAS`）。短弓は**低い素体 `range`** と **速い素体 `attackSpeed`**（`BOW_ATTACK_SPEED`）で長弓との差を付ける。
-- **合成射程の帯**（素体 `range`×`TwoHandBow` の `rangeMultiplier`）の目安: **Q1 は 18m 未満**、**Q3 で約 18m**、**Q6 は長弓三種より短い帯**（小数第 2 位丸め。実装は `[tools/regenerate_ranged_from_vanilla.py](tools/regenerate_ranged_from_vanilla.py)` の `ROLE_RANGE` / `TWO_HAND_BOW_QUALITY_DELTAS` と素体 `attackSpeed`）。
+- **品質 WQS**: 四弓とも `**weaponType` = `TwoHandBow`**（本体列挙に無い名前は `Player.log` で拒否される）。品質による射程伸びは長弓三種と同じ `TwoHandBow` の `rangeMultiplier`（`TWO_HAND_BOW_QUALITY_DELTAS`）。短弓は**低い素体 `range`** と **速い素体 `attackSpeed`**（`BOW_ATTACK_SPEED`）で長弓との差を付ける。
+- **合成射程の帯**（素体 `range`×`TwoHandBow` の `rangeMultiplier`）の目安: **Q1 は 18m 未満**、**Q3 で約 18m**、**Q6 は長弓三種より短い帯**（小数第 2 位丸め。実装は `[tools/regenerate_ranged_from_vanilla.py](../../tools/regenerate_ranged_from_vanilla.py)` の `ROLE_RANGE` / `TWO_HAND_BOW_QUALITY_DELTAS` と素体 `attackSpeed`）。
 
 ### `war_bow`
 
@@ -77,17 +77,17 @@
 
 **本体仕様との関係**
 
-- ゲーム側の被弾減速・怪我デバフなどは変えられないため、**届く距離・`precisionFalloff`・門限・移動ペナルティ**で「遠くを取る弓」と「中で鎧を通すクロス」の版図を組み直す。実戦妥当性はチャートだけにせず、`[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`・`[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)` の階層で検証する。
+- ゲーム側の被弾減速・怪我デバフなどは変えられないため、**届く距離・`precisionFalloff`・門限・移動ペナルティ**で「遠くを取る弓」と「中で鎧を通すクロス」の版図を組み直す。実戦妥当性はチャートだけにせず、`[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`・`[COMBAT_PLAYTEST_POLICY.md](../core/COMBAT_PLAYTEST_POLICY.md)` の階層で検証する。
 
 ### **弓（`TwoHandBow`）** — データ差分（実装・検証用）
 
-役割の**理由**は上記「役割方針の決定背景」および「四弓のコンセプト」。ここは `**Equipment` / WQS で守る対比**だけを列挙する。**四弓**はいずれも `**TwoHandBow`** を参照する（`weaponType` は列挙型のみ）。短弓は素体 `range` / `attackSpeed` で差別化する。
+役割の**理由**は上記「役割方針の決定背景」および「四弓のコンセプト」。ここは `**Equipment` / WQS で守る対比**だけを列挙する。四弓はいずれも `**TwoHandBow`** を参照する（`weaponType` は列挙型のみ）。短弓は素体 `range` / `attackSpeed` で差別化する。
 
 - **射程**: **上級弓（`curved_bow` / `long_bow`）**はクロス最上級より遠い帯。`short_bow` / `war_bow` とクロス群の重なり・解禁順は下記「弓＋クロスボウの射程順」。
 - **命中**: `**precisionFalloff` はクロスより大きめ**（遠距離で落ちやすい弓）。単発 `damage` は暴れさせず（長弓はバニラ上限を超えない想定）、**射程・命中曲線・品質**で実効。
-- **射速**: クロスより高回転。四弓内の `attackSpeed` 鎖は `**BOW_ATTACK_SPEED`**（`[regenerate_ranged_from_vanilla.py](tools/regenerate_ranged_from_vanilla.py)`）と「四弓のコンセプト」。
+- **射速**: クロスより高回転。四弓内の `attackSpeed` 鎖は `**BOW_ATTACK_SPEED`**（`[regenerate_ranged_from_vanilla.py](../../tools/regenerate_ranged_from_vanilla.py)`）と「四弓のコンセプト」。
 
-`**WeaponQualitySettings`（`TwoHandBow`）の品質勾配（明文化）**: バニラは主に命中列で品質差を出しているが、本 Mod では 「大きく押し上げない」≠ 火力・攻速を品質で一切動かさないとする。`**damageMultiplier`**（単発火力）と `**attackSpeedMultiplier**`（間隔・射撃ペース）を `**productQuality` 段階で控えめに変化**させ、`**precisionMultiplier` / `precisionFalloffMultiplier` / `rangeMultiplier`** とあわせて「品質の効き」を表現する。具体数値は `tools/regenerate_ranged_from_vanilla.py` の `**TWO_HAND_BOW_QUALITY_DELTAS**` を正とし、変更したら本節または `[CREATION_POLICY.md](CREATION_POLICY.md)` の該当箇所を追随する。
+`**WeaponQualitySettings`（`TwoHandBow`）の品質勾配（明文化）**: バニラは主に命中列で品質差を出しているが、本 Mod では 「大きく押し上げない」≠ 火力・攻速を品質で一切動かさないとする。`**damageMultiplier`**（単発火力）と `**attackSpeedMultiplier**`（間隔・射撃ペース）を `**productQuality` 段階で控えめに変化**させ、`**precisionMultiplier` / `precisionFalloffMultiplier` / `rangeMultiplier`** とあわせて「品質の効き」を表現する。具体数値は `tools/regenerate_ranged_from_vanilla.py` の `**TWO_HAND_BOW_QUALITY_DELTAS**` を正とし、変更したら本節または `[CREATION_POLICY.md](../core/CREATION_POLICY.md)` の該当箇所を追随する。
 
 ### **クロスボウ（TwoHandCrossbow）** — データ差分（実装・検証用）
 
@@ -103,7 +103,7 @@
 - **順序の約束**: 上級ラインでは `range` / `damage` / `ignoresArmor` / `attackSpeed` の **順序鎖**（クロスと上級弓の段差）を崩さないこと。詳細の鎖は**下記「Q3 素体での相対チェーン」**（矢印表記）。
 - **装備中の移動（本職の長射程のコスト）**: 移動速度はできるだけ **明示倍率**で管理し、射程・火力とセットでトレードオフを作る。鎧デバフとの重ね掛け前提でプレイ確認する。
   - **弓の目標倍率（確定方針）**: `**short_bow` = 1.00**, `**curved_bow` = 0.95**, `**war_bow` = 0.85**, `**long_bow` = 0.75**。
-  （**データ実装（2026-04-16）**: 弓／クロスに `onEquipEffectors` による移動特徴付けは**行わない**。上記倍率は設計目標として `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` に残し、機動コストは `range` / `attackSpeed` / 掩体などで表現する。）
+  （**データ実装（2026-04-16）**: 弓／クロスに `onEquipEffectors` による移動特徴付けは**行わない**。上記倍率は設計目標として `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` に残し、機動コストは `range` / `attackSpeed` / 掩体などで表現する。）
   - **クロスの目標倍率（確定方針）**: `**light_crossbow` = 0.85**（`war_bow` 相当）、`**crossbow` = 0.75**、`**heavy_crossbow` = 0.70**。
   （標準〜ヘビィは `**long_bow`（0.75）以上の鈍重**を基準にしつつ、実戦で過度な操作不能感が出る場合は微調整する。）
   - **掩体（`meleeCover` / `coverAngle` / `rangedCover`）**: クロス段差で **ヘビィはライト・標準より掩体を厚く**する。`**rangedCover` はバックラー（最も遠距離カバーが低い盾）を基準に、常にバックラー未満**で設定する。加えて、`**rangedCover` が存在するだけで中射程武器でも遠距離の撃ち合いに強くなりうる**ため、射程の短さだけを理由に過大設定しない。
@@ -153,7 +153,7 @@
 `**curved_bow` → `long_bow` →（やや間をあけて）→ `war_bow` → `short_bow`**
 となるよう `Equipment` を合わせる（品質 Q ごとの検証は `tools/plot_weapon_quality_comparison.py` の mid（18m）チャートで確認）。
 
-### 期待 DPS 指標の定義（プロキシ・`[tools/plot_weapon_quality_comparison.py](tools/plot_weapon_quality_comparison.py)` と同一式）
+### 期待 DPS 指標の定義（プロキシ・`[tools/plot_weapon_quality_comparison.py](../../tools/plot_weapon_quality_comparison.py)` と同一式）
 
 `Equipment.json` の `primaryWeaponMode` を品質乗算まで合成した値（`damage` / `attackSpeed` / `precision` / `precisionFalloff` / `range`）に対し、次の**簡易プロキシ**でグラフ化する。本体の命中式・掩体・スキル補正までは含めない。**単体の「DPS」だけの折れ線グラフは出力しない**（内部では **ノミナル DPS**（`damage ÷ attackSpeed`）を距離別期待 DPS の因子として使用）。
 
@@ -169,7 +169,7 @@
 比較・バランス検討では **期待 DPS** と **距離別期待 DPS** を主に用い、射程・減衰の差は mid（18）／far（22）／ultra-far（25）チャートで見る。
 
 - **帯域評価の出力（推奨）** … 点比較だけでなく、各基準点の前後 1m を含む**3 点帯域**（例: near=9/10/11, mid=17/18/19, far=21/22/23, ultra=24/25/26）を併記し、**平均値（mean）**と**最小値（min）**を並べて判断する。
-- **層 1 補完バンドル（自動生成）** … `tools/plot_weapon_quality_comparison.py` は `[quality_charts/ranged_layer1_eval_bundle.md](quality_charts/ranged_layer1_eval_bundle.md)` と CSV 3 本（`ranged_layer1_armored_distance_dps_band_summary.csv` / `ranged_layer1_per_shot_expected_damage_band_summary.csv` / `ranged_layer1_ignores_armor_policy_summary.csv`）および `**ignoresArmor` 方針用チャート**（`ranged_ignoresArmor_mod_policy_overlay.png`）を出す。**距離期待 DPS の帯域 CSV に加え、対鎧プロキシ・単発期待・Q3 四鎖・`ignoresArmor` キャップ／弓対クロス順序・`rangedCover`/バックラー比較・移動目標（ドキュメント）・門限メモなどの層 1 確認はこのバンドルに任せる**（式・限界は同 MD）。**データ再生成のたびに当該 MD を確認**する。
+- **層 1 補完バンドル（自動生成）** … `tools/plot_weapon_quality_comparison.py` は `[quality_charts/ranged_layer1_eval_bundle.md](../../quality_charts/ranged_layer1_eval_bundle.md)` と CSV 3 本（`ranged_layer1_armored_distance_dps_band_summary.csv` / `ranged_layer1_per_shot_expected_damage_band_summary.csv` / `ranged_layer1_ignores_armor_policy_summary.csv`）および `**ignoresArmor` 方針用チャート**（`ranged_ignoresArmor_mod_policy_overlay.png`）を出す。**距離期待 DPS の帯域 CSV に加え、対鎧プロキシ・単発期待・Q3 四鎖・`ignoresArmor` キャップ／弓対クロス順序・`rangedCover`/バックラー比較・移動目標（ドキュメント）・門限メモなどの層 1 確認はこのバンドルに任せる**（式・限界は同 MD）。**データ再生成のたびに当該 MD を確認**する。
 
 ### 評価基準の階層（期待 DPS の限界と補助指標）
 
@@ -178,9 +178,9 @@
 
 | 層     | 指標・手段                                                                                                                                                  | 役割                                                                                                                     | 限界・注意                                                                                                                                                                                  |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1** | **距離別期待 DPS**（上式）・帯域 CSV・`[quality_charts/ranged_layer1_eval_bundle.md](quality_charts/ranged_layer1_eval_bundle.md)`（+ 同生成 CSV・`ignoresArmor` 方針チャート） | 素体 × 品質の**広い順位**・射程／減衰の**相対**・**対鎧プロキシ／単発期待／Q3 鎖／`ignoresArmor` 方針**・`**rangedCover` とバックラー基準／移動目標（ドキュメント）**の機械メモを一括見る | **スキル補正・本体の射程加算・掩体の実戦合成・敵装備抽選・UI の「攻撃時間」を含まない。`hit(d)` と鎧式はプロキシ**。移動倍率の**データ実装は行わない**（`[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` の設計目標のみ）。 |
+| **1** | **距離別期待 DPS**（上式）・帯域 CSV・`[quality_charts/ranged_layer1_eval_bundle.md](../../quality_charts/ranged_layer1_eval_bundle.md)`（+ 同生成 CSV・`ignoresArmor` 方針チャート） | 素体 × 品質の**広い順位**・射程／減衰の**相対**・**対鎧プロキシ／単発期待／Q3 鎖／`ignoresArmor` 方針**・`**rangedCover` とバックラー基準／移動目標（ドキュメント）**の機械メモを一括見る | **スキル補正・本体の射程加算・掩体の実戦合成・敵装備抽選・UI の「攻撃時間」を含まない。`hit(d)` と鎧式はプロキシ**。移動倍率の**データ実装は行わない**（`[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` の設計目標のみ）。 |
 | **2** | **ゲーム内 UI**（射撃武器命中率、装備 DPS の分解表示など）                                                                                                                    | **プレイヤーが見える天井**の確認                                                                                                     | JSON の `attackSpeed`／`precision` と**数値が一致しない**ことがある（**生数字をメモ**）。                                                                                                                       |
-| **3** | **標準化プレイテスト**（`[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`）                                                                                | **討伐秒数・体感命中**・バニラ素体との **A/B**                                                                                          | 敵装備ランダム性あり。**鎧メモ**・同一敵の使い回し・**複数距離**（10m だけでは減衰が効かず射程を切り分けにくい）。                                                                                                                        |
+| **3** | **標準化プレイテスト**（`[COMBAT_PLAYTEST_POLICY.md](../core/COMBAT_PLAYTEST_POLICY.md)`）                                                                                | **討伐秒数・体感命中**・バニラ素体との **A/B**                                                                                          | 敵装備ランダム性あり。**鎧メモ**・同一敵の使い回し・**複数距離**（10m だけでは減衰が効かず射程を切り分けにくい）。                                                                                                                        |
 | **4** | **バニラ同条件デルタ**                                                                                                                                          | Mod が**弱くし過ぎ／強くし過ぎ**の検知                                                                                                | Mod OFF／ON または素体一時バニラ化で **TTK・UI** を並べる。                                                                                                                                               |
 
 
@@ -214,7 +214,7 @@
 
 - `**ignoresArmor**` … その一撃における **鎧軽減が素体ダメージに効く度合い**を弱める係数（Mod 内プロキシでは `dealt = damage × (1 − mitigation × (1 − ignoresArmor))` 等で参照）。
 - `**armorDamage`** … **防具耐久（鎧そのもの）**への負荷。鈍器が「厚鎧に強い」表現の主戦場になりやすい。
-- **将来の近接・装備オーバーホール連携（前提）** … 鈍器は `ignoresArmor` を **ゼロに近い帯**へ寄せ、重装甲への主表現を `**armorDamage` に載せる**想定とする（実装本体は別枠・`[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` 等を参照）。本 Mod の弓はその世界観と矛盾しない `**ignoresArmor` の置き場**に収める（近接改修の有無にかかわらず、下記「確定目標」を先に採用する）。
+- **将来の近接・装備オーバーホール連携（前提）** … 鈍器は `ignoresArmor` を **ゼロに近い帯**へ寄せ、重装甲への主表現を `**armorDamage` に載せる**想定とする（実装本体は別枠・`[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` 等を参照）。本 Mod の弓はその世界観と矛盾しない `**ignoresArmor` の置き場**に収める（近接改修の有無にかかわらず、下記「確定目標」を先に採用する）。
 
 ### 弓の `ignoresArmor` 目標帯（上記基準）
 
@@ -266,7 +266,7 @@
 **本 Mod の `Data/Models/Equipment.json` にある `requiredSkills` が確定値**であり、下表の数値は**ドラフト（計画時点）**。**ズレを直す想定はこの節（門限・表・上の箇条書きの具体レベル）のドキュメント更新**であり、`range` / `damage` など**弓とクロスで役割を分ける素体設計**（射程の逆転含む）を JSON から方針文へ引きずり戻す意味ではない。門限を変えたら表と本文を JSON に合わせる。
 （`**requiredSkills` は装備エントリのトップレベル**。`primaryWeaponMode` 内には書かない。マージでは `**Marksman` の `value: 0` が効かずバニラ門限が残る**ため、門限なしは **キー省略**、門限ありは **正の整数**で明示する。）
 
-**並べ方**: 表の行順は**弓系ランク低 → 高**（`primaryWeaponMode` と同じ並びの想定）→ クロスボウ。スリングは `[CREATION_POLICY.md](CREATION_POLICY.md)`。
+**並べ方**: 表の行順は**弓系ランク低 → 高**（`primaryWeaponMode` と同じ並びの想定）→ クロスボウ。スリングは `[CREATION_POLICY.md](../core/CREATION_POLICY.md)`。
 
 - `**light_crossbow`**: 門限**なし**。標準クロスと**ほぼ同時期**に候補として並ぶ想定のうえで、**誰でも装備できる低門限枠のクロス**とする（「序盤専用」ではない）。
 - `**crossbow` / `heavy_crossbow`**: Marksman を**段階付け**し、標準とヘビィで門限を分ける（ドラフトでは標準 **5**・ヘビィ **10**）。**標準の Marksman 5** は、ライトと同時期でも **スキルが足りた入れ替え先＝上位ライン**として位置づける。

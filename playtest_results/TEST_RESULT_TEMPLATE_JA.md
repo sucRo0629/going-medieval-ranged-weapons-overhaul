@@ -14,9 +14,20 @@
 - 地形条件: 平地 / 拠点遮蔽
 - 備考:
 
+### 比較武器セット（防具改修フェーズ1）
+
+- 近接（全て鉄）:
+  - 剣: `longsword`
+  - 槍: `berdiche`
+  - 鈍器: `two_handed_mace`
+  - 斧: `greataxe`
+- 遠距離:
+  - `curved_bow`
+  - `crossbow`
+
 ### テスト前処理チェック
 
-- [ ] 門限を外すテストなら `requiredSkills` を意図どおり変更した（[`CREATION_POLICY.md`](../CREATION_POLICY.md) の `requiredSkills` 節 — **`value: 0` は不可**。通常プレイ用の門限表は [`BOW_DESIGN_TARGETS.md`](../BOW_DESIGN_TARGETS.md)）
+- [ ] 門限を外すテストなら `requiredSkills` を意図どおり変更した（[`CREATION_POLICY.md`](../implementation_policies/core/CREATION_POLICY.md) の `requiredSkills` 節 — **`value: 0` は不可**。通常プレイ用の門限表は [`BOW_DESIGN_TARGETS.md`](../implementation_policies/ranged/BOW_DESIGN_TARGETS.md)）
 - [ ] Devツールでスポーン住民が全比較武器を装備可能なことを確認した
 - [ ] 通常プレイへ戻すときに `requiredSkills` を復元する方針を確認した
 
@@ -46,9 +57,12 @@
 ### 試行結果
 
 - 先制を取る武器:
-- 被弾までの時間:
+- 被弾までの時間（取れれば）:
 - 敵重装への通り方:
 - 崩れ始める距離帯:
+- 負傷の治癒まで時間（取得可能な範囲で）:
+- 死亡有無:
+- 戦闘後の機嫌低下（有/無 + メモ）:
 - 期待順位（サマリ）との一致/不一致:
 - メモ:
 

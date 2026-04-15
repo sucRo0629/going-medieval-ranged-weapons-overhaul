@@ -1,6 +1,6 @@
 # 実戦検証ポリシー（弓・クロス）
 
-> **このファイルの役割** — 弓・クロス調整の**実戦検証シナリオと評価観点**のみ。数値方針・階層化指標・門限・コンセプトは `**[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`**、変更手順・実効命中の下限・再生成は `**[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`**、入口・Precedence は `**[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)**`。
+> **このファイルの役割** — 弓・クロス調整の**実戦検証シナリオと評価観点**のみ。数値方針・階層化指標・門限・コンセプトは `**[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)`**、変更手順・実効命中の下限・再生成は `**[BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)`**、入口・Precedence は `**[BOW_MOD_INTEGRATION_POLICY.md](../ranged/BOW_MOD_INTEGRATION_POLICY.md)**`。
 
 ## 共通ルール
 
@@ -11,6 +11,27 @@
 - **射手スキル差は検証軸にしない**（全武器に同系統の補正が掛かるため）。
 - **装備門限は検証では無視**し、武器性能比較を優先する。
 - 個人利用のため、厳密統計よりも**各シナリオでの体感差分**を優先して記録する。
+
+## 損耗コスト評価（近接関連）
+
+近接の評価は「戦闘中の勝敗」だけでなく、**戦後に開拓地の運用へ返るまでの損耗コスト**を主評価に含める。プレイヤー側住民は平時タスクを担うため、同じ被害量でも敵側より機会損失が重い。
+
+- **療養ダウンタイム**: 負傷者ごとに「復帰までの時間」をメモし、戦闘結果と分けて記録する。
+- **死亡コスト**: 死亡者が出たケースは、勝敗に関わらず「再建コスト高」で別枠評価にする。
+- **機嫌ペナルティ**: 戦闘後に住民全体の機嫌低下が目立つ場合は、負傷・死亡件数と紐づけてメモする。
+- **近接採用判断**: 討伐が早くても、損耗が重く平時運用を崩すなら「不採用寄り」の判定を許容する。
+
+### 防具改修フェーズ1 ゲート（2026-04）
+
+- **現環境の状態**: このリポジトリ実行環境ではゲーム本体を直接起動しての実戦試験は未実施。
+- **静的プリチェック（実施済み）**:
+  - 防具序列 `light <= gambeson < mail < plate` を確認。
+  - 盾の `meleeCover` / `rangedCover` / `coverAngle` が据え置きであることを確認。
+- **実機で必ず埋める項目**:
+  - 射撃 vs 前衛（軽装/重装）での被弾後生存時間
+  - 戦後療養（復帰までの時間）
+  - 死亡有無と機嫌低下
+- **記録ファイル**: `playtest_results/2026-04-14_armor_phase1_gate.md`（静的チェック先行、実機項目は未記録）。
 
 ## DevTools と製作品質（観察・読み替え）
 
@@ -55,19 +76,19 @@
 
 ## 鎧・装甲軽減と確率（検証メモ・2026-04）
 
-**狙い**: `ignoresArmor` の有無を実機で切り分けるときの**ノイズ要因**を列挙し、データで言えることと言えないことを分ける。**「鎧軽減が確率的に外れる」**という説明は、少なくとも **Equipment 系 JSON では専用フィールドが見当たらず**、外部 LLM の要約に**誤って混じった可能性**がある（下記）。比較がブレる主因は、同一敵の装備抽選、`ignoresArmor` の解釈、UI と数値の不一致などのほうが現実的、という整理から進める。
+**狙い**: `ignoresArmor` の有無を実機で切り分けるときの**ノイズ要因**を列挙し、データで言えることと言えないことを分ける。**「鎧軽減が確率的に外れる」という説明は、少なくとも Equipment 系 JSON では専用フィールドが見当たらず、外部 LLM の要約に誤って混じった可能性**がある（下記）。比較がブレる主因は、同一敵の装備抽選、`ignoresArmor` の解釈、UI と数値の不一致などのほうが現実的、という整理から進める。
 
 ### `StreamingAssets` を見た範囲での結論
 
-- **防具エントリ**（`Items/Equipment.json`・`itemType` が防具系）では、主に **`armorRating`** と **`armorType`**、耐火系などが載る。**「鎧軽減がこの確率で発動する」ような 0〜1 の専用フィールドは見当たらない**（少なくとも防具ブロックの素データとしては未検出）。
-- **`Items/ArmorQualitySettings.json`** は品質ごとの **`armorRatingMultiplier`** 等であり、**「軽減必中」スイッチではない**。
-- **`Combat/DamageTakingAgentSettings.json`**（General Mod では `Data/Combat/DamageTakingAgentSettings.json` として上書き可能。Foxy [Modding Guide](https://foxyvoxel.io/2025/03/13/modding-guide-policy/) の Supported json 一覧）には **`accidentallyHitChance`** / **`absoluteHitChance`** がある。**名称からは誤射・命中扱い寄り**で、**鎧軽減のロールと同一とは未同定**（コメント無し JSON のため、本体コードまたは実験で要確認）。
+- **防具エントリ**（`Items/Equipment.json`・`itemType` が防具系）では、主に `**armorRating`** と `**armorType`**、耐火系などが載る。**「鎧軽減がこの確率で発動する」ような 0〜1 の専用フィールドは見当たらない**（少なくとも防具ブロックの素データとしては未検出）。
+- `**Items/ArmorQualitySettings.json`** は品質ごとの `**armorRatingMultiplier`** 等であり、**「軽減必中」スイッチではない**。
+- `**Combat/DamageTakingAgentSettings.json`**（General Mod では `Data/Combat/DamageTakingAgentSettings.json` として上書き可能。Foxy [Modding Guide](https://foxyvoxel.io/2025/03/13/modding-guide-policy/) の Supported json 一覧）には `**accidentallyHitChance`** / `**absoluteHitChance**` がある。**名称からは誤射・命中扱い寄り**で、**鎧軽減のロールと同一とは未同定**（コメント無し JSON のため、本体コードまたは実験で要確認）。
 - **「鎧 HP が減ると軽減率が下がる」挙動**をオフにするキーは、上記 JSON スキャンでは**見つけていない**（**本体ロジック**の可能性が高い）。
 
 ### 本 Mod リポジトリでの扱い
 
 - **現状の Equipment Overhaul リポジトリは `Data/Models/` の弓・クロス中心**であり、**「鎧軽減の確率を JSON で 100% に固定する」類の変更は未実装**（該当フィールドが無い／未特定のため）。
-- 将来キーが判明したら **`Data/Combat/`** または **`Data/Items/`** に差分を置くのが公式の置き場（同 Guide の **Supported json files** を正とする）。
+- 将来キーが判明したら `**Data/Combat/`** または `**Data/Items/`** に差分を置くのが公式の置き場（同 Guide の **Supported json files** を正とする）。
 
 ### 検証の妥協案（データを触れない間）
 
@@ -76,7 +97,7 @@
 
 ### `ignoresArmor` を 0 にしたときの実機メモ（2026-04）
 
-`short_bow` の `**primaryWeaponMode.ignoresArmor` を `0.0**` にした検証では、**リポジトリ上は当該フィールドのみ**が変わっており、`war_bow` に替えると同じ敵に通常攻撃できた（他ステータスの取り違えは起きにくい）。
+`short_bow` の `**primaryWeaponMode.ignoresArmor` を `0.0`** にした検証では、**リポジトリ上は当該フィールドのみ**が変わっており、`war_bow` に替えると同じ敵に通常攻撃できた（他ステータスの取り違えは起きにくい）。
 
 一方ゲーム内では次のように **UI と挙動が噛み合わない**ことが分かった。
 
@@ -99,11 +120,11 @@
 
 - **戦闘に効く数値**は `**Equipment.json` / `WeaponQualitySettings.json` の合成を正**とする（`ignoresArmor` の変更は挙動に反映され得る、という前提でバランスする）。
 - **アイテムの「装甲貫通」大中小表記**は上記のとおり **データとずれることがある**。**気持ち悪さは許容し、表記に合わせて JSON を曲げない**。
-- **弓／クロスボウ**のラインは **当面ここで区切り**（再開時は `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)` と `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)` の Repository phase から）。
+- **弓／クロスボウ**のラインは **当面ここで区切り**（再開時は `[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)` と `[BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)` の Repository phase から）。
 
 ## テスト前処理（毎回）
 
-1. 実戦比較で **装備門限を無視**したい場合、`Data/Models/Equipment.json` の該当武器について `**requiredSkills` を一時的に省略**するか、`**Marksman` の `value` を 1 など極小に下げる**（`**value: 0` はバニラ門限が残る**ため使わない。終了後は `**[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`** の門限表へ戻す）。
+1. 実戦比較で **装備門限を無視**したい場合、`Data/Models/Equipment.json` の該当武器について `**requiredSkills` を一時的に省略**するか、`**Marksman` の `value` を 1 など極小に下げる**（`**value: 0` はバニラ門限が残る**ため使わない。終了後は `**[BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)`** の門限表へ戻す）。
 2. Dev ツールでスポーンした住民が、比較対象武器を全て装備可能であることを確認する。
 3. テスト終了後に通常プレイへ戻す場合は、`requiredSkills` を元の状態へ戻す。
 
@@ -146,7 +167,7 @@
 - **10m・Marksman 10・`war_bow`**: 表示は **100% −20% ≈ 80%** 付近（**武器別の命中補正がこの表示にさらに乗るか**は未整理。深掘りするときは UI 説明または本体挙動で要確認）。討伐 **約 48 秒**。攻速の遅さは `short_bow` と比べて分かる程度。
 - **10m・Marksman 10・`short_bow` 再試行**: 命中は高いはずだが**あまり当たらず**、1分以上で中断。
 
-**設計への反映**: 上記より **「可」品質・10m・一方的射撃**でも実用になるよう **命中系を修正する必要**がある。**バニラより命中を下げない**ことは `**[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`** の「**実効命中のバニラ下限**」に拘束として書いた。
+**設計への反映**: 上記より **「可」品質・10m・一方的射撃**でも実用になるよう **命中系を修正する必要**がある。**バニラより命中を下げない**ことは `**[BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)`** の「**実効命中のバニラ下限**」に拘束として書いた。
 
 ### 2026-04-15 — `curved_bow` vs `long_bow`（**データ変更なし**、品質「**良**」、Marksman **15**、**22m**）
 

@@ -2,9 +2,9 @@
 
 > **役割** — Cursor／人間が **最初に `@` する 1 枚**。タスク別の参照ファイルと **正本** を固定する。詳細は各リンク先のみ読む。
 
-**Mod 名・スコープ**: ゲーム内表示名は **`ModInfo.json` の `name`（Equipment Overhaul）**。ローカルの **リポジトリ／Mod フォルダ名**は環境ごとに異なってよい（ドキュメントでは **リポジトリ相対パス**を正とする）。装備全体（遠距離に限らず防具・盾・近接メタ・スリング）の概論と禁則は **[`CREATION_POLICY.md`](CREATION_POLICY.md)**。遠距離を変える作業でもそれらに触れる想定なら **[`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)** を必ず併読する。
+**Mod 名・スコープ**: ゲーム内表示名は **`ModInfo.json` の `name`（Equipment Overhaul）**。ローカルの **リポジトリ／Mod フォルダ名**は環境ごとに異なってよい（ドキュメントでは **リポジトリ相対パス**を正とする）。装備全体（遠距離に限らず防具・盾・近接メタ・スリング）の概論と禁則は **[`CREATION_POLICY.md`](CREATION_POLICY.md)**。実装方針の集約入口は **[`../README.md`](../README.md)**。遠距離を変える作業でもそれらに触れる想定なら **[`EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)** を必ず併読する。
 
-**弓・クロス（2026-04 一区切り）**: 装甲貫通の **アイテム表記は JSON とずれることがある**が、**戦闘は `Equipment.json` / WQS を正**とし、表記に合わせて数値を曲げない。詳細は **`[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`** / **`[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`**。
+**弓・クロス（2026-04 一区切り）**: 装甲貫通の **アイテム表記は JSON とずれることがある**が、**戦闘は `Equipment.json` / WQS を正**とし、表記に合わせて数値を曲げない。詳細は **`[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`** / **`[BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)`**。
 
 ---
 
@@ -26,7 +26,7 @@ Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
 
 テキストエディタで開き、`[ERR]` / `[WARN]` / `Exception` / 装備・NPC 関連の `id` などで検索する。プレイテスト手順との対応は [`COMBAT_PLAYTEST_POLICY.md`](COMBAT_PLAYTEST_POLICY.md) を参照。
 
-**Precedence（矛盾時）**: `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)` の順序に従う（JSON ＞ 設計 MD のドラフト表）。
+**Precedence（矛盾時）**: `[implementation_policies/ranged/BOW_MOD_INTEGRATION_POLICY.md](../ranged/BOW_MOD_INTEGRATION_POLICY.md)` の順序に従う（JSON ＞ 設計 MD のドラフト表）。
 
 ---
 
@@ -35,13 +35,13 @@ Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
 
 | タスク                                        | `@`（この順で足す）                                                                            |
 | ------------------------------------------ | -------------------------------------------------------------------------------------- |
-| 何から読むか迷う                                   | 本ファイル → `[BOW_MOD_INTEGRATION_POLICY.md](BOW_MOD_INTEGRATION_POLICY.md)`               |
-| 弓・クロスの役割／**四弓（短弓＋長弓三種）コンセプト**／射程順／DPS 式／Q3 鎖／門限ドラフト | `[BOW_DESIGN_TARGETS.md](BOW_DESIGN_TARGETS.md)`（同一ファイル内の「四弓のコンセプト」節）                  |
-| 再生成・変更チェック・実装フェーズ・実効命中の下限                  | `[BOW_IMPLEMENTATION_STATUS.md](BOW_IMPLEMENTATION_STATUS.md)`                         |
+| 何から読むか迷う                                   | 本ファイル → `[implementation_policies/ranged/BOW_MOD_INTEGRATION_POLICY.md](../ranged/BOW_MOD_INTEGRATION_POLICY.md)`               |
+| 弓・クロスの役割／**四弓（短弓＋長弓三種）コンセプト**／射程順／DPS 式／Q3 鎖／門限ドラフト | `[implementation_policies/ranged/BOW_DESIGN_TARGETS.md](../ranged/BOW_DESIGN_TARGETS.md)`（同一ファイル内の「四弓のコンセプト」節）                  |
+| 再生成・変更チェック・実装フェーズ・実効命中の下限                  | `[implementation_policies/ranged/BOW_IMPLEMENTATION_STATUS.md](../ranged/BOW_IMPLEMENTATION_STATUS.md)`                         |
 | 層 1 補完（対鎧プロキシ・単発期待・Q3 鎖・`ignoresArmor` 方針・門限メモ）       | [`quality_charts/ranged_layer1_eval_bundle.md`](quality_charts/ranged_layer1_eval_bundle.md)（`plot_weapon_quality_comparison.py` 再生成で更新）        |
 | Mod 全体スコープ・部分上書き・丸め・素体×品質                  | `[CREATION_POLICY.md](CREATION_POLICY.md)`                                             |
 | プレイテスト手順                                   | `[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`（ログ場所は本ファイル「ゲームログ」）                               |
-| 防具・盾・近接・スリング                               | `[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)` |
+| 防具・盾・近接・スリング                               | `[implementation_policies/melee_armor/MELEE_ARMOR_MOD_INTEGRATION_POLICY.md](implementation_policies/melee_armor/MELEE_ARMOR_MOD_INTEGRATION_POLICY.md)`（詳細履歴は `EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`） |
 
 
 ---
