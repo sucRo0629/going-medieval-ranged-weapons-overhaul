@@ -1,7 +1,8 @@
 # 近接・投擲・防具・盾 — 実装・現状・作業手順
 
 > **このファイルの役割** — 実装フェーズ、変更時チェックリスト、ゲート評価手順を管理する。  
-> バランス目標は `MELEE_ARMOR_DESIGN_TARGETS.md` を参照。
+> バランス目標は `MELEE_ARMOR_DESIGN_TARGETS.md` を参照。  
+> 分離計画は `melee_throwing/MELEE_THROWING_PLAN.md`（近接・投擲）と `armor_shield/ARMOR_SHIELD_PLAN.md`（鎧・盾）を参照。
 
 ---
 

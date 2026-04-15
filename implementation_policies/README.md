@@ -8,9 +8,12 @@
 - `ranged/`
   - 弓・クロスボウの方針群（入口 / 設計目標 / 実装状況）
 - `melee_armor/`
-  - 近接・投擲・防具・盾の方針群（入口 / 設計目標 / 実装状況）
+  - 近接・投擲・防具・盾の方針群（入口 / 設計目標 / 実装状況 / 分離計画）
+  - `melee_throwing/MELEE_THROWING_PLAN.md`（近接・投擲計画）
+  - `armor_shield/ARMOR_SHIELD_PLAN.md`（鎧・盾計画）
 - `core/`
   - 共通方針群（作成ポリシー / プレイテスト方針 / セッション早見）
+  - `WEAPON_ARMOR_INTERACTION_POLICY.md`（武器×防具の横断ルール）
 
 ## 参照ルール
 

@@ -42,7 +42,7 @@ Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
 | 層 1 補完（対鎧プロキシ・単発期待・Q3 鎖・`ignoresArmor` 方針・門限メモ）     | `[quality_charts/ranged/layer1_eval_bundle.md](../../quality_charts/ranged/layer1_eval_bundle.md)`（`plot_weapon_quality_comparison.py` 再生成で更新）                                                             |
 | Mod 全体スコープ・部分上書き・丸め・素体×品質                           | `[CREATION_POLICY.md](CREATION_POLICY.md)`                                                                                                                                                                 |
 | プレイテスト手順                                            | `[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`（ログ場所は本ファイル「ゲームログ」）                                                                                                                                |
-| 防具・盾・近接・スリング                                        | `[implementation_policies/melee_armor/MELEE_ARMOR_MOD_INTEGRATION_POLICY.md](implementation_policies/melee_armor/MELEE_ARMOR_MOD_INTEGRATION_POLICY.md)`（詳細履歴は `EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md`） |
+| 防具・盾・近接・スリング                                        | `[implementation_policies/melee_armor/MELEE_ARMOR_MOD_INTEGRATION_POLICY.md](../melee_armor/MELEE_ARMOR_MOD_INTEGRATION_POLICY.md)`（計画分離: `melee_throwing/MELEE_THROWING_PLAN.md` / `armor_shield/ARMOR_SHIELD_PLAN.md`、横断ルール: `WEAPON_ARMOR_INTERACTION_POLICY.md`） |
 
 
 ---

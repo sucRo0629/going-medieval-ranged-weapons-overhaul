@@ -1,7 +1,8 @@
 # 近接・投擲・防具・盾 データ変更方針（入口）
 
 > **このファイルの役割** — 近接・投擲・防具・盾方針の入口と正本優先順位（Precedence）を示す。  
-> 設計目標は `MELEE_ARMOR_DESIGN_TARGETS.md`、実装状況と作業手順は `MELEE_ARMOR_IMPLEMENTATION_STATUS.md` を正本とする。
+> 設計目標は `MELEE_ARMOR_DESIGN_TARGETS.md`、実装状況と作業手順は `MELEE_ARMOR_IMPLEMENTATION_STATUS.md` を正本とする。  
+> 分離計画書は `melee_throwing/MELEE_THROWING_PLAN.md` と `armor_shield/ARMOR_SHIELD_PLAN.md`、横断ルールは `../core/WEAPON_ARMOR_INTERACTION_POLICY.md`。
 
 ---
 
@@ -28,6 +29,9 @@
 | 方針の入口・正本参照順を確認         | `MELEE_ARMOR_MOD_INTEGRATION_POLICY.md`    |
 | 役割分離・数値ターゲット・ガードレールを確認 | `MELEE_ARMOR_DESIGN_TARGETS.md`            |
 | 現状フェーズ・変更チェック・ゲート運用を確認 | `MELEE_ARMOR_IMPLEMENTATION_STATUS.md`     |
+| 近接・投擲の作業計画を確認          | `melee_throwing/MELEE_THROWING_PLAN.md`    |
+| 鎧・盾の作業計画を確認            | `armor_shield/ARMOR_SHIELD_PLAN.md`        |
+| 武器×防具の横断ルールを確認         | `../core/WEAPON_ARMOR_INTERACTION_POLICY.md` |
 | 既存の統合メモ/履歴を確認          | `EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md` |
 
 
