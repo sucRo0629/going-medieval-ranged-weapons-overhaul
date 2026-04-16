@@ -428,3 +428,39 @@
   - `curved_bow`: `damage=24`, `range=22.0`, `ignoresArmor=0.78`
   - `crossbow`: `damage=26`, `range=17.44`, `ignoresArmor=0.9`
 - 解釈: 静的値では投擲が平地で弓/クロスを常時上回る構成ではない（実機で最終確認）。
+
+## 近接・投擲 再調整 静的チェック（2026-04）
+
+### 方針順位チェック（カテゴリ平均・実施済み）
+
+- 射程: 槍 > 剣 > 斧 = 鈍器
+- 防具無視: 槍 > 剣 > 斧 > 鈍器
+- 防具/盾ダメージ: 鈍器 > 斧 > 槍 = 剣
+- 攻撃速度（速い順）: 剣 > 鈍器 > 斧 > 槍
+- 命中: 剣 > 鈍器 > 斧 > 槍
+- 基本ダメージ: 斧 > 槍 > 剣 > 鈍器
+- 近接カバー: 槍 > 剣 > 斧 > 鈍器
+
+### 投擲レンジチェック（実施済み）
+
+- `throwing_axes`（投擲）: `ignoresArmor=0.22`, `armorDamage=1.0`, `range=10`
+- `light_javelins`（投擲）: `ignoresArmor=0.30`, `armorDamage=0.9`, `range=13`
+- 判定: 投擲槍は投擲斧より `ignoresArmor` 高 / `armorDamage` 低 / `range` +3 を満たす。
+
+### チャート/サマリ出力（実施済み）
+
+- スクリプト: `tools/plot_melee_throwing_quality_comparison.py`
+- 同格比較: `quality_charts/melee_throwing/same_tier/`
+- 武器種内比較: `quality_charts/melee_throwing/by_category/`
+- サマリ:
+  - `quality_charts/melee_throwing/script/same_tier_q1_q6_summary.csv`
+  - `quality_charts/melee_throwing/script/by_category_q1_q6_summary.csv`
+
+### 実機ゲート（要実施）
+
+- 主シナリオ: `general_basic_med` ×3
+- 記録:
+  - 死亡率 / 気絶率
+  - 初被弾後の離脱再編可否
+  - 治癒時間
+  - 投擲と弓/クロスの平地比較（継続優越がないこと）

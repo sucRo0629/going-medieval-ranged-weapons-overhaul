@@ -102,13 +102,13 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandSword",
         "damage": 12,
-        "ignoresArmor": 0.15,
-        "armorDamage": 0.6,
+        "ignoresArmor": 0.18,
+        "armorDamage": 0.55,
         "buildingDamage": 0.4,
         "precision": 1,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 3.15,
+        "attackSpeed": 2.9,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],
@@ -119,7 +119,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "KnifeSlash"
       },
-      "meleeCover": 0.04,
+      "meleeCover": 0.06,
       "rangedCover": 0,
       "coverAngle": 30
     },
@@ -133,13 +133,13 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandSword",
         "damage": 16,
-        "ignoresArmor": 0.2,
-        "armorDamage": 0.6,
+        "ignoresArmor": 0.26,
+        "armorDamage": 0.58,
         "buildingDamage": 0.4,
         "precision": 1,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 3.15,
+        "attackSpeed": 3.0,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],
@@ -150,7 +150,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SwordSlash"
       },
-      "meleeCover": 0.1,
+      "meleeCover": 0.12,
       "rangedCover": 0,
       "coverAngle": 45
     },
@@ -164,13 +164,13 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandSword",
         "damage": 16,
-        "ignoresArmor": 0.2,
-        "armorDamage": 0.6,
+        "ignoresArmor": 0.26,
+        "armorDamage": 0.58,
         "buildingDamage": 0.4,
         "precision": 1,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 3.15,
+        "attackSpeed": 3.0,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],
@@ -181,7 +181,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SwordSlash"
       },
-      "meleeCover": 0.1,
+      "meleeCover": 0.12,
       "rangedCover": 0,
       "coverAngle": 45
     },
@@ -201,13 +201,13 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandSword",
         "damage": 16,
-        "ignoresArmor": 0.25,
-        "armorDamage": 0.6,
+        "ignoresArmor": 0.28,
+        "armorDamage": 0.62,
         "buildingDamage": 0.4,
         "precision": 1,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 3.15,
+        "attackSpeed": 3.05,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],
@@ -218,7 +218,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SwordSlash"
       },
-      "meleeCover": 0.1,
+      "meleeCover": 0.12,
       "rangedCover": 0,
       "coverAngle": 60
     },
@@ -238,13 +238,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandSword",
         "damage": 32,
-        "ignoresArmor": 0.3,
-        "armorDamage": 0.6,
+        "ignoresArmor": 0.32,
+        "armorDamage": 0.68,
         "buildingDamage": 0.4,
         "precision": 0.95,
         "precisionFalloff": 0,
         "range": 0.3,
-        "attackSpeed": 3.15,
+        "attackSpeed": 3.2,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],
@@ -255,7 +255,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SwordSlash"
       },
-      "meleeCover": 0.24,
+      "meleeCover": 0.26,
       "rangedCover": 0,
       "coverAngle": 90
     },
@@ -275,13 +275,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandSword",
         "damage": 40,
-        "ignoresArmor": 0.35,
-        "armorDamage": 0.6,
+        "ignoresArmor": 0.32,
+        "armorDamage": 0.75,
         "buildingDamage": 0.4,
         "precision": 0.95,
         "precisionFalloff": 0,
         "range": 0.3,
-        "attackSpeed": 4.05,
+        "attackSpeed": 3.95,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],
@@ -292,7 +292,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SwordSlash"
       },
-      "meleeCover": 0.25,
+      "meleeCover": 0.28,
       "rangedCover": 0,
       "coverAngle": 110
     },
@@ -337,14 +337,14 @@
       "carryHand": 1,
       "primaryWeaponMode": {
         "weaponType": "OneHandMace",
-        "damage": 12,
-        "ignoresArmor": 0.0,
-        "armorDamage": 1.35,
+        "damage": 11,
+        "ignoresArmor": 0.05,
+        "armorDamage": 1.55,
         "buildingDamage": 1,
         "precision": 1,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 4.95,
+        "attackSpeed": 4.75,
         "hitEffectorGroupIDs": [
           "WoundsBlunt"
         ],
@@ -368,14 +368,14 @@
       "carryHand": 1,
       "primaryWeaponMode": {
         "weaponType": "OneHandMace",
-        "damage": 12,
-        "ignoresArmor": 0.0,
-        "armorDamage": 1.35,
+        "damage": 13,
+        "ignoresArmor": 0.05,
+        "armorDamage": 1.85,
         "buildingDamage": 1,
         "precision": 1,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 4.95,
+        "attackSpeed": 5.15,
         "hitEffectorGroupIDs": [
           "WoundsBlunt"
         ],
@@ -400,13 +400,13 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandMace",
         "damage": 16,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.09,
         "armorDamage": 2.3,
         "buildingDamage": 1.5,
         "precision": 1,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 3.15,
+        "attackSpeed": 3.4,
         "hitEffectorGroupIDs": [
           "WoundsBlunt"
         ],
@@ -437,7 +437,7 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandMace",
         "damage": 30,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.11,
         "armorDamage": 2.2,
         "buildingDamage": 1.5,
         "precision": 0.95,
@@ -474,7 +474,7 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandMace",
         "damage": 30,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.12,
         "armorDamage": 2.35,
         "buildingDamage": 1.5,
         "precision": 0.95,
@@ -491,7 +491,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "MaceSlash"
       },
-      "meleeCover": 0.15,
+      "meleeCover": 0.17,
       "rangedCover": 0,
       "coverAngle": 90
     },
@@ -511,7 +511,7 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandMace",
         "damage": 16,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.12,
         "armorDamage": 2.25,
         "buildingDamage": 1.5,
         "precision": 1,
@@ -543,13 +543,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandSpear",
         "damage": 26,
-        "ignoresArmor": 0.45,
+        "ignoresArmor": 0.36,
         "armorDamage": 0.55,
         "buildingDamage": 0.2,
         "precision": 0.95,
         "precisionFalloff": 0,
-        "range": 0.7,
-        "attackSpeed": 6.3,
+        "range": 0.5,
+        "attackSpeed": 6.2,
         "ladderCritMod": 1.2,
         "hitEffectorGroupIDs": [
           "WoundsPiercing"
@@ -561,7 +561,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SpearSlash"
       },
-      "meleeCover": 0.15,
+      "meleeCover": 0.17,
       "rangedCover": 0,
       "coverAngle": 90
     },
@@ -575,12 +575,12 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandSpear",
         "damage": 27,
-        "ignoresArmor": 0.48,
+        "ignoresArmor": 0.38,
         "armorDamage": 0.65,
         "buildingDamage": 0.3,
         "precision": 0.95,
         "precisionFalloff": 0,
-        "range": 0.8,
+        "range": 0.9,
         "attackSpeed": 5.85,
         "ladderCritMod": 1.2,
         "hitEffectorGroupIDs": [
@@ -607,13 +607,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandSpear",
         "damage": 27,
-        "ignoresArmor": 0.5,
+        "ignoresArmor": 0.4,
         "armorDamage": 0.6,
         "buildingDamage": 0.2,
         "precision": 0.95,
         "precisionFalloff": 0,
-        "range": 0.7,
-        "attackSpeed": 6.3,
+        "range": 1.0,
+        "attackSpeed": 6.2,
         "ladderCritMod": 1.2,
         "hitEffectorGroupIDs": [
           "WoundsPiercing"
@@ -625,7 +625,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SpearSlash"
       },
-      "meleeCover": 0.18,
+      "meleeCover": 0.2,
       "rangedCover": 0,
       "coverAngle": 90
     },
@@ -639,13 +639,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandSpear",
         "damage": 26,
-        "ignoresArmor": 0.47,
+        "ignoresArmor": 0.39,
         "armorDamage": 0.6,
         "buildingDamage": 0.2,
         "precision": 0.95,
         "precisionFalloff": 0,
-        "range": 0.7,
-        "attackSpeed": 6.3,
+        "range": 0.6,
+        "attackSpeed": 6.2,
         "ladderCritMod": 1.3,
         "hitEffectorGroupIDs": [
           "WoundsPiercing"
@@ -657,7 +657,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SpearSlash"
       },
-      "meleeCover": 0.15,
+      "meleeCover": 0.17,
       "rangedCover": 0,
       "coverAngle": 90
     },
@@ -671,13 +671,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandSpear",
         "damage": 26,
-        "ignoresArmor": 0.46,
+        "ignoresArmor": 0.37,
         "armorDamage": 0.6,
         "buildingDamage": 0.2,
         "precision": 0.95,
         "precisionFalloff": 0,
-        "range": 0.7,
-        "attackSpeed": 6.3,
+        "range": 0.5,
+        "attackSpeed": 6.2,
         "ladderCritMod": 1.2,
         "hitEffectorGroupIDs": [
           "WoundsPiercing"
@@ -689,7 +689,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "SpearSlash"
       },
-      "meleeCover": 0.15,
+      "meleeCover": 0.17,
       "rangedCover": 0,
       "coverAngle": 90
     },
@@ -703,13 +703,13 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandAxe",
         "damage": 18,
-        "ignoresArmor": 0.25,
+        "ignoresArmor": 0.2,
         "armorDamage": 1.45,
         "buildingDamage": 0.6,
-        "precision": 1,
+        "precision": 0.97,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 3.6,
+        "attackSpeed": 3.9,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],
@@ -720,7 +720,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "AxeSlash"
       },
-      "meleeCover": 0.1,
+      "meleeCover": 0.08,
       "rangedCover": 0,
       "coverAngle": 30
     },
@@ -740,13 +740,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandAxe",
         "damage": 36,
-        "ignoresArmor": 0.3,
+        "ignoresArmor": 0.22,
         "armorDamage": 1.55,
         "buildingDamage": 2,
         "precision": 0.95,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 6.75,
+        "attackSpeed": 5.4,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],
@@ -757,7 +757,7 @@
         "loseHpOnMiss": false,
         "weaponSound": "AxeSlash"
       },
-      "meleeCover": 0.18,
+      "meleeCover": 0.16,
       "rangedCover": 0,
       "coverAngle": 80
     },
@@ -771,7 +771,7 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandMace",
         "damage": 16,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.1,
         "armorDamage": 2.1,
         "buildingDamage": 1.5,
         "precision": 1,
@@ -808,13 +808,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandMace",
         "damage": 30,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.13,
         "armorDamage": 2.2,
         "buildingDamage": 2,
-        "precision": 0.9,
+        "precision": 0.95,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 6.3,
+        "attackSpeed": 5.2,
         "hitEffectorGroupIDs": [
           "WoundsBlunt"
         ],
@@ -839,7 +839,7 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandMace",
         "damage": 10,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.08,
         "armorDamage": 2.3,
         "buildingDamage": 1.5,
         "precision": 1,
@@ -870,7 +870,7 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandMace",
         "damage": 11,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.09,
         "armorDamage": 2.4,
         "buildingDamage": 1.6,
         "precision": 1,
@@ -901,13 +901,13 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandMace",
         "damage": 26,
-        "ignoresArmor": 0.0,
+        "ignoresArmor": 0.1,
         "armorDamage": 2.35,
         "buildingDamage": 1.5,
         "precision": 0.95,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 5.85,
+        "attackSpeed": 5.2,
         "hitEffectorGroupIDs": [
           "WoundsBlunt"
         ],
@@ -1463,7 +1463,7 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandThrow",
         "damage": 16,
-        "ignoresArmor": 0.5,
+        "ignoresArmor": 0.3,
         "armorDamage": 0.9,
         "buildingDamage": 0.15,
         "precision": 1,
@@ -1491,12 +1491,12 @@
       "secondaryWeaponMode": {
         "weaponType": "OneHandSpear",
         "damage": 10,
-        "ignoresArmor": 0.5,
+        "ignoresArmor": 0.34,
         "armorDamage": 0.25,
         "buildingDamage": 0.2,
         "precision": 0.95,
         "precisionFalloff": 0.03,
-        "range": 0.7,
+        "range": 0.5,
         "attackSpeed": 4.5,
         "hitEffectorGroupIDs": [
           "WoundsPiercing"
