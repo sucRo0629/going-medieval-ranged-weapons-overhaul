@@ -315,6 +315,7 @@ def apply_quality(base: dict, row: dict) -> dict:
         "precisionFalloff": float(base.get("precisionFalloff", 0))
         * m("precisionFalloffMultiplier"),
         "ignoresArmor": float(base.get("ignoresArmor", 0)) * m("ignoresArmorMultiplier"),
+        "armorDamage": float(base.get("armorDamage", 0.0)) * m("armorDamageMultiplier"),
     }
 
 
@@ -746,6 +747,8 @@ def write_layer1_eval_bundle_md(
         f"- **[`{ia_policy_chart_name}`]({ia_policy_chart_name})** — Mod のみの "
         "`ignoresArmor`（品質合成）と、弓/クロスの **キャップ参照線**（弓 ≤ "
         f"{IA_CAP_BOW:.2f}、クロス ≤ {IA_CAP_CROSSBOW:.2f}）。",
+        "- `armorDamage_Q1_Q6_vanilla_vs_mod.png` / `armorDamage_all_weapons_overlay.png` — "
+        "武器別 Q1–Q6 と全武器オーバーレイの **armor damage**（品質合成）。",
         "",
         "## Q3 synthetic stats — order checks ([`BOW_DESIGN_TARGETS.md`](../../implementation_policies/ranged/BOW_DESIGN_TARGETS.md) four-way chains)",
         "",
@@ -1216,6 +1219,7 @@ def main() -> None:
         ("precision", "Precision (base × quality)"),
         ("precisionFalloff", "Precision falloff (base × quality)"),
         ("ignoresArmor", "Ignores armor (base × quality)"),
+        ("armorDamage", "Armor damage (base × quality)"),
     ]
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -1282,6 +1286,11 @@ def main() -> None:
             "ignoresArmor",
             "Ignores armor",
             "Ignores armor Q1–Q6: all ranged (solid=mod, dashed=vanilla)",
+        ),
+        (
+            "armorDamage",
+            "Armor damage",
+            "Armor damage Q1–Q6: all ranged (solid=mod, dashed=vanilla)",
         ),
     ]
     for stat_key, y_label, title in overlay_specs:

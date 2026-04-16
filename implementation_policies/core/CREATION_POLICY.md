@@ -76,6 +76,33 @@
 - `TwoHandBow` のように低品質側 `rangeMultiplier < 1` の系統は、低品質帯のズレを必ずチャートで確認する。
 - **データ上の `productQuality`（1–6）＝本 Mod チャートの Q1–Q6** とする。DevTools の品質ラベルやスポーン可否は **ローカライズ名と 1:1 ではない**ことがある（観察・読み替えは `**[COMBAT_PLAYTEST_POLICY.md](COMBAT_PLAYTEST_POLICY.md)`** の「DevTools と製作品質」）。
 
+## 品質で変化させる値／固定すべき値（全装備共通）
+
+- **原則**: 品質（Q1–Q6）で変化させるのは **品質テーブル側**（例: `WeaponQualitySettings`）で定義し、`Data/Models/Equipment.json` 側に「品質別の値」を埋め込まない（装備側は **素体**のみ）。
+- **根拠（WQS が持つ“品質で動くキー”）**: 本 Mod 同梱の `Data/Models/WeaponQualitySettings.json` は、少なくとも次の multiplier / 加算を品質行として持つ。  
+  `damageMultiplier`, `attackSpeedMultiplier`, `rangeMultiplier`, `precisionMultiplier`, `precisionFalloffMultiplier`, `hitpointsMultiplier`, `hpLossPerUseMultiplier`, `decompositionCoefficientMultiplier`, `wealthPointsMultiplier`, `beautyInputAdd`, `beautyInputEquippedAdd`, `beautyInputOnShelfAdd`
+- **未同梱の品質テーブル**: 現状、本リポジトリに `Data/Models/ArmorQualitySettings.json` 等は無い（`implementation_policies/melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md` の「未実施: ArmorQualitySettings 調整」参照）。防具／盾／衣服の品質差を Mod 側で設計する場合は、本節の「変化させる／固定」分類に従う。
+
+### 武器（`itemType: 1`、`primaryWeaponMode` / `secondaryWeaponMode`）
+
+- **品質で変化してよい（品質テーブル側）**: `damage`, `attackSpeed`, `range`, `precision`, `precisionFalloff`, `ignoresArmor`, `armorDamage`, `buildingDamage`, 耐久（`hitpoints` 相当）, `hpLossPerUse`, `decompositionCoefficient`, `wealthPoints`, `beautyInput*`
+- **品質で固定（`Equipment.json` 側）**: `weaponType`, `requiredSkills`, `equipmentSlots`, `carryHand`, `hitEffectorGroupIDs`, `criticalHitEffectorGroupIDs`, 発射体・挙動（`projectilePrefabAddress` / `projectileArcHeight` / `projectileSpeed` / `projectileOffset` / `canFireFlammableProjectiles` / `loseHpOnMiss` など）、各種 `*Sound`
+
+### 盾（`itemType: 3` かつ盾系）
+
+- **品質で変化してよい（品質テーブル側）**: 耐久（`hitpoints` 相当）, `decompositionCoefficient`, `wealthPoints`, `beautyInput*`
+- **品質で固定（`Equipment.json` 側）**: `meleeCover`, `rangedCover`, `coverAngle`, `onEquipEffectors`, `equipmentSlots`, `armorType`
+
+### 防具（鎧／兜など、`itemType: 3` かつ盾以外）
+
+- **品質で変化してよい（品質テーブル側）**: `armorRating`（増減幅は小さく。素材ティア差・カテゴリ序列を壊さない）, 耐久（`hitpoints` 相当）, `decompositionCoefficient`, `wealthPoints`, `beautyInput*`
+- **品質で固定（`Equipment.json` 側）**: `armorType`, `onEquipEffectors`, `agentFlammability`, `agentFireDamageMultiplier`, `hideHair` / `hideHead` / `hideFacialHair` / `headMaskAmount`
+
+### 衣服（`itemType: 2`）
+
+- **品質で変化してよい（品質テーブル側）**: `beautyInput*`, `wealthPoints`, 耐久（`hitpoints` 相当）, `decompositionCoefficient`
+- **品質で固定（`Equipment.json` 側）**: `warmthModifier`（役割そのものなので品質で揺らさない）, `onEquipEffectors`, `garmentType`, `hideHair` / `hideHead` / `hideFacialHair`
+
 ## 数値の丸め（基本方針）
 
 Mod に明示する **浮動小数の装備パラメータ**（例: `primaryWeaponMode` / `secondaryWeaponMode` の `range`, `attackSpeed`, `precisionFalloff`, `ignoresArmor` など、および `meleeCover` / `rangedCover`）は、**小数第2位まで**を正とする。

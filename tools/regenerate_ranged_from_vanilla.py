@@ -62,6 +62,9 @@ RANGED_IDS = [
     "heavy_crossbow",
 ]
 
+# Reduce ranged armor damage (flatten armor break pressure).
+RANGED_ARMOR_DAMAGE_DELTA = -0.3
+
 # None = omit requiredSkills key. Align with BOW_DESIGN_TARGETS.md 装備門限表.
 REQUIRED_SKILLS: dict[str, list[dict[str, str | int]] | None] = {
     "short_bow": None,
@@ -205,6 +208,9 @@ def apply_ranged_role_postprocess(eid: str, entry: dict) -> None:
             pwm["attackSpeed"] = BOW_ATTACK_SPEED[eid]
         if eid in BOW_PRIMARY_IGNORES_ARMOR:
             pwm["ignoresArmor"] = BOW_PRIMARY_IGNORES_ARMOR[eid]
+        if eid in RANGED_IDS:
+            ad = float(pwm.get("armorDamage", 0.0))
+            pwm["armorDamage"] = round(max(0.0, ad + RANGED_ARMOR_DAMAGE_DELTA), 2)
     if eid in CROSSBOW_RANGED_COVER:
         entry["rangedCover"] = CROSSBOW_RANGED_COVER[eid]
     if eid in RANGED_IDS:

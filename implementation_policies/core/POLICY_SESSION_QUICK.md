@@ -52,6 +52,7 @@ Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
 - 旧スキーマのトップレベル `range` / `damage` / `attackSpeed` は使わない（`primaryWeaponMode` / `secondaryWeaponMode` 配下）。`[CREATION_POLICY.md](CREATION_POLICY.md)`
 - `Research.json` / `Production.json` は原則置かない。
 - 浮動小数の装備パラメータは **小数第2位・四捨五入**（`[CREATION_POLICY.md](CREATION_POLICY.md)`）。
+- **品質で変化/固定**: 装備側に「品質別の値」を埋め込まない（品質曲線は品質テーブル側）。分類の正本は `CREATION_POLICY.md` の「品質で変化させる値／固定すべき値」節。
 
 ---
 
