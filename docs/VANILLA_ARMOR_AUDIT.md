@@ -2,6 +2,8 @@
 
 > **部分スナップショット**: 入力は Mod 同梱の `Equipment.json`（全 id ではない場合あり）。
 >
+> **方針（本 Mod）**: `macabre_*` / `forest_*` 装備は **敵専用のまま**とする（プレイヤー向けレシピ・研究解禁の対象にしない）。
+>
 > **防具・盾**の `onEquip` / `armorRating` はバニラ踏襲の可能性が高いが、**武器**は Mod 改変が混ざる。
 >
 > 武器表は「現リポジトリの値」として読み、**バニラ照合は `GOING_MEDIEVAL_ITEMS` で再抽出**すること。
@@ -14,6 +16,7 @@ python scripts/vanilla_equipment_audit.py --items-dir "$GOING_MEDIEVAL_ITEMS" --
 ```
 
 - `StreamingAssets` は `Items` の親ディレクトリ。スクリプトは `Combat/` と `StatsSystem/` を兄弟として読む。
+- `onEquipEffectors` の各 id が **ステータス上どう定義されているか**は [`docs/VANILLA_ON_EQUIP_EFFECTORS.md`](VANILLA_ON_EQUIP_EFFECTORS.md)（要約と再生成手順）を参照。
 - 本ファイルの **問題点の断定**は、上記バニラ `Equipment.json` を正に再生成した表で置き換えること。
 - ビルドや配布形態によって、`**Equipment.json` の正本がかつて `Items/` 直下にあった／パスが異なっていた**という経緯メモもある。**実インストールのツリーを正**に `GOING_MEDIEVAL_ITEMS` を取る。
 

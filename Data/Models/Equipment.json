@@ -28,7 +28,7 @@
         "devCommentWeaponType": "Weapon type: None = 0,TwoHandBow = 1,TwoHandCrossbow = 2, OneHandMace = 3,TwoHandMace = 4,TwoHandStaff = 5,TwoHandSpear = 6 OneHandAxe = 7, TwoHandAxe = 8,OneHandSword = 9,TwoHandSword = 10,TwoHandRam = 11,Trap = 12. will determine animation among other things. see weaponTypeSettings.json for more info. carryHand can be 1 or 2. 1 is the right hand, 2 is the left one. determines what hand is the main hand for the animation",
         "weaponType": "OneHandSword",
         "damage": 2,
-        "ignoresArmor": 0.7,
+        "ignoresArmor": 0.68,
         "armorDamage": 0.6,
         "buildingDamage": 0.4,
         "precision": 1,
@@ -101,7 +101,7 @@
       "carryHand": 1,
       "primaryWeaponMode": {
         "weaponType": "OneHandSword",
-        "damage": 12,
+        "damage": 11.12,
         "ignoresArmor": 0.7,
         "armorDamage": 0.6,
         "buildingDamage": 0.4,
@@ -201,7 +201,7 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandSword",
         "damage": 16,
-        "ignoresArmor": 0.75,
+        "ignoresArmor": 0.72,
         "armorDamage": 0.6,
         "buildingDamage": 0.4,
         "precision": 1,
@@ -931,14 +931,14 @@
       "carryHand": 2,
       "primaryWeaponMode": {
         "weaponType": "TwoHandBow",
-        "damage": 12,
+        "damage": 11.12,
         "ignoresArmor": 0.35,
         "armorDamage": 0.1,
         "buildingDamage": 0,
         "precision": 1,
         "precisionFalloff": 0.02,
         "range": 17.65,
-        "attackSpeed": 3.72,
+        "attackSpeed": 3.52,
         "canFireFlammableProjectiles": true,
         "projectilePrefabAddress": "SimpleArrow",
         "projectileArcHeight": 1.2,
@@ -999,13 +999,13 @@
       "carryHand": 2,
       "primaryWeaponMode": {
         "weaponType": "TwoHandBow",
-        "damage": 20,
+        "damage": 17.82,
         "ignoresArmor": 0.58,
         "armorDamage": 0.1,
         "buildingDamage": 0,
         "precision": 1,
         "precisionFalloff": 0.02,
-        "range": 19.9,
+        "range": 20.9,
         "attackSpeed": 4.72,
         "canFireFlammableProjectiles": true,
         "projectilePrefabAddress": "SimpleArrow",
@@ -1067,14 +1067,14 @@
       "carryHand": 2,
       "primaryWeaponMode": {
         "weaponType": "TwoHandBow",
-        "damage": 24,
-        "ignoresArmor": 0.78,
+        "damage": 21.62,
+        "ignoresArmor": 0.68,
         "armorDamage": 0.1,
         "buildingDamage": 0,
         "precision": 1,
         "precisionFalloff": 0.02,
-        "range": 22.0,
-        "attackSpeed": 5.18,
+        "range": 24.0,
+        "attackSpeed": 5.2,
         "canFireFlammableProjectiles": true,
         "projectilePrefabAddress": "SimpleArrow",
         "projectileArcHeight": 1.2,
@@ -1122,21 +1122,21 @@
       "requiredSkills": [
         {
           "key": "Marksman",
-          "value": 15
+          "value": 20
         }
       ],
       "beautyInputEquipped": 10,
       "carryHand": 2,
       "primaryWeaponMode": {
         "weaponType": "TwoHandBow",
-        "damage": 22,
+        "damage": 25.1,
         "ignoresArmor": 0.7,
         "armorDamage": 0.1,
         "buildingDamage": 0,
         "precision": 1,
         "precisionFalloff": 0.01,
-        "range": 24.1,
-        "attackSpeed": 5.72,
+        "range": 29.5,
+        "attackSpeed": 5.4,
         "canFireFlammableProjectiles": true,
         "projectilePrefabAddress": "SimpleArrow",
         "projectileArcHeight": 1.2,
@@ -1191,13 +1191,13 @@
       "carryHand": 1,
       "primaryWeaponMode": {
         "weaponType": "TwoHandCrossbow",
-        "damage": 26,
-        "ignoresArmor": 0.9,
+        "damage": 25.4,
+        "ignoresArmor": 0.65,
         "armorDamage": 0.2,
         "buildingDamage": 0,
         "precision": 1,
         "precisionFalloff": 0.01,
-        "range": 16.79,
+        "range": 17.29,
         "attackSpeed": 11.25,
         "projectilePrefabAddress": "BoltProjectile",
         "projectileArcHeight": 0.3,
@@ -1252,13 +1252,13 @@
       "carryHand": 1,
       "primaryWeaponMode": {
         "weaponType": "TwoHandCrossbow",
-        "damage": 26,
-        "ignoresArmor": 0.9,
+        "damage": 30.6,
+        "ignoresArmor": 0.72,
         "armorDamage": 0.2,
         "buildingDamage": 0,
         "precision": 1,
         "precisionFalloff": 0.01,
-        "range": 17.44,
+        "range": 18.44,
         "attackSpeed": 12.6,
         "projectilePrefabAddress": "BoltProjectile",
         "projectileArcHeight": 0.3,
@@ -1302,12 +1302,6 @@
           "key": 4,
           "value": "Quiver_Short"
         }
-      ],
-      "requiredSkills": [
-        {
-          "key": "Marksman",
-          "value": 5
-        }
       ]
     },
     {
@@ -1318,20 +1312,20 @@
       "requiredSkills": [
         {
           "key": "Marksman",
-          "value": 10
+          "value": 15
         }
       ],
       "beautyInputEquipped": 10,
       "carryHand": 1,
       "primaryWeaponMode": {
         "weaponType": "TwoHandCrossbow",
-        "damage": 36,
-        "ignoresArmor": 0.92,
+        "damage": 37,
+        "ignoresArmor": 0.85,
         "armorDamage": 0.2,
         "buildingDamage": 0,
         "precision": 1,
         "precisionFalloff": 0.01,
-        "range": 20.11,
+        "range": 21.61,
         "attackSpeed": 13.5,
         "projectilePrefabAddress": "BoltProjectile",
         "projectileArcHeight": 0.3,

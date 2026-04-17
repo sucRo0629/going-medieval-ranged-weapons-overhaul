@@ -361,6 +361,52 @@ def plot_group_stat(
     return out_path
 
 
+def plot_group_expected_armored_dps(
+    *,
+    group_name: str,
+    mode_keys: list[str],
+    mitigation_label: str,
+    mitigation: float,
+    out_dir: Path,
+    vmap: dict[str, dict],
+    mmap: dict[str, dict],
+    wqs_vanilla: dict,
+    wqs_mod: dict,
+) -> Path:
+    fig, ax = plt.subplots(figsize=(11, 6))
+    palette = list(plt.get_cmap("tab20").colors)
+    for idx, mk in enumerate(mode_keys):
+        y_v, y_m = series_pair(mk, vmap, mmap, wqs_vanilla, wqs_mod)
+        col = mode_color(mk, palette, idx)
+        label = MODE_SPECS[mk].label
+        ax.plot(
+            QUALITIES,
+            [SHARED.round2(melee_expected_dps_armor_proxy(s, mitigation)) for s in y_v],
+            linestyle="--",
+            linewidth=1.8,
+            color=col,
+            label=f"{label} (V)",
+        )
+        ax.plot(
+            QUALITIES,
+            [SHARED.round2(melee_expected_dps_armor_proxy(s, mitigation)) for s in y_m],
+            linestyle="-",
+            linewidth=2.1,
+            color=col,
+            label=f"{label} (M)",
+        )
+    ax.set_title(f"{group_name.replace('_', ' ')} — expected armored DPS ({mitigation_label})")
+    ax.set_xlabel("Quality")
+    ax.set_ylabel(f"Expected armored DPS ({mitigation_label})")
+    ax.grid(True, alpha=0.3)
+    ax.legend(bbox_to_anchor=(1.02, 1), loc="upper left", fontsize=7)
+    plt.tight_layout()
+    out_path = out_dir / f"{group_name}_expected_armored_dps_{mitigation_label}_Q1_Q6_vanilla_vs_mod.png"
+    SHARED.savefig_png(fig, out_path, dpi=150, tight=True)
+    plt.close(fig)
+    return out_path
+
+
 def plot_category_group_stat_overlay(
     *,
     group_name: str,
@@ -1340,6 +1386,20 @@ def main() -> None:
                     group_name=group_name,
                     mode_keys=mode_keys,
                     stat=stat,
+                    out_dir=OUT_SAME_TIER,
+                    vmap=vmap,
+                    mmap=mmap,
+                    wqs_vanilla=wqs_vanilla,
+                    wqs_mod=wqs_mod,
+                )
+            )
+        for mitigation_label, mitigation in (("light", 0.28), ("heavy", 0.68)):
+            print(
+                plot_group_expected_armored_dps(
+                    group_name=group_name,
+                    mode_keys=mode_keys,
+                    mitigation_label=mitigation_label,
+                    mitigation=mitigation,
                     out_dir=OUT_SAME_TIER,
                     vmap=vmap,
                     mmap=mmap,

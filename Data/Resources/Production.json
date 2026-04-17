@@ -1,0 +1,220 @@
+{
+  "repository": [
+    {
+      "id": "war_bow",
+      "iconPath": "war_bow",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_war_bow",
+          "info": "equipment_info_war_bow"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 5
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_war_bow",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 25
+        },
+        {
+          "key": 256,
+          "value": 5
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 200,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
+      "id": "long_bow",
+      "iconPath": "long_bow",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_long_bow",
+          "info": "equipment_info_long_bow"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 15
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_long_bow",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 40
+        },
+        {
+          "key": 256,
+          "value": 5
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponLong",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 300,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 600
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
+      "id": "curved_bow",
+      "iconPath": "curved_bow",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_curved_bow",
+          "info": "equipment_info_curved_bow"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 10
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_curved_bow",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 30
+        },
+        {
+          "key": 256,
+          "value": 5
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponLong",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 300,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 500
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    }
+  ]
+}

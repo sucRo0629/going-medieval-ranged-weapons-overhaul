@@ -16,6 +16,7 @@
 | 装備の実装     | `Data/Models/Equipment.json`（`requiredSkills` はトップレベル。門限なしは **キー省略**。`Marksman` の `value: 0` は使わない）                                                             |
 | 品質乗算      | `Data/Models/WeaponQualitySettings.json`（`TWO_HAND_BOW_QUALITY_DELTAS` / `TWO_HAND_CROSSBOW_DAMAGE_ATTACK_OVERRIDES`＝`tools/regenerate_ranged_from_vanilla.py`） |
 | バニラ比較・再同期 | 本体 `Items/Equipment.json` / `Items/WeaponQualitySettings.json`（`[CREATION_POLICY.md](CREATION_POLICY.md)` のパス）                                                  |
+| レシピ・研究（例外時のみ） | `Data/Models/Production.json` / `Data/Models/Research.json`（正本・監査: `[docs/WEAPON_PRODUCTION_RESEARCH_AUDIT.md](../../docs/WEAPON_PRODUCTION_RESEARCH_AUDIT.md)`）。作業台ホワイトリストは `Constructables/ProductionComponentsRepository.json`（再集計: `[scripts/vanilla_production_station_audit.py](../../scripts/vanilla_production_station_audit.py)`） |
 
 
 ### ゲームログ（本体・Unity）
@@ -50,7 +51,7 @@ Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
 ## よくある禁則（短く）
 
 - 旧スキーマのトップレベル `range` / `damage` / `attackSpeed` は使わない（`primaryWeaponMode` / `secondaryWeaponMode` 配下）。`[CREATION_POLICY.md](CREATION_POLICY.md)`
-- `Research.json` / `Production.json` は原則置かない。
+- `Research.json` / `Production.json` は原則置かない（**例外**: 制作不可武器のレシピ／研究解放を Mod で補うときのみ。`[CREATION_POLICY.md](CREATION_POLICY.md)`・`[docs/WEAPON_PRODUCTION_RESEARCH_AUDIT.md](../../docs/WEAPON_PRODUCTION_RESEARCH_AUDIT.md)`）。**`hand_ram` / `metal_hand_ram` は例外に含めない**（制作不可のまま）。**`macabre_*` / `forest_*` は敵専用のまま**（解禁対象にしない）。
 - 浮動小数の装備パラメータは **小数第2位・四捨五入**（`[CREATION_POLICY.md](CREATION_POLICY.md)`）。
 - **品質で変化/固定**: 装備側に「品質別の値」を埋め込まない（品質曲線は品質テーブル側）。分類の正本は `CREATION_POLICY.md` の「品質で変化させる値／固定すべき値」節。
 

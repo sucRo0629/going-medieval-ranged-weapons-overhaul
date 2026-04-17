@@ -1,0 +1,38 @@
+{
+  "repository": [
+    {
+      "id": "fletchering_lvl2",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "research_name_fletchering_lvl2"
+        }
+      ],
+      "iconActive": "fletchering_lvl2",
+      "iconUnlocked": "fletchering_lvl2_unlocked",
+      "iconLocked": "fletchering_lvl2_locked",
+      "nextNodesIDs": [
+        "crossbows_lvl2"
+      ],
+      "requiredResources": {
+        "keys": [
+          "basic_research_book"
+        ],
+        "values": [
+          30
+        ]
+      },
+      "unlocks": [
+        {
+          "unlockId": "long_bow"
+        },
+        {
+          "unlockId": "curved_bow"
+        },
+        {
+          "unlockId": "sling_staff"
+        }
+      ]
+    }
+  ]
+}

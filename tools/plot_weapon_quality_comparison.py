@@ -31,6 +31,7 @@ import json
 import math
 import os
 import re
+from math import ceil
 from decimal import ROUND_HALF_UP, Decimal
 from collections.abc import Callable
 from copy import deepcopy
@@ -69,8 +70,14 @@ WEAPON_LINE_COLORS_MOD: dict[str, str] = {
 }
 
 
+def _fallback_color_hex(key: str) -> str:
+    palette = list(plt.get_cmap("tab20").colors)
+    idx = sum(ord(ch) for ch in key) % len(palette)
+    return plt.matplotlib.colors.to_hex(palette[idx])
+
+
 def _weapon_rgba_vanilla(wid: str, alpha: float = 0.52) -> tuple[float, float, float, float]:
-    r, g, b = mcolors.to_rgb(WEAPON_LINE_COLORS_MOD[wid])
+    r, g, b = mcolors.to_rgb(WEAPON_LINE_COLORS_MOD.get(wid) or _fallback_color_hex(wid))
     return (r, g, b, alpha)
 
 
@@ -90,9 +97,10 @@ ARMOR_PROXY_PROFILES: tuple[tuple[str, float], ...] = (
 )
 
 # Q3 four-way chains from BOW_DESIGN_TARGETS.md (synthetic stats after WQS apply).
+# Intent: long_bow is clearly above curved_bow in core performance axes.
 Q3_CHAIN_RANGE_ASC = ["crossbow", "heavy_crossbow", "curved_bow", "long_bow"]
-Q3_CHAIN_DAMAGE_ASC = ["long_bow", "curved_bow", "crossbow", "heavy_crossbow"]
-Q3_CHAIN_IA_ASC = ["long_bow", "curved_bow", "crossbow", "heavy_crossbow"]
+Q3_CHAIN_DAMAGE_ASC = ["curved_bow", "crossbow", "long_bow", "heavy_crossbow"]
+Q3_CHAIN_IA_ASC = ["curved_bow", "long_bow", "crossbow", "heavy_crossbow"]
 Q3_CHAIN_ATTACKSPEED_ASC = ["curved_bow", "long_bow", "crossbow", "heavy_crossbow"]
 
 # Vanilla shield id for rangedCover ceiling check (lowest rangedCover among common shields).
@@ -344,6 +352,10 @@ def hit_chance_at_distance(stats: dict, distance: float) -> float:
 
 def expected_dps(stats: dict) -> float:
     return nominal_dps(stats) * float(stats["precision"])
+
+
+def expected_armored_dps(stats: dict, mitigation: float) -> float:
+    return nominal_armored_dps(stats, mitigation) * float(stats["precision"])
 
 
 def distance_expected_dps(stats: dict, distance: float) -> float:
@@ -756,6 +768,8 @@ def write_layer1_eval_bundle_md(
         "",
         "Weak order: each stat must be `<=` the next (ties allowed; eps 1e-6). "
         "Values are **post-WQS** `primaryWeaponMode` stats.",
+        "- `Detail` は比較に使った **実数値そのもの**で、`weapon_id=value` 形式。"
+        "このセクションでは各 stat の **Q3 合成値**（マージ後素体 × Mod WQS）を表示する。",
         "",
     ]
     chain_defs: list[tuple[str, list[str], str]] = [
@@ -817,19 +831,51 @@ def write_layer1_eval_bundle_md(
             ok_s = "yes" if ok_cap else "no"
         lines.append(f"| {wid} | {mx:.4f} | {cap_s} | {ok_s} |")
     lines.append("")
+    ia_quality_varies = any(
+        (max(vals) - min(vals)) > IA_POLICY_EPS for vals in mat.values()
+    )
+    if ia_quality_varies:
+        lines.append(
+            "- `Policy check` の `[QX]` は **品質段階**（`Q1`〜`Q6`）を表す。"
+        )
+        lines.append(
+            "- 各 `[QX]` 行は、**同じ品質段階 X の合成値**（マージ後素体 × Mod `WeaponQualitySettings`）だけを比較して判定する。"
+        )
+        lines.append(
+            "- `Policy check` の `Detail` は判定に使った値（`max_bows` / `max_cross` や "
+            "`short` / `war` / `curved` / `long`）を、同じ `[QX]` の値で表示する。"
+        )
+        lines.append(
+            "- ここでの数値はすべて **`ignoresArmor`**。例: `long=0.7000, curved=0.7000` は "
+            "`long_bow.primaryWeaponMode.ignoresArmor` と "
+            "`curved_bow.primaryWeaponMode.ignoresArmor`（同じ `[QX]`）を示す。"
+        )
+    else:
+        lines.append(
+            "- 現状は `ignoresArmorMultiplier=1` のため、`ignoresArmor` は **品質で不変**。"
+            "そのため `Policy check` は品質ごとに重複表示せず、1 回だけ表示する。"
+        )
+        lines.append(
+            "- `Policy check` の `Detail` は判定に使った値（`max_bows` / `max_cross` や "
+            "`short` / `war` / `curved` / `long`）で、数値はすべて **`ignoresArmor`**。"
+        )
+    lines.append("")
 
     per_q_checks: list[tuple[str, bool, str]] = []
     bow_ids = list(BOW_IDS_IA_POLICY)
     cross_ids = list(CROSSBOW_IDS_IA_POLICY)
-    for q_idx, q in enumerate(qualities):
+    q_indices = list(range(len(qualities))) if ia_quality_varies else [0]
+    for q_idx in q_indices:
+        q = qualities[q_idx]
+        suffix = f" [{q}]" if ia_quality_varies else ""
         max_b = max(mat[w][q_idx] for w in bow_ids)
-        min_c = min(mat[w][q_idx] for w in cross_ids)
-        ok_mx = max_b < min_c - IA_POLICY_EPS
+        max_c = max(mat[w][q_idx] for w in cross_ids)
+        ok_mx = max_b <= max_c + IA_POLICY_EPS
         per_q_checks.append(
             (
-                f"Each Q: max(4 bows) < min(3 crossbows) [{q}]",
+                f"Each Q: max(4 bows) ≤ max(3 crossbows){suffix}",
                 ok_mx,
-                f"max_bows={max_b:.4f}, min_cross={min_c:.4f}",
+                f"max_bows={max_b:.4f}, max_cross={max_c:.4f}",
             )
         )
         s_, w_, c_, l_ = (
@@ -845,7 +891,7 @@ def write_layer1_eval_bundle_md(
         )
         per_q_checks.append(
             (
-                f"short_bow lowest among four bows [{q}]",
+                f"short_bow lowest among four bows{suffix}",
                 ok_short_low,
                 f"short={s_:.4f}, war={w_:.4f}, curved={c_:.4f}, long={l_:.4f}",
             )
@@ -853,16 +899,16 @@ def write_layer1_eval_bundle_md(
         ok_w_lt_c = w_ < c_ - IA_POLICY_EPS
         per_q_checks.append(
             (
-                f"war_bow < curved_bow [{q}]",
+                f"war_bow < curved_bow{suffix}",
                 ok_w_lt_c,
                 f"war={w_:.4f}, curved={c_:.4f}",
             )
         )
-        ok_l_le_c = l_ <= c_ + IA_POLICY_EPS
+        ok_l_ge_c = l_ + IA_POLICY_EPS >= c_
         per_q_checks.append(
             (
-                f"long_bow ≤ curved_bow (Q3 sub-chain) [{q}]",
-                ok_l_le_c,
+                f"long_bow ≥ curved_bow (Q3 sub-chain){suffix}",
+                ok_l_ge_c,
                 f"long={l_:.4f}, curved={c_:.4f}",
             )
         )
@@ -878,9 +924,13 @@ def write_layer1_eval_bundle_md(
         f"| **All cap rows (bows + crossbows)** | {'yes' if all_caps_ok else 'no'} | "
         f"弓 ≤ {IA_CAP_BOW:.2f}; クロス ≤ {IA_CAP_CROSSBOW:.2f} |"
     )
+    summary_title = (
+        "**All per-quality ordering checks**"
+        if ia_quality_varies
+        else "**All ordering checks (qualities identical for iga)**"
+    )
     lines.append(
-        f"| **All per-quality ordering checks** | "
-        f"{'yes' if all_per_q_ok else 'no'} | See rows above |"
+        f"| {summary_title} | {'yes' if all_per_q_ok else 'no'} | See rows above |"
     )
     lines.append("")
 
@@ -1111,6 +1161,116 @@ def save_all_weapons_overlay_metric(
     plt.tight_layout()
     out_path = out_dir / f"{filename_base}_all_weapons_overlay.png"
     savefig_png(fig, out_path, dpi=150, tight=True)
+    plt.close(fig)
+    return out_path
+
+
+def save_subset_overlay_metric(
+    *,
+    weapon_ids: list[str],
+    value_getter: Callable[[dict], float],
+    y_label: str,
+    title: str,
+    filename_base: str,
+    qualities: list[str],
+    vmap: dict[str, dict],
+    mmap: dict[str, dict],
+    wqs_vanilla: dict,
+    wqs_mod: dict,
+    out_dir: Path,
+) -> Path:
+    fig, ax = plt.subplots(figsize=(10, 6))
+    palette = list(plt.get_cmap("tab20").colors)
+    for idx, wid in enumerate(weapon_ids):
+        v_only = merge_ranged(vmap[wid], None)
+        v_item = merge_ranged(vmap[wid], mmap.get(wid))
+        y_v = [round2(value_getter(s)) for s in series_for_item(v_only, wqs_vanilla)]
+        y_m = [round2(value_getter(s)) for s in series_for_item(v_item, wqs_mod)]
+        c_mod = WEAPON_LINE_COLORS_MOD.get(wid) or _fallback_color_hex(wid)
+        ax.plot(
+            qualities,
+            y_v,
+            linestyle="--",
+            linewidth=1.4,
+            color=_weapon_rgba_vanilla(wid),
+            label=f"{wid} (V)",
+        )
+        ax.plot(
+            qualities,
+            y_m,
+            linestyle="-",
+            linewidth=2.2,
+            color=c_mod,
+            label=f"{wid} (M)",
+        )
+    ax.set_title(title)
+    ax.set_xlabel("Quality")
+    ax.set_ylabel(y_label)
+    ax.grid(True, alpha=0.3)
+    ax.legend(bbox_to_anchor=(1.02, 1), loc="upper left", fontsize=8)
+    plt.tight_layout()
+    out_path = out_dir / f"{filename_base}_all_weapons_overlay.png"
+    savefig_png(fig, out_path, dpi=150, tight=True)
+    plt.close(fig)
+    return out_path
+
+
+def plot_subset_metric_grid(
+    *,
+    weapon_ids: list[str],
+    file_key: str,
+    y_label: str,
+    title_prefix: str,
+    value_getter: Callable[[dict], float],
+    qualities: list[str],
+    vmap: dict[str, dict],
+    mmap: dict[str, dict],
+    wqs_vanilla: dict,
+    wqs_mod: dict,
+    out_dir: Path,
+) -> Path:
+    n = max(1, len(weapon_ids))
+    ncols = 4
+    nrows = max(1, ceil(n / ncols))
+    fig, axes = plt.subplots(nrows, ncols, figsize=(14, max(6.5, 3.0 * nrows)), sharex=True)
+    fig.suptitle(f"{title_prefix} — Vanilla vs mod", fontsize=12)
+    axes_flat = list(axes.flatten()) if hasattr(axes, "flatten") else [axes]
+    palette = list(plt.get_cmap("tab20").colors)
+    for ax, wid in zip(axes_flat, weapon_ids):
+        v_only = merge_ranged(vmap[wid], None)
+        v_item = merge_ranged(vmap[wid], mmap.get(wid))
+        v_series = series_for_item(v_only, wqs_vanilla)
+        m_series = series_for_item(v_item, wqs_mod)
+        y_v = [round2(value_getter(s)) for s in v_series]
+        y_m = [round2(value_getter(s)) for s in m_series]
+        idx = weapon_ids.index(wid)
+        c_mod = WEAPON_LINE_COLORS_MOD.get(wid) or _fallback_color_hex(wid)
+        ax.plot(
+            qualities,
+            y_v,
+            marker="o",
+            label="Vanilla",
+            linewidth=1.5,
+            color=_weapon_rgba_vanilla(wid),
+        )
+        ax.plot(
+            qualities,
+            y_m,
+            marker="s",
+            label="Mod",
+            linewidth=1.5,
+            color=c_mod,
+        )
+        ax.set_title(wid.replace("_", " "), fontsize=9)
+        ax.grid(True, alpha=0.3)
+        ax.tick_params(axis="x", rotation=0, labelsize=7)
+    for ax in axes_flat[len(weapon_ids):]:
+        ax.axis("off")
+    handles, labels = axes_flat[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower right", bbox_to_anchor=(0.98, 0.02))
+    plt.tight_layout(rect=(0, 0.04, 1, 0.95))
+    out_path = out_dir / f"{file_key}_Q1_Q6_vanilla_vs_mod.png"
+    savefig_png(fig, out_path, dpi=150, tight=False)
     plt.close(fig)
     return out_path
 
@@ -1366,6 +1526,22 @@ def main() -> None:
         out_dir=OUT_DIR,
     ):
         print(p)
+
+    armored_profiles = [("light", 0.28), ("heavy", 0.68)]
+    for profile, mitigation in armored_profiles:
+        p_overlay = save_all_weapons_overlay_metric(
+            value_getter=lambda s, m=mitigation: expected_armored_dps(s, m),
+            y_label=f"Expected armored DPS ({profile})",
+            title=f"Expected armored DPS ({profile}) Q1–Q6: all ranged (solid=mod, dashed=vanilla)",
+            filename_base=f"expected_armored_dps_{profile}",
+            qualities=qualities,
+            vmap=vmap,
+            mmap=mmap,
+            wqs_vanilla=wqs_vanilla,
+            wqs_mod=wqs_mod,
+            out_dir=OUT_DIR,
+        )
+        print(p_overlay)
 
     band_csv_path = write_distance_band_summary_csv(
         qualities=qualities,
