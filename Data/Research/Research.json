@@ -33,6 +33,150 @@
           "unlockId": "sling_staff"
         }
       ]
+    },
+    {
+      "id": "crossbows_lvl2",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "research_name_crossbows_lvl2"
+        }
+      ],
+      "iconActive": "crossbows_lvl3",
+      "iconUnlocked": "crossbows_lvl3_unlocked",
+      "iconLocked": "crossbows_lvl3_locked",
+      "nextNodesIDs": [
+        "crossbows_lvl3"
+      ],
+      "requiredResources": {
+        "keys": [
+          "basic_research_book",
+          "normal_research_book"
+        ],
+        "values": [
+          30,
+          20
+        ]
+      },
+      "unlocks": [
+        {
+          "unlockId": "light_crossbow"
+        },
+        {
+          "unlockId": "crossbow"
+        }
+      ]
+    },
+    {
+      "id": "swords_lvl2",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "research_name_swords_lvl2"
+        }
+      ],
+      "iconActive": "swords_lvl2",
+      "iconUnlocked": "swords_lvl2_unlocked",
+      "iconLocked": "swords_lvl2_locked",
+      "requiredResources": {
+        "keys": [
+          "basic_research_book",
+          "normal_research_book"
+        ],
+        "values": [
+          30,
+          20
+        ]
+      },
+      "unlocks": [
+        {
+          "unlockId": "longsword"
+        },
+        {
+          "unlockId": "greatsword"
+        }
+      ]
+    },
+    {
+      "id": "woodwork_lvl2",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "research_name_woodwork_lvl2"
+        }
+      ],
+      "iconActive": "woodwork_lvl1",
+      "iconUnlocked": "woodwork_lvl1_unlocked",
+      "iconLocked": "woodwork_lvl1_locked",
+      "requiredResources": {
+        "keys": [
+          "basic_research_book",
+          "normal_research_book"
+        ],
+        "values": [
+          30,
+          20
+        ]
+      },
+      "unlocks": [
+        {
+          "unlockId": "flail"
+        },
+        {
+          "unlockId": "two_handed_flail"
+        },
+        {
+          "unlockId": "warfork"
+        }
+      ]
+    },
+    {
+      "id": "maces_lvl2",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "research_name_maces_lvl2"
+        }
+      ],
+      "iconActive": "maces_lvl2",
+      "iconUnlocked": "maces_lvl2_unlocked",
+      "iconLocked": "maces_lvl2_locked",
+      "requiredResources": {
+        "keys": [
+          "basic_research_book",
+          "normal_research_book"
+        ],
+        "values": [
+          30,
+          20
+        ]
+      },
+      "unlocks": [
+        {
+          "unlockId": "mace"
+        },
+        {
+          "unlockId": "two_handed_mace"
+        },
+        {
+          "unlockId": "military_pick"
+        },
+        {
+          "unlockId": "reinforced_flail"
+        },
+        {
+          "unlockId": "two_handed_flail"
+        },
+        {
+          "unlockId": "two_handed_flanged_mace"
+        },
+        {
+          "unlockId": "two_handed_warhammer"
+        },
+        {
+          "unlockId": "warhammer"
+        }
+      ]
     }
   ]
 }

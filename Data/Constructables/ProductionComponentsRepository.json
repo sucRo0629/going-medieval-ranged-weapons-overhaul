@@ -19,6 +19,7 @@
         "war_bow",
         "curved_bow",
         "long_bow",
+        "light_crossbow",
         "crossbow",
         "heavy_crossbow",
         "practice_target",
@@ -29,6 +30,107 @@
           "x": 0,
           "y": 1.7,
           "z": 0.3
+        }
+      },
+      "effectTransformSettings": {
+        "positionOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "id": "blacksmith_station",
+      "productionSpeedMultiplier": {
+        "outside": 0.8,
+        "inside": 1.1,
+        "roofed": 1,
+        "outsideRain": 0.5,
+        "outsideSnow": 0.45,
+        "outsideFog": 0.75
+      },
+      "interactAnimation": "TableHammering",
+      "interactTool": "hammer_item",
+      "activeThermalModelID": "stove",
+      "canProtectAgainstPredatorsWhileActive": true,
+      "productions": [
+        "mechanical_parts",
+        "short_sword",
+        "longsword",
+        "mace",
+        "two_handed_mace",
+        "hatchet",
+        "greataxe",
+        "throwing_axes",
+        "berdiche",
+        "mirror_wall",
+        "shackles",
+        "dismantle_metal",
+        "dagger",
+        "falchion",
+        "knightly_sword",
+        "greatsword",
+        "military_pick",
+        "warhammer",
+        "two_handed_warhammer",
+        "two_handed_flanged_mace",
+        "billhook",
+        "reinforced_spear",
+        "reinforced_flail",
+        "two_handed_flail"
+      ],
+      "productionEffectPrefabId": "BlacksmithProductionActive",
+      "productionSound": "BlacksmithForge",
+      "productionMarkerOffset": {
+        "positionOffset": {
+          "x": 0.5,
+          "y": 2,
+          "z": 0.75
+        }
+      },
+      "effectTransformSettings": {
+        "positionOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "id": "woodwork_bench",
+      "productionSpeedMultiplier": {
+        "outside": 0.8,
+        "inside": 1.1,
+        "roofed": 1,
+        "outsideRain": 0.5,
+        "outsideSnow": 0.18,
+        "outsideFog": 0.75
+      },
+      "interactAnimation": "Sawing",
+      "interactTool": "saw_item",
+      "productions": [
+        "cudgel",
+        "spear",
+        "light_javelins",
+        "flail",
+        "two_handed_flail",
+        "wood_mechanical_parts",
+        "wood_statue_large",
+        "wood_statue_wall",
+        "practice_target",
+        "basic_ballista_ammo",
+        "dismantle_wood",
+        "bludgeon",
+        "warfork",
+        "reinforced_spear",
+        "reinforced_flail"
+      ],
+      "productionMarkerOffset": {
+        "positionOffset": {
+          "x": 0,
+          "y": 1.5,
+          "z": 0
         }
       },
       "effectTransformSettings": {

@@ -5,8 +5,9 @@ at least one workstation), with recipe summary and research unlocks.
 
 Tables are **split by weapon type** (`primaryWeaponMode.weaponType`) from **Mod**
 `Data/Models/Equipment.json` when provided (fallback: vanilla `Items/Equipment.json`).
-Rows within each table are sorted by **design tier** (bows/crossbows per
-`BOW_DESIGN_TARGETS` T1–T4) or by recipe skill gates (melee / other).
+Rows within each table are sorted by **design tier** (`weapon_table_common.DESIGN_TIER_ALL`)
+when the weapon id is listed there; otherwise by fallback rules (Marksman for bows/crossbows,
+range for slings, recipe skills for melee).
 
 Requires:
   StreamingAssets/Items/Equipment.json
@@ -32,16 +33,11 @@ from collections import deque
 from pathlib import Path
 from typing import Any
 
-# 弓／クロス並び順: [BOW_DESIGN_TARGETS.md] のティア表に合わせる（数値が小さいほど序盤）。
-_DESIGN_TIER_SORT: dict[str, tuple[int, str]] = {
-    "short_bow": (1, "T1"),
-    "war_bow": (2, "T2"),
-    "light_crossbow": (2, "T2"),
-    "curved_bow": (3, "T3"),
-    "crossbow": (3, "T3"),
-    "long_bow": (4, "T4"),
-    "heavy_crossbow": (4, "T4"),
-}
+_SCRIPTS = Path(__file__).resolve().parent
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+
+from weapon_table_common import tier_display, tier_sort_key
 
 # セクション見出し順（weaponType）
 _WEAPON_TYPE_SECTION_ORDER: list[str] = [
@@ -282,65 +278,6 @@ def _weapon_type_from_equip(eq_row: dict) -> str:
     return "Unknown"
 
 
-def _tier_sort_key(
-    wid: str,
-    wtype: str,
-    prod: dict,
-    equip_row: dict,
-) -> tuple:
-    """Lower tuple sorts earlier. Used within one weaponType group."""
-    if wtype in ("TwoHandBow", "TwoHandCrossbow"):
-        if wid in _DESIGN_TIER_SORT:
-            return (0, _DESIGN_TIER_SORT[wid][0], wid)
-        m = _skill_val(equip_row, "Marksman")
-        mv = m if m is not None else -1
-        return (1, mv, wid)
-    if wtype in ("OneHandSling", "TwoHandSling"):
-        r = equip_row.get("primaryWeaponMode") or {}
-        rng = r.get("range")
-        try:
-            rv = float(rng) if rng is not None else 0.0
-        except (TypeError, ValueError):
-            rv = 0.0
-        return (0, rv, wid)
-    sm = _skill_val(prod, "Smithing")
-    cr = _skill_val(prod, "Carpentry")
-    tl = _skill_val(prod, "Tailoring")
-    # 木工作業台のみ（Carpentry のみ）を鍛冶より先に並べる
-    if sm is None and cr is not None:
-        bench = 0
-    elif sm is not None:
-        bench = 1
-    else:
-        bench = 2
-    return (bench, sm or 0, cr or 0, tl or 0, wid)
-
-
-def _tier_display(wid: str, wtype: str, prod: dict, equip_row: dict) -> str:
-    if wtype in ("TwoHandBow", "TwoHandCrossbow") and wid in _DESIGN_TIER_SORT:
-        _, label = _DESIGN_TIER_SORT[wid]
-        return f"設計{label}"
-    if wtype in ("TwoHandBow", "TwoHandCrossbow"):
-        m = _skill_val(equip_row, "Marksman")
-        if m is not None:
-            return f"門限 Marksman {m}"
-        return "門限なし（Mod）"
-    if wtype in ("OneHandSling", "TwoHandSling"):
-        return "射程・素体順（短いほど先）"
-    sm = _skill_val(prod, "Smithing")
-    cr = _skill_val(prod, "Carpentry")
-    tl = _skill_val(prod, "Tailoring")
-    bits = []
-    if sm is not None:
-        bits.append(f"Smithing {sm}")
-    if cr is not None:
-        bits.append(f"Carpentry {cr}")
-    if tl is not None:
-        bits.append(f"Tailoring {tl}")
-    body = "レシピ " + ", ".join(bits) if bits else "—"
-    return body
-
-
 def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
     eq_path = sa / "Items" / "Equipment.json"
     prod_path = sa / "Resources" / "Production.json"
@@ -394,7 +331,7 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
         "- **武器** = `Items/Equipment.json` の `itemType == 1`。",
         "- **製作可能** = 同名の `Production.repository[].id` があり、かつ `ProductionComponentsRepository` のいずれかの `productions` にその id が含まれる。",
         "- **武器種**: `primaryWeaponMode.weaponType`（**Mod の `Equipment.json` があれば優先**、無い id はバニラ装備で補完）。",
-        "- **ティア順**: 弓／クロスは **[BOW_DESIGN_TARGETS.md](../implementation_policies/ranged/BOW_DESIGN_TARGETS.md) の T1–T4** に対応する `設計T*`。スリング系は **合成射程の短い順**（Mod の `range`）。その他は **レシピ要求スキル**で、同一武器種内では **木工のみ（Carpentry のみ）を鍛冶レシピより先**に並べる。",
+        "- **ティア順**: `scripts/weapon_table_common.py` の **`DESIGN_TIER_ALL`** に載る id は **`設計T*`**（全武器種共通）。未登録 id は弓／クロスは **Marksman 門限**、スリングは **合成射程の短い順**（Mod の `range`）、その他は **レシピ要求スキル**（同一武器種内で **Carpentry のみを鍛冶より先**）。",
         "- **研究**: 各ノードの **`unlocks[].unlockId`** が `Production.id` と一致するものを正とする。併せて JSON 全体の文字列一致で補足ヒットを拾う（稀な定義用）。",
         "- **深さ**: `nextNodesIDs` から作った木で、ルート（誰の `nextNodesIDs` の先でもない id）からの BFS 深さ。複数ルートがある場合は最短。",
         "",
@@ -414,7 +351,7 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
     for wt in by_wt:
         by_wt[wt] = sorted(
             by_wt[wt],
-            key=lambda wid: _tier_sort_key(
+            key=lambda wid: tier_sort_key(
                 wid,
                 wt,
                 prod_by_id[wid],
@@ -442,7 +379,7 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
             stations = ", ".join(f"`{x}`" for x in station_map.get(w, []))
             rec = _recipe_summary(prod)
             sk = _skills(prod)
-            tier = _tier_display(w, wt, prod, eqr)
+            tier = tier_display(w, wt, prod, eqr)
             rids = unlock.get(w, [])
             rparts: list[str] = []
             for rid in rids:

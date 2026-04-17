@@ -43,6 +43,10 @@
 - **鈍器（装備損耗主軸）**
   - `ignoresArmor` は最低帯、`armorDamage` は最上位、`damage` は最低帯に置く。
   - 重装対応は貫通ではなく、防具損耗による実効軽減率低下で表現する。
+  - **メイス系**（cudgel / bludgeon / mace / military_pick / two_handed_mace / two_handed_flanged_mace）は、同Tier内で「やや高ダメージ・中速」の汎用枠。
+    - 低Tier帯では `cudgel` を入門、`bludgeon` を同Tier上位（高ダメージ・高装備損耗・やや低精度/低速）として段差を作る。
+  - **フレイル系**（flail / reinforced_flail / two_handed_flail）は、同Tier内で「低貫通・高 `armorDamage`」の装備損耗特化枠。
+  - **ウォーハンマー系**（warhammer / two_handed_warhammer）は、同Tier内で「低 `ignoresArmor` を維持しつつ、高単発・高 `armorDamage`」の重装突破枠。
 
 ### 数値レンジ（実装ガイド）
 

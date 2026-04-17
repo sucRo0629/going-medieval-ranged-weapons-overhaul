@@ -2,8 +2,8 @@
 Generate melee/throwing vanilla-vs-mod quality charts and summaries.
 
 Outputs:
-- quality_charts/melee_throwing/same_tier/      (tier-matched comparisons, overlay)
-- quality_charts/melee_throwing/by_category/    (per category + stat: grid `*_Q1_Q6_vanilla_vs_mod.png` and
+- quality_charts/melee_throwing/same_tier/<tier>/      (tier-matched comparisons, overlay)
+- quality_charts/melee_throwing/by_category/<category>/    (per category + stat: grid `*_Q1_Q6_vanilla_vs_mod.png` and
   overlay `*_all_weapons_overlay.png`, same idea as `tools/plot_weapon_quality_comparison.py` ranged outputs)
 - quality_charts/melee_throwing/layer1_eval_bundle.md
 - quality_charts/melee_throwing/script/         (tier/category stat summary CSVs)
@@ -18,6 +18,7 @@ import csv
 import importlib.util
 import math
 import statistics
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -26,6 +27,11 @@ import matplotlib.pyplot as plt
 _THIS = Path(__file__).resolve()
 _ROOT = _THIS.parent.parent
 _RANGED_PLOT = _THIS.parent / "plot_weapon_quality_comparison.py"
+_SCRIPTS = _ROOT / "scripts"
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+
+import weapon_table_common as WCOMMON
 
 
 def _load_shared():
@@ -122,11 +128,28 @@ MODE_SPECS: dict[str, WeaponMode] = {
     "light_javelins_melee": WeaponMode("light_javelins", "secondary", "light_javelins_melee", "spear"),
 }
 
-SAME_TIER_GROUPS: dict[str, list[str]] = {
-    "tier_novice": ["dagger", "cudgel", "spear", "hatchet"],
-    "tier_skilled": ["knightly_sword", "mace", "reinforced_spear", "greataxe"],
-    "tier_heavy": ["greatsword", "two_handed_mace", "berdiche", "greataxe"],
-}
+def _tier_sort_key(label: str) -> tuple[int, str]:
+    if label.startswith("T"):
+        try:
+            return (0, int(label[1:]))
+        except ValueError:
+            pass
+    return (1, label)
+
+
+def build_same_tier_groups() -> dict[str, list[str]]:
+    grouped: dict[str, list[str]] = {}
+    for mode_key, spec in MODE_SPECS.items():
+        tier_label = WCOMMON.DESIGN_TIER_ALL.get(spec.weapon_id, (99, "未割当"))[1]
+        group_name = f"tier_{tier_label}"
+        grouped.setdefault(group_name, []).append(mode_key)
+    out: dict[str, list[str]] = {}
+    for group_name in sorted(grouped, key=lambda g: _tier_sort_key(g.removeprefix("tier_"))):
+        out[group_name] = sorted(grouped[group_name], key=lambda mk: MODE_SPECS[mk].label)
+    return out
+
+
+SAME_TIER_GROUPS: dict[str, list[str]] = build_same_tier_groups()
 
 CATEGORY_GROUPS: dict[str, list[str]] = {
     "sword_family": SWORDS,
@@ -194,34 +217,10 @@ THROW_MODE_COLORS: dict[str, str] = {
     "light_javelins_melee": "#B39DDB",
 }
 
-# Display tier for per-weapon chart titles (aligned with same_tier chart intent).
+# Display tier for per-weapon chart titles (source: `scripts/weapon_table_common.py` DESIGN_TIER_ALL).
 WEAPON_TIER_DISPLAY: dict[str, str] = {
-    "dagger": "Novice",
-    "cudgel": "Novice",
-    "spear": "Novice",
-    "hatchet": "Novice",
-    "bludgeon": "Novice",
-    "short_sword": "Novice",
-    "falchion": "Skilled",
-    "knightly_sword": "Skilled",
-    "longsword": "Skilled",
-    "warfork": "Skilled",
-    "billhook": "Skilled",
-    "reinforced_spear": "Skilled",
-    "mace": "Skilled",
-    "warhammer": "Skilled",
-    "flail": "Skilled",
-    "reinforced_flail": "Skilled",
-    "military_pick": "Skilled",
-    "greataxe": "Skilled",
-    "throwing_axes": "Skilled",
-    "light_javelins": "Skilled",
-    "greatsword": "Heavy",
-    "berdiche": "Heavy",
-    "two_handed_mace": "Heavy",
-    "two_handed_flanged_mace": "Heavy",
-    "two_handed_warhammer": "Heavy",
-    "two_handed_flail": "Heavy",
+    spec.weapon_id: WCOMMON.DESIGN_TIER_ALL.get(spec.weapon_id, (99, "未割当"))[1]
+    for spec in MODE_SPECS.values()
 }
 
 _wids_in_modes = {MODE_SPECS[k].weapon_id for k in MODE_SPECS}
@@ -327,6 +326,7 @@ def plot_group_stat(
     wqs_vanilla: dict,
     wqs_mod: dict,
 ) -> Path:
+    out_dir.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(11, 6))
     palette = list(plt.get_cmap("tab20").colors)
     for idx, mk in enumerate(mode_keys):
@@ -373,6 +373,7 @@ def plot_group_expected_armored_dps(
     wqs_vanilla: dict,
     wqs_mod: dict,
 ) -> Path:
+    out_dir.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(11, 6))
     palette = list(plt.get_cmap("tab20").colors)
     for idx, mk in enumerate(mode_keys):
@@ -419,6 +420,7 @@ def plot_category_group_stat_overlay(
     wqs_mod: dict,
 ) -> Path:
     """All modes in one axes — mirrors ranged `save_all_weapons_overlay` → `*_all_weapons_overlay.png`."""
+    out_dir.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(10, 6))
     palette = list(plt.get_cmap("tab20").colors)
     group_title = group_name.replace("_", " ")
@@ -466,6 +468,7 @@ def plot_category_group_stat_grid(
     wqs_mod: dict,
 ) -> Path:
     """One figure per category + stat: subplot per weapon/mode (same layout idea as ranged `*_Q1_Q6_vanilla_vs_mod.png`)."""
+    out_dir.mkdir(parents=True, exist_ok=True)
     n = len(mode_keys)
     if n == 0:
         raise ValueError("mode_keys is empty")
@@ -1279,8 +1282,8 @@ def write_layer1_bundle(
         "",
         "## Outputs",
         "",
-        "- same tier: `quality_charts/melee_throwing/same_tier/`",
-        "- by category: `quality_charts/melee_throwing/by_category/` — per stat: "
+        "- same tier: `quality_charts/melee_throwing/same_tier/<tier>/`",
+        "- by category: `quality_charts/melee_throwing/by_category/<category>/` — per stat: "
         "`{group}_{stat}_Q1_Q6_vanilla_vs_mod.png` (grid) and `{group}_{stat}_all_weapons_overlay.png` (overlay), "
         "same pattern as ranged `tools/plot_weapon_quality_comparison.py`",
         "- summaries: `quality_charts/melee_throwing/script/same_tier_q1_q6_summary.csv`, `quality_charts/melee_throwing/script/by_category_q1_q6_summary.csv`",
@@ -1380,13 +1383,14 @@ def main() -> None:
         out_dir.mkdir(parents=True, exist_ok=True)
 
     for group_name, mode_keys in SAME_TIER_GROUPS.items():
+        tier_dir = OUT_SAME_TIER / group_name
         for stat in STAT_SPECS:
             print(
                 plot_group_stat(
                     group_name=group_name,
                     mode_keys=mode_keys,
                     stat=stat,
-                    out_dir=OUT_SAME_TIER,
+                    out_dir=tier_dir,
                     vmap=vmap,
                     mmap=mmap,
                     wqs_vanilla=wqs_vanilla,
@@ -1400,7 +1404,7 @@ def main() -> None:
                     mode_keys=mode_keys,
                     mitigation_label=mitigation_label,
                     mitigation=mitigation,
-                    out_dir=OUT_SAME_TIER,
+                    out_dir=tier_dir,
                     vmap=vmap,
                     mmap=mmap,
                     wqs_vanilla=wqs_vanilla,
@@ -1409,13 +1413,14 @@ def main() -> None:
             )
 
     for group_name, mode_keys in CATEGORY_GROUPS.items():
+        cat_dir = OUT_BY_CATEGORY / group_name
         for stat in STAT_SPECS:
             print(
                 plot_category_group_stat_grid(
                     group_name=group_name,
                     mode_keys=mode_keys,
                     stat=stat,
-                    out_dir=OUT_BY_CATEGORY,
+                    out_dir=cat_dir,
                     vmap=vmap,
                     mmap=mmap,
                     wqs_vanilla=wqs_vanilla,
@@ -1427,7 +1432,7 @@ def main() -> None:
                     group_name=group_name,
                     mode_keys=mode_keys,
                     stat=stat,
-                    out_dir=OUT_BY_CATEGORY,
+                    out_dir=cat_dir,
                     vmap=vmap,
                     mmap=mmap,
                     wqs_vanilla=wqs_vanilla,

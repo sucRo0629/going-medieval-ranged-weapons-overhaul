@@ -29,7 +29,7 @@ Weak order: each stat must be `<=` the next (ties allowed; eps 1e-6). Values are
 | Chain | OK | Detail |
 |---|---|---|
 | range (short → long) | yes | `crossbow=18.8088, heavy_crossbow=22.0422, curved_bow=24.4800, long_bow=30.0900` |
-| damage (low → high) | no | `curved_bow=21.1876, crossbow=30.6000, long_bow=24.5980, heavy_crossbow=37.0000` |
+| damage (low → high) | yes | `curved_bow=21.1876, long_bow=24.5980, crossbow=30.6000, heavy_crossbow=37.0000` |
 | ignoresArmor (low → high) | yes | `curved_bow=0.6800, long_bow=0.7000, crossbow=0.7200, heavy_crossbow=0.8500` |
 | attackSpeed (fast → slow, numeric increase) | yes | `curved_bow=5.2000, long_bow=5.4000, crossbow=12.6000, heavy_crossbow=13.5000` |
 

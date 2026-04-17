@@ -99,7 +99,7 @@ ARMOR_PROXY_PROFILES: tuple[tuple[str, float], ...] = (
 # Q3 four-way chains from BOW_DESIGN_TARGETS.md (synthetic stats after WQS apply).
 # Intent: long_bow is clearly above curved_bow in core performance axes.
 Q3_CHAIN_RANGE_ASC = ["crossbow", "heavy_crossbow", "curved_bow", "long_bow"]
-Q3_CHAIN_DAMAGE_ASC = ["curved_bow", "crossbow", "long_bow", "heavy_crossbow"]
+Q3_CHAIN_DAMAGE_ASC = ["curved_bow", "long_bow", "crossbow", "heavy_crossbow"]
 Q3_CHAIN_IA_ASC = ["curved_bow", "long_bow", "crossbow", "heavy_crossbow"]
 Q3_CHAIN_ATTACKSPEED_ASC = ["curved_bow", "long_bow", "crossbow", "heavy_crossbow"]
 

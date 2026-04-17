@@ -10,15 +10,59 @@ from collections import deque
 from pathlib import Path
 from typing import Any
 
-# 弓／クロス並び順: [BOW_DESIGN_TARGETS.md] のティア表に合わせる（数値が小さいほど序盤）。
-DESIGN_TIER_SORT: dict[str, tuple[int, str]] = {
+# 全武器 id の設計ティア（整数は並び順のみ。レシピ・研究とは独立して先に決める）。
+# 方針・ワークフローは `implementation_policies/core/WEAPON_DESIGN_TIERS.md`。表は `mod_weapon_overview_table.py` が参照。
+# 帯は `Data/Models/Equipment.json` の primaryWeaponMode.damage を前提に、次でざっくり分類（武器種別ごとに閾値が違う）。
+#   ・1H・投擲・遠距離: OneHandSword/Axe/Mace, OneHandThrow, OneHandSling, TwoHandBow, TwoHandCrossbow, TwoHandSling
+#     T1: D<15  T2: 15–19  T3: 20–24  T4: ≥25
+#   ・両手近接: TwoHandSword/Axe/Mace/Spear/Staff/Ram
+#     T1: D≤20  T2: 21–24  T3: 25–29  T4: ≥30
+# 未登録 id は「設計（未割当）」＋従来のフォールバック並び。
+DESIGN_TIER_ALL: dict[str, tuple[int, str]] = {
+    # T1
+    "bludgeon": (1, "T1"),
+    "cudgel": (1, "T1"),
+    "dagger": (1, "T1"),
+    "flail": (1, "T1"),
     "short_bow": (1, "T1"),
+    # T2
+    "hatchet": (5, "T5"),
+    "falchion": (2, "T2"),
+    "light_javelins": (2, "T2"),
+    "mace": (2, "T2"),
+    "military_pick": (2, "T2"),
+    "reinforced_flail": (2, "T2"),
+    "short_sword": (2, "T2"),
+    "sling": (5, "T5"),
+    "throwing_axes": (5, "T5"),
     "war_bow": (2, "T2"),
-    "light_crossbow": (2, "T2"),
+    # T3
+    "berdiche": (5, "T5"),
+    "billhook": (3, "T3"),
     "curved_bow": (3, "T3"),
-    "crossbow": (3, "T3"),
-    "long_bow": (4, "T4"),
-    "heavy_crossbow": (4, "T4"),
+    "knightly_sword": (5, "T5"),
+    "greataxe": (5, "T5"),
+    "greatsword": (5, "T5"),
+    "hand_ram": (4, "T4"),
+    "longsword": (4, "T4"),
+    "reinforced_spear": (2, "T2"),
+    "sling_staff": (5, "T5"),
+    "spear": (1, "T1"),
+    "staff": (5, "T5"),
+    "warhammer": (5, "T5"),
+    "two_handed_flail": (3, "T3"),
+    "two_handed_flanged_mace": (4, "T4"),
+    "two_handed_mace": (4, "T4"),
+    "two_handed_warhammer": (5, "T5"),
+    "warfork": (3, "T3"),
+    "crossbow": (4, "T4"),
+    # T4
+    "heavy_crossbow": (5, "T5"),
+    "light_crossbow": (3, "T3"),
+    "long_bow": (5, "T5"),
+    "metal_hand_ram": (5, "T5"),
+    # サンプル（Mod テンプレ）
+    "example_weapon": (99, "例"),
 }
 
 WEAPON_TYPE_SECTION_ORDER: list[str] = [
@@ -256,9 +300,9 @@ def tier_sort_key(
     prod: dict,
     equip_row: dict,
 ) -> tuple:
+    if wid in DESIGN_TIER_ALL:
+        return (0, DESIGN_TIER_ALL[wid][0], wid)
     if wtype in ("TwoHandBow", "TwoHandCrossbow"):
-        if wid in DESIGN_TIER_SORT:
-            return (0, DESIGN_TIER_SORT[wid][0], wid)
         m = skill_val(equip_row, "Marksman")
         mv = m if m is not None else -1
         return (1, mv, wid)
@@ -283,9 +327,8 @@ def tier_sort_key(
 
 
 def tier_display(wid: str, wtype: str, prod: dict, equip_row: dict) -> str:
-    if wtype in ("TwoHandBow", "TwoHandCrossbow") and wid in DESIGN_TIER_SORT:
-        _, label = DESIGN_TIER_SORT[wid]
-        return f"設計{label}"
+    if wid in DESIGN_TIER_ALL:
+        return f"設計{DESIGN_TIER_ALL[wid][1]}"
     if wtype in ("TwoHandBow", "TwoHandCrossbow"):
         m = skill_val(equip_row, "Marksman")
         if m is not None:

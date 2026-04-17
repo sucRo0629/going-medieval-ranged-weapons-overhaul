@@ -200,7 +200,7 @@
 **「長所の分担」を、製作品質 Q3 の合成（素体＋`WeaponQualitySettings` の通常行）で次の順序**として維持する目標とする。比較は**同一 JSON フィールド**の数値（厳密には `<` で表せる段差）。**全 7 種の射程の厳密順**は上記「弓＋クロスボウの射程順」の **Q3／Q4** 節（`light_crossbow` から `long_bow` まで）を正とする。
 
 - `**range`（届く距離が短い → 長い）**: `crossbow` → `heavy_crossbow` → `curved_bow` → `long_bow`
-- `**damage`（単発が低い → 高い）**: `long_bow` → `curved_bow` → `crossbow` → `heavy_crossbow`
+- `**damage`（単発が低い → 高い）**: `curved_bow` → `long_bow` → `crossbow` → `heavy_crossbow`
 - `**ignoresArmor`（低い → 高い）**: `long_bow` → `curved_bow` → `crossbow` → `heavy_crossbow`（段を飛ばさない）。`curved_bow` の `ignoresArmor` を上げすぎると `**crossbow` を上回り連鎖が崩れる**ため、Q3 合成では**この順序を満たす値に揃えて**調整する。
 - `**attackSpeed`（速い＝数値が小さい → 遅い＝数値が大きい）**: `curved_bow` → `long_bow` → `crossbow` → `heavy_crossbow`
 
