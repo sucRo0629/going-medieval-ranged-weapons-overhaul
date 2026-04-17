@@ -359,9 +359,7 @@ def _build_auto_tier_by_combat_score(
 
     out: dict[str, str] = {}
     for wid, s in scored:
-        if s > thresholds["t5_max"]:
-            out[wid] = "T5+"
-        elif s >= thresholds["t5_min"]:
+        if s >= thresholds["t5_min"]:
             out[wid] = "T5"
         elif s >= thresholds["t4_min"]:
             out[wid] = "T4"
@@ -511,7 +509,8 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
         "- **damage / attackSpeed / ignoresArmor / armorDamage** = **バニラ `Equipment` に Mod `Equipment` を再帰マージした** `primaryWeaponMode`（Mod キー優先・**Mod 適用後の実効値**）。品質倍率は含まない。",
         "- **CombatScore(Base)** = `damage / attackSpeed` を基礎に、`ignoresArmor`（貫通）・`armorDamage`（装甲剥離）・`precision`・`precisionFalloff`・到達性補正（近接は接敵ロス、遠隔は射程優位）を乗せた比較用スコア。遠距離は **10m/18m/25m の命中係数を 0.60/0.25/0.15 で合成**し、主戦場 10m を重めに評価。",
         "- **CombatScore(鋼想定)** = `MaterialSettings.steel` の `damageMultiplier` / `attackSpeedMultiplier` を `primaryWeaponMode` に仮適用した想定値（金属レシピ行のみ表示）。",
-        "- **ティア列**は **CombatScore(Base)** に固定閾値（T2:2.5〜 / T3:3.0〜 / T4:3.5〜 / T5:4.0〜4.5 / 4.5超はT5+）を適用。",
+        "- **ティア列**は **CombatScore(Base)** に固定閾値（T2:2.5〜 / T3:3.0〜 / T4:3.5〜 / T5:4.0〜4.5）を適用。",
+        "- **鋼版上限方針**: 鋼想定スコアは目安として **T5: 5.0 以下** を維持する。",
         "- **備考**: `A` = レシピなし、`B` = レシピはあるが作業台未掲載（オーファン）。",
         "- **ティア調整用表**（下）: **データ上製作可**に加え `TIER_PLANNING_EXTRA_WEAPON_IDS` の武器を **全 weaponType 混在** で並べ、CombatScore ベースの自動ティアを種別横断で比較する。",
         "",
@@ -522,8 +521,7 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
             f"T2:>=**{_fmt_weapon_stat(tier_thresholds.get('t2_min'), decimals=2)}**, "
             f"T3:>=**{_fmt_weapon_stat(tier_thresholds.get('t3_min'), decimals=2)}**, "
             f"T4:>=**{_fmt_weapon_stat(tier_thresholds.get('t4_min'), decimals=2)}**, "
-            f"T5:**{_fmt_weapon_stat(tier_thresholds.get('t5_min'), decimals=2)}**〜**{_fmt_weapon_stat(tier_thresholds.get('t5_max'), decimals=2)}**, "
-            f"T5+:>**{_fmt_weapon_stat(tier_thresholds.get('t5_max'), decimals=2)}**"
+            f"T5:**{_fmt_weapon_stat(tier_thresholds.get('t5_min'), decimals=2)}**〜**{_fmt_weapon_stat(tier_thresholds.get('t5_max'), decimals=2)}**"
         ),
         (
             f"- 鋼補正（`MaterialSettings.steel`）: "
@@ -550,7 +548,7 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
         [
             "## ティア調整用: 製作可＋計画武器（全武器種・ティア順）",
             "",
-            "> **製作可**（マージ後 `Production` ＋作業台）に加え、レシピ調整前でもティアだけ揃えたい id は **`TIER_PLANNING_EXTRA_WEAPON_IDS`**（スクリプト先頭定数）。**ティアは CombatScore の固定閾値（T2:2.5〜 / T3:3.0〜 / T4:3.5〜 / T5:4.0〜4.5 / 4.5超はT5+）で自動割当**。並びは **ティア内補正後スコア昇順** → **`weaponType` 昇順** → weapon id。",
+            "> **製作可**（マージ後 `Production` ＋作業台）に加え、レシピ調整前でもティアだけ揃えたい id は **`TIER_PLANNING_EXTRA_WEAPON_IDS`**（スクリプト先頭定数）。**ティアは CombatScore の固定閾値（T2:2.5〜 / T3:3.0〜 / T4:3.5〜 / T5:4.0〜4.5）で自動割当**。並びは **ティア内補正後スコア昇順** → **`weaponType` 昇順** → weapon id。",
             "",
             "| weapon | `weaponType` | CombatScore(Base) | CombatScore(鋼想定) | ティア（CombatScore自動） | damage | attackSpeed | ignoresArmor | armorDamage | 製作 |",
             "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",

@@ -105,6 +105,12 @@
           "value": 5
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "long_bow",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -139,26 +145,6 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_long_bow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_long_bow",
-              "amount": 1
-            }
-          ]
         }
       ]
     },
@@ -331,6 +317,12 @@
           "value": 1
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "sling",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -365,171 +357,6 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "linen_cloth",
-          "output": [
-            {
-              "blueprintID": "linen_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather",
-          "output": [
-            {
-              "blueprintID": "leather_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "wool_cloth",
-          "output": [
-            {
-              "blueprintID": "wool_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_hare",
-          "output": [
-            {
-              "blueprintID": "leather_hare_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_wolf",
-          "output": [
-            {
-              "blueprintID": "leather_wolf_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_boar",
-          "output": [
-            {
-              "blueprintID": "leather_boar_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_fox",
-          "output": [
-            {
-              "blueprintID": "leather_fox_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_rat",
-          "output": [
-            {
-              "blueprintID": "leather_rat_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_polecat",
-          "output": [
-            {
-              "blueprintID": "leather_polecat_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_cow",
-          "output": [
-            {
-              "blueprintID": "leather_cow_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_goat",
-          "output": [
-            {
-              "blueprintID": "leather_goat_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_sheep",
-          "output": [
-            {
-              "blueprintID": "leather_sheep_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_donkey",
-          "output": [
-            {
-              "blueprintID": "leather_donkey_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_cat",
-          "output": [
-            {
-              "blueprintID": "leather_cat_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_dog",
-          "output": [
-            {
-              "blueprintID": "leather_dog_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_human",
-          "onStartEffector": "MadeSomethigOutOfHumanLeather",
-          "output": [
-            {
-              "blueprintID": "leather_human_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_bear",
-          "output": [
-            {
-              "blueprintID": "leather_bear_sling",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "leather_water_vole",
-          "output": [
-            {
-              "blueprintID": "leather_water_vole_sling",
-              "amount": 1
-            }
-          ]
         }
       ]
     },
@@ -770,6 +597,12 @@
           "value": 20
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "dagger",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -805,35 +638,6 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_dagger",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_dagger",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_dagger",
-              "amount": 1
-            }
-          ]
-        }
       ]
     },
     {
@@ -863,6 +667,12 @@
         {
           "key": "wood",
           "value": 15
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "falchion",
+          "amount": 1
         }
       ],
       "productionSteps": [
@@ -899,35 +709,6 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_falchion",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_falchion",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_falchion",
-              "amount": 1
-            }
-          ]
         }
       ]
     },
@@ -960,6 +741,12 @@
           "value": 40
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "knightly_sword",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -995,35 +782,6 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_knightly_sword",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_knightly_sword",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_knightly_sword",
-              "amount": 1
-            }
-          ]
-        }
       ]
     },
     {
@@ -1053,6 +811,12 @@
         {
           "key": "wood",
           "value": 30
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "greatsword",
+          "amount": 1
         }
       ],
       "productionSteps": [
@@ -1089,35 +853,6 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_greatsword",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_greatsword",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_greatsword",
-              "amount": 1
-            }
-          ]
         }
       ]
     },
@@ -1362,6 +1097,12 @@
           "value": 5
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "heavy_crossbow",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -1397,26 +1138,6 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_heavy_crossbow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_heavy_crossbow",
-              "amount": 1
-            }
-          ]
-        }
       ]
     },
     {
@@ -1446,6 +1167,12 @@
         {
           "key": "wood",
           "value": 20
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "short_sword",
+          "amount": 1
         }
       ],
       "productionSteps": [
@@ -1483,60 +1210,6 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_short_sword",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_short_sword",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_short_sword",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_short_sword",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        }
       ]
     },
     {
@@ -1566,6 +1239,12 @@
         {
           "key": "wood",
           "value": 35
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "longsword",
+          "amount": 1
         }
       ],
       "productionSteps": [
@@ -1603,60 +1282,6 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_longsword",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 125
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_longsword",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 125
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_longsword",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 125
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_longsword",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 125
-            }
-          ]
-        }
       ]
     },
     {
@@ -1680,7 +1305,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "iron_military_pick",
+          "blueprintID": "military_pick",
           "amount": 1
         }
       ],
@@ -1908,6 +1533,12 @@
           "value": 10
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "mace",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -1942,60 +1573,6 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
         }
       ]
     },
@@ -2094,12 +1671,6 @@
           "value": 10
         }
       ],
-      "produced": [
-        {
-          "blueprintID": "iron_two_handed_warhammer",
-          "amount": 1
-        }
-      ],
       "recipe": [
         {
           "key": 2048,
@@ -2108,6 +1679,12 @@
         {
           "key": "wood",
           "value": 15
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "two_handed_warhammer",
+          "amount": 1
         }
       ],
       "productionSteps": [
@@ -2176,6 +1753,12 @@
           "value": 15
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "two_handed_mace",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -2210,60 +1793,6 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_two_handed_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_two_handed_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_two_handed_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_two_handed_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
         }
       ]
     },
@@ -2580,6 +2109,12 @@
           "value": 10
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "berdiche",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -2614,60 +2149,6 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_berdiche",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_berdiche",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_berdiche",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_berdiche",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
         }
       ]
     },
@@ -2700,6 +2181,12 @@
           "value": 10
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "hatchet",
+          "amount": 1
+        }
+      ],
       "productionSteps": [
         {
           "devName": "collectResources",
@@ -2735,60 +2222,6 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_hatchet",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_hatchet",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_hatchet",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_hatchet",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 50
-            }
-          ]
-        }
       ]
     },
     {
@@ -2818,6 +2251,12 @@
         {
           "key": "wood",
           "value": 15
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "greataxe",
+          "amount": 1
         }
       ],
       "productionSteps": [
@@ -2855,60 +2294,6 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_greataxe",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_greataxe",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_greataxe",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_greataxe",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        }
       ]
     },
     {
@@ -2932,12 +2317,18 @@
       ],
       "recipe": [
         {
-          "key": "iron_ingot",
+          "key": 2048,
           "value": 5
         },
         {
           "key": "wood",
           "value": 20
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "throwing_axes",
+          "amount": 1
         }
       ],
       "productionSteps": [
@@ -2974,26 +2365,6 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_throwing_axes",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_throwing_axes",
-              "amount": 1
-            }
-          ]
         }
       ]
     }
