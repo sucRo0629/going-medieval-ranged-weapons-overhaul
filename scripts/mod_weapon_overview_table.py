@@ -66,7 +66,27 @@ _MELEE_THROW_TYPES: set[str] = {
 
 
 def _mod_data_file(*parts: str) -> Path:
-    return Path(__file__).resolve().parent.parent.joinpath("Data", *parts)
+    return Path(__file__).resolve().parent.parent.joinpath("Data", "Models", *parts)
+
+
+def _resolve_models_root(base: Path) -> Path:
+    """
+    Data/Models のルートを正規化して返す。
+    許容入力:
+    - .../Data/Models
+    - .../Data
+    - リポジトリ/StreamingAssets ルート（.../Data/Models を内包）
+    """
+    b = base.resolve()
+    candidates = [
+        b,
+        b / "Models",
+        b / "Data" / "Models",
+    ]
+    for c in candidates:
+        if (c / "Items" / "Equipment.json").is_file():
+            return c
+    return b
 
 
 def _deep_merge_dict(base: dict, overlay: dict) -> dict:
@@ -251,7 +271,8 @@ def _combat_score_with_material(
 
 def _steel_material_multipliers(sa: Path) -> tuple[float, float] | None:
     """MaterialSettings の steel 補正（damage, attackSpeed）を返す。"""
-    path = sa / "Items" / "MaterialSettings.json"
+    models_root = _resolve_models_root(sa)
+    path = models_root / "Items" / "MaterialSettings.json"
     if not path.is_file():
         return None
     data = W.load_json(path)
@@ -291,8 +312,12 @@ def _combat_score_steel_cell(
 ) -> str:
     if not steel_applicable:
         return "-"
-    if steel_multipliers is None:
+    base_score = _combat_score(eq_row)
+    if base_score is None:
         return "—"
+    if steel_multipliers is None:
+        # MaterialSettings を解決できない環境でも、設計上の鋼倍率で比較を継続する。
+        return _fmt_weapon_stat(base_score * 1.2, decimals=2)
     dmg_mul, atk_mul = steel_multipliers
     score = _combat_score_with_material(
         eq_row,
@@ -420,10 +445,11 @@ def _global_tier_sort_key(
 
 
 def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
-    eq_path = sa / "Data" / "Models" / "Items" / "Equipment.json"
-    prod_path = sa / "Data" / "Models" / "Resources" / "Production.json"
-    pc_path = sa / "Data" / "Models" / "Constructables" / "ProductionComponentsRepository.json"
-    res_path = sa / "Data" / "Models" / "Research" / "Research.json"
+    models_root = _resolve_models_root(sa)
+    eq_path = models_root / "Items" / "Equipment.json"
+    prod_path = models_root / "Resources" / "Production.json"
+    pc_path = models_root / "Constructables" / "ProductionComponentsRepository.json"
+    res_path = models_root / "Research" / "Research.json"
     for p in (eq_path, prod_path, pc_path, res_path):
         if not p.is_file():
             return f"# Error\n\nMissing: `{p}`\n"
