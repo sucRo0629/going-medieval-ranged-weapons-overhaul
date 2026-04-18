@@ -2,104 +2,6 @@
   "name": "Equipment",
   "repository": [
     {
-      "id": "example_weapon",
-      "hideInGame": true,
-      "devCommentItemType": "item type determines if the item is a: weapon (1), garment (2) or armour (3). Equipment slot is used to determine what sloth the item will use when equipmed: right hand(1), left hand (2), head (4), body (8), body armour (16). two handed weapons use 3 (1+2)",
-      "itemType": 1,
-      "equipmentSlots": 1,
-      "decompositionCoefficient": 0.15,
-      "requiredSkills": [
-        {
-          "key": "Botanical",
-          "value": 20
-        },
-        {
-          "key": "Speechcraft",
-          "value": 5
-        }
-      ],
-      "devCommentEquipEffectors": "Equip effectors are everlasting effectors that are active while the item is equipped. example is making a settler slower when an armour is equipped etc. On hit and on Critical hit effectors are effectors that are inflicted to the target. the threshold determines how likely one of these effectors (wounds) will be inflicted to the target. here you can add effects that make the target bleed, or slowly lose speed, or slowly loose HP as a poison effect",
-      "onEquipEffectors": [
-        "ImpairedMovementLow",
-        "ShieldCombatSpeedHigh"
-      ],
-      "carryHand": 1,
-      "primaryWeaponMode": {
-        "devCommentWeaponType": "Weapon type: None = 0,TwoHandBow = 1,TwoHandCrossbow = 2, OneHandMace = 3,TwoHandMace = 4,TwoHandStaff = 5,TwoHandSpear = 6 OneHandAxe = 7, TwoHandAxe = 8,OneHandSword = 9,TwoHandSword = 10,TwoHandRam = 11,Trap = 12. will determine animation among other things. see weaponTypeSettings.json for more info. carryHand can be 1 or 2. 1 is the right hand, 2 is the left one. determines what hand is the main hand for the animation",
-        "weaponType": "OneHandSword",
-        "damage": 2,
-        "ignoresArmor": 0.2,
-        "armorDamage": 0.6,
-        "buildingDamage": 0.4,
-        "precision": 1,
-        "precisionFalloff": 0,
-        "range": 0,
-        "attackSpeed": 3.6,
-        "ladderDamageMod": 1,
-        "ladderCritMod": 2,
-        "ladderSpeedMod": 3,
-        "waterDamageMod ": 4,
-        "waterCritMod ": 5,
-        "waterSpeedMod ": 6,
-        "waterPrecisionPenalty ": 7,
-        "projectilePrefabAddress": "SimpleArrow",
-        "projectileArcHeight": 1,
-        "projectileSpeed": 1,
-        "hitEffectorGroupIDs": [
-          "WoundsCutting"
-        ],
-        "criticalHitEffectorGroupIDs": [
-          "WoundsCuttingHead"
-        ],
-        "hpLossPerUse": 2,
-        "loseHpOnMiss": false
-      },
-      "secondaryWeaponMode": {
-        "weaponType": "OneHandSword",
-        "damage": 2,
-        "ignoresArmor": 0.2,
-        "armorDamage": 0.6,
-        "buildingDamage": 0.4,
-        "precision": 1,
-        "precisionFalloff": 0,
-        "range": 0,
-        "attackSpeed": 3.6,
-        "ladderDamageMod": 1,
-        "ladderCritMod": 2,
-        "ladderSpeedMod": 3,
-        "waterDamageMod ": 4,
-        "waterCritMod ": 5,
-        "waterSpeedMod ": 6,
-        "waterPrecisionPenalty ": 7,
-        "projectilePrefabAddress": "SimpleArrow",
-        "projectileArcHeight": 1,
-        "projectileSpeed": 1,
-        "hitEffectorGroupIDs": [
-          "WoundsCutting"
-        ],
-        "criticalHitEffectorGroupIDs": [
-          "WoundsCuttingHead"
-        ]
-      },
-      "additionalPrefabs": [
-        {
-          "key": 4,
-          "value": "Quiver_Long"
-        },
-        {
-          "key": 0,
-          "value": "Branches_left_shoulder_ornament"
-        }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_example_weapon",
-          "info": "equipment_info_example_weapon"
-        }
-      ]
-    },
-    {
       "id": "dagger",
       "itemType": 1,
       "equipmentSlots": 1,
@@ -128,14 +30,7 @@
       },
       "meleeCover": 0.06,
       "rangedCover": 0,
-      "coverAngle": 30,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_dagger",
-          "info": "equipment_info_dagger"
-        }
-      ]
+      "coverAngle": 30
     },
     {
       "id": "short_sword",
@@ -171,13 +66,6 @@
         {
           "key": "Melee",
           "value": 10
-        }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_short_sword",
-          "info": "equipment_info_short_sword"
         }
       ]
     },
@@ -216,13 +104,6 @@
           "key": "Melee",
           "value": 5
         }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_falchion",
-          "info": "equipment_info_falchion"
-        }
       ]
     },
     {
@@ -260,14 +141,7 @@
       },
       "meleeCover": 0.12,
       "rangedCover": 0,
-      "coverAngle": 60,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_knightly_sword",
-          "info": "equipment_info_knightly_sword"
-        }
-      ]
+      "coverAngle": 60
     },
     {
       "id": "longsword",
@@ -304,14 +178,7 @@
       },
       "meleeCover": 0.26,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_longsword",
-          "info": "equipment_info_longsword"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "greatsword",
@@ -348,14 +215,7 @@
       },
       "meleeCover": 0.28,
       "rangedCover": 0,
-      "coverAngle": 110,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_greatsword",
-          "info": "equipment_info_greatsword"
-        }
-      ]
+      "coverAngle": 110
     },
     {
       "id": "staff",
@@ -387,14 +247,7 @@
       },
       "meleeCover": 0.2,
       "rangedCover": 0,
-      "coverAngle": 110,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_staff",
-          "info": "equipment_info_staff"
-        }
-      ]
+      "coverAngle": 110
     },
     {
       "id": "cudgel",
@@ -425,14 +278,7 @@
       },
       "meleeCover": 0.1,
       "rangedCover": 0,
-      "coverAngle": 45,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_cudgel",
-          "info": "equipment_info_cudgel"
-        }
-      ]
+      "coverAngle": 45
     },
     {
       "id": "bludgeon",
@@ -469,14 +315,7 @@
       },
       "meleeCover": 0.1,
       "rangedCover": 0,
-      "coverAngle": 45,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_bludgeon",
-          "info": "equipment_info_bludgeon"
-        }
-      ]
+      "coverAngle": 45
     },
     {
       "id": "mace",
@@ -507,14 +346,7 @@
       },
       "meleeCover": 0.1,
       "rangedCover": 0,
-      "coverAngle": 45,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_mace",
-          "info": "equipment_info_mace"
-        }
-      ]
+      "coverAngle": 45
     },
     {
       "id": "two_handed_mace",
@@ -551,14 +383,7 @@
       },
       "meleeCover": 0.18,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_two_handed_mace",
-          "info": "equipment_info_two_handed_mace"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "two_handed_flanged_mace",
@@ -595,14 +420,7 @@
       },
       "meleeCover": 0.17,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_two_handed_flanged_mace",
-          "info": "equipment_info_two_handed_flanged_mace"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "military_pick",
@@ -640,14 +458,7 @@
       },
       "meleeCover": 0.06,
       "rangedCover": 0,
-      "coverAngle": 30,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_military_pick",
-          "info": "equipment_info_military_pick"
-        }
-      ]
+      "coverAngle": 30
     },
     {
       "id": "spear",
@@ -679,14 +490,7 @@
       },
       "meleeCover": 0.17,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_spear",
-          "info": "equipment_info_spear"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "reinforced_spear",
@@ -718,14 +522,7 @@
       },
       "meleeCover": 0.15,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_reinforced_spear",
-          "info": "equipment_info_reinforced_spear"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "berdiche",
@@ -757,14 +554,7 @@
       },
       "meleeCover": 0.2,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_berdiche",
-          "info": "equipment_info_berdiche"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "billhook",
@@ -796,14 +586,7 @@
       },
       "meleeCover": 0.17,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_billhook",
-          "info": "equipment_info_billhook"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "warfork",
@@ -835,14 +618,7 @@
       },
       "meleeCover": 0.17,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_warfork",
-          "info": "equipment_info_warfork"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "hatchet",
@@ -873,14 +649,7 @@
       },
       "meleeCover": 0.08,
       "rangedCover": 0,
-      "coverAngle": 30,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_hatchet",
-          "info": "equipment_info_hatchet"
-        }
-      ]
+      "coverAngle": 30
     },
     {
       "id": "greataxe",
@@ -917,14 +686,7 @@
       },
       "meleeCover": 0.16,
       "rangedCover": 0,
-      "coverAngle": 80,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_greataxe",
-          "info": "equipment_info_greataxe"
-        }
-      ]
+      "coverAngle": 80
     },
     {
       "id": "warhammer",
@@ -955,14 +717,7 @@
       },
       "meleeCover": 0.1,
       "rangedCover": 0,
-      "coverAngle": 30,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_warhammer",
-          "info": "equipment_info_warhammer"
-        }
-      ]
+      "coverAngle": 30
     },
     {
       "id": "two_handed_warhammer",
@@ -999,14 +754,7 @@
       },
       "meleeCover": 0.15,
       "rangedCover": 0,
-      "coverAngle": 90,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_two_handed_warhammer",
-          "info": "equipment_info_two_handed_warhammer"
-        }
-      ]
+      "coverAngle": 90
     },
     {
       "id": "flail",
@@ -1037,14 +785,7 @@
       },
       "meleeCover": 0.05,
       "rangedCover": 0,
-      "coverAngle": 30,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_flail",
-          "info": "equipment_info_flail"
-        }
-      ]
+      "coverAngle": 30
     },
     {
       "id": "reinforced_flail",
@@ -1080,13 +821,6 @@
         {
           "key": "Melee",
           "value": 0
-        }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_reinforced_flail",
-          "info": "equipment_info_reinforced_flail"
         }
       ]
     },
@@ -1124,13 +858,6 @@
         {
           "key": "Melee",
           "value": 5
-        }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_two_handed_flail",
-          "info": "equipment_info_two_handed_flail"
         }
       ]
     },
@@ -1193,13 +920,6 @@
         {
           "key": 4,
           "value": "Quiver_Long"
-        }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_short_bow",
-          "info": "equipment_info_short_bow"
         }
       ]
     },
@@ -1269,13 +989,6 @@
           "key": 4,
           "value": "Quiver_Long"
         }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_war_bow",
-          "info": "equipment_info_war_bow"
-        }
       ]
     },
     {
@@ -1338,14 +1051,7 @@
       },
       "meleeCover": 0.2,
       "rangedCover": 0,
-      "coverAngle": 45,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_curved_bow",
-          "info": "equipment_info_curved_bow"
-        }
-      ]
+      "coverAngle": 45
     },
     {
       "id": "long_bow",
@@ -1413,13 +1119,6 @@
           "key": 4,
           "value": "Quiver_Long"
         }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_long_bow",
-          "info": "equipment_info_long_bow"
-        }
       ]
     },
     {
@@ -1481,13 +1180,6 @@
           "key": 4,
           "value": "Quiver_Short"
         }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_light_crossbow",
-          "info": "equipment_info_light_crossbow"
-        }
       ]
     },
     {
@@ -1548,13 +1240,6 @@
         {
           "key": 4,
           "value": "Quiver_Short"
-        }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_crossbow",
-          "info": "equipment_info_crossbow"
         }
       ]
     },
@@ -1622,13 +1307,6 @@
         {
           "key": 4,
           "value": "Quiver_Short"
-        }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_heavy_crossbow",
-          "info": "equipment_info_heavy_crossbow"
         }
       ]
     },
@@ -1699,13 +1377,6 @@
         {
           "key": 4,
           "value": "Throwing_axe_additional"
-        }
-      ],
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_throwing_axes",
-          "info": "equipment_info_throwing_axes"
         }
       ]
     },
@@ -1778,12 +1449,76 @@
           "key": 2,
           "value": "Light_javelins_additional"
         }
-      ],
-      "locKeys": [
+      ]
+    },
+    {
+      "id": "javelins",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
         {
-          "languageName": "English",
-          "name": "equipment_name_light_javelins",
-          "info": "equipment_info_light_javelins"
+          "key": "Marksman",
+          "value": 10
+        }
+      ],
+      "beautyInputEquipped": 6,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandThrow",
+        "damage": 25,
+        "ignoresArmor": 0.3,
+        "armorDamage": 1.5,
+        "buildingDamage": 0.15,
+        "precision": 1,
+        "precisionFalloff": 0.015,
+        "range": 14,
+        "attackSpeed": 5.8,
+        "projectilePrefabAddress": "JavelinProjectile",
+        "projectileOffset": {
+          "x": 0,
+          "y": 0.3,
+          "z": 0.1
+        },
+        "projectileArcHeight": 2,
+        "projectileSpeed": 0.4,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 1.2,
+        "loseHpOnMiss": true,
+        "weaponSound": "ShootJavelin"
+      },
+      "secondaryWeaponMode": {
+        "weaponType": "OneHandSpear",
+        "damage": 13,
+        "ignoresArmor": 0.31,
+        "armorDamage": 0.40,
+        "buildingDamage": 0.2,
+        "precision": 0.95,
+        "precisionFalloff": 0.03,
+        "range": 0.5,
+        "attackSpeed": 4.3,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.05,
+      "rangedCover": 0,
+      "coverAngle": 45,
+      "additionalPrefabs": [
+        {
+          "key": 2,
+          "value": "Light_javelins_additional"
         }
       ]
     },
@@ -1823,14 +1558,7 @@
       },
       "meleeCover": 0,
       "rangedCover": 0,
-      "coverAngle": 0,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_sling",
-          "info": "equipment_info_sling"
-        }
-      ]
+      "coverAngle": 0
     },
     {
       "id": "sling_staff",
@@ -1888,14 +1616,7 @@
       },
       "meleeCover": 0.2,
       "rangedCover": 0,
-      "coverAngle": 30,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_sling_staff",
-          "info": "equipment_info_sling_staff"
-        }
-      ]
+      "coverAngle": 30
     },
     {
       "id": "hand_ram",
@@ -1929,14 +1650,7 @@
       },
       "meleeCover": 0.15,
       "rangedCover": 0.05,
-      "coverAngle": 45,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_hand_ram",
-          "info": "equipment_info_hand_ram"
-        }
-      ]
+      "coverAngle": 45
     },
     {
       "id": "metal_hand_ram",
@@ -1970,14 +1684,7 @@
       },
       "meleeCover": 0.18,
       "rangedCover": 0.05,
-      "coverAngle": 45,
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_metal_hand_ram",
-          "info": "equipment_info_metal_hand_ram"
-        }
-      ]
+      "coverAngle": 45
     },
     {
       "id": "shackles",

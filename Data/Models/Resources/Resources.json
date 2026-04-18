@@ -1,0 +1,213 @@
+{
+  "repository": [
+    {
+      "id": "reinforced_flail",
+      "materials": [
+        "iron",
+        "steel",
+        "silver",
+        "gold"
+      ],
+      "itemMaterialCategory": 1
+    },
+    {
+      "id": "two_handed_flail",
+      "materials": [
+        "iron",
+        "steel",
+        "silver",
+        "gold"
+      ],
+      "itemMaterialCategory": 1
+    },
+    {
+      "id": "reinforced_spear",
+      "materials": [
+        "iron",
+        "steel",
+        "silver",
+        "gold"
+      ],
+      "itemMaterialCategory": 1
+    },
+    {
+      "id": "long_bow",
+      "materials": [
+        "iron",
+        "steel",
+        "silver",
+        "gold"
+      ]
+    },
+    {
+      "id": "heavy_crossbow",
+      "materials": [
+        "iron",
+        "steel",
+        "silver",
+        "gold"
+      ]
+    },
+    {
+      "id": "throwing_axes",
+      "materials": [
+        "iron",
+        "steel",
+        "silver",
+        "gold"
+      ],
+      "itemMaterialCategory": 1
+    },
+    {
+      "id": "light_javelins",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_light_javelins",
+          "info": "equipment_info_light_javelins"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "ライトジャベリン",
+          "info": "equipment_info_light_javelins"
+        }
+      ]
+    },
+    {
+      "id": "javelins",
+      "materials": [
+        "iron",
+        "steel",
+        "silver",
+        "gold"
+      ],
+      "iconPath": "reinforced_spear",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "Javelins",
+          "info": "equipment_info_light_javelins"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "ジャベリン",
+          "info": "equipment_info_light_javelins"
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "light_javelin_pile"
+                },
+                {
+                  "id": "2",
+                  "slot": "meshInHand",
+                  "slotType": "Mesh",
+                  "value": "light_javelin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_throwing_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0,
+            "y": 0.02,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 22
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.1,
+            "y": 0,
+            "z": 0.38
+          },
+          "rotationOffset": {
+            "x": -90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "javelins",
+      "protoId": "javelins",
+      "hasQuality": true,
+      "weight": 2,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 300,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 2,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 40,
+      "category": 65536,
+      "sortingGroup": "WeaponRanged",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Ranged",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
+    }
+  ]
+}

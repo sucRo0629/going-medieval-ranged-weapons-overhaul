@@ -77,6 +77,7 @@
         "two_handed_flanged_mace",
         "billhook",
         "reinforced_spear",
+        "javelins",
         "reinforced_flail",
         "two_handed_flail"
       ],
@@ -124,6 +125,7 @@
         "bludgeon",
         "warfork",
         "reinforced_spear",
+        "javelins",
         "reinforced_flail"
       ],
       "productionMarkerOffset": {

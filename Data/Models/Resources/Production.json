@@ -1,679 +1,44 @@
 {
   "repository": [
     {
-      "id": "war_bow",
-      "iconPath": "war_bow",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_war_bow",
-          "info": "equipment_info_war_bow"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 10
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "wood_war_bow",
-          "amount": 1
-        }
-      ],
+      "id": "dagger",
       "recipe": [
-        {
-          "key": "wood",
-          "value": 30
-        },
-        {
-          "key": 256,
-          "value": 5
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 200,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "long_bow",
-      "iconPath": "long_bow",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_long_bow",
-          "info": "equipment_info_long_bow"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 20
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 50
-        },
-        {
-          "key": 256,
-          "value": 10
-        },
         {
           "key": 2048,
-          "value": 5
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "long_bow",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponLong",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 300,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 600
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_long_bow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_long_bow",
-              "amount": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "curved_bow",
-      "iconPath": "curved_bow",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_curved_bow",
-          "info": "equipment_info_curved_bow"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
           "value": 10
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "wood_curved_bow",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 35
         },
         {
-          "key": 256,
-          "value": 10
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponLong",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 300,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
+          "key": 131072,
+          "value": 20
         }
       ]
     },
     {
-      "id": "light_crossbow",
-      "iconPath": "light_crossbow",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_light_crossbow",
-          "info": "equipment_info_light_crossbow"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 10
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "wood_light_crossbow",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 25
-        },
-        {
-          "key": "wood_mechanical_parts",
-          "value": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingCrossobow",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 300,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "sling",
-      "iconPath": "sling",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_sling",
-          "info": "equipment_info_sling"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Tailoring",
-          "value": 0
-        }
-      ],
-      "recipe": [
-        {
-          "key": 256,
-          "value": 1
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "sling",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "sewingRoughHat",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_hat"
-            }
-          ],
-          "productionTime": 100,
-          "modifyingAttribute": "MakeClothesSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Tailoring",
-              "value": 200
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "sling_staff",
-      "iconPath": "sling_staff",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_sling_staff",
-          "info": "equipment_info_sling_staff"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 0
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "wood_sling_staff",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": 256,
-          "value": 3
-        },
-        {
-          "key": "wood",
-          "value": 5
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 90,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "light_javelins",
-      "iconPath": "light_javelins",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_light_javelins",
-          "info": "equipment_info_light_javelins"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 0
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "wood_light_javelins",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 18
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 200,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "spear",
-      "iconPath": "spear",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_spear",
-          "info": "equipment_info_spear"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 0
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "wood_spear",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 15
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 90,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "dagger",
-      "iconPath": "dagger",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_dagger",
-          "info": "equipment_info_dagger"
-        }
-      ],
-      "jobType": 256,
+      "id": "short_sword",
       "requiredSkills": [
         {
           "key": "Smithing",
-          "value": 0
+          "value": 10
         }
       ],
       "recipe": [
         {
           "key": 2048,
-          "value": 10
+          "value": 30
         },
         {
-          "key": "wood",
+          "key": 131072,
           "value": 20
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "dagger",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 400,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
         }
       ]
     },
     {
       "id": "falchion",
-      "iconPath": "falchion",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_falchion",
-          "info": "equipment_info_falchion"
-        }
-      ],
-      "jobType": 256,
       "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 0
+        },
         {
           "key": "Smithing",
           "value": 5
@@ -685,66 +50,13 @@
           "value": 20
         },
         {
-          "key": "wood",
+          "key": 131072,
           "value": 15
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "falchion",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 550,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
         }
       ]
     },
     {
       "id": "knightly_sword",
-      "iconPath": "knightly_sword",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_knightly_sword",
-          "info": "equipment_info_knightly_sword"
-        }
-      ],
-      "jobType": 256,
       "requiredSkills": [
         {
           "key": "Smithing",
@@ -757,66 +69,32 @@
           "value": 35
         },
         {
-          "key": "wood",
+          "key": 131072,
           "value": 40
         }
-      ],
-      "produced": [
+      ]
+    },
+    {
+      "id": "longsword",
+      "requiredSkills": [
         {
-          "blueprintID": "knightly_sword",
-          "amount": 1
+          "key": "Smithing",
+          "value": 20
         }
       ],
-      "productionSteps": [
+      "recipe": [
         {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
+          "key": 2048,
+          "value": 35
         },
         {
-          "devName": "makingMetalWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 550,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
+          "key": 131072,
+          "value": 35
         }
       ]
     },
     {
       "id": "greatsword",
-      "iconPath": "greatsword",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_greatsword",
-          "info": "equipment_info_greatsword"
-        }
-      ],
-      "jobType": 256,
       "requiredSkills": [
         {
           "key": "Smithing",
@@ -829,118 +107,8 @@
           "value": 45
         },
         {
-          "key": "wood",
+          "key": 131072,
           "value": 30
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "greatsword",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponLong",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 800,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "cudgel",
-      "iconPath": "cudgel",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_cudgel",
-          "info": "equipment_info_cudgel"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 0
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "wood_cudgel",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 25
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 90,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
         }
       ]
     },
@@ -965,7 +133,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "bludgeon",
+          "blueprintID": "wood_bludgeon",
           "amount": 1
         }
       ],
@@ -1013,18 +181,214 @@
       ]
     },
     {
-      "id": "short_bow",
-      "iconPath": "short_bow",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
+      "id": "mace",
+      "requiredSkills": [
         {
-          "languageName": "English",
-          "name": "equipment_name_short_bow",
-          "info": "equipment_info_short_bow"
+          "key": "Smithing",
+          "value": 5
         }
       ],
-      "jobType": 512,
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 20
+        },
+        {
+          "key": 131072,
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "two_handed_mace",
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 10
+        }
+      ],
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 35
+        },
+        {
+          "key": 131072,
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "two_handed_flanged_mace",
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 15
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "iron_two_handed_flanged_mace",
+          "amount": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": "iron_ingot",
+          "value": 0
+        },
+        {
+          "key": 2048,
+          "value": 40
+        },
+        {
+          "key": 131072,
+          "value": 15
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_two_handed_flanged_mace",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 80
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_two_handed_flanged_mace",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 80
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_two_handed_flanged_mace",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 80
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_two_handed_flanged_mace",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "military_pick",
+      "produced": [
+        {
+          "blueprintID": "iron_military_pick",
+          "amount": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": "iron_ingot",
+          "value": 0
+        },
+        {
+          "key": 2048,
+          "value": 10
+        },
+        {
+          "key": 131072,
+          "value": 10
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_military_pick",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_military_pick",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_military_pick",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_military_pick",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spear",
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "reinforced_spear",
       "requiredSkills": [
         {
           "key": "Carpentry",
@@ -1033,78 +397,712 @@
       ],
       "produced": [
         {
-          "blueprintID": "short_bow",
-          "amount": 1
+          "blueprintID": "wood_reinforced_spear",
+          "amount": 0
         }
       ],
       "recipe": [
         {
           "key": "wood",
-          "value": 20
+          "value": 15
+        },
+        {
+          "key": "iron_ingot",
+          "value": 0
+        },
+        {
+          "key": 2048,
+          "value": 2
         }
       ],
       "productionSteps": [
         {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 90,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
           "experienceReward": [
             {
               "key": "Carpentry",
-              "value": 300
+              "value": 400
+            },
+            {
+              "key": "Smithing",
+              "value": 100
+            }
+          ]
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_reinforced_spear",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 5
             }
           ]
         },
         {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_reinforced_spear",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_reinforced_spear",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_reinforced_spear",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 5
+            }
+          ]
         }
       ]
     },
     {
-      "id": "crossbow",
-      "iconPath": "crossbow",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
+      "id": "berdiche",
+      "requiredSkills": [
         {
-          "languageName": "English",
-          "name": "equipment_name_crossbow",
-          "info": "equipment_info_crossbow"
+          "key": "Smithing",
+          "value": 5
         }
       ],
-      "jobType": 512,
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 15
+        },
+        {
+          "key": 131072,
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "billhook",
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 5
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "iron_billhook",
+          "amount": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": "iron_ingot",
+          "value": 0
+        },
+        {
+          "key": "wood",
+          "value": 0
+        },
+        {
+          "key": 2048,
+          "value": 10
+        },
+        {
+          "key": 131072,
+          "value": 10
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_billhook",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_billhook",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_billhook",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_billhook",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "warfork",
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "hatchet",
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 10
+        },
+        {
+          "key": 131072,
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "greataxe",
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 40
+        },
+        {
+          "key": 131072,
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "warhammer",
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 5
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "iron_warhammer",
+          "amount": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 10
+        },
+        {
+          "key": "iron_ingot",
+          "value": 0
+        },
+        {
+          "key": 2048,
+          "value": 15
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_warhammer",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_warhammer",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_warhammer",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_warhammer",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "two_handed_warhammer",
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 10
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "iron_two_handed_warhammer",
+          "amount": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": "iron_ingot",
+          "value": 0
+        },
+        {
+          "key": "wood",
+          "value": 15
+        },
+        {
+          "key": 2048,
+          "value": 30
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_two_handed_warhammer",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_two_handed_warhammer",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_two_handed_warhammer",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_two_handed_warhammer",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reinforced_flail",
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 5
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_reinforced_flail",
+          "amount": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 30
+        },
+        {
+          "key": "iron_ingot",
+          "value": 0
+        },
+        {
+          "key": 2048,
+          "value": 2
+        }
+      ],
+      "productionSteps": [
+        {
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 500
+            },
+            {
+              "key": "Smithing",
+              "value": 125
+            }
+          ]
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_reinforced_flail",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_reinforced_flail",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_reinforced_flail",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_reinforced_flail",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "two_handed_flail",
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 5
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_two_handed_flail",
+          "amount": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 45
+        },
+        {
+          "key": 2048,
+          "value": 5
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_two_handed_flail",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_two_handed_flail",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_two_handed_flail",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_two_handed_flail",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "short_bow",
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "war_bow",
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 10
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 30
+        },
+        {
+          "key": 256,
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "long_bow",
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 20
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_long_bow",
+          "amount": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 50
+        },
+        {
+          "key": 256,
+          "value": 10
+        },
+        {
+          "key": 2048,
+          "value": 5
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_long_bow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_long_bow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_long_bow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_long_bow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "curved_bow",
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 10
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 45
+        },
+        {
+          "key": 256,
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "light_crossbow",
       "requiredSkills": [
         {
           "key": "Carpentry",
           "value": 15
         }
       ],
-      "produced": [
+      "recipe": [
         {
-          "blueprintID": "crossbow",
-          "amount": 1
+          "key": "wood",
+          "value": 25
+        },
+        {
+          "key": "wood_mechanical_parts",
+          "value": 2
         }
-      ],
+      ]
+    },
+    {
+      "id": "crossbow",
       "recipe": [
         {
           "key": "wood",
@@ -1112,63 +1110,22 @@
         },
         {
           "key": "wood_mechanical_parts",
-          "value": 5
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingCrossobow",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 300,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
+          "value": 3
         }
       ]
     },
     {
       "id": "heavy_crossbow",
-      "iconPath": "heavy_crossbow",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_heavy_crossbow",
-          "info": "equipment_info_heavy_crossbow"
-        }
-      ],
-      "jobType": 512,
       "requiredSkills": [
         {
           "key": "Carpentry",
-          "value": 15
+          "value": 25
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_heavy_crossbow",
+          "amount": 0
         }
       ],
       "recipe": [
@@ -1183,48 +1140,6 @@
         {
           "key": 2048,
           "value": 5
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "heavy_crossbow",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingCrossobow",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 300,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
         }
       ],
       "customProducts": [
@@ -1245,1422 +1160,51 @@
               "amount": 1
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "short_sword",
-      "iconPath": "short_sword",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_short_sword",
-          "info": "equipment_info_short_sword"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 10
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 30
         },
         {
-          "key": "wood",
-          "value": 20
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "short_sword",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 400,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "longsword",
-      "iconPath": "longsword",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_longsword",
-          "info": "equipment_info_longsword"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 20
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 35
-        },
-        {
-          "key": "wood",
-          "value": 35
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "longsword",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponLong",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 800,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "military_pick",
-      "iconPath": "military_pick",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_military_pick",
-          "info": "equipment_info_military_pick"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 0
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "military_pick",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 11
-        },
-        {
-          "key": "wood",
-          "value": 11
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 200,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
+          "input": "gold_ingot",
           "output": [
             {
-              "blueprintID": "iron_military_pick",
+              "blueprintID": "gold_heavy_crossbow",
               "amount": 1
             }
           ]
         },
         {
-          "input": "steel_ingot",
+          "input": "silver_ingot",
           "output": [
             {
-              "blueprintID": "steel_military_pick",
+              "blueprintID": "silver_heavy_crossbow",
               "amount": 1
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "flail",
-      "iconPath": "flail",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_flail",
-          "info": "equipment_info_flail"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 0
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "wood_flail",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 30
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 90,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "reinforced_flail",
-      "iconPath": "reinforced_flail",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_reinforced_flail",
-          "info": "equipment_info_reinforced_flail"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 5
-        },
-        {
-          "key": "Carpentry",
-          "value": 5
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "reinforced_flail",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 30
-        },
-        {
-          "key": 2048,
-          "value": 5
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponLong",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 300,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_reinforced_flail",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_reinforced_flail",
-              "amount": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "warhammer",
-      "iconPath": "warhammer",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_warhammer",
-          "info": "equipment_info_warhammer"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 5
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "iron_warhammer",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 15
-        },
-        {
-          "key": "wood",
-          "value": 10
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 550,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "mace",
-      "iconPath": "mace",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_mace",
-          "info": "equipment_info_mace"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 5
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 20
-        },
-        {
-          "key": "wood",
-          "value": 10
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "mace",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 400,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "two_handed_flail",
-      "iconPath": "two_handed_flail",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_two_handed_flail",
-          "info": "equipment_info_two_handed_flail"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 5
-        },
-        {
-          "key": "Carpentry",
-          "value": 10
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "two_handed_flail",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 45
-        },
-        {
-          "key": 2048,
-          "value": 5
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 200,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_two_handed_flail",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_two_handed_flail",
-              "amount": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "two_handed_warhammer",
-      "iconPath": "two_handed_warhammer",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_two_handed_warhammer",
-          "info": "equipment_info_two_handed_warhammer"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 10
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 30
-        },
-        {
-          "key": "wood",
-          "value": 15
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "two_handed_warhammer",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponLong",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 800,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "two_handed_mace",
-      "iconPath": "two_handed_mace",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_two_handed_mace",
-          "info": "equipment_info_two_handed_mace"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 10
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 35
-        },
-        {
-          "key": "wood",
-          "value": 15
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "two_handed_mace",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 550,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "two_handed_flanged_mace",
-      "iconPath": "two_handed_flanged_mace",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_two_handed_flanged_mace",
-          "info": "equipment_info_two_handed_flanged_mace"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 15
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "iron_two_handed_flanged_mace",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 40
-        },
-        {
-          "key": "wood",
-          "value": 15
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponLong",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 300,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "warfork",
-      "iconPath": "warfork",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_warfork",
-          "info": "equipment_info_warfork"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 5
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "warfork",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 15
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 200,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "reinforced_spear",
-      "iconPath": "reinforced_spear",
-      "iconColorValue": "#B3803A",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_reinforced_spear",
-          "info": "equipment_info_reinforced_spear"
-        }
-      ],
-      "jobType": 512,
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 5
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "reinforced_spear",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": "wood",
-          "value": 15
-        },
-        {
-          "key": 2048,
-          "value": 3
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingWoodenWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 200,
-          "modifyingAttribute": "WoodWorkingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Carpentry",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_reinforced_spear",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_reinforced_spear",
-              "amount": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "billhook",
-      "iconPath": "billhook",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_billhook",
-          "info": "equipment_info_billhook"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 5
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "iron_billhook",
-          "amount": 1
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 10
-        },
-        {
-          "key": "wood",
-          "value": 10
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 550,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_billhook",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_billhook",
-              "amount": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "berdiche",
-      "iconPath": "berdiche",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_berdiche",
-          "info": "equipment_info_berdiche"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 5
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 15
-        },
-        {
-          "key": "wood",
-          "value": 10
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "berdiche",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 400,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_berdiche",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_berdiche",
-              "amount": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "hatchet",
-      "iconPath": "hatchet",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_hatchet",
-          "info": "equipment_info_hatchet"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 0
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 10
-        },
-        {
-          "key": "wood",
-          "value": 10
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "hatchet",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponShort",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 400,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 300
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
-        }
-      ]
-    },
-    {
-      "id": "greataxe",
-      "iconPath": "greataxe",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "melee_weapon_background",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_greataxe",
-          "info": "equipment_info_greataxe"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
-        {
-          "key": "Smithing",
-          "value": 20
-        }
-      ],
-      "recipe": [
-        {
-          "key": 2048,
-          "value": 40
-        },
-        {
-          "key": "wood",
-          "value": 15
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "greataxe",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
-        },
-        {
-          "devName": "makingMetalWeaponLong",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 800,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 500
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
         }
       ]
     },
     {
       "id": "throwing_axes",
-      "iconPath": "throwing_axes",
-      "iconColorValue": "#bebebe",
-      "iconBackgroundPath": "ranged_weapon_background",
-      "locKeys": [
+      "produced": [
         {
-          "languageName": "English",
-          "name": "equipment_name_throwing_axes",
-          "info": "equipment_info_throwing_axes"
-        }
-      ],
-      "jobType": 256,
-      "requiredSkills": [
+          "blueprintID": "iron_throwing_axes",
+          "amount": 0
+        },
         {
-          "key": "Smithing",
-          "value": 10
+          "blueprintID": "ash",
+          "amount": 25
         }
       ],
       "recipe": [
         {
-          "key": 2048,
-          "value": 5
+          "key": "iron_ingot",
+          "value": 0
         },
         {
           "key": "wood",
           "value": 20
-        }
-      ],
-      "produced": [
-        {
-          "blueprintID": "throwing_axes",
-          "amount": 1
-        }
-      ],
-      "productionSteps": [
-        {
-          "devName": "collectResources",
-          "type": "collect",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_resources"
-            }
-          ],
-          "interruptible": true
         },
         {
-          "devName": "makingMetalWeaponMed",
-          "type": "workerProduce",
-          "locKeys": [
-            {
-              "languageName": "English",
-              "name": "name_prod_make_weapon"
-            }
-          ],
-          "productionTime": 550,
-          "modifyingAttribute": "SmithingSpeed",
-          "interruptible": true,
-          "experienceReward": [
-            {
-              "key": "Smithing",
-              "value": 400
-            }
-          ]
-        },
-        {
-          "devName": "spawnProduct",
-          "type": "spawnProduct"
+          "key": 2048,
+          "value": 5
         }
       ],
       "customProducts": [
@@ -2681,6 +1225,165 @@
               "amount": 1
             }
           ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_throwing_axes",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_throwing_axes",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "light_javelins",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_light_javelins",
+          "info": "equipment_info_light_javelins"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "ライトジャベリン",
+          "info": "equipment_info_light_javelins"
+        }
+      ]
+    },
+    {
+      "id": "javelins",
+      "iconPath": "reinforced_spear",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "Japanese",
+          "name": "ジャベリン",
+          "info": "equipment_info_light_javelins"
+        }
+      ],
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 5
+        }
+      ],
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 10
+        },
+        {
+          "key": "wood",
+          "value": 20
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingMetalWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 550,
+          "modifyingAttribute": "SmithingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_javelins",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_javelins",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_javelins",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_javelins",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sling",
+      "recipe": [
+        {
+          "key": 256,
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "sling_staff",
+      "recipe": [
+        {
+          "key": 256,
+          "value": 3
+        },
+        {
+          "key": "wood",
+          "value": 5
         }
       ]
     }
