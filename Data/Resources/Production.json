@@ -31,7 +31,7 @@
           "value": 30
         },
         {
-          "key": "leather",
+          "key": 256,
           "value": 5
         }
       ],
@@ -97,7 +97,7 @@
           "value": 50
         },
         {
-          "key": "leather",
+          "key": 256,
           "value": 10
         },
         {
@@ -179,7 +179,7 @@
           "value": 35
         },
         {
-          "key": "leather",
+          "key": 256,
           "value": 10
         }
       ],
@@ -877,7 +877,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_bludgeon",
+          "blueprintID": "bludgeon",
           "amount": 1
         }
       ],
@@ -945,7 +945,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_short_bow",
+          "blueprintID": "short_bow",
           "amount": 1
         }
       ],
@@ -1013,7 +1013,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_crossbow",
+          "blueprintID": "crossbow",
           "amount": 1
         }
       ],
@@ -1381,7 +1381,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_reinforced_flail",
+          "blueprintID": "reinforced_flail",
           "amount": 1
         }
       ],
@@ -1601,7 +1601,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_two_handed_flail",
+          "blueprintID": "two_handed_flail",
           "amount": 1
         }
       ],
@@ -1889,7 +1889,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_warfork",
+          "blueprintID": "warfork",
           "amount": 1
         }
       ],
@@ -1957,7 +1957,7 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_reinforced_spear",
+          "blueprintID": "reinforced_spear",
           "amount": 1
         }
       ],
