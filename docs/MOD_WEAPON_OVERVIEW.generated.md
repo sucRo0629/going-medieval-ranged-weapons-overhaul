@@ -109,7 +109,7 @@
 
 | weapon | `weaponType` | CombatScore(Base) | CombatScore(鋼想定) | ティア（CombatScore自動） | 作業台 | 必要スキル（レシピ） | レシピ（要約） | 研究（id / 表示名 / 深さ） | 装備必要スキル（Mod） | damage | attackSpeed | ignoresArmor | armorDamage | 備考 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `greataxe` | `TwoHandAxe` | 4.16 | — | T5 | `blacksmith_station` | Smithing 20 | 金属インゴット類（iron/steel 等・カテゴリマスク） x40, wood x15 | -（`Research.unlocks` 無し・初期解禁等） | Melee 20 | 33.1 | 5.1 | 0.22 | 1.55 | 製作可 |
+| `greataxe` | `TwoHandAxe` | 4.16 | — | T5 | `blacksmith_station` | Smithing 20 | 金属インゴット類（iron/steel 等・カテゴリマスク） x40, wood x15 | `axes_lvl2` / `research_name_axes_lvl2`（ローカライズキー） / 0 | Melee 20 | 33.1 | 5.1 | 0.22 | 1.55 | 製作可 |
 
 ## 片手剣（OneHandSword）
 
