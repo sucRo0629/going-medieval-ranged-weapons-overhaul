@@ -420,10 +420,10 @@ def _global_tier_sort_key(
 
 
 def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
-    eq_path = sa / "Items" / "Equipment.json"
-    prod_path = sa / "Resources" / "Production.json"
-    pc_path = sa / "Constructables" / "ProductionComponentsRepository.json"
-    res_path = sa / "Research" / "Research.json"
+    eq_path = sa / "Data" / "Models" / "Items" / "Equipment.json"
+    prod_path = sa / "Data" / "Models" / "Resources" / "Production.json"
+    pc_path = sa / "Data" / "Models" / "Constructables" / "ProductionComponentsRepository.json"
+    res_path = sa / "Data" / "Models" / "Research" / "Research.json"
     for p in (eq_path, prod_path, pc_path, res_path):
         if not p.is_file():
             return f"# Error\n\nMissing: `{p}`\n"

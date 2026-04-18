@@ -274,7 +274,7 @@ def skill_val(obj: dict, key: str) -> int | None:
 
 
 def default_mod_equipment_path() -> Path:
-    return Path(__file__).resolve().parent.parent / "Data" / "Models" / "Equipment.json"
+    return Path(__file__).resolve().parent.parent / "Data" / "Models" / "Items" /  "Equipment.json"
 
 
 def repository_index(data: dict) -> dict[str, dict]:
