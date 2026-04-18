@@ -466,13 +466,16 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
     vanilla_index = W.repository_index(eq_data)
 
     eq_repo = eq_data.get("repository") or []
-    prod_repo = prod_data.get("repository") or []
+    vanilla_prod_repo = prod_data.get("repository") or []
+    prod_repo = list(vanilla_prod_repo)
     pc_repo = pc_data.get("repository") or []
     research_repo = res_data.get("repository") or []
 
     mod_prod = _mod_data_file("Resources", "Production.json")
+    mod_prod_repo: list[dict] = []
     if mod_prod.is_file():
-        prod_repo = _merge_repo_by_id(prod_repo, (W.load_json(mod_prod).get("repository") or []))
+        mod_prod_repo = W.load_json(mod_prod).get("repository") or []
+        prod_repo = _merge_repo_by_id(prod_repo, mod_prod_repo)
     mod_pc = _mod_data_file("Constructables", "ProductionComponentsRepository.json")
     if mod_pc.is_file():
         pc_repo = _merge_repo_by_id(pc_repo, (W.load_json(mod_pc).get("repository") or []))
@@ -480,6 +483,12 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
     if mod_res.is_file():
         research_repo = _merge_repo_by_id(research_repo, (W.load_json(mod_res).get("repository") or []))
 
+    vanilla_prod_by_id = {
+        str(p["id"]): p for p in vanilla_prod_repo if isinstance(p, dict) and p.get("id")
+    }
+    mod_prod_by_id = {
+        str(p["id"]): p for p in mod_prod_repo if isinstance(p, dict) and p.get("id")
+    }
     prod_by_id = {str(p["id"]): p for p in prod_repo if isinstance(p, dict) and p.get("id")}
     weapon_id_set = set(W.weapon_ids(eq_repo))
     for wid, row in mod_index.items():
@@ -645,9 +654,15 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
                     )
             else:
                 stations = "-"
-                sk = "-"
-                rec = "-"
                 rcol = "-"
+                # Mod側に同名Productionが無い場合は、バニラのレシピ情報を表示する。
+                if w not in mod_prod_by_id and w in vanilla_prod_by_id:
+                    vanilla_prod = vanilla_prod_by_id[w]
+                    sk = W.skills(vanilla_prod).replace("|", "/")
+                    rec = W.recipe_summary(vanilla_prod).replace("|", "/")
+                else:
+                    sk = "-"
+                    rec = "-"
             lines.append(
                 f"| `{w}` | `{wt}` | {cs_cell} | {css_cell} | {tier.replace('|', '/')} | {stations} | {sk} | {rec} | {rcol} | {equip_skill} | {d_cell} | {as_cell} | {ia_cell} | {ad_cell} | {note} |"
             )
