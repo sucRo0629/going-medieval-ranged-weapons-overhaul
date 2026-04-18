@@ -146,6 +146,26 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_long_bow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_long_bow",
+              "amount": 1
+            }
+          ]
+        }
       ]
     },
     {
@@ -857,6 +877,74 @@
       ]
     },
     {
+      "id": "cudgel",
+      "iconPath": "cudgel",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_cudgel",
+          "info": "equipment_info_cudgel"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 0
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_cudgel",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 25
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponShort",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 90,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 300
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
       "id": "bludgeon",
       "iconPath": "bludgeon",
       "iconColorValue": "#B3803A",
@@ -1138,6 +1226,26 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_heavy_crossbow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_heavy_crossbow",
+              "amount": 1
+            }
+          ]
+        }
       ]
     },
     {
@@ -1354,6 +1462,94 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_military_pick",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_military_pick",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flail",
+      "iconPath": "flail",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_flail",
+          "info": "equipment_info_flail"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 0
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_flail",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 30
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponShort",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 90,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 300
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
       ]
     },
     {
@@ -1429,6 +1625,26 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_reinforced_flail",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_reinforced_flail",
+              "amount": 1
+            }
+          ]
         }
       ]
     },
@@ -1649,6 +1865,26 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_two_handed_flail",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_two_handed_flail",
+              "amount": 1
+            }
+          ]
         }
       ]
     },
@@ -2006,6 +2242,26 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_reinforced_spear",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_reinforced_spear",
+              "amount": 1
+            }
+          ]
+        }
       ]
     },
     {
@@ -2078,6 +2334,26 @@
           "devName": "spawnProduct",
           "type": "spawnProduct"
         }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_billhook",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_billhook",
+              "amount": 1
+            }
+          ]
+        }
       ]
     },
     {
@@ -2149,6 +2425,26 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_berdiche",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_berdiche",
+              "amount": 1
+            }
+          ]
         }
       ]
     },
@@ -2365,6 +2661,26 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_throwing_axes",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_throwing_axes",
+              "amount": 1
+            }
+          ]
         }
       ]
     }
