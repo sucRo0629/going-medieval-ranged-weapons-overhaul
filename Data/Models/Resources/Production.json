@@ -224,17 +224,13 @@
       ],
       "produced": [
         {
-          "blueprintID": "iron_two_handed_flanged_mace",
-          "amount": 0
+          "blueprintID": "ash",
+          "amount": 80
         }
       ],
       "recipe": [
         {
           "key": "iron_ingot",
-          "value": 0
-        },
-        {
-          "key": 2048,
           "value": 40
         },
         {
@@ -242,56 +238,16 @@
           "value": 15
         }
       ],
-      "customProducts": [
+      "productionSteps": [
         {
-          "input": "iron_ingot",
-          "output": [
+          "experienceReward": [
             {
-              "blueprintID": "iron_two_handed_flanged_mace",
-              "amount": 1
+              "key": "Carpentry",
+              "value": 0
             },
             {
-              "blueprintID": "ash",
-              "amount": 80
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_two_handed_flanged_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 80
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_two_handed_flanged_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 80
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_two_handed_flanged_mace",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 80
+              "key": "Smithing",
+              "value": 500
             }
           ]
         }
@@ -301,17 +257,13 @@
       "id": "military_pick",
       "produced": [
         {
-          "blueprintID": "iron_military_pick",
-          "amount": 0
+          "blueprintID": "ash",
+          "amount": 20
         }
       ],
       "recipe": [
         {
           "key": "iron_ingot",
-          "value": 0
-        },
-        {
-          "key": 2048,
           "value": 10
         },
         {
@@ -319,56 +271,16 @@
           "value": 10
         }
       ],
-      "customProducts": [
+      "productionSteps": [
         {
-          "input": "iron_ingot",
-          "output": [
+          "experienceReward": [
             {
-              "blueprintID": "iron_military_pick",
-              "amount": 1
+              "key": "Carpentry",
+              "value": 400
             },
             {
-              "blueprintID": "ash",
-              "amount": 25
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_military_pick",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 25
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_military_pick",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 25
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_military_pick",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 25
+              "key": "Smithing",
+              "value": 400
             }
           ]
         }
@@ -393,8 +305,8 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_reinforced_spear",
-          "amount": 0
+          "blueprintID": "ash",
+          "amount": 4
         }
       ],
       "recipe": [
@@ -404,10 +316,6 @@
         },
         {
           "key": "iron_ingot",
-          "value": 0
-        },
-        {
-          "key": 2048,
           "value": 2
         }
       ],
@@ -420,61 +328,7 @@
             },
             {
               "key": "Smithing",
-              "value": 100
-            }
-          ]
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_reinforced_spear",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 5
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_reinforced_spear",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 5
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_reinforced_spear",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 5
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_reinforced_spear",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 5
+              "value": 50
             }
           ]
         }
@@ -509,80 +363,18 @@
       ],
       "produced": [
         {
-          "blueprintID": "iron_billhook",
-          "amount": 0
+          "blueprintID": "ash",
+          "amount": 40
         }
       ],
       "recipe": [
         {
           "key": "iron_ingot",
-          "value": 0
+          "value": 10
         },
         {
           "key": "wood",
-          "value": 0
-        },
-        {
-          "key": 2048,
           "value": 10
-        },
-        {
-          "key": 131072,
-          "value": 10
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_billhook",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 40
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_billhook",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 40
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_billhook",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 40
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_billhook",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 40
-            }
-          ]
         }
       ]
     },
@@ -631,8 +423,8 @@
       ],
       "produced": [
         {
-          "blueprintID": "iron_warhammer",
-          "amount": 0
+          "blueprintID": "ash",
+          "amount": 45
         }
       ],
       "recipe": [
@@ -642,65 +434,7 @@
         },
         {
           "key": "iron_ingot",
-          "value": 0
-        },
-        {
-          "key": 2048,
           "value": 15
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_warhammer",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 45
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_warhammer",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 45
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_warhammer",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 45
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_warhammer",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 45
-            }
-          ]
         }
       ]
     },
@@ -714,76 +448,18 @@
       ],
       "produced": [
         {
-          "blueprintID": "iron_two_handed_warhammer",
-          "amount": 0
+          "blueprintID": "ash",
+          "amount": 75
         }
       ],
       "recipe": [
         {
           "key": "iron_ingot",
-          "value": 0
+          "value": 30
         },
         {
           "key": "wood",
           "value": 15
-        },
-        {
-          "key": 2048,
-          "value": 30
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_two_handed_warhammer",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_two_handed_warhammer",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_two_handed_warhammer",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_two_handed_warhammer",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 75
-            }
-          ]
         }
       ]
     },
@@ -797,8 +473,8 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_reinforced_flail",
-          "amount": 0
+          "blueprintID": "ash",
+          "amount": 5
         }
       ],
       "recipe": [
@@ -808,10 +484,6 @@
         },
         {
           "key": "iron_ingot",
-          "value": 0
-        },
-        {
-          "key": 2048,
           "value": 2
         }
       ],
@@ -819,66 +491,8 @@
         {
           "experienceReward": [
             {
-              "key": "Carpentry",
-              "value": 500
-            },
-            {
               "key": "Smithing",
-              "value": 125
-            }
-          ]
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_reinforced_flail",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 5
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_reinforced_flail",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 5
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_reinforced_flail",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 5
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_reinforced_flail",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 5
+              "value": 50
             }
           ]
         }
@@ -895,8 +509,8 @@
       ],
       "produced": [
         {
-          "blueprintID": "wood_two_handed_flail",
-          "amount": 0
+          "blueprintID": "ash",
+          "amount": 10
         }
       ],
       "recipe": [
@@ -905,62 +519,8 @@
           "value": 45
         },
         {
-          "key": 2048,
+          "key": "iron_ingot",
           "value": 5
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_two_handed_flail",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 10
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_two_handed_flail",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 10
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_two_handed_flail",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 10
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_two_handed_flail",
-              "amount": 1
-            },
-            {
-              "blueprintID": "ash",
-              "amount": 10
-            }
-          ]
         }
       ]
     },
@@ -1000,12 +560,6 @@
           "value": 20
         }
       ],
-      "produced": [
-        {
-          "blueprintID": "wood_long_bow",
-          "amount": 0
-        }
-      ],
       "recipe": [
         {
           "key": "wood",
@@ -1016,46 +570,8 @@
           "value": 10
         },
         {
-          "key": 2048,
+          "key": "iron_ingot",
           "value": 5
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_long_bow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_long_bow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_long_bow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_long_bow",
-              "amount": 1
-            }
-          ]
         }
       ]
     },
@@ -1118,12 +634,6 @@
           "value": 25
         }
       ],
-      "produced": [
-        {
-          "blueprintID": "wood_heavy_crossbow",
-          "amount": 0
-        }
-      ],
       "recipe": [
         {
           "key": "wood",
@@ -1134,111 +644,21 @@
           "value": 6
         },
         {
-          "key": 2048,
+          "key": "iron_ingot",
           "value": 5
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_heavy_crossbow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_heavy_crossbow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_heavy_crossbow",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_heavy_crossbow",
-              "amount": 1
-            }
-          ]
         }
       ]
     },
     {
       "id": "throwing_axes",
-      "produced": [
-        {
-          "blueprintID": "iron_throwing_axes",
-          "amount": 0
-        },
-        {
-          "blueprintID": "ash",
-          "amount": 25
-        }
-      ],
       "recipe": [
         {
           "key": "iron_ingot",
-          "value": 0
+          "value": 5
         },
         {
           "key": "wood",
           "value": 20
-        },
-        {
-          "key": 2048,
-          "value": 5
-        }
-      ],
-      "customProducts": [
-        {
-          "input": "iron_ingot",
-          "output": [
-            {
-              "blueprintID": "iron_throwing_axes",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "steel_ingot",
-          "output": [
-            {
-              "blueprintID": "steel_throwing_axes",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "gold_ingot",
-          "output": [
-            {
-              "blueprintID": "gold_throwing_axes",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "input": "silver_ingot",
-          "output": [
-            {
-              "blueprintID": "silver_throwing_axes",
-              "amount": 1
-            }
-          ]
         }
       ]
     },

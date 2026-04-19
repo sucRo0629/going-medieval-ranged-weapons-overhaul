@@ -1,72 +1,27 @@
 {
   "repository": [
     {
-      "id": "reinforced_flail",
-      "materials": [
-        "iron",
-        "steel",
-        "silver",
-        "gold"
-      ],
-      "itemMaterialCategory": 1
+      "id": "reinforced_flail"
     },
     {
-      "id": "two_handed_flail",
-      "materials": [
-        "iron",
-        "steel",
-        "silver",
-        "gold"
-      ],
-      "itemMaterialCategory": 1
+      "id": "two_handed_flail"
     },
     {
-      "id": "reinforced_spear",
-      "materials": [
-        "iron",
-        "steel",
-        "silver",
-        "gold"
-      ],
-      "itemMaterialCategory": 1
+      "id": "reinforced_spear"
     },
     {
-      "id": "long_bow",
-      "materials": [
-        "iron",
-        "steel",
-        "silver",
-        "gold"
-      ]
+      "id": "long_bow"
     },
     {
-      "id": "heavy_crossbow",
-      "materials": [
-        "iron",
-        "steel",
-        "silver",
-        "gold"
-      ]
+      "id": "heavy_crossbow"
     },
     {
-      "id": "throwing_axes",
-      "materials": [
-        "iron",
-        "steel",
-        "silver",
-        "gold"
-      ],
-      "itemMaterialCategory": 1
+      "id": "throwing_axes"
     },
     {
       "id": "light_javelins",
       "iconBackgroundPath": "ranged_weapon_background",
       "locKeys": [
-        {
-          "languageName": "English",
-          "name": "equipment_name_light_javelins",
-          "info": "equipment_info_light_javelins"
-        },
         {
           "languageName": "Japanese",
           "name": "ライトジャベリン",

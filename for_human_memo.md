@@ -14,7 +14,8 @@ Mod では Mod 名/Data/Models/がバニラの StreamingAssets/に相当する�
 「何を作るか」を決めるレシピ層
 produced[].blueprintID / customProducts[].output[].blueprintID で生成先 ID を指定
 
-作業台でのアイコンは iconPath
+- iconPath: 作業台でのアイコン
+- jobType: 256: 鍛冶、512: 大工
 
 ### 素材で性能差を追加する
 
