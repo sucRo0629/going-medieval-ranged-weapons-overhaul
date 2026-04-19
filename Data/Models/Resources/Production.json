@@ -840,7 +840,7 @@
       "requiredSkills": [
         {
           "key": "Smithing",
-          "value": 0
+          "value": 10
         }
       ],
       "recipe": [
@@ -1801,6 +1801,115 @@
         {
           "devName": "spawnProduct",
           "type": "spawnProduct"
+        }
+      ]
+    },
+    {
+      "id": "francisca",
+      "iconPath": "hatchet",
+      "iconColorValue": "#bebebe",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_francisca",
+          "info": "equipment_info_throwing_axes"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "フランキスカ",
+          "info": "equipment_info_throwing_axes"
+        }
+      ],
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 15
+        }
+      ],
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 20
+        },
+        {
+          "key": 131072,
+          "value": 15
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingMetalWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 550,
+          "modifyingAttribute": "SmithingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_francisca",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_francisca",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_francisca",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_francisca",
+              "amount": 1
+            }
+          ]
         }
       ]
     },

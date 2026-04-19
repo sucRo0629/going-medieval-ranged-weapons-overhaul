@@ -15,7 +15,7 @@
 - **備考**: `A` = レシピなし、`B` = レシピはあるが作業台未掲載（オーファン）。
 - **ティア調整用表**（下）: **データ上製作可**に加え `TIER_PLANNING_EXTRA_WEAPON_IDS` の武器を **全 weaponType 混在** で並べ、CombatScore ベースの自動ティアを種別横断で比較する。
 
-- 武器総数: **53** / 製作可: **49**
+- 武器総数: **54** / 製作可: **50**
 - CombatScore自動ティア閾値（絶対）: T1:<**2.5**, T2:>=**2.5**, T3:>=**3**, T4:>=**3.5**, T5:**4**〜**4.5**
 - 鋼補正（`MaterialSettings.steel`）: damage x**1.2**, attackSpeed x**1**
 
@@ -63,6 +63,7 @@
 | `berdiche` | `TwoHandSpear` | 3.97 | 4.76 | T4 | 31 | 6 | 0.42 | 0.75 | 可 |
 | `reinforced_two_handed_flail` | `TwoHandMace` | 4 | 4.8 | T4 | 31.2 | 5 | 0.1 | 2.7 | 可 |
 | `knightly_sword` | `OneHandSword` | 4 | 4.8 | T5 | 19.5 | 3.23 | 0.31 | 0.66 | 可 |
+| `francisca` | `OneHandThrow` | 4.03 | 4.84 | T5 | 24.9 | 4.8 | 0.21 | 1.51 | 可 |
 | `longsword` | `TwoHandSword` | 4.06 | 4.88 | T5 | 26.5 | 4.43 | 0.32 | 0.68 | 可 |
 | `greataxe` | `TwoHandAxe` | 4.11 | 4.93 | T5 | 34.5 | 5.5 | 0.23 | 1.82 | 可 |
 | `heavy_crossbow` | `TwoHandCrossbow` | 4.12 | 4.94 | T5 | 38 | 10.4 | 0.85 | 0.2 | 可 |
@@ -116,13 +117,14 @@
 | `throwing_axes` | `OneHandThrow` | 2.8 | 3.36 | T2 | `blacksmith_station` | — | iron_ingot x5, wood x20 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 5 | 17.5 | 4.5 | 0.2 | 1 | 製作可 |
 | `reinforced_throwing_axes` | `OneHandThrow` | 3.36 | 4.03 | T3 | `blacksmith_station` | Smithing 10 | steel_ingot x5, wood x20 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 5 | 21 | 4.5 | 0.2 | 1 | 製作可 |
 | `javelins` | `OneHandThrow` | 3.57 | 4.28 | T4 | `woodwork_bench` | Smithing 5 | 金属インゴット類（iron/steel 等・カテゴリマスク） x10, wood x20 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 10 | 25 | 5.8 | 0.3 | 1.5 | 製作可 |
+| `francisca` | `OneHandThrow` | 4.03 | 4.84 | T5 | `blacksmith_station` | Smithing 15 | 金属インゴット類（iron/steel 等・カテゴリマスク） x20, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x15 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 15, Melee 15 | 24.9 | 4.8 | 0.21 | 1.51 | 製作可 |
 
 ## 片手斧（OneHandAxe）
 
 | weapon | `weaponType` | CombatScore(Base) | CombatScore(鋼想定) | ティア（CombatScore自動） | 作業台 | 必要スキル（レシピ） | レシピ（要約） | 研究（id / 表示名 / 深さ） | 装備必要スキル（Mod） | damage | attackSpeed | ignoresArmor | armorDamage | 備考 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `hatchet` | `OneHandAxe` | 2.8 | 3.36 | T2 | `blacksmith_station` | — | 金属インゴット類（iron/steel 等・カテゴリマスク） x5, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x10 | -（`Research.unlocks` 無し・初期解禁等） | なし | 19 | 4.35 | 0.2 | 1.45 | 製作可 |
-| `waraxe` | `OneHandAxe` | 3.72 | 4.46 | T4 | `blacksmith_station` | Smithing 0 | 金属インゴット類（iron/steel 等・カテゴリマスク） x15, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x10 | -（`Research.unlocks` 無し・初期解禁等） | なし | 26 | 4.65 | 0.21 | 1.7 | 製作可 |
+| `waraxe` | `OneHandAxe` | 3.72 | 4.46 | T4 | `blacksmith_station` | Smithing 10 | 金属インゴット類（iron/steel 等・カテゴリマスク） x15, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x10 | -（`Research.unlocks` 無し・初期解禁等） | Melee 10 | 26 | 4.65 | 0.21 | 1.7 | 製作可 |
 
 ## 両手斧（TwoHandAxe）
 
