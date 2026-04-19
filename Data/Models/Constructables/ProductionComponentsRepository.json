@@ -75,11 +75,7 @@
         "warhammer",
         "two_handed_warhammer",
         "two_handed_flanged_mace",
-        "billhook",
-        "reinforced_spear",
-        "javelins",
-        "reinforced_flail",
-        "two_handed_flail"
+        "billhook"
       ],
       "productionEffectPrefabId": "BlacksmithProductionActive",
       "productionSound": "BlacksmithForge",
