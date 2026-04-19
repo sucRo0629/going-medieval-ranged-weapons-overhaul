@@ -9,7 +9,7 @@
         },
         {
           "key": 131072,
-          "value": 20
+          "value": 10
         }
       ]
     },
@@ -35,10 +35,6 @@
     {
       "id": "falchion",
       "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 0
-        },
         {
           "key": "Smithing",
           "value": 5
@@ -617,11 +613,11 @@
       "recipe": [
         {
           "key": 2048,
-          "value": 40
+          "value": 45
         },
         {
           "key": 131072,
-          "value": 15
+          "value": 30
         }
       ]
     },
@@ -1135,7 +1131,7 @@
         },
         {
           "key": "mechanical_parts",
-          "value": 5
+          "value": 6
         },
         {
           "key": 2048,

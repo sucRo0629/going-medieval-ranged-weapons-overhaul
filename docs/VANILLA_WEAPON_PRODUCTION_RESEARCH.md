@@ -24,6 +24,7 @@ python scripts/vanilla_weapon_production_research_table.py \
 **Mod 用・全武器一覧**（`MOD_WEAPON_OVERVIEW.generated.md`）は同じパスで:
 
 ```bash
+export GM_STREAMING_ASSETS="D:/SteamLibrary/steamapps/common/Going Medieval/Going Medieval_Data/StreamingAssets"
 python scripts/mod_weapon_overview_table.py \
   --streaming-assets "$GM_STREAMING_ASSETS" \
   --mod-equipment "Data/Models/Items/Equipment.json" \
@@ -56,4 +57,4 @@ python scripts\mod_weapon_overview_table.py --streaming-assets "%GM_STREAMING_AS
 - **A（レシピなし）**: `Production` 定義の追加 ＋ 作業台 `productions` への id 追加 ＋ 必要なら `Research.unlocks`。
 - **B（オーファン）**: `Production` は既にあるので、**作業台 `productions` への id 追加**が主。研究はバニラで未リンクなら `unlocks` 追加を検討。
 
-本作の方針で除外する id（手ラム、`macabre_`_、`forest\__`等）は`[implementation_policies/core/CREATION_POLICY.md](../implementation_policies/core/CREATION_POLICY.md)` を参照。
+本作の方針で除外する id（手ラム、`macabre_`\_、`forest\__`等）は`[implementation_policies/core/CREATION_POLICY.md](../implementation_policies/core/CREATION_POLICY.md)` を参照。
