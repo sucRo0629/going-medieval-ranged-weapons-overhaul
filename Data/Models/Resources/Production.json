@@ -384,6 +384,10 @@
         {
           "key": "wood",
           "value": 15
+        },
+        {
+          "key": "iron_ingot",
+          "value": 3
         }
       ]
     },
@@ -632,6 +636,12 @@
         {
           "key": "Carpentry",
           "value": 25
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "wood_heavy_crossbow",
+          "amount": 1
         }
       ],
       "recipe": [
