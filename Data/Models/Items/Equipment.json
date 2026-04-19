@@ -823,6 +823,37 @@
       "coverAngle": 30
     },
     {
+      "id": "waraxe",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandAxe",
+        "damage": 26,
+        "ignoresArmor": 0.21,
+        "armorDamage": 1.7,
+        "buildingDamage": 0.6,
+        "precision": 0.99,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.65,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "AxeSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 30
+    },
+    {
       "id": "greataxe",
       "itemType": 1,
       "equipmentSlots": 3,
@@ -837,14 +868,14 @@
       "carryHand": 1,
       "primaryWeaponMode": {
         "weaponType": "TwoHandAxe",
-        "damage": 34,
-        "ignoresArmor": 0.22,
-        "armorDamage": 1.7,
+        "damage": 34.5,
+        "ignoresArmor": 0.23,
+        "armorDamage": 1.82,
         "buildingDamage": 2,
         "precision": 0.95,
         "precisionFalloff": 0,
         "range": 0,
-        "attackSpeed": 5.3,
+        "attackSpeed": 5.5,
         "hitEffectorGroupIDs": [
           "WoundsCutting"
         ],

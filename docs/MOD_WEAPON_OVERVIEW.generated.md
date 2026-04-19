@@ -15,7 +15,7 @@
 - **備考**: `A` = レシピなし、`B` = レシピはあるが作業台未掲載（オーファン）。
 - **ティア調整用表**（下）: **データ上製作可**に加え `TIER_PLANNING_EXTRA_WEAPON_IDS` の武器を **全 weaponType 混在** で並べ、CombatScore ベースの自動ティアを種別横断で比較する。
 
-- 武器総数: **52** / 製作可: **48**
+- 武器総数: **53** / 製作可: **49**
 - CombatScore自動ティア閾値（絶対）: T1:<**2.5**, T2:>=**2.5**, T3:>=**3**, T4:>=**3.5**, T5:**4**〜**4.5**
 - 鋼補正（`MaterialSettings.steel`）: damage x**1.2**, attackSpeed x**1**
 
@@ -56,6 +56,7 @@
 | `re_reinforced_spear` | `TwoHandSpear` | 3.56 | 4.28 | T4 | 27.6 | 5.8 | 0.4 | 0.5 | 可 |
 | `javelins` | `OneHandThrow` | 3.57 | 4.28 | T4 | 25 | 5.8 | 0.3 | 1.5 | 可 |
 | `curved_bow` | `TwoHandBow` | 3.7 | - | T4 | 18 | 5.2 | 0.68 | 0.1 | 可 |
+| `waraxe` | `OneHandAxe` | 3.72 | 4.46 | T4 | 26 | 4.65 | 0.21 | 1.7 | 可 |
 | `two_handed_warhammer` | `TwoHandMace` | 3.74 | 4.49 | T4 | 30.1 | 5.1 | 0.13 | 2.2 | 可 |
 | `two_handed_mace` | `TwoHandMace` | 3.74 | 4.49 | T4 | 28.4 | 4.8 | 0.11 | 2.36 | 可 |
 | `reinforced_warhammer` | `OneHandMace` | 3.88 | 4.65 | T4 | 24.48 | 4.05 | 0.1 | 2 | 可 |
@@ -63,14 +64,14 @@
 | `reinforced_two_handed_flail` | `TwoHandMace` | 4 | 4.8 | T4 | 31.2 | 5 | 0.1 | 2.7 | 可 |
 | `knightly_sword` | `OneHandSword` | 4 | 4.8 | T5 | 19.5 | 3.23 | 0.31 | 0.66 | 可 |
 | `longsword` | `TwoHandSword` | 4.06 | 4.88 | T5 | 26.5 | 4.43 | 0.32 | 0.68 | 可 |
+| `greataxe` | `TwoHandAxe` | 4.11 | 4.93 | T5 | 34.5 | 5.5 | 0.23 | 1.82 | 可 |
 | `heavy_crossbow` | `TwoHandCrossbow` | 4.12 | 4.94 | T5 | 38 | 10.4 | 0.85 | 0.2 | 可 |
 | `greatsword` | `TwoHandSword` | 4.15 | 4.98 | T5 | 31 | 5.1 | 0.32 | 0.75 | 可 |
-| `greataxe` | `TwoHandAxe` | 4.15 | 4.98 | T5 | 34 | 5.3 | 0.22 | 1.7 | 可 |
 | `two_handed_flanged_mace` | `TwoHandMace` | 4.15 | 4.98 | T5 | 29.6 | 4.65 | 0.15 | 2.5 | 可 |
 | `long_bow` | `TwoHandBow` | 4.15 | 4.98 | T5 | 23.3 | 6.2 | 0.7 | 0.1 | 可 |
 | `reinforced_billhook` | `TwoHandSpear` | 4.16 | 5 | T5 | 32.4 | 5.9 | 0.34 | 0.9 | 可 |
 | `reinforced_two_handed_warhammer` | `TwoHandMace` | 4.49 | 5.39 | T5 | 36.12 | 5.1 | 0.13 | 2.2 | 可 |
-| `reinforced_heavy_crossbow` | `TwoHandCrossbow` | 4.94 | - | T5 | 45.6 | 10.4 | 0.85 | 0.2 | 可 |
+| `reinforced_heavy_crossbow` | `TwoHandCrossbow` | 4.94 | 5.93 | T5 | 45.6 | 10.4 | 0.85 | 0.2 | 可 |
 | `reinforced_two_handed_flanged_mace` | `TwoHandMace` | 4.98 | 5.98 | T5 | 35.52 | 4.65 | 0.15 | 2.5 | 可 |
 | `reinforced_long_bow` | `TwoHandBow` | 4.98 | 5.98 | T5 | 27.96 | 6.2 | 0.7 | 0.1 | 可 |
 
@@ -93,7 +94,7 @@
 | `light_crossbow` | `TwoHandCrossbow` | 2.98 | - | T2 | `fletchers_table` | Carpentry 15 | wood x25, wood_mechanical_parts x2 | `crossbows_lvl2` / `research_name_crossbows_lvl2`（ローカライズキー） / 3 | なし | 26 | 8.6 | 0.65 | 0.2 | 製作可 |
 | `crossbow` | `TwoHandCrossbow` | 3.44 | - | T3 | `fletchers_table` | — | wood x40, wood_mechanical_parts x3 | `crossbows_lvl2` / `research_name_crossbows_lvl2`（ローカライズキー） / 3 | なし | 32 | 9.6 | 0.72 | 0.2 | 製作可 |
 | `heavy_crossbow` | `TwoHandCrossbow` | 4.12 | 4.94 | T5 | `fletchers_table` | Carpentry 25 | wood x45, mechanical_parts x6, iron_ingot x5 | `crossbows_lvl3` / `research_name_crossbows_lvl3`（ローカライズキー） / 4 | Marksman 15 | 38 | 10.4 | 0.85 | 0.2 | 製作可 |
-| `reinforced_heavy_crossbow` | `TwoHandCrossbow` | 4.94 | - | T5 | `fletchers_table` | Carpentry 20 | wood x45, mechanical_parts x3 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 15 | 45.6 | 10.4 | 0.85 | 0.2 | 製作可 |
+| `reinforced_heavy_crossbow` | `TwoHandCrossbow` | 4.94 | 5.93 | T5 | `fletchers_table` | Carpentry 20 | wood x45, mechanical_parts x3, steel_ingot x5 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 15 | 45.6 | 10.4 | 0.85 | 0.2 | 製作可 |
 
 ## 片手スリング（OneHandSling）
 
@@ -120,13 +121,14 @@
 
 | weapon | `weaponType` | CombatScore(Base) | CombatScore(鋼想定) | ティア（CombatScore自動） | 作業台 | 必要スキル（レシピ） | レシピ（要約） | 研究（id / 表示名 / 深さ） | 装備必要スキル（Mod） | damage | attackSpeed | ignoresArmor | armorDamage | 備考 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `hatchet` | `OneHandAxe` | 2.8 | 3.36 | T2 | `blacksmith_station` | — | 金属インゴット類（iron/steel 等・カテゴリマスク） x10, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x10 | -（`Research.unlocks` 無し・初期解禁等） | なし | 19 | 4.35 | 0.2 | 1.45 | 製作可 |
+| `hatchet` | `OneHandAxe` | 2.8 | 3.36 | T2 | `blacksmith_station` | — | 金属インゴット類（iron/steel 等・カテゴリマスク） x5, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x10 | -（`Research.unlocks` 無し・初期解禁等） | なし | 19 | 4.35 | 0.2 | 1.45 | 製作可 |
+| `waraxe` | `OneHandAxe` | 3.72 | 4.46 | T4 | `blacksmith_station` | Smithing 0 | 金属インゴット類（iron/steel 等・カテゴリマスク） x15, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x10 | -（`Research.unlocks` 無し・初期解禁等） | なし | 26 | 4.65 | 0.21 | 1.7 | 製作可 |
 
 ## 両手斧（TwoHandAxe）
 
 | weapon | `weaponType` | CombatScore(Base) | CombatScore(鋼想定) | ティア（CombatScore自動） | 作業台 | 必要スキル（レシピ） | レシピ（要約） | 研究（id / 表示名 / 深さ） | 装備必要スキル（Mod） | damage | attackSpeed | ignoresArmor | armorDamage | 備考 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `greataxe` | `TwoHandAxe` | 4.15 | 4.98 | T5 | `blacksmith_station` | — | 金属インゴット類（iron/steel 等・カテゴリマスク） x45, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x30 | `axes_lvl2` / `research_name_axes_lvl2`（ローカライズキー） / 3 | Melee 20 | 34 | 5.3 | 0.22 | 1.7 | 製作可 |
+| `greataxe` | `TwoHandAxe` | 4.11 | 4.93 | T5 | `blacksmith_station` | — | 金属インゴット類（iron/steel 等・カテゴリマスク） x45, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x30 | `axes_lvl2` / `research_name_axes_lvl2`（ローカライズキー） / 3 | Melee 20 | 34.5 | 5.5 | 0.23 | 1.82 | 製作可 |
 
 ## 片手剣（OneHandSword）
 

@@ -683,6 +683,145 @@
       ]
     },
     {
+      "id": "waraxe",
+      "materials": [
+        "iron",
+        "steel",
+        "gold",
+        "silver"
+      ],
+      "iconPath": "hatchet",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_waraxr",
+          "info": "equipment_info_hatchet",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "戦斧",
+          "info": "equipment_info_hatchet",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "hatchet"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_2"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_metal_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_equiped_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.18,
+            "y": 0.02,
+            "z": -0.18
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": -35,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.1,
+            "y": 0,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "waraxe",
+      "protoId": "waraxe",
+      "hasQuality": true,
+      "weight": 4,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 150,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 8,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 40,
+      "category": 65536,
+      "sortingGroup": "MeleeOnehanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
+    },
+    {
       "id": "reinforced_warhammer",
       "materials": [
         "steel"

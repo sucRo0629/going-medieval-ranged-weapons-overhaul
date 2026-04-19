@@ -801,11 +801,146 @@
       "recipe": [
         {
           "key": 2048,
-          "value": 10
+          "value": 5
         },
         {
           "key": 131072,
           "value": 10
+        }
+      ],
+      "productionSteps": [
+        {
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 250
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "waraxe",
+      "iconPath": "hatchet",
+      "iconColorValue": "#bebebe",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_waraxe",
+          "info": "equipment_info_hatchet"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "戦斧",
+          "info": "equipment_info_hatchet"
+        }
+      ],
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 0
+        }
+      ],
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 15
+        },
+        {
+          "key": 131072,
+          "value": 10
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingMetalWeaponShort",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 400,
+          "modifyingAttribute": "SmithingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 300
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ],
+      "customProducts": [
+        {
+          "input": "iron_ingot",
+          "output": [
+            {
+              "blueprintID": "iron_waraxe",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "input": "steel_ingot",
+          "output": [
+            {
+              "blueprintID": "steel_waraxe",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "input": "gold_ingot",
+          "output": [
+            {
+              "blueprintID": "gold_waraxe",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "input": "silver_ingot",
+          "output": [
+            {
+              "blueprintID": "silver_waraxe",
+              "amount": 1
+            },
+            {
+              "blueprintID": "ash",
+              "amount": 75
+            }
+          ]
         }
       ]
     },
