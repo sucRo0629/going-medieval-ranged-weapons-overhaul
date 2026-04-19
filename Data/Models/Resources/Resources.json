@@ -1,22 +1,1644 @@
 {
   "repository": [
     {
-      "id": "reinforced_flail"
+      "id": "reinforced_two_handed_flanged_mace",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "two_handed_flanged_mace",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_two_handed_flanged_mace",
+          "info": "equipment_info_two_handed_flanged_mace",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化両手フランジドメイス",
+          "info": "equipment_info_two_handed_flanged_mace",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "two_handed_flanged_mace"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_metal_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_equiped_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": -0.43,
+            "y": 0.05,
+            "z": -0.36
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 45,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.1,
+            "y": 0,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_two_handed_flanged_mace",
+      "protoId": "reinforced_two_handed_flanged_mace",
+      "hasQuality": true,
+      "weight": 4,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 150,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 10,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 50,
+      "category": 65536,
+      "sortingGroup": "MeleeTwohanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
     },
     {
-      "id": "two_handed_flail"
+      "id": "reinforced_military_pick",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "military_pick",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_military_pick",
+          "info": "equipment_info_military_pick",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化軍用つるはし",
+          "info": "equipment_info_military_pick",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "military_pick"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_metal_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_equiped_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": -0.23,
+            "y": 0.05,
+            "z": -0.23
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 45,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.1,
+            "y": 0,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_military_pick",
+      "protoId": "reinforced_military_pick",
+      "hasQuality": true,
+      "weight": 3,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 150,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 8,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 65,
+      "category": 65536,
+      "sortingGroup": "MeleeOnehanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
     },
     {
-      "id": "reinforced_spear"
+      "id": "re_reinforced_spear",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "reinforced_spear",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_spear",
+          "info": "equipment_info_reinforced_spear",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "再強化槍",
+          "info": "equipment_info_reinforced_spear",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "spear"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_equiped_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.24,
+            "y": 0.04,
+            "z": -0.13
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 55
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.22,
+            "y": 0,
+            "z": 0.31
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 22
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "re_reinforced_spear",
+      "protoId": "re_reinforced_spear",
+      "hasQuality": true,
+      "weight": 7,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 500,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 10,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 65,
+      "category": 65536,
+      "sortingGroup": "MeleeTwohanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 3,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
     },
     {
-      "id": "long_bow"
+      "id": "reinforced_billhook",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "billhook",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_billhook",
+          "info": "equipment_info_billhook",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化鉈鎌",
+          "info": "equipment_info_billhook",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "billhook"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_metal_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_equiped_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.35,
+            "y": 0.04,
+            "z": -0.35
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": -40,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.08,
+            "y": 0,
+            "z": -0.04
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 22
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_billhook",
+      "protoId": "reinforced_billhook",
+      "hasQuality": true,
+      "weight": 4,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 150,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 12,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 65,
+      "category": 65536,
+      "sortingGroup": "MeleeTwohanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
     },
     {
-      "id": "heavy_crossbow"
+      "id": "reinforced_warfork",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "warfork",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_warfork",
+          "info": "equipment_info_warfork",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化ウォーフォーク",
+          "info": "equipment_info_warfork",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "warfork"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_equiped_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.46,
+            "y": 0.04,
+            "z": -0.46
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 50
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.09,
+            "y": 0.03,
+            "z": -0.04
+          },
+          "rotationOffset": {
+            "x": 185,
+            "y": 70,
+            "z": 85
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_warfork",
+      "protoId": "reinforced_warfork",
+      "hasQuality": true,
+      "weight": 6,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 500,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 7,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 68,
+      "category": 65536,
+      "sortingGroup": "MeleeTwohanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 3,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
     },
     {
-      "id": "throwing_axes"
+      "id": "reinforced_warhammer",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "warhammer",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_warhammer",
+          "info": "equipment_info_warhammer",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageVeryHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化戦鎚",
+          "info": "equipment_info_warhammer",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageVeryHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "warhammer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_2"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_metal_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_equiped_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.1,
+            "y": 0.02,
+            "z": -0.11
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": -45,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.1,
+            "y": 0,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_warhammer",
+      "protoId": "reinforced_warhammer",
+      "hasQuality": true,
+      "weight": 5,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 150,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 10,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 30,
+      "category": 65536,
+      "sortingGroup": "MeleeOnehanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "reinforced_two_handed_warhammer",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "two_handed_warhammer",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_two_handed_warhammer",
+          "info": "equipment_info_two_handed_warhammer",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageVeryHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化両手戦鎚",
+          "info": "equipment_info_two_handed_warhammer",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageVeryHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "two_handed_warhammer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_2"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_metal_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_equiped_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.12,
+            "y": 0.02,
+            "z": -0.15
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": -45,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.1,
+            "y": 0,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_two_handed_warhammer",
+      "protoId": "reinforced_two_handed_warhammer",
+      "hasQuality": true,
+      "weight": 6,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 200,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 15,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 50,
+      "category": 65536,
+      "sortingGroup": "MeleeTwohanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "re_reinforced_flail",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "reinforced_flail",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_flail",
+          "info": "equipment_info_reinforced_flail",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageVeryHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "再強化フレイル",
+          "info": "equipment_info_reinforced_flail",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageVeryHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "reinforced_flail"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_2"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_skinned_weapon",
+      "skinnedMeshID": "reinforced_flail",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.13,
+            "y": 0.02,
+            "z": -0.12
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": -45,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.13,
+            "y": 0,
+            "z": 0.04
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 10
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "re_reinforced_flail",
+      "protoId": "re_reinforced_flail",
+      "hasQuality": true,
+      "weight": 7,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 500,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 1,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 63,
+      "category": 65536,
+      "sortingGroup": "MeleeOnehanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "reinforced_two_handed_flail",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "two_handed_flail",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_two_handed_flail",
+          "info": "equipment_info_two_handed_flail",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageVeryHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化両手フレイル",
+          "info": "equipment_info_two_handed_flail",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmorDamageVeryHigh",
+            "pile_tooltip_info_BuildingDamageHigh",
+            "pile_tooltip_info_ArmourPenetrationLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "two_handed_flail"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_2"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_skinned_weapon",
+      "skinnedMeshID": "two_handed_flail",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.16,
+            "y": 0.02,
+            "z": -0.14
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": -45,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.11,
+            "y": 0,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 67,
+            "y": 80,
+            "z": 90
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_two_handed_flail",
+      "protoId": "reinforced_two_handed_flail",
+      "hasQuality": true,
+      "weight": 9,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 550,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 1,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 85,
+      "category": 65536,
+      "sortingGroup": "MeleeTwohanded",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Melee",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 1,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "reinforced_long_bow",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "long_bow",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_long_bow",
+          "info": "equipment_info_long_bow",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BonusHigherGround",
+            "pile_tooltip_info_ArmorDamageLow"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化ロングボウ",
+          "info": "equipment_info_long_bow",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BonusHigherGround",
+            "pile_tooltip_info_ArmorDamageLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "long_bow"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "bow_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "bow_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_skinned_bow",
+      "skinnedMeshID": "long_bow",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": -0.06,
+            "y": 0.03,
+            "z": 0.08
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": -25
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.13,
+            "y": 0.01,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_long_bow",
+      "protoId": "reinforced_long_bow",
+      "hasQuality": true,
+      "weight": 4,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 700,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 25,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 110,
+      "category": 65536,
+      "sortingGroup": "WeaponRanged",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Ranged",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 3,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "reinforced_heavy_crossbow",
+      "materials": [
+        "steel"
+      ],
+      "iconPath": "heavy_crossbow",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_heavy_crossbow",
+          "info": "equipment_info_heavy_crossbow",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BonusHigherGround",
+            "pile_tooltip_info_ArmorDamageLow",
+            "pile_tooltip_info_AttckSpeedLow"
+          ]
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化ヘビィクロスボウ",
+          "info": "equipment_info_heavy_crossbow",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BonusHigherGround",
+            "pile_tooltip_info_ArmorDamageLow",
+            "pile_tooltip_info_AttckSpeedLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "heavy_crossbow"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "bow_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "bow_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_skinned_crossbow",
+      "skinnedMeshID": "heavy_crossbow",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.04,
+            "y": 0.04,
+            "z": 0.05
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": -25
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.37,
+            "y": 0.02,
+            "z": 0.21
+          },
+          "rotationOffset": {
+            "x": 0,
+            "y": 210,
+            "z": 270
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_heavy_crossbow",
+      "protoId": "reinforced_heavy_crossbow",
+      "hasQuality": true,
+      "weight": 6,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 900,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 45,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 150,
+      "category": 65536,
+      "sortingGroup": "WeaponRanged",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Ranged",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 3,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        },
+        {
+          "key": "mechanical_parts",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "reinforced_throwing_axes",
+      "materials": [
+        "iron"
+      ],
+      "iconPath": "throwing_axes",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_throwing_axes",
+          "info": "equipment_info_throwing_axes"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化投斧",
+          "info": "equipment_info_throwing_axes"
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "throwing_axe_pile"
+                },
+                {
+                  "id": "2",
+                  "slot": "meshInHand",
+                  "slotType": "Mesh",
+                  "value": "throwing_axe"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_2"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "base_melee_weapon_metal_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_throwing_weapon",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": 0.03,
+            "y": 0.02,
+            "z": 0.03
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.1,
+            "y": 0,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "reinforced_throwing_axes",
+      "protoId": "reinforced_throwing_axes",
+      "hasQuality": true,
+      "weight": 1,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 120,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 2,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 40,
+      "category": 65536,
+      "sortingGroup": "WeaponRanged",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Ranged",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 3,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
     },
     {
       "id": "light_javelins",

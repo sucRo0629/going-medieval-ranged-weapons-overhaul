@@ -423,6 +423,43 @@
       "coverAngle": 90
     },
     {
+      "id": "reinforced_two_handed_flanged_mace",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 10
+        }
+      ],
+      "beautyInputEquipped": 5,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandMace",
+        "damage": 35.52,
+        "ignoresArmor": 0.15,
+        "armorDamage": 2.5,
+        "buildingDamage": 1.5,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.65,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "MaceSlash"
+      },
+      "meleeCover": 0.17,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
       "id": "military_pick",
       "itemType": 1,
       "equipmentSlots": 1,
@@ -438,6 +475,44 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandMace",
         "damage": 18,
+        "ignoresArmor": 0.2,
+        "armorDamage": 2.23,
+        "buildingDamage": 1.5,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.63,
+        "ladderCritMod": 1.2,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1,
+        "loseHpOnMiss": false,
+        "weaponSound": "MaceSlash"
+      },
+      "meleeCover": 0.06,
+      "rangedCover": 0,
+      "coverAngle": 30
+    },
+    {
+      "id": "reinforced_military_pick",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 0
+        }
+      ],
+      "beautyInputEquipped": 4,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 21.6,
         "ignoresArmor": 0.2,
         "armorDamage": 2.23,
         "buildingDamage": 1.5,
@@ -525,6 +600,38 @@
       "coverAngle": 90
     },
     {
+      "id": "re_reinforced_spear",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSpear",
+        "damage": 27.6,
+        "ignoresArmor": 0.4,
+        "armorDamage": 0.5,
+        "buildingDamage": 0.3,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0.9,
+        "attackSpeed": 5.8,
+        "ladderCritMod": 1.2,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
       "id": "berdiche",
       "itemType": 1,
       "equipmentSlots": 3,
@@ -589,6 +696,38 @@
       "coverAngle": 90
     },
     {
+      "id": "reinforced_billhook",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 6,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSpear",
+        "damage": 32.4,
+        "ignoresArmor": 0.34,
+        "armorDamage": 0.9,
+        "buildingDamage": 0.2,
+        "precision": 0.97,
+        "precisionFalloff": 0,
+        "range": 0.75,
+        "attackSpeed": 5.9,
+        "ladderCritMod": 1.3,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.17,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
       "id": "warfork",
       "itemType": 1,
       "equipmentSlots": 3,
@@ -598,6 +737,38 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandSpear",
         "damage": 21.6,
+        "ignoresArmor": 0.36,
+        "armorDamage": 0.5,
+        "buildingDamage": 0.2,
+        "precision": 0.93,
+        "precisionFalloff": 0,
+        "range": 0.55,
+        "attackSpeed": 5.3,
+        "ladderCritMod": 1.2,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "SpearSlash"
+      },
+      "meleeCover": 0.17,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
+      "id": "reinforced_warfork",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 3,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandSpear",
+        "damage": 25.92,
         "ignoresArmor": 0.36,
         "armorDamage": 0.5,
         "buildingDamage": 0.2,
@@ -720,6 +891,37 @@
       "coverAngle": 30
     },
     {
+      "id": "reinforced_warhammer",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 5,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 24.48,
+        "ignoresArmor": 0.1,
+        "armorDamage": 2.0,
+        "buildingDamage": 1.5,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.05,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1.5,
+        "loseHpOnMiss": false,
+        "weaponSound": "WarhammerSmallSlash"
+      },
+      "meleeCover": 0.1,
+      "rangedCover": 0,
+      "coverAngle": 30
+    },
+    {
       "id": "two_handed_warhammer",
       "itemType": 1,
       "equipmentSlots": 3,
@@ -735,6 +937,43 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandMace",
         "damage": 30.1,
+        "ignoresArmor": 0.13,
+        "armorDamage": 2.2,
+        "buildingDamage": 2,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 5.1,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 1.5,
+        "loseHpOnMiss": false,
+        "weaponSound": "WarhammerBigSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 90
+    },
+    {
+      "id": "reinforced_two_handed_warhammer",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 10
+        }
+      ],
+      "beautyInputEquipped": 7,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandMace",
+        "damage": 36.12,
         "ignoresArmor": 0.13,
         "armorDamage": 2.2,
         "buildingDamage": 2,
@@ -825,6 +1064,43 @@
       ]
     },
     {
+      "id": "re_reinforced_flail",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 0,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandMace",
+        "damage": 18,
+        "ignoresArmor": 0.08,
+        "armorDamage": 2.45,
+        "buildingDamage": 1.6,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 3.8,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "FlailSlash"
+      },
+      "meleeCover": 0.05,
+      "rangedCover": 0,
+      "coverAngle": 30,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 0
+        }
+      ]
+    },
+    {
       "id": "two_handed_flail",
       "itemType": 1,
       "equipmentSlots": 3,
@@ -834,6 +1110,43 @@
       "primaryWeaponMode": {
         "weaponType": "TwoHandMace",
         "damage": 26,
+        "ignoresArmor": 0.1,
+        "armorDamage": 2.7,
+        "buildingDamage": 1.5,
+        "precision": 0.95,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 5.0,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "FlailSlash"
+      },
+      "meleeCover": 0.15,
+      "rangedCover": 0,
+      "coverAngle": 60,
+      "requiredSkills": [
+        {
+          "key": "Melee",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "reinforced_two_handed_flail",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "beautyInputEquipped": 0,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandMace",
+        "damage": 31.2,
         "ignoresArmor": 0.1,
         "armorDamage": 2.7,
         "buildingDamage": 1.5,
@@ -1122,6 +1435,74 @@
       ]
     },
     {
+      "id": "reinforced_long_bow",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 20
+        }
+      ],
+      "beautyInputEquipped": 10,
+      "carryHand": 2,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandBow",
+        "damage": 27.96,
+        "ignoresArmor": 0.7,
+        "armorDamage": 0.1,
+        "buildingDamage": 0,
+        "precision": 1,
+        "precisionFalloff": 0.01,
+        "range": 29.5,
+        "attackSpeed": 6.2,
+        "canFireFlammableProjectiles": true,
+        "projectilePrefabAddress": "SimpleArrow",
+        "projectileArcHeight": 1.2,
+        "projectileSpeed": 1,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 1,
+        "hpLossFlammableProjectileModifier": 3,
+        "loseHpOnMiss": true,
+        "weaponSound": "ShootBow"
+      },
+      "secondaryWeaponMode": {
+        "weaponType": "TwoHandBowMelee",
+        "damage": 8,
+        "ignoresArmor": 0.5,
+        "armorDamage": 0.8,
+        "buildingDamage": 0.8,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 6.3,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 2.5,
+        "loseHpOnMiss": false,
+        "weaponSound": "StaffSlash"
+      },
+      "meleeCover": 0.25,
+      "rangedCover": 0,
+      "coverAngle": 60,
+      "additionalPrefabs": [
+        {
+          "key": 4,
+          "value": "Quiver_Long"
+        }
+      ]
+    },
+    {
       "id": "light_crossbow",
       "itemType": 1,
       "equipmentSlots": 3,
@@ -1311,6 +1692,73 @@
       ]
     },
     {
+      "id": "reinforced_heavy_crossbow",
+      "itemType": 1,
+      "equipmentSlots": 3,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 15
+        }
+      ],
+      "beautyInputEquipped": 10,
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "TwoHandCrossbow",
+        "damage": 45.6,
+        "ignoresArmor": 0.85,
+        "armorDamage": 0.2,
+        "buildingDamage": 0,
+        "precision": 1,
+        "precisionFalloff": 0.01,
+        "range": 21.61,
+        "attackSpeed": 10.4,
+        "projectilePrefabAddress": "BoltProjectile",
+        "projectileArcHeight": 0.3,
+        "projectileSpeed": 1.3,
+        "hitEffectorGroupIDs": [
+          "WoundsPiercing"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsPiercingHead"
+        ],
+        "hpLossPerUse": 1,
+        "hpLossFlammableProjectileModifier": 3,
+        "loseHpOnMiss": true,
+        "weaponSound": "ShootCrossbow"
+      },
+      "secondaryWeaponMode": {
+        "weaponType": "TwoHandBowMelee",
+        "damage": 8,
+        "ignoresArmor": 0.5,
+        "armorDamage": 0.8,
+        "buildingDamage": 0.8,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 6.3,
+        "hitEffectorGroupIDs": [
+          "WoundsBlunt"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsBluntHead"
+        ],
+        "hpLossPerUse": 3,
+        "loseHpOnMiss": false,
+        "weaponSound": "StaffSlash"
+      },
+      "meleeCover": 0.25,
+      "rangedCover": 0.2,
+      "coverAngle": 45,
+      "additionalPrefabs": [
+        {
+          "key": 4,
+          "value": "Quiver_Short"
+        }
+      ]
+    },
+    {
       "id": "throwing_axes",
       "itemType": 1,
       "equipmentSlots": 1,
@@ -1325,6 +1773,76 @@
       "primaryWeaponMode": {
         "weaponType": "OneHandThrow",
         "damage": 17.5,
+        "ignoresArmor": 0.2,
+        "armorDamage": 1.0,
+        "buildingDamage": 0.9,
+        "precision": 0.98,
+        "precisionFalloff": 0.02,
+        "range": 10,
+        "attackSpeed": 4.5,
+        "projectilePrefabAddress": "ThrowingAxesProjectile",
+        "projectileOffset": {
+          "x": 0,
+          "y": 0.4,
+          "z": 0.2
+        },
+        "projectileArcHeight": 1.4,
+        "projectileSpeed": 0.35,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 1.2,
+        "loseHpOnMiss": true,
+        "weaponSound": "ShootAxe"
+      },
+      "secondaryWeaponMode": {
+        "weaponType": "OneHandAxe",
+        "damage": 15.5,
+        "ignoresArmor": 0.2,
+        "armorDamage": 0.92,
+        "buildingDamage": 0.6,
+        "precision": 1,
+        "precisionFalloff": 0,
+        "range": 0,
+        "attackSpeed": 4.25,
+        "hitEffectorGroupIDs": [
+          "WoundsCutting"
+        ],
+        "criticalHitEffectorGroupIDs": [
+          "WoundsCuttingHead"
+        ],
+        "hpLossPerUse": 2,
+        "loseHpOnMiss": false,
+        "weaponSound": "AxeSlash"
+      },
+      "meleeCover": 0.05,
+      "rangedCover": 0,
+      "coverAngle": 45,
+      "additionalPrefabs": [
+        {
+          "key": 4,
+          "value": "Throwing_axe_additional"
+        }
+      ]
+    },
+    {
+      "id": "reinforced_throwing_axes",
+      "itemType": 1,
+      "equipmentSlots": 1,
+      "decompositionCoefficient": 0.1,
+      "requiredSkills": [
+        {
+          "key": "Marksman",
+          "value": 5
+        }
+      ],
+      "carryHand": 1,
+      "primaryWeaponMode": {
+        "weaponType": "OneHandThrow",
+        "damage": 21,
         "ignoresArmor": 0.2,
         "armorDamage": 1.0,
         "buildingDamage": 0.9,

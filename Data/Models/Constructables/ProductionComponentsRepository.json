@@ -19,9 +19,11 @@
         "war_bow",
         "curved_bow",
         "long_bow",
+        "reinforced_long_bow",
         "light_crossbow",
         "crossbow",
         "heavy_crossbow",
+        "reinforced_heavy_crossbow",
         "practice_target",
         "dismantle_wood"
       ],
@@ -63,6 +65,7 @@
         "hatchet",
         "greataxe",
         "throwing_axes",
+        "reinforced_throwing_axes",
         "berdiche",
         "mirror_wall",
         "shackles",
@@ -72,10 +75,15 @@
         "knightly_sword",
         "greatsword",
         "military_pick",
+        "reinforced_military_pick",
         "warhammer",
+        "reinforced_warhammer",
         "two_handed_warhammer",
+        "reinforced_two_handed_warhammer",
         "two_handed_flanged_mace",
-        "billhook"
+        "reinforced_two_handed_flanged_mace",
+        "billhook",
+        "reinforced_billhook"
       ],
       "productionEffectPrefabId": "BlacksmithProductionActive",
       "productionSound": "BlacksmithForge",
@@ -109,9 +117,11 @@
       "productions": [
         "cudgel",
         "spear",
+        "re_reinforced_spear",
         "light_javelins",
         "flail",
         "two_handed_flail",
+        "reinforced_two_handed_flail",
         "wood_mechanical_parts",
         "wood_statue_large",
         "wood_statue_wall",
@@ -120,9 +130,11 @@
         "dismantle_wood",
         "bludgeon",
         "warfork",
+        "reinforced_warfork",
         "reinforced_spear",
         "javelins",
-        "reinforced_flail"
+        "reinforced_flail",
+        "re_reinforced_flail"
       ],
       "productionMarkerOffset": {
         "positionOffset": {

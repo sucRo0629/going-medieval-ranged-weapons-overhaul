@@ -254,6 +254,87 @@
       ]
     },
     {
+      "id": "reinforced_two_handed_flanged_mace",
+      "iconPath": "two_handed_flanged_mace",
+      "iconColorValue": "#bebebe",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_two_handed_flanged_mace",
+          "info": "equipment_info_two_handed_flanged_mace"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化両手フランジドメイス",
+          "info": "equipment_info_two_handed_flanged_mace"
+        }
+      ],
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 15
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_two_handed_flanged_mace",
+          "amount": 1
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 80
+        }
+      ],
+      "recipe": [
+        {
+          "key": "steel_ingot",
+          "value": 40
+        },
+        {
+          "key": 131072,
+          "value": 15
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponLong",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 300,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 500
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
       "id": "military_pick",
       "produced": [
         {
@@ -276,13 +357,94 @@
           "experienceReward": [
             {
               "key": "Carpentry",
-              "value": 400
+              "value": 0
             },
             {
               "key": "Smithing",
               "value": 400
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "reinforced_military_pick",
+      "iconPath": "military_pick",
+      "iconColorValue": "#bebebe",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_military_pick",
+          "info": "equipment_info_military_pick"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化軍用つるはし",
+          "info": "equipment_info_military_pick"
+        }
+      ],
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 0
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_military_pick",
+          "amount": 1
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 20
+        }
+      ],
+      "recipe": [
+        {
+          "key": "steel_ingot",
+          "value": 10
+        },
+        {
+          "key": 131072,
+          "value": 10
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 200,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
         }
       ]
     },
@@ -335,6 +497,91 @@
       ]
     },
     {
+      "id": "re_reinforced_spear",
+      "iconPath": "reinforced_spear",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_re_reinforced_spear",
+          "info": "equipment_info_reinforced_spear"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "再強化槍",
+          "info": "equipment_info_reinforced_spear"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 5
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_re_reinforced_spear",
+          "amount": 1
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 4
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 30
+        },
+        {
+          "key": "steel_ingot",
+          "value": 2
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 200,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 400
+            },
+            {
+              "key": "Smithing",
+              "value": 50
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
       "id": "berdiche",
       "requiredSkills": [
         {
@@ -379,6 +626,87 @@
       ]
     },
     {
+      "id": "reinforced_billhook",
+      "iconPath": "billhook",
+      "iconColorValue": "#bebebe",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_billhook",
+          "info": "equipment_info_billhook"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化鉈鎌",
+          "info": "equipment_info_billhook"
+        }
+      ],
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 5
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_billhook",
+          "amount": 1
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 40
+        }
+      ],
+      "recipe": [
+        {
+          "key": "steel_ingot",
+          "value": 10
+        },
+        {
+          "key": "wood",
+          "value": 20
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingMetalWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 550,
+          "modifyingAttribute": "SmithingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
       "id": "warfork",
       "recipe": [
         {
@@ -388,6 +716,83 @@
         {
           "key": "iron_ingot",
           "value": 3
+        }
+      ]
+    },
+    {
+      "id": "reinforced_warfork",
+      "iconPath": "warfork",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_warfork",
+          "info": "equipment_info_warfork"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化ウォーフォーク",
+          "info": "equipment_info_warfork"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 0
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_warfork",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 15
+        },
+        {
+          "key": "steel_ingot",
+          "value": 3
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 200,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
         }
       ]
     },
@@ -443,6 +848,87 @@
       ]
     },
     {
+      "id": "reinforced_warhammer",
+      "iconPath": "warhammer",
+      "iconColorValue": "#bebebe",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_warhammer",
+          "info": "equipment_info_warhammer"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化戦鎚",
+          "info": "equipment_info_warhammer"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 5
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 45
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_warhammer",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 10
+        },
+        {
+          "key": "steel_ingot",
+          "value": 15
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingMetalWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 550,
+          "modifyingAttribute": "SmithingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
       "id": "two_handed_warhammer",
       "requiredSkills": [
         {
@@ -464,6 +950,87 @@
         {
           "key": "wood",
           "value": 15
+        }
+      ]
+    },
+    {
+      "id": "reinforced_two_handed_warhammer",
+      "iconPath": "two_handed_warhammer",
+      "iconColorValue": "#bebebe",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_two_reinforced_handed_warhammer",
+          "info": "equipment_info_two_handed_warhammer"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化両手戦鎚",
+          "info": "equipment_info_two_handed_warhammer"
+        }
+      ],
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 10
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_two_handed_warhammer",
+          "amount": 1
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 75
+        }
+      ],
+      "recipe": [
+        {
+          "key": "steel_ingot",
+          "value": 30
+        },
+        {
+          "key": "wood",
+          "value": 15
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingMetalWeaponLong",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 800,
+          "modifyingAttribute": "SmithingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 500
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
         }
       ]
     },
@@ -503,6 +1070,87 @@
       ]
     },
     {
+      "id": "re_reinforced_flail",
+      "iconPath": "reinforced_flail",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_re_reinforced_flail",
+          "info": "equipment_info_reinforced_flail"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "再強化フレイル",
+          "info": "equipment_info_reinforced_flail"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 5
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_re_reinforced_flail",
+          "amount": 1
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 5
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 30
+        },
+        {
+          "key": "steel_ingot",
+          "value": 2
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponLong",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 300,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 500
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
       "id": "two_handed_flail",
       "jobType": 256,
       "requiredSkills": [
@@ -525,6 +1173,112 @@
         {
           "key": "iron_ingot",
           "value": 5
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 0
+            },
+            {
+              "key": "Smithing",
+              "value": 400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reinforced_two_handed_flail",
+      "iconPath": "two_handed_flail",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "melee_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_two_handed_flail",
+          "info": "equipment_info_two_handed_flail"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化両手フレイル",
+          "info": "equipment_info_two_handed_flail"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 0
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_two_handed_flail",
+          "amount": 1
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 10
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 45
+        },
+        {
+          "key": "steel_ingot",
+          "value": 5
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 200,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
         }
       ]
     },
@@ -576,6 +1330,87 @@
         {
           "key": "iron_ingot",
           "value": 5
+        }
+      ]
+    },
+    {
+      "id": "reinforced_long_bow",
+      "iconPath": "long_bow",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_long_bow",
+          "info": "equipment_info_long_bow"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化ロングボウ",
+          "info": "equipment_info_long_bow"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 20
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_long_bow",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 50
+        },
+        {
+          "key": 256,
+          "value": 10
+        },
+        {
+          "key": "steel_ingot",
+          "value": 5
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingWoodenWeaponLong",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 300,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 500
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
         }
       ]
     },
@@ -660,6 +1495,87 @@
       ]
     },
     {
+      "id": "reinforced_heavy_crossbow",
+      "iconPath": "heavy_crossbow",
+      "iconColorValue": "#B3803A",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_heavy_crossbow",
+          "info": "equipment_info_heavy_crossbow"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化ヘビィクロスボウ",
+          "info": "equipment_info_heavy_crossbow"
+        }
+      ],
+      "jobType": 512,
+      "requiredSkills": [
+        {
+          "key": "Carpentry",
+          "value": 20
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_heavy_crossbow",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": "wood",
+          "value": 45
+        },
+        {
+          "key": "mechanical_parts",
+          "value": 3
+        },
+        {
+          "key": "steel_ingot",
+          "value": 5
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingCrossobow",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 300,
+          "modifyingAttribute": "WoodWorkingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Carpentry",
+              "value": 500
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
+    },
+    {
       "id": "throwing_axes",
       "recipe": [
         {
@@ -669,6 +1585,87 @@
         {
           "key": "wood",
           "value": 20
+        }
+      ]
+    },
+    {
+      "id": "reinforced_throwing_axes",
+      "iconPath": "throwing_axes",
+      "iconColorValue": "#bebebe",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_reinforced_throwing_axes",
+          "info": "equipment_info_throwing_axes"
+        },
+        {
+          "languageName": "Japanese",
+          "name": "強化投斧",
+          "info": "equipment_info_throwing_axes"
+        }
+      ],
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 10
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "steel_reinforced_throwing_axes",
+          "amount": 1
+        },
+        {
+          "blueprintID": "ash",
+          "amount": 25
+        }
+      ],
+      "recipe": [
+        {
+          "key": "steel_ingot",
+          "value": 5
+        },
+        {
+          "key": "wood",
+          "value": 20
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_resources"
+            }
+          ],
+          "interruptible": true
+        },
+        {
+          "devName": "makingMetalWeaponMed",
+          "type": "workerProduce",
+          "locKeys": [
+            {
+              "languageName": "English",
+              "name": "name_prod_make_weapon"
+            }
+          ],
+          "productionTime": 550,
+          "modifyingAttribute": "SmithingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
         }
       ]
     },
