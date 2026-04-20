@@ -1418,15 +1418,6 @@
       ]
     },
     {
-      "id": "short_bow",
-      "requiredSkills": [
-        {
-          "key": "Carpentry",
-          "value": 5
-        }
-      ]
-    },
-    {
       "id": "war_bow",
       "requiredSkills": [
         {
