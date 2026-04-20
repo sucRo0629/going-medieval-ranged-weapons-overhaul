@@ -1,0 +1,26 @@
+{
+  "repository": [
+    {
+      "debug_name": "new_worker_with_weapons",
+      "id": "new_worker_with_weapons",
+      "itemGroups": [
+        {
+          "groupName": "weapon",
+          "isNoneChance": 0,
+          "equipment": [
+            "flimsy_wood_spear",
+            "flimsy_iron_falchion",
+            "flimsy_wood_staff",
+            "flimsy_iron_hatchet",
+            "sturdy_iron_falchion",
+            "sturdy_iron_dagger",
+            "good_iron_dagger",
+            "sturdy_wood_short_bow",
+            "flimsy_wood_light_crossbow",
+            "sturdy_wood_light_crossbow"
+          ]
+        }
+      ]
+    }
+  ]
+}

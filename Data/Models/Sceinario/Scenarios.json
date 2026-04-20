@@ -1,0 +1,1572 @@
+{
+  "repository": [
+    {
+      "id": "default_1",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "scenario_default_1_title",
+          "info": "scenario_default_1_info",
+          "description": "scenario_default_1_narrative"
+        }
+      ],
+      "imageId": "scenario_normal",
+      "difficulty": "scenario_difficulty_standard",
+      "isDefault": true,
+      "startSeason": 0,
+      "startHour": 7,
+      "startingEventScheduleId": "default_1",
+      "startMapTypes": [
+        "map_type_wetland",
+        "map_type_valley",
+        "map_type_hill",
+        "map_type_mountain"
+      ],
+      "factionFriendlinessOverrides": [
+        {
+          "factionTypeId": "bandits",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -100
+          }
+        },
+        {
+          "factionTypeId": "cannibal",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -100
+          }
+        }
+      ],
+      "startingResources": [
+        {
+          "id": "packaged_meal",
+          "value": 12
+        },
+        {
+          "id": "wood",
+          "value": 400
+        },
+        {
+          "id": "hay",
+          "value": 200
+        },
+        {
+          "id": "cabbage",
+          "value": 35
+        },
+        {
+          "id": "basic_research_book",
+          "value": 25
+        },
+        {
+          "id": "linen_cloth",
+          "value": 50
+        },
+        {
+          "id": "healing_kit_simple",
+          "value": 10
+        },
+        {
+          "id": "wood_mechanical_parts",
+          "value": 10
+        },
+        {
+          "id": "mechanical_parts",
+          "value": 5
+        },
+        {
+          "id": "ale",
+          "value": 25
+        },
+        {
+          "id": "cabbage_seed",
+          "value": 35
+        }
+      ],
+      "startingEquipment": [
+        {
+          "id": "sturdy_wood_spear",
+          "value": 1
+        },
+        {
+          "id": "sturdy_steel_falchion",
+          "value": 1
+        },
+        {
+          "id": "good_wood_short_bow",
+          "value": 1
+        },
+        {
+          "id": "good_leather_cow_sling",
+          "value": 1
+        },
+        {
+          "id": "sturdy_wood_long_bow",
+          "value": 1
+        },
+        {
+          "id": "fine_wood_buckler_shield",
+          "value": 1
+        },
+        {
+          "id": "fine_linen_gambeson_armor",
+          "value": 1
+        }
+      ],
+      "startingAnimals": [
+        {
+          "id": "goat",
+          "bodyType": 1,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 0
+        },
+        {
+          "id": "goat",
+          "bodyType": 2,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 0
+        },
+        {
+          "id": "cat",
+          "bodyType": 2,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 2
+        }
+      ],
+      "villagerConstraints": {
+        "numberOfVillagers": 3,
+        "ageMin": 23,
+        "ageMax": 55,
+        "heightMin": 150,
+        "heightMax": 190,
+        "weightMin": 50,
+        "weightMax": 110,
+        "forceBodyType": 50,
+        "forceReligion": 50,
+        "defaultClothes": [
+          "good_linen_winter_clothes",
+          "good_leather_winter_clothes",
+          "good_wool_winter_clothes",
+          "fine_linen_winter_clothes",
+          "fine_leather_winter_clothes",
+          "fine_wool_winter_clothes"
+        ]
+      },
+      "gameParameters": [
+        {
+          "id": "raidPointsMultiplier",
+          "value": 1
+        },
+        {
+          "id": "raidStrengthMultiplier",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidStrengthMultiplier",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMultiplier",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMax",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMin",
+          "value": 1
+        },
+        {
+          "id": "woundSeverityMultiplier",
+          "value": 1
+        },
+        {
+          "id": "animalSpawnMultiplier",
+          "value": 1
+        },
+        {
+          "id": "plantYieldMultiplier",
+          "value": 1
+        },
+        {
+          "id": "moodTarget",
+          "value": 1
+        },
+        {
+          "id": "enemyHPMax",
+          "value": 0.65
+        },
+        {
+          "id": "healthRecoverySpeed",
+          "value": 1
+        },
+        {
+          "id": "rottingSpeed",
+          "value": 1
+        },
+        {
+          "id": "decomposeSpeed",
+          "value": 1
+        },
+        {
+          "id": "tradingValue",
+          "value": 1
+        },
+        {
+          "id": "huntingRetailateChance",
+          "value": 1
+        },
+        {
+          "id": "globalWorkSpeed",
+          "value": 1
+        },
+        {
+          "id": "useSeeds",
+          "value": 1
+        },
+        {
+          "id": "enemiesHaveTrebuchet",
+          "value": 1
+        },
+        {
+          "id": "mineYieldMultiplier",
+          "value": 1
+        },
+        {
+          "id": "fireSpreadSpeedMultiplier",
+          "value": 1
+        },
+        {
+          "id": "runawayEvent",
+          "value": 10
+        },
+        {
+          "id": "thundertstormEvent",
+          "value": 10
+        },
+        {
+          "id": "CellarFloodEvent",
+          "value": 10
+        },
+        {
+          "id": "hailstormEvent",
+          "value": 10
+        },
+        {
+          "id": "blightEvent",
+          "value": 10
+        },
+        {
+          "id": "coldsnapEvent",
+          "value": 10
+        },
+        {
+          "id": "heatwaveEvent",
+          "value": 10
+        },
+        {
+          "id": "animalRaidEvent",
+          "value": 8
+        },
+        {
+          "id": "animalInfestationEvent",
+          "value": 10
+        },
+        {
+          "id": "newWorkerEvent",
+          "value": 10
+        },
+        {
+          "id": "enemyRaidEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantGeneralEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantRareEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantPrisonerEvent",
+          "value": 10
+        },
+        {
+          "id": "visitorEvent",
+          "value": 10
+        },
+        {
+          "id": "visitorRoleEvent",
+          "value": 10
+        },
+        {
+          "id": "animalMiscSmallEvent",
+          "value": 5
+        },
+        {
+          "id": "animalWildLargeEvent",
+          "value": 5
+        },
+        {
+          "id": "animalDomesticSingleEvent",
+          "value": 5
+        },
+        {
+          "id": "animalBearSingleEvent",
+          "value": 5
+        },
+        {
+          "id": "caravanAmbushChanceMultiplier",
+          "value": 0.15
+        }
+      ],
+      "allowedObjectives": [
+        "objective_religious",
+        "objective_pagan",
+        "objective_intellectual",
+        "objective_military",
+        "objective_trade",
+        "objective_infamy"
+      ]
+    },
+    {
+      "id": "default_2",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "scenario_default_2_title",
+          "info": "scenario_default_2_info",
+          "description": "scenario_default_2_narrative"
+        }
+      ],
+      "imageId": "scenario_builder",
+      "isDefault": true,
+      "difficulty": "scenario_difficulty_VeryEasy",
+      "startSeason": 0,
+      "startHour": 7,
+      "startingEventScheduleId": "default_2",
+      "startMapTypes": [
+        "map_type_wetland",
+        "map_type_valley",
+        "map_type_hill",
+        "map_type_mountain"
+      ],
+      "factionFriendlinessOverrides": [
+        {
+          "factionTypeId": "bandits",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -100
+          }
+        },
+        {
+          "factionTypeId": "cannibal",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -100
+          }
+        }
+      ],
+      "startingResources": [
+        {
+          "id": "packaged_meal",
+          "value": 40
+        },
+        {
+          "id": "wood",
+          "value": 600
+        },
+        {
+          "id": "hay",
+          "value": 450
+        },
+        {
+          "id": "cabbage",
+          "value": 100
+        },
+        {
+          "id": "basic_research_book",
+          "value": 25
+        },
+        {
+          "id": "linen_cloth",
+          "value": 75
+        },
+        {
+          "id": "healing_kit_simple",
+          "value": 10
+        },
+        {
+          "id": "wood_mechanical_parts",
+          "value": 10
+        },
+        {
+          "id": "mechanical_parts",
+          "value": 5
+        },
+        {
+          "id": "ale",
+          "value": 55
+        },
+        {
+          "id": "cabbage_seed",
+          "value": 50
+        },
+        {
+          "id": "beet_seed",
+          "value": 50
+        }
+      ],
+      "startingEquipment": [
+        {
+          "id": "sturdy_wood_spear",
+          "value": 1
+        },
+        {
+          "id": "sturdy_steel_falchion",
+          "value": 1
+        },
+        {
+          "id": "good_wood_short_bow",
+          "value": 1
+        },
+        {
+          "id": "good_leather_cow_sling",
+          "value": 1
+        },
+        {
+          "id": "sturdy_wood_long_bow",
+          "value": 1
+        },
+        {
+          "id": "fine_wood_buckler_shield",
+          "value": 1
+        },
+        {
+          "id": "fine_linen_gambeson_armor",
+          "value": 1
+        }
+      ],
+      "startingAnimals": [
+        {
+          "id": "goat",
+          "bodyType": 1,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 0
+        },
+        {
+          "id": "goat",
+          "bodyType": 2,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 0
+        },
+        {
+          "id": "cat",
+          "bodyType": 2,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 2
+        }
+      ],
+      "villagerConstraints": {
+        "numberOfVillagers": 4,
+        "ageMin": 23,
+        "ageMax": 55,
+        "heightMin": 150,
+        "heightMax": 190,
+        "weightMin": 50,
+        "weightMax": 110,
+        "forceBodyType": 50,
+        "forceReligion": 50,
+        "defaultClothes": [
+          "good_linen_winter_clothes",
+          "good_leather_winter_clothes",
+          "good_wool_winter_clothes",
+          "fine_linen_winter_clothes",
+          "fine_leather_winter_clothes",
+          "fine_wool_winter_clothes"
+        ]
+      },
+      "gameParameters": [
+        {
+          "id": "raidPointsMultiplier",
+          "value": 0.7
+        },
+        {
+          "id": "raidStrengthMultiplier",
+          "value": 0
+        },
+        {
+          "id": "enemyRaidStrengthMultiplier",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMultiplier",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMax",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMin",
+          "value": 1
+        },
+        {
+          "id": "woundSeverityMultiplier",
+          "value": 0.7
+        },
+        {
+          "id": "animalSpawnMultiplier",
+          "value": 1.5
+        },
+        {
+          "id": "plantYieldMultiplier",
+          "value": 1.3
+        },
+        {
+          "id": "moodTarget",
+          "value": 1.3
+        },
+        {
+          "id": "enemyHPMax",
+          "value": 0.45
+        },
+        {
+          "id": "healthRecoverySpeed",
+          "value": 1.2
+        },
+        {
+          "id": "rottingSpeed",
+          "value": 0.8
+        },
+        {
+          "id": "decomposeSpeed",
+          "value": 1
+        },
+        {
+          "id": "tradingValue",
+          "value": 1.2
+        },
+        {
+          "id": "huntingRetailateChance",
+          "value": 0.5
+        },
+        {
+          "id": "globalWorkSpeed",
+          "value": 1.2
+        },
+        {
+          "id": "useSeeds",
+          "value": 1
+        },
+        {
+          "id": "enemiesHaveTrebuchet",
+          "value": 1
+        },
+        {
+          "id": "mineYieldMultiplier",
+          "value": 1.1
+        },
+        {
+          "id": "fireSpreadSpeedMultiplier",
+          "value": 0.5
+        },
+        {
+          "id": "runawayEvent",
+          "value": 0
+        },
+        {
+          "id": "thundertstormEvent",
+          "value": 10
+        },
+        {
+          "id": "CellarFloodEvent",
+          "value": 10
+        },
+        {
+          "id": "hailstormEvent",
+          "value": 10
+        },
+        {
+          "id": "blightEvent",
+          "value": 10
+        },
+        {
+          "id": "coldsnapEvent",
+          "value": 10
+        },
+        {
+          "id": "heatwaveEvent",
+          "value": 10
+        },
+        {
+          "id": "animalRaidEvent",
+          "value": 4
+        },
+        {
+          "id": "animalInfestationEvent",
+          "value": 6
+        },
+        {
+          "id": "newWorkerEvent",
+          "value": 10
+        },
+        {
+          "id": "enemyRaidEvent",
+          "value": 0
+        },
+        {
+          "id": "merchantGeneralEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantRareEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantPrisonerEvent",
+          "value": 5
+        },
+        {
+          "id": "visitorEvent",
+          "value": 15
+        },
+        {
+          "id": "visitorRoleEvent",
+          "value": 15
+        },
+        {
+          "id": "animalMiscSmallEvent",
+          "value": 5
+        },
+        {
+          "id": "animalWildLargeEvent",
+          "value": 7
+        },
+        {
+          "id": "animalDomesticSingleEvent",
+          "value": 6
+        },
+        {
+          "id": "animalBearSingleEvent",
+          "value": 5
+        },
+        {
+          "id": "caravanAmbushChanceMultiplier",
+          "value": 0
+        }
+      ],
+      "allowedObjectives": [
+        "objective_religious",
+        "objective_pagan",
+        "objective_intellectual",
+        "objective_military",
+        "objective_trade",
+        "objective_infamy"
+      ]
+    },
+    {
+      "id": "default_3",
+      "isDefault": true,
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "scenario_default_3_title",
+          "info": "scenario_default_3_info",
+          "description": "scenario_default_3_narrative"
+        }
+      ],
+      "imageId": "scenario_hard",
+      "startSeason": 3,
+      "difficulty": "scenario_difficulty_Difficult",
+      "startHour": 19,
+      "startingEventScheduleId": "default_3",
+      "startMapTypes": [
+        "map_type_hill",
+        "map_type_mountain"
+      ],
+      "factionFriendlinessOverrides": [
+        {
+          "factionTypeId": "bandits",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -100
+          }
+        },
+        {
+          "factionTypeId": "cannibal",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -100
+          }
+        }
+      ],
+      "startingResources": [
+        {
+          "id": "wood",
+          "value": 20
+        },
+        {
+          "id": "packaged_meal",
+          "value": 3
+        }
+      ],
+      "startingEquipment": [
+        {
+          "id": "flimsy_wood_buckler_shield",
+          "value": 1
+        },
+        {
+          "id": "fine_wood_short_bow",
+          "value": 1
+        },
+        {
+          "id": "good_linen_cap",
+          "value": 1
+        },
+        {
+          "id": "sturdy_wood_spear",
+          "value": 1
+        }
+      ],
+      "startingStructurePiles": [],
+      "startingAnimals": [
+        {
+          "id": "dog",
+          "bodyType": 1,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 2
+        }
+      ],
+      "villagerConstraints": {
+        "numberOfVillagers": 1,
+        "ageMin": 23,
+        "ageMax": 28,
+        "heightMin": 150,
+        "heightMax": 190,
+        "weightMin": 50,
+        "weightMax": 110,
+        "forceBodyType": 50,
+        "forceReligion": 50,
+        "defaultClothes": [
+          "flimsy_linen_winter_clothes"
+        ]
+      },
+      "gameParameters": [
+        {
+          "id": "raidPointsMultiplier",
+          "value": 2.1
+        },
+        {
+          "id": "raidStrengthMultiplier",
+          "value": 2
+        },
+        {
+          "id": "woundSeverityMultiplier",
+          "value": 1.2
+        },
+        {
+          "id": "animalSpawnMultiplier",
+          "value": 0.7
+        },
+        {
+          "id": "plantYieldMultiplier",
+          "value": 0.8
+        },
+        {
+          "id": "moodTarget",
+          "value": 0.6
+        },
+        {
+          "id": "enemyHPMax",
+          "value": 1
+        },
+        {
+          "id": "healthRecoverySpeed",
+          "value": 1
+        },
+        {
+          "id": "rottingSpeed",
+          "value": 1
+        },
+        {
+          "id": "decomposeSpeed",
+          "value": 1
+        },
+        {
+          "id": "tradingValue",
+          "value": 0.8
+        },
+        {
+          "id": "huntingRetailateChance",
+          "value": 1.2
+        },
+        {
+          "id": "globalWorkSpeed",
+          "value": 1
+        },
+        {
+          "id": "useSeeds",
+          "value": 1
+        },
+        {
+          "id": "enemiesHaveTrebuchet",
+          "value": 1
+        },
+        {
+          "id": "mineYieldMultiplier",
+          "value": 0.8
+        },
+        {
+          "id": "fireSpreadSpeedMultiplier",
+          "value": 1
+        },
+        {
+          "id": "runawayEvent",
+          "value": 10
+        },
+        {
+          "id": "thundertstormEvent",
+          "value": 20
+        },
+        {
+          "id": "CellarFloodEvent",
+          "value": 20
+        },
+        {
+          "id": "hailstormEvent",
+          "value": 20
+        },
+        {
+          "id": "blightEvent",
+          "value": 20
+        },
+        {
+          "id": "coldsnapEvent",
+          "value": 20
+        },
+        {
+          "id": "heatwaveEvent",
+          "value": 20
+        },
+        {
+          "id": "animalRaidEvent",
+          "value": 25
+        },
+        {
+          "id": "animalInfestationEvent",
+          "value": 25
+        },
+        {
+          "id": "newWorkerEvent",
+          "value": 5
+        },
+        {
+          "id": "enemyRaidEvent",
+          "value": 35
+        },
+        {
+          "id": "merchantGeneralEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantRareEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantPrisonerEvent",
+          "value": 10
+        },
+        {
+          "id": "visitorEvent",
+          "value": 10
+        },
+        {
+          "id": "visitorRoleEvent",
+          "value": 10
+        },
+        {
+          "id": "animalMiscSmallEvent",
+          "value": 5
+        },
+        {
+          "id": "animalWildLargeEvent",
+          "value": 5
+        },
+        {
+          "id": "animalDomesticSingleEvent",
+          "value": 5
+        },
+        {
+          "id": "animalBearSingleEvent",
+          "value": 15
+        },
+        {
+          "id": "caravanAmbushChanceMultiplier",
+          "value": 0.3
+        }
+      ],
+      "allowedObjectives": [
+        "objective_religious",
+        "objective_pagan",
+        "objective_intellectual",
+        "objective_military",
+        "objective_trade",
+        "objective_infamy"
+      ]
+    },
+    {
+      "id": "default_4",
+      "isDefault": true,
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "scenario_default_4_title",
+          "info": "scenario_default_4_info",
+          "description": "scenario_default_4_narrative"
+        }
+      ],
+      "imageId": "scenario_hard",
+      "startSeason": 2,
+      "difficulty": "scenario_difficulty_Difficult",
+      "startEventId": "game_event_thunderstorm",
+      "startHour": 7,
+      "startingEventScheduleId": "default_4",
+      "startMapTypes": [
+        "map_type_wetland",
+        "map_type_valley",
+        "map_type_hill",
+        "map_type_mountain"
+      ],
+      "factionFriendlinessOverrides": [
+        {
+          "factionTypeId": "bandits",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -100
+          }
+        },
+        {
+          "factionTypeId": "cannibal",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -100
+          }
+        }
+      ],
+      "startingResources": [
+        {
+          "id": "packaged_meal",
+          "value": 6
+        },
+        {
+          "id": "wood",
+          "value": 200
+        },
+        {
+          "id": "hay",
+          "value": 0
+        },
+        {
+          "id": "beet",
+          "value": 20
+        },
+        {
+          "id": "basic_research_book",
+          "value": 5
+        },
+        {
+          "id": "linen_cloth",
+          "value": 50
+        },
+        {
+          "id": "healing_kit_simple",
+          "value": 10
+        },
+        {
+          "id": "wood_mechanical_parts",
+          "value": 10
+        },
+        {
+          "id": "ale",
+          "value": 25
+        },
+        {
+          "id": "cabbage_seed",
+          "value": 20
+        },
+        {
+          "id": "gold_coin",
+          "value": 1500
+        }
+      ],
+      "startingEquipment": [
+        {
+          "id": "sturdy_wood_spear",
+          "value": 1
+        },
+        {
+          "id": "sturdy_steel_falchion",
+          "value": 1
+        },
+        {
+          "id": "good_wood_short_bow",
+          "value": 1
+        },
+        {
+          "id": "good_leather_cow_sling",
+          "value": 1
+        },
+        {
+          "id": "sturdy_wood_long_bow",
+          "value": 1
+        },
+        {
+          "id": "fine_wood_buckler_shield",
+          "value": 1
+        },
+        {
+          "id": "fine_linen_gambeson_armor",
+          "value": 1
+        }
+      ],
+      "startingStructurePiles": [],
+      "startingAnimals": [
+        {
+          "id": "donkey",
+          "bodyType": 1,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 0
+        }
+      ],
+      "villagerConstraints": {
+        "numberOfVillagers": 3,
+        "ageMin": 23,
+        "ageMax": 28,
+        "heightMin": 150,
+        "heightMax": 190,
+        "weightMin": 50,
+        "weightMax": 110,
+        "forceBodyType": 50,
+        "forceReligion": 50,
+        "defaultClothes": [
+          "good_linen_winter_clothes",
+          "good_leather_winter_clothes",
+          "good_wool_winter_clothes",
+          "fine_linen_winter_clothes",
+          "fine_leather_winter_clothes",
+          "fine_wool_winter_clothes"
+        ]
+      },
+      "gameParameters": [
+        {
+          "id": "raidPointsMultiplier",
+          "value": 2.3
+        },
+        {
+          "id": "raidStrengthMultiplier",
+          "value": 3
+        },
+        {
+          "id": "woundSeverityMultiplier",
+          "value": 1.2
+        },
+        {
+          "id": "animalSpawnMultiplier",
+          "value": 0.7
+        },
+        {
+          "id": "plantYieldMultiplier",
+          "value": 0.8
+        },
+        {
+          "id": "moodTarget",
+          "value": 0.6
+        },
+        {
+          "id": "enemyHPMax",
+          "value": 1
+        },
+        {
+          "id": "healthRecoverySpeed",
+          "value": 1
+        },
+        {
+          "id": "rottingSpeed",
+          "value": 1
+        },
+        {
+          "id": "decomposeSpeed",
+          "value": 1
+        },
+        {
+          "id": "tradingValue",
+          "value": 0.8
+        },
+        {
+          "id": "huntingRetailateChance",
+          "value": 1.2
+        },
+        {
+          "id": "globalWorkSpeed",
+          "value": 1
+        },
+        {
+          "id": "useSeeds",
+          "value": 1
+        },
+        {
+          "id": "enemiesHaveTrebuchet",
+          "value": 1
+        },
+        {
+          "id": "mineYieldMultiplier",
+          "value": 0.8
+        },
+        {
+          "id": "fireSpreadSpeedMultiplier",
+          "value": 1
+        },
+        {
+          "id": "runawayEvent",
+          "value": 15
+        },
+        {
+          "id": "thundertstormEvent",
+          "value": 35
+        },
+        {
+          "id": "CellarFloodEvent",
+          "value": 35
+        },
+        {
+          "id": "hailstormEvent",
+          "value": 35
+        },
+        {
+          "id": "blightEvent",
+          "value": 35
+        },
+        {
+          "id": "coldsnapEvent",
+          "value": 35
+        },
+        {
+          "id": "heatwaveEvent",
+          "value": 35
+        },
+        {
+          "id": "animalRaidEvent",
+          "value": 35
+        },
+        {
+          "id": "animalInfestationEvent",
+          "value": 40
+        },
+        {
+          "id": "newWorkerEvent",
+          "value": 10
+        },
+        {
+          "id": "enemyRaidEvent",
+          "value": 55
+        },
+        {
+          "id": "merchantGeneralEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantRareEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantPrisonerEvent",
+          "value": 10
+        },
+        {
+          "id": "visitorEvent",
+          "value": 10
+        },
+        {
+          "id": "visitorRoleEvent",
+          "value": 10
+        },
+        {
+          "id": "animalMiscSmallEvent",
+          "value": 5
+        },
+        {
+          "id": "animalWildLargeEvent",
+          "value": 5
+        },
+        {
+          "id": "animalDomesticSingleEvent",
+          "value": 5
+        },
+        {
+          "id": "animalBearSingleEvent",
+          "value": 5
+        },
+        {
+          "id": "caravanAmbushChanceMultiplier",
+          "value": 0.3
+        }
+      ],
+      "allowedObjectives": [
+        "objective_religious",
+        "objective_pagan",
+        "objective_intellectual",
+        "objective_military",
+        "objective_trade",
+        "objective_infamy"
+      ]
+    },
+    {
+      "id": "blueprint_scenario",
+      "isDefault": true,
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "",
+          "info": "",
+          "description": ""
+        }
+      ],
+      "imageId": "scenario_default",
+      "startSeason": 0,
+      "difficulty": "scenario_difficulty_standard",
+      "startHour": 8,
+      "startEventId": "",
+      "startingEventScheduleId": "default_1",
+      "startMapTypes": [
+        "map_type_wetland",
+        "map_type_valley",
+        "map_type_hill",
+        "map_type_mountain"
+      ],
+      "factionFriendlinessOverrides": [
+        {
+          "factionTypeId": "bandits",
+          "friendlinessRange": {
+            "min": -100,
+            "max": 0
+          }
+        },
+        {
+          "factionTypeId": "cannibal",
+          "friendlinessRange": {
+            "min": -100,
+            "max": -20
+          }
+        }
+      ],
+      "startingResources": [
+        {
+          "id": "packaged_meal",
+          "value": 12
+        },
+        {
+          "id": "wood",
+          "value": 400
+        },
+        {
+          "id": "hay",
+          "value": 200
+        },
+        {
+          "id": "cabbage",
+          "value": 35
+        },
+        {
+          "id": "basic_research_book",
+          "value": 25
+        },
+        {
+          "id": "linen_cloth",
+          "value": 50
+        },
+        {
+          "id": "healing_kit_simple",
+          "value": 10
+        },
+        {
+          "id": "wood_mechanical_parts",
+          "value": 10
+        },
+        {
+          "id": "mechanical_parts",
+          "value": 5
+        },
+        {
+          "id": "ale",
+          "value": 25
+        },
+        {
+          "id": "cabbage_seed",
+          "value": 35
+        }
+      ],
+      "startingEquipment": [
+        {
+          "id": "sturdy_wood_spear",
+          "value": 1
+        },
+        {
+          "id": "sturdy_steel_falchion",
+          "value": 1
+        },
+        {
+          "id": "good_wood_short_bow",
+          "value": 1
+        },
+        {
+          "id": "good_leather_cow_sling",
+          "value": 1
+        },
+        {
+          "id": "sturdy_wood_long_bow",
+          "value": 1
+        },
+        {
+          "id": "fine_wood_buckler_shield",
+          "value": 1
+        },
+        {
+          "id": "fine_linen_gambeson_armor",
+          "value": 1
+        }
+      ],
+      "startingAnimals": [
+        {
+          "id": "goat",
+          "bodyType": 1,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 0
+        },
+        {
+          "id": "goat",
+          "bodyType": 2,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 0
+        },
+        {
+          "id": "cat",
+          "bodyType": 2,
+          "count": 1,
+          "lifePhaseIndex": 1,
+          "animalType": 2
+        }
+      ],
+      "villagerConstraints": {
+        "numberOfVillagers": 3,
+        "ageMin": 23,
+        "ageMax": 55,
+        "heightMin": 150,
+        "heightMax": 190,
+        "weightMin": 50,
+        "weightMax": 110,
+        "forceBodyType": 50,
+        "forceReligion": 50,
+        "defaultClothes": [
+          "good_linen_winter_clothes",
+          "good_leather_winter_clothes",
+          "good_wool_winter_clothes",
+          "fine_linen_winter_clothes",
+          "fine_leather_winter_clothes",
+          "fine_wool_winter_clothes"
+        ]
+      },
+      "gameParameters": [
+        {
+          "id": "raidPointsMultiplier",
+          "value": 1
+        },
+        {
+          "id": "raidStrengthMultiplier",
+          "value": 0
+        },
+        {
+          "id": "enemyRaidStrengthMultiplier",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMultiplier",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMax",
+          "value": 1
+        },
+        {
+          "id": "enemyRaidPointsMin",
+          "value": 1
+        },
+        {
+          "id": "woundSeverityMultiplier",
+          "value": 1
+        },
+        {
+          "id": "animalSpawnMultiplier",
+          "value": 1
+        },
+        {
+          "id": "plantYieldMultiplier",
+          "value": 1
+        },
+        {
+          "id": "moodTarget",
+          "value": 1
+        },
+        {
+          "id": "enemyHPMax",
+          "value": 0.65
+        },
+        {
+          "id": "healthRecoverySpeed",
+          "value": 1
+        },
+        {
+          "id": "rottingSpeed",
+          "value": 1
+        },
+        {
+          "id": "decomposeSpeed",
+          "value": 1
+        },
+        {
+          "id": "tradingValue",
+          "value": 1
+        },
+        {
+          "id": "huntingRetailateChance",
+          "value": 1
+        },
+        {
+          "id": "globalWorkSpeed",
+          "value": 1
+        },
+        {
+          "id": "useSeeds",
+          "value": 1
+        },
+        {
+          "id": "enemiesHaveTrebuchet",
+          "value": 1
+        },
+        {
+          "id": "mineYieldMultiplier",
+          "value": 1
+        },
+        {
+          "id": "fireSpreadSpeedMultiplier",
+          "value": 1
+        },
+        {
+          "id": "runawayEvent",
+          "value": 10
+        },
+        {
+          "id": "thundertstormEvent",
+          "value": 10
+        },
+        {
+          "id": "CellarFloodEvent",
+          "value": 10
+        },
+        {
+          "id": "hailstormEvent",
+          "value": 10
+        },
+        {
+          "id": "blightEvent",
+          "value": 10
+        },
+        {
+          "id": "coldsnapEvent",
+          "value": 10
+        },
+        {
+          "id": "heatwaveEvent",
+          "value": 10
+        },
+        {
+          "id": "animalRaidEvent",
+          "value": 10
+        },
+        {
+          "id": "animalInfestationEvent",
+          "value": 10
+        },
+        {
+          "id": "newWorkerEvent",
+          "value": 10
+        },
+        {
+          "id": "enemyRaidEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantGeneralEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantRareEvent",
+          "value": 10
+        },
+        {
+          "id": "merchantPrisonerEvent",
+          "value": 10
+        },
+        {
+          "id": "visitorEvent",
+          "value": 10
+        },
+        {
+          "id": "visitorRoleEvent",
+          "value": 10
+        },
+        {
+          "id": "animalMiscSmallEvent",
+          "value": 5
+        },
+        {
+          "id": "animalWildLargeEvent",
+          "value": 5
+        },
+        {
+          "id": "animalDomesticSingleEvent",
+          "value": 5
+        },
+        {
+          "id": "animalBearSingleEvent",
+          "value": 5
+        },
+        {
+          "id": "caravanAmbushChanceMultiplier",
+          "value": 0.1
+        }
+      ],
+      "allowedObjectives": [
+        "objective_religious",
+        "objective_pagan",
+        "objective_intellectual",
+        "objective_military",
+        "objective_trade",
+        "objective_infamy"
+      ]
+    }
+  ]
+}
