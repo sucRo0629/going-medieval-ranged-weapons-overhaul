@@ -1,6 +1,17 @@
 {
   "repository": [
     {
+      "id": "dagger",
+      "locKeys": [
+        {
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationLow",
+            "pile_tooltip_info_ArmorDamageLow"
+          ]
+        }
+      ]
+    },
+    {
       "id": "reinforced_two_handed_flanged_mace",
       "materials": [
         "steel"
@@ -275,6 +286,30 @@
       ]
     },
     {
+      "id": "spear",
+      "locKeys": [
+        {
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationMed",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reinforced_spear",
+      "locKeys": [
+        {
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationMed",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ]
+    },
+    {
       "id": "re_reinforced_spear",
       "materials": [
         "steel"
@@ -287,7 +322,7 @@
           "name": "equipment_name_reinforced_spear",
           "info": "equipment_info_reinforced_spear",
           "tooltipLines": [
-            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_ArmourPenetrationMed",
             "pile_tooltip_info_BuildingDamageLow",
             "pile_tooltip_info_BonusOnLadders"
           ]
@@ -297,7 +332,7 @@
           "name": "再強化槍",
           "info": "equipment_info_reinforced_spear",
           "tooltipLines": [
-            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_ArmourPenetrationMed",
             "pile_tooltip_info_BuildingDamageLow",
             "pile_tooltip_info_BonusOnLadders"
           ]
@@ -411,6 +446,30 @@
       ]
     },
     {
+      "id": "berdiche",
+      "locKeys": [
+        {
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationMed",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "billhook",
+      "locKeys": [
+        {
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationMed",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ]
+    },
+    {
       "id": "reinforced_billhook",
       "materials": [
         "steel"
@@ -423,7 +482,7 @@
           "name": "equipment_name_billhook",
           "info": "equipment_info_billhook",
           "tooltipLines": [
-            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_ArmourPenetrationMed",
             "pile_tooltip_info_BuildingDamageLow",
             "pile_tooltip_info_BonusOnLadders"
           ]
@@ -433,7 +492,7 @@
           "name": "強化鉈鎌",
           "info": "equipment_info_billhook",
           "tooltipLines": [
-            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_ArmourPenetrationMed",
             "pile_tooltip_info_BuildingDamageLow",
             "pile_tooltip_info_BonusOnLadders"
           ]
@@ -547,6 +606,18 @@
       ]
     },
     {
+      "id": "warfork",
+      "locKeys": [
+        {
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationMed",
+            "pile_tooltip_info_BuildingDamageLow",
+            "pile_tooltip_info_BonusOnLadders"
+          ]
+        }
+      ]
+    },
+    {
       "id": "reinforced_warfork",
       "materials": [
         "steel"
@@ -559,7 +630,6 @@
           "name": "equipment_name_warfork",
           "info": "equipment_info_warfork",
           "tooltipLines": [
-            "pile_tooltip_info_ArmourPenetrationHigh",
             "pile_tooltip_info_BuildingDamageLow",
             "pile_tooltip_info_BonusOnLadders"
           ]
@@ -569,7 +639,6 @@
           "name": "強化ウォーフォーク",
           "info": "equipment_info_warfork",
           "tooltipLines": [
-            "pile_tooltip_info_ArmourPenetrationHigh",
             "pile_tooltip_info_BuildingDamageLow",
             "pile_tooltip_info_BonusOnLadders"
           ]
