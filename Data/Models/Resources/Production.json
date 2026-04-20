@@ -1453,6 +1453,12 @@
           "value": 20
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "wood_long_bow",
+          "amount": 1
+        }
+      ],
       "recipe": [
         {
           "key": "wood",

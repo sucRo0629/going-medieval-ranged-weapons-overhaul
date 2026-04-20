@@ -1650,7 +1650,7 @@
     {
       "id": "reinforced_throwing_axes",
       "materials": [
-        "iron"
+        "steel"
       ],
       "iconPath": "throwing_axes",
       "iconBackgroundPath": "melee_weapon_background",
