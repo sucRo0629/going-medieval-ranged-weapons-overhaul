@@ -1,63 +1,56 @@
 {
   "repository": [
     {
-      "id": "fletchering_lvl2",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "research_name_fletchering_lvl2"
-        }
-      ],
-      "iconActive": "fletchering_lvl2",
-      "iconUnlocked": "fletchering_lvl2_unlocked",
-      "iconLocked": "fletchering_lvl2_locked",
-      "nextNodesIDs": [
-        "crossbows_lvl2"
-      ],
-      "requiredResources": {
-        "keys": [
-          "basic_research_book"
-        ],
-        "values": [
-          30
-        ]
-      },
+      "id": "woodwork_lvl2",
       "unlocks": [
         {
-          "unlockId": "long_bow"
+          "unlockId": "reinforced_spear"
+        },
+        {
+          "unlockId": "re_reinforced_spear"
+        },
+        {
+          "unlockId": "warfork"
+        },
+        {
+          "unlockId": "reinforced_warfork"
+        },
+        {
+          "unlockId": "reinforced_flail"
+        },
+        {
+          "unlockId": "re_reinforced_flail"
+        },
+        {
+          "unlockId": "reinforced_two_handed_flail"
+        },
+        {
+          "unlockId": "javelins"
+        }
+      ]
+    },
+    {
+      "id": "fletchering_lvl2",
+      "unlocks": [
+        {
+          "unlockId": "war_bow"
+        },
+        {
+          "unlockId": "sling_staff"
         },
         {
           "unlockId": "curved_bow"
         },
         {
-          "unlockId": "sling_staff"
+          "unlockId": "long_bow"
+        },
+        {
+          "unlockId": "reinforced_long_bow"
         }
       ]
     },
     {
       "id": "crossbows_lvl2",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "research_name_crossbows_lvl2"
-        }
-      ],
-      "iconActive": "crossbows_lvl3",
-      "iconUnlocked": "crossbows_lvl3_unlocked",
-      "iconLocked": "crossbows_lvl3_locked",
-      "nextNodesIDs": [
-        "crossbows_lvl3"
-      ],
-      "requiredResources": {
-        "keys": [
-          "basic_research_book",
-          "normal_research_book"
-        ],
-        "values": [
-          30,
-          20
-        ]
-      },
       "unlocks": [
         {
           "unlockId": "light_crossbow"
@@ -68,27 +61,25 @@
       ]
     },
     {
-      "id": "swords_lvl2",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "research_name_swords_lvl2"
-        }
-      ],
-      "iconActive": "swords_lvl2",
-      "iconUnlocked": "swords_lvl2_unlocked",
-      "iconLocked": "swords_lvl2_locked",
-      "requiredResources": {
-        "keys": [
-          "basic_research_book",
-          "normal_research_book"
-        ],
-        "values": [
-          30,
-          20
-        ]
-      },
+      "id": "crossbows_lvl3",
       "unlocks": [
+        {
+          "unlockId": "heavy_crossbow"
+        },
+        {
+          "unlockId": "reinforced_heavy_crossbow"
+        }
+      ]
+    },
+    {
+      "id": "swords_lvl2",
+      "unlocks": [
+        {
+          "unlockId": "short_sword"
+        },
+        {
+          "unlockId": "knightly_sword"
+        },
         {
           "unlockId": "longsword"
         },
@@ -99,25 +90,6 @@
     },
     {
       "id": "woodwork_lvl2",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "research_name_woodwork_lvl2"
-        }
-      ],
-      "iconActive": "woodwork_lvl1",
-      "iconUnlocked": "woodwork_lvl1_unlocked",
-      "iconLocked": "woodwork_lvl1_locked",
-      "requiredResources": {
-        "keys": [
-          "basic_research_book",
-          "normal_research_book"
-        ],
-        "values": [
-          30,
-          20
-        ]
-      },
       "unlocks": [
         {
           "unlockId": "flail"
@@ -132,53 +104,33 @@
     },
     {
       "id": "axes_lvl2",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "research_name_axes_lvl2"
-        }
-      ],
-      "iconActive": "axes_lvl2",
-      "iconUnlocked": "axes_lvl2_unlocked",
-      "iconLocked": "axes_lvl2_locked",
-      "requiredResources": {
-        "keys": [
-          "basic_research_book",
-          "normal_research_book"
-        ],
-        "values": [
-          30,
-          20
-        ]
-      },
       "unlocks": [
         {
+          "unlockId": "waraxe"
+        },
+        {
+          "unlockId": "francisca"
+        },
+        {
           "unlockId": "greataxe"
+        },
+        {
+          "unlockId": "throwing_axes"
+        },
+        {
+          "unlockId": "reinforced_throwing_axes"
         }
       ]
     },
     {
       "id": "maces_lvl2",
-      "locKeys": [
-        {
-          "languageName": "English",
-          "name": "research_name_maces_lvl2"
-        }
-      ],
-      "iconActive": "maces_lvl2",
-      "iconUnlocked": "maces_lvl2_unlocked",
-      "iconLocked": "maces_lvl2_locked",
-      "requiredResources": {
-        "keys": [
-          "basic_research_book",
-          "normal_research_book"
-        ],
-        "values": [
-          30,
-          20
-        ]
-      },
       "unlocks": [
+        {
+          "unlockId": "military_pick"
+        },
+        {
+          "unlockId": "reinforced_military_pick"
+        },
         {
           "unlockId": "mace"
         },
@@ -186,22 +138,22 @@
           "unlockId": "two_handed_mace"
         },
         {
-          "unlockId": "military_pick"
+          "unlockId": "warhammer"
         },
         {
-          "unlockId": "reinforced_flail"
-        },
-        {
-          "unlockId": "two_handed_flail"
-        },
-        {
-          "unlockId": "two_handed_flanged_mace"
+          "unlockId": "reinforced_warhammer"
         },
         {
           "unlockId": "two_handed_warhammer"
         },
         {
-          "unlockId": "warhammer"
+          "unlockId": "reinforced_two_handed_warhammer"
+        },
+        {
+          "unlockId": "two_handed_flanged_mace"
+        },
+        {
+          "unlockId": "reinforced_two_handed_flanged_mace"
         }
       ]
     }
