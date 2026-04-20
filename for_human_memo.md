@@ -122,7 +122,6 @@ Production の blueprintID はまずここで解決される
 
 - id : Equipment の ID
 - materials : Equipment の customProducts で指定した材料
-- tooltipLines : 防具貫通大とかの表記
 - groupIdentifier : Equipment の ID
 - protoId : Equipment の ID
 - itemMaterialCategory : 1:金属、2:皮革、3:木
@@ -135,7 +134,3 @@ Production の blueprintID はまずここで解決される
 なのでイメージは:
 
 Production (作成指示) → Resources (アイテム実体) ↔ Equipment (装備性能)
-
-## Research
-
-こっちはもしかしたら差分だけ書くだとエラーになるかも
