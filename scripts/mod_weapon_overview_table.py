@@ -38,6 +38,8 @@ TIER_PLANNING_EXTRA_WEAPON_IDS: frozenset[str] = frozenset(
     }
 )
 
+EXCLUDED_WEAPON_IDS: frozenset[str] = frozenset({"example_weapon"})
+
 
 # ティア内順位用のコスト序列（小→大）。
 _COST_RANK_BY_WEAPON_TYPE: dict[str, int] = {
@@ -61,6 +63,14 @@ _MELEE_THROW_TYPES: set[str] = {
     "TwoHandSpear",
     "TwoHandStaff",
     "TwoHandRam",
+    "OneHandThrow",
+}
+
+_RANGED_OR_THROW_TYPES: set[str] = {
+    "TwoHandBow",
+    "TwoHandCrossbow",
+    "OneHandSling",
+    "TwoHandSling",
     "OneHandThrow",
 }
 
@@ -110,7 +120,12 @@ def _merge_repo_by_id(base_repo: list[dict], mod_repo: list[dict]) -> list[dict]
             passthrough.append(row)
     for row in mod_repo:
         if isinstance(row, dict) and row.get("id"):
-            merged[str(row["id"])] = row
+            rid = str(row["id"])
+            base = merged.get(rid)
+            if isinstance(base, dict):
+                merged[rid] = _deep_merge_dict(base, row)
+            else:
+                merged[rid] = row
         elif isinstance(row, dict):
             passthrough.append(row)
     return [*merged.values(), *passthrough]
@@ -158,25 +173,34 @@ def _primary_mode_combat_cells(eq_row: dict) -> tuple[str, str, str, str]:
     )
 
 
-def _combat_score(eq_row: dict) -> float | None:
+def _weapon_mode_combat_cells(eq_row: dict, mode_key: str) -> tuple[str, str, str, str]:
+    wm = eq_row.get(mode_key)
+    if not isinstance(wm, dict):
+        return ("—", "—", "—", "—")
+    return (
+        _fmt_weapon_stat(wm.get("damage")),
+        _fmt_weapon_stat(wm.get("attackSpeed")),
+        _fmt_weapon_stat(wm.get("ignoresArmor")),
+        _fmt_weapon_stat(wm.get("armorDamage")),
+    )
+
+
+def _mode_combat_score(weapon_mode: dict) -> float | None:
     """武器種横断の実戦補正スコア v2（比較用）。大きいほど強い想定。"""
-    pwm = eq_row.get("primaryWeaponMode")
-    if not isinstance(pwm, dict):
-        return None
     try:
-        damage = float(pwm.get("damage"))
-        attack_speed = float(pwm.get("attackSpeed"))
-        ignores_armor = float(pwm.get("ignoresArmor"))
-        armor_damage = float(pwm.get("armorDamage"))
-        precision = float(pwm.get("precision", 1.0))
-        precision_falloff = float(pwm.get("precisionFalloff", 0.0))
-        range_v = float(pwm.get("range", 0.0))
+        damage = float(weapon_mode.get("damage"))
+        attack_speed = float(weapon_mode.get("attackSpeed"))
+        ignores_armor = float(weapon_mode.get("ignoresArmor"))
+        armor_damage = float(weapon_mode.get("armorDamage"))
+        precision = float(weapon_mode.get("precision", 1.0))
+        precision_falloff = float(weapon_mode.get("precisionFalloff", 0.0))
+        range_v = float(weapon_mode.get("range", 0.0))
     except (TypeError, ValueError):
         return None
     if attack_speed <= 0:
         return None
 
-    wt = str(pwm.get("weaponType", ""))
+    wt = str(weapon_mode.get("weaponType", ""))
     base_dps = damage / attack_speed
 
     # 軽装/重装ケースを混ぜた実効ダメージ補正。
@@ -238,6 +262,13 @@ def _combat_score(eq_row: dict) -> float | None:
     return base_dps * armor_case_mix * armor_break_mix * stability * reach
 
 
+def _combat_score(eq_row: dict, mode_key: str = "primaryWeaponMode") -> float | None:
+    wm = eq_row.get(mode_key)
+    if not isinstance(wm, dict):
+        return None
+    return _mode_combat_score(wm)
+
+
 def _combat_score_cell(eq_row: dict) -> str:
     score = _combat_score(eq_row)
     if score is None:
@@ -250,9 +281,10 @@ def _combat_score_with_material(
     *,
     damage_multiplier: float,
     attack_speed_multiplier: float,
+    mode_key: str = "primaryWeaponMode",
 ) -> float | None:
     """素材補正を仮適用した CombatScore。"""
-    pwm = eq_row.get("primaryWeaponMode")
+    pwm = eq_row.get(mode_key)
     if not isinstance(pwm, dict):
         return None
     try:
@@ -265,8 +297,8 @@ def _combat_score_with_material(
     pwm2["damage"] = damage * damage_multiplier
     pwm2["attackSpeed"] = attack_speed * attack_speed_multiplier
     eq2 = dict(eq_row)
-    eq2["primaryWeaponMode"] = pwm2
-    return _combat_score(eq2)
+    eq2[mode_key] = pwm2
+    return _combat_score(eq2, mode_key=mode_key)
 
 
 def _steel_material_multipliers(sa: Path) -> tuple[float, float] | None:
@@ -309,10 +341,11 @@ def _combat_score_steel_cell(
     *,
     steel_multipliers: tuple[float, float] | None,
     steel_applicable: bool,
+    mode_key: str = "primaryWeaponMode",
 ) -> str:
     if not steel_applicable:
         return "-"
-    base_score = _combat_score(eq_row)
+    base_score = _combat_score(eq_row, mode_key=mode_key)
     if base_score is None:
         return "—"
     if steel_multipliers is None:
@@ -323,6 +356,7 @@ def _combat_score_steel_cell(
         eq_row,
         damage_multiplier=dmg_mul,
         attack_speed_multiplier=atk_mul,
+        mode_key=mode_key,
     )
     if score is None:
         return "—"
@@ -330,7 +364,7 @@ def _combat_score_steel_cell(
 
 
 def _combat_score_sort_value(eq_row: dict) -> float:
-    score = _combat_score(eq_row)
+    score = _combat_score(eq_row, mode_key="primaryWeaponMode")
     if score is None:
         return float("inf")
     return score
@@ -411,6 +445,18 @@ def _primary_damage_sort_value(eq_row: dict) -> float:
         return float("inf")
 
 
+def _weapon_mode_score_cell(eq_row: dict, mode_key: str) -> str:
+    score = _combat_score(eq_row, mode_key=mode_key)
+    if score is None:
+        return "—"
+    return _fmt_weapon_stat(score, decimals=2)
+
+
+def _weapon_mode_exists(eq_row: dict, mode_key: str) -> bool:
+    wm = eq_row.get(mode_key)
+    return isinstance(wm, dict) and bool(wm)
+
+
 def _overview_row_sort_key(
     wid: str,
     wt: str,
@@ -435,13 +481,16 @@ def _overview_row_sort_key(
 
 def _global_tier_sort_key(
     wid: str,
+    mode_key: str,
     prod_by_id: dict[str, dict],
     equip_for,
     auto_tier_by_wid: dict[str, str],
 ) -> tuple:
     """全 weaponType 混在: ティア → damage 昇順 → id（種別横断の並び）。"""
     wt = W.weapon_type_from_equip(equip_for(wid))
-    return _overview_row_sort_key(wid, wt, prod_by_id, equip_for, auto_tier_by_wid)
+    score = _combat_score(equip_for(wid), mode_key=mode_key)
+    score_sort = score if score is not None else float("inf")
+    return (score_sort, wt, wid, mode_key)
 
 
 def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
@@ -490,17 +539,35 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
         str(p["id"]): p for p in mod_prod_repo if isinstance(p, dict) and p.get("id")
     }
     prod_by_id = {str(p["id"]): p for p in prod_repo if isinstance(p, dict) and p.get("id")}
-    weapon_id_set = set(W.weapon_ids(eq_repo))
+    vanilla_weapon_order: list[str] = []
+    for row in eq_repo:
+        if isinstance(row, dict) and row.get("itemType") == 1 and row.get("id"):
+            vanilla_weapon_order.append(str(row["id"]))
+    weapon_id_set = set(vanilla_weapon_order)
     for wid, row in mod_index.items():
         if isinstance(row, dict) and row.get("itemType") == 1:
             weapon_id_set.add(wid)
-    weapons = sorted(weapon_id_set)
+    weapon_id_set -= EXCLUDED_WEAPON_IDS
+    vanilla_weapon_order = [wid for wid in vanilla_weapon_order if wid not in EXCLUDED_WEAPON_IDS]
+    extra_weapon_ids = sorted(w for w in weapon_id_set if w not in set(vanilla_weapon_order))
+    weapons = vanilla_weapon_order + extra_weapon_ids
     st_map = W.station_map(pc_repo)
+    vanilla_st_map = W.station_map(pc_data.get("repository") or [])
     depth = W.research_depth(research_repo)
     res_by_id = {str(n["id"]): n for n in research_repo if isinstance(n, dict) and n.get("id")}
 
-    craftable_ids = {w for w in weapons if w in prod_by_id and w in st_map}
-    unlock = W.research_unlock_map(research_repo, set(weapons) & set(prod_by_id.keys()))
+    display_prod_by_id = {wid: prod_by_id.get(wid) or vanilla_prod_by_id.get(wid) for wid in weapons}
+    effective_st_map: dict[str, list[str]] = {}
+    for wid in weapons:
+        stations = sorted(set((st_map.get(wid) or []) + (vanilla_st_map.get(wid) or [])))
+        if stations:
+            effective_st_map[wid] = stations
+    craftable_ids = {
+        w for w in weapons if isinstance(display_prod_by_id.get(w), dict) and w in effective_st_map
+    }
+    unlock = W.research_unlock_map(
+        research_repo, {wid for wid, prow in display_prod_by_id.items() if isinstance(prow, dict)}
+    )
 
     mod_label = f"`{mod_path}`" if mod_path.is_file() else "_(Mod Equipment なし)_"
     steel_multipliers = _steel_material_multipliers(sa)
@@ -528,8 +595,13 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
             ),
         )
 
-    section_keys = [k for k in W.WEAPON_TYPE_SECTION_ORDER if k in by_wt]
-    section_keys += sorted(k for k in by_wt if k not in W.WEAPON_TYPE_SECTION_ORDER)
+    vanilla_type_order: list[str] = []
+    for wid in vanilla_weapon_order:
+        wt = W.weapon_type_from_equip(vanilla_index.get(wid) or {})
+        if wt not in vanilla_type_order:
+            vanilla_type_order.append(wt)
+    section_keys = [k for k in vanilla_type_order if k in by_wt]
+    section_keys += [k for k in by_wt if k not in set(section_keys)]
 
     lines: list[str] = [
         "# Mod 用: 全武器一覧（ティア順・製作可否）（生成）",
@@ -571,12 +643,17 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
     ]
 
     tier_balance_ids = craftable_ids | (TIER_PLANNING_EXTRA_WEAPON_IDS & weapon_id_set)
+    tier_balance_rows: list[tuple[str, str]] = []
+    for w in tier_balance_ids:
+        eqr = equip_for(w)
+        if _weapon_mode_exists(eqr, "primaryWeaponMode"):
+            tier_balance_rows.append((w, "primaryWeaponMode"))
+        if _weapon_mode_exists(eqr, "secondaryWeaponMode"):
+            tier_balance_rows.append((w, "secondaryWeaponMode"))
     craftable_sorted_global = sorted(
-        tier_balance_ids,
-        key=lambda w: (
-            _combat_score_sort_value(equip_for(w)),
-            W.weapon_type_from_equip(equip_for(w)),
-            w,
+        tier_balance_rows,
+        key=lambda row: _global_tier_sort_key(
+            row[0], row[1], prod_by_id, equip_for, auto_tier_by_wid
         ),
     )
     lines.extend(
@@ -585,25 +662,29 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
             "",
             "> **製作可**（マージ後 `Production` ＋作業台）に加え、レシピ調整前でもティアだけ揃えたい id は **`TIER_PLANNING_EXTRA_WEAPON_IDS`**（スクリプト先頭定数）。**ティアは CombatScore の固定閾値（T2:2.5〜 / T3:3.0〜 / T4:3.5〜 / T5:4.0〜4.5）で自動割当**。並びは **ティア内補正後スコア昇順** → **`weaponType` 昇順** → weapon id。",
             "",
-            "| weapon | `weaponType` | CombatScore(Base) | CombatScore(鋼想定) | ティア（CombatScore自動） | damage | attackSpeed | ignoresArmor | armorDamage | 製作 |",
+            "| weapon | `weaponType` | CombatScore | CombatScore(鋼想定) | ティア（CombatScore自動） | damage | attackSpeed | ignoresArmor | armorDamage | 製作 |",
             "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
-    for w in craftable_sorted_global:
+    for w, mode_key in craftable_sorted_global:
         wt = W.weapon_type_from_equip(equip_for(w))
         eqr = equip_for(w)
         prod = prod_by_id.get(w) or {}
         tier = auto_tier_by_wid.get(w, "未算出")
-        d_cell, as_cell, ia_cell, ad_cell = _primary_mode_combat_cells(eqr)
-        cs_cell = _combat_score_cell(eqr)
+        d_cell, as_cell, ia_cell, ad_cell = _weapon_mode_combat_cells(eqr, mode_key)
+        cs_cell = _weapon_mode_score_cell(eqr, mode_key)
         css_cell = _combat_score_steel_cell(
             eqr,
             steel_multipliers=steel_multipliers,
             steel_applicable=_is_metal_recipe(prod),
+            mode_key=mode_key,
         )
         craft_cell = "可" if w in craftable_ids else "予定"
+        name_suffix = ""
+        if mode_key == "secondaryWeaponMode" and wt in _RANGED_OR_THROW_TYPES:
+            name_suffix = "(近)"
         lines.append(
-            f"| `{w}` | `{wt}` | {cs_cell} | {css_cell} | {tier} | {d_cell} | {as_cell} | {ia_cell} | {ad_cell} | {craft_cell} |"
+            f"| `{w}{name_suffix}` | `{wt}` | {cs_cell} | {css_cell} | {tier} | {d_cell} | {as_cell} | {ia_cell} | {ad_cell} | {craft_cell} |"
         )
     lines.extend(["", "---", ""])
 
@@ -614,27 +695,19 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
             [
                 f"## {title}",
                 "",
-                "| weapon | `weaponType` | CombatScore(Base) | CombatScore(鋼想定) | ティア（CombatScore自動） | 作業台 | 必要スキル（レシピ） | レシピ（要約） | 研究（id / 表示名 / 深さ） | 装備必要スキル（Mod） | damage | attackSpeed | ignoresArmor | armorDamage | 備考 |",
+                "| weapon | `weaponType` | CombatScore | CombatScore(鋼想定) | ティア（CombatScore自動） | 作業台 | 必要スキル（レシピ） | レシピ（要約） | 研究（id / 表示名 / 深さ） | 装備必要スキル | damage | attackSpeed | ignoresArmor | armorDamage | 備考 |",
                 "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
             ]
         )
         for w in wids:
             eqr = equip_for(w)
-            prod = prod_by_id.get(w) or {}
+            prod = display_prod_by_id.get(w) or {}
             tier = auto_tier_by_wid.get(w, "未算出")
-            craft_note = _craft_status(w, prod_by_id, st_map)
+            craft_note = _craft_status(w, display_prod_by_id, effective_st_map)
             equip_skill = _equip_skill_text(eqr).replace("|", "/")
-            d_cell, as_cell, ia_cell, ad_cell = _primary_mode_combat_cells(eqr)
-            cs_cell = _combat_score_cell(eqr)
-            css_cell = _combat_score_steel_cell(
-                eqr,
-                steel_multipliers=steel_multipliers,
-                steel_applicable=_is_metal_recipe(prod),
-            )
-            note = craft_note
-            craft = w in craftable_ids
-            if craft:
-                stations = ", ".join(f"`{x}`" for x in st_map.get(w, []))
+            if isinstance(prod, dict) and prod:
+                stations_list = effective_st_map.get(w) or []
+                stations = ", ".join(f"`{x}`" for x in stations_list) if stations_list else "-"
                 sk = W.skills(prod).replace("|", "/")
                 rec = W.recipe_summary(prod).replace("|", "/")
                 rids = unlock.get(w, [])
@@ -655,17 +728,26 @@ def build_markdown(sa: Path, mod_equipment_path: Path | None) -> str:
             else:
                 stations = "-"
                 rcol = "-"
-                # Mod側に同名Productionが無い場合は、バニラのレシピ情報を表示する。
-                if w not in mod_prod_by_id and w in vanilla_prod_by_id:
-                    vanilla_prod = vanilla_prod_by_id[w]
-                    sk = W.skills(vanilla_prod).replace("|", "/")
-                    rec = W.recipe_summary(vanilla_prod).replace("|", "/")
-                else:
-                    sk = "-"
-                    rec = "-"
-            lines.append(
-                f"| `{w}` | `{wt}` | {cs_cell} | {css_cell} | {tier.replace('|', '/')} | {stations} | {sk} | {rec} | {rcol} | {equip_skill} | {d_cell} | {as_cell} | {ia_cell} | {ad_cell} | {note} |"
-            )
+                sk = "-"
+                rec = "-"
+            mode_rows = [("primaryWeaponMode",)]
+            if _weapon_mode_exists(eqr, "secondaryWeaponMode"):
+                mode_rows.append(("secondaryWeaponMode",))
+            for (mode_key,) in mode_rows:
+                d_cell, as_cell, ia_cell, ad_cell = _weapon_mode_combat_cells(eqr, mode_key)
+                cs_cell = _weapon_mode_score_cell(eqr, mode_key)
+                css_cell = _combat_score_steel_cell(
+                    eqr,
+                    steel_multipliers=steel_multipliers,
+                    steel_applicable=_is_metal_recipe(prod),
+                    mode_key=mode_key,
+                )
+                name_suffix = ""
+                if mode_key == "secondaryWeaponMode" and wt in _RANGED_OR_THROW_TYPES:
+                    name_suffix = "(近)"
+                lines.append(
+                    f"| `{w}{name_suffix}` | `{wt}` | {cs_cell} | {css_cell} | {tier.replace('|', '/')} | {stations} | {sk} | {rec} | {rcol} | {equip_skill} | {d_cell} | {as_cell} | {ia_cell} | {ad_cell} | {craft_note} |"
+                )
         lines.append("")
 
     lines.extend(
