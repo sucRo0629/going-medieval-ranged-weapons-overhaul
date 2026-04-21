@@ -1982,8 +1982,8 @@
       "secondaryWeaponMode": {
         "weaponType": "OneHandAxe",
         "damage": 23.6,
-        "ignoresArmor": 0.18,
-        "armorDamage": 1,
+        "ignoresArmor": 0.2,
+        "armorDamage": 13,
         "buildingDamage": 0.6,
         "precision": 1,
         "precisionFalloff": 0,
@@ -2123,14 +2123,14 @@
       },
       "secondaryWeaponMode": {
         "weaponType": "OneHandSpear",
-        "damage": 13,
+        "damage": 19.6,
         "ignoresArmor": 0.31,
-        "armorDamage": 0.40,
+        "armorDamage": 0.61,
         "buildingDamage": 0.2,
         "precision": 0.95,
         "precisionFalloff": 0.03,
         "range": 0.5,
-        "attackSpeed": 4.3,
+        "attackSpeed": 4.25,
         "hitEffectorGroupIDs": [
           "WoundsPiercing"
         ],

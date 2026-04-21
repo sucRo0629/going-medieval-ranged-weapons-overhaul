@@ -38,7 +38,6 @@
 | `light_javelins(近)` | `OneHandThrow` | 1.54 | - | T1 | 10 | 4.5 | 0.34 | 0.25 | 可 |
 | `bludgeon` | `OneHandMace` | 1.64 | - | T1 | 14 | 5.25 | 0.05 | 1.95 | 可 |
 | `flail` | `OneHandMace` | 1.79 | - | T1 | 10 | 3.6 | 0.08 | 2.3 | 可 |
-| `javelins(近)` | `OneHandThrow` | 2.08 | 2.5 | T4 | 13 | 4.3 | 0.31 | 0.4 | 可 |
 | `sling` | `OneHandSling` | 2.11 | - | T1 | 14 | 5.25 | 0.25 | 0.7 | 可 |
 | `sling_staff(近)` | `TwoHandSling` | 2.2 | - | T2 | 20 | 5.4 | 0.1 | 0.8 | 可 |
 | `light_javelins` | `OneHandThrow` | 2.23 | - | T1 | 17.6 | 6.1 | 0.3 | 0.6 | 可 |
@@ -57,8 +56,8 @@
 | `light_crossbow` | `TwoHandCrossbow` | 2.98 | - | T2 | 26 | 8.6 | 0.65 | 0.2 | 可 |
 | `falchion` | `OneHandSword` | 3.02 | 3.63 | T3 | 15 | 3.15 | 0.22 | 0.72 | 可 |
 | `re_reinforced_flail` | `OneHandMace` | 3.08 | 3.7 | T3 | 18 | 3.8 | 0.08 | 2.45 | 可 |
-| `francisca(近)` | `OneHandThrow` | 3.21 | 3.85 | T5 | 23.6 | 4.65 | 0.18 | 1 | 可 |
 | `reinforced_military_pick` | `OneHandMace` | 3.21 | 3.85 | T3 | 21.6 | 4.63 | 0.2 | 2.23 | 可 |
+| `javelins(近)` | `OneHandThrow` | 3.22 | 3.86 | T4 | 19.6 | 4.25 | 0.31 | 0.61 | 可 |
 | `mace` | `OneHandMace` | 3.23 | 3.87 | T3 | 17.5 | 3.5 | 0.09 | 2.2 | 可 |
 | `warhammer` | `OneHandMace` | 3.23 | 3.88 | T3 | 20.4 | 4.05 | 0.1 | 2 | 可 |
 | `war_bow` | `TwoHandBow` | 3.33 | - | T3 | 15.9 | 4.72 | 0.58 | 0.1 | 可 |
@@ -76,6 +75,7 @@
 | `two_handed_mace` | `TwoHandMace` | 3.74 | 4.49 | T4 | 28.4 | 4.8 | 0.11 | 2.36 | 可 |
 | `reinforced_warhammer` | `OneHandMace` | 3.88 | 4.65 | T4 | 24.48 | 4.05 | 0.1 | 2 | 可 |
 | `berdiche` | `TwoHandSpear` | 3.97 | 4.76 | T4 | 31 | 6 | 0.42 | 0.75 | 可 |
+| `francisca(近)` | `OneHandThrow` | 3.99 | 4.79 | T5 | 23.6 | 4.65 | 0.2 | 13 | 可 |
 | `reinforced_two_handed_flail` | `TwoHandMace` | 4 | 4.8 | T4 | 31.2 | 5 | 0.1 | 2.7 | 可 |
 | `knightly_sword` | `OneHandSword` | 4 | 4.8 | T5 | 19.5 | 3.23 | 0.31 | 0.66 | 可 |
 | `francisca` | `OneHandThrow` | 4.03 | 4.84 | T5 | 24.9 | 4.8 | 0.21 | 1.51 | 可 |
@@ -207,9 +207,9 @@
 | `reinforced_throwing_axes` | `OneHandThrow` | 3.36 | 4.03 | T3 | `blacksmith_station` | Smithing 10 | steel_ingot x5, wood x20 | `axes_lvl2` / `research_name_axes_lvl2`（ローカライズキー） / 3 | Marksman 5 | 21 | 4.5 | 0.2 | 1 | 製作可 |
 | `reinforced_throwing_axes(近)` | `OneHandThrow` | 2.78 | 3.34 | T3 | `blacksmith_station` | Smithing 10 | steel_ingot x5, wood x20 | `axes_lvl2` / `research_name_axes_lvl2`（ローカライズキー） / 3 | Marksman 5 | 18.6 | 4.25 | 0.2 | 0.92 | 製作可 |
 | `javelins` | `OneHandThrow` | 3.57 | 4.28 | T4 | `woodwork_bench` | Smithing 5 | 金属インゴット類（iron/steel 等・カテゴリマスク） x10, wood x20 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 10 | 25 | 5.8 | 0.3 | 1.5 | 製作可 |
-| `javelins(近)` | `OneHandThrow` | 2.08 | 2.5 | T4 | `woodwork_bench` | Smithing 5 | 金属インゴット類（iron/steel 等・カテゴリマスク） x10, wood x20 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 10 | 13 | 4.3 | 0.31 | 0.4 | 製作可 |
+| `javelins(近)` | `OneHandThrow` | 3.22 | 3.86 | T4 | `woodwork_bench` | Smithing 5 | 金属インゴット類（iron/steel 等・カテゴリマスク） x10, wood x20 | -（`Research.unlocks` 無し・初期解禁等） | Marksman 10 | 19.6 | 4.25 | 0.31 | 0.61 | 製作可 |
 | `francisca` | `OneHandThrow` | 4.03 | 4.84 | T5 | `blacksmith_station` | Smithing 15 | 金属インゴット類（iron/steel 等・カテゴリマスク） x20, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x15 | `axes_lvl2` / `research_name_axes_lvl2`（ローカライズキー） / 3 | Marksman 15, Melee 15 | 24.9 | 4.8 | 0.21 | 1.51 | 製作可 |
-| `francisca(近)` | `OneHandThrow` | 3.21 | 3.85 | T5 | `blacksmith_station` | Smithing 15 | 金属インゴット類（iron/steel 等・カテゴリマスク） x20, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x15 | `axes_lvl2` / `research_name_axes_lvl2`（ローカライズキー） / 3 | Marksman 15, Melee 15 | 23.6 | 4.65 | 0.18 | 1 | 製作可 |
+| `francisca(近)` | `OneHandThrow` | 3.99 | 4.79 | T5 | `blacksmith_station` | Smithing 15 | 金属インゴット類（iron/steel 等・カテゴリマスク） x20, 木材・燃料・骨など（wood/coal 等・カテゴリマスク） x15 | `axes_lvl2` / `research_name_axes_lvl2`（ローカライズキー） / 3 | Marksman 15, Melee 15 | 23.6 | 4.65 | 0.2 | 13 | 製作可 |
 
 ## 片手スリング（OneHandSling）
 
