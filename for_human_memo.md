@@ -7,6 +7,9 @@
 - produced が wood や iron だったものを出力 0 にしても元の武器名が見つからずエラーになって何も出ない
   バニラ版を鉄製として、鋼製を新規追加するしかなさそう
 
+- WeaponQualitySettings.json はどうも Mod で追加するともろいなどの特定の品質だけ BluePring が見つからず制作アイテムが生成されない
+  バニラ側を直接上書きすれば通ったので多分ゲーム側のバグ
+
 ## ディレクトリ構造
 
 Mod では Mod 名/Data/Models/がバニラの StreamingAssets/に相当するので構造を合わせる
