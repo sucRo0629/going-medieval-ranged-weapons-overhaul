@@ -33,6 +33,13 @@
 - **各論 2（防具・盾・近接メタ）**: `**[EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md](../melee_armor/EQUIPMENT_OVERHAUL_INTEGRATION_POLICY.md)`**  
 鎧／盾の役割、スリング・斧の対メタ設計、全装備の整合チェック。
 
+## トークン節約運用（基本）
+
+- 大きい JSON は全体読込を避け、先に `rg` / `Glob` で候補を絞ってから `offset` / `limit` で必要範囲のみ読む。
+- 編集は対象 `id` / キー周辺の最小ブロックに限定し、ファイル全体の再整形・並び替えを行わない（差分最小）。
+- 返答では巨大 JSON 本文を貼らず、`path`・変更キー・影響範囲のみを報告する。
+- 詳細運用は `**[.cursor/rules/token-efficient-json-workflow.mdc](../../.cursor/rules/token-efficient-json-workflow.mdc)`** を正とする。
+
 ## スコープと編集原則
 
 `**Items/Equipment.json`（バニラ）をスコープ全体**とみなし、変更が必要な装備だけを本 Mod の `Data/Models/Equipment.json` に記述する。  
@@ -43,6 +50,7 @@
 - `**requiredSkills` を消したいときは `[]` ではなく、方針どおりの配列を明示**する（空配列がマージで「未指定」扱いになり、バニラ門限が残ることがある）。`**{"key":"Marksman","value":0}` は上書きにならずバニラ門限が残る**（本体が 0 を「要求なし」と扱い、マージでバニラ値が勝つため）。門限なしは **バニラ同様 `requiredSkills` キー自体を書かない**（`short_bow` / `light_crossbow`）。門限ありは `**value` に意図した正の整数**を書く。
 - バニラと同値にしたいキーは **Mod 側に書かない**。
 - `Research.json` / `Production.json` は原則置かない（解禁・レシピはバニラ準拠）。**例外**: バニラに **同名 `Production` が存在しない武器**など、制作・研究解放を Mod 側で補う必要がある場合のみ、`Data/Models/Production.json` / `Data/Models/Research.json` に **差分**を置く（バニラ `Resources/Production.json`・`Research/Research.json` を正本とし、マージ前提の最小ブロック）。監査と接続先の一覧は `[docs/WEAPON_PRODUCTION_RESEARCH_AUDIT.md](../../docs/WEAPON_PRODUCTION_RESEARCH_AUDIT.md)`。**手ラム（`hand_ram` / `metal_hand_ram`）向けの差分は置かない**（制作不可のまま）。**`macabre_` で始まる装備**（例: `macabre_armor`, `macabre_helmet`, `macabre_shield`, `macabre_crown`）および **`forest_` で始まる装備**（例: `forest_light_armor`, `forest_mask`, `forest_horned_mask`, `forest_horned_helmet`）は **敵専用のまま**とし、プレイヤー解禁のための `Production` / `Research` / 作業台差分は置かない。  
+- `Constructables/ProductionComponentsRepository.json` は **バニラに既に記載済みの装備 `id` を Mod 側で重複記載しない**。作業台 `productions` への追記は、**バニラで未接続の装備（オーファン）を解禁する場合のみ**許可する（差分は最小、既存エントリの並び替え・再掲はしない）。
   **補足（作業台）**: バニラでは **`Production` があっても**、`Constructables/ProductionComponentsRepository.json` の各作業台 `productions` に **`id` が載っていなければ UI 上は作れない**。そのため「オーファン」装備を解禁するには **`ProductionComponentsRepository` の差分**が必要なことがある（`Research` / `Production` だけでは足りない）。洗い出しは `[scripts/vanilla_production_station_audit.py](../../scripts/vanilla_production_station_audit.py)`（`GM_STREAMING_ASSETS` または `GOING_MEDIEVAL_ITEMS` の親を `StreamingAssets` とする）。
 - 品質曲線を触るときだけ `WeaponQualitySettings.json` を任意同梱。
 - 参照対象は **バニラ + 本 Mod 差分のみ**（他 Mod の `Equipment.json` は参照しない）。

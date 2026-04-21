@@ -1437,6 +1437,134 @@
       ]
     },
     {
+      "id": "short_bow",
+      "materials": [
+        "wood",
+        "bone"
+      ],
+      "iconPath": "short_bow",
+      "iconBackgroundPath": "ranged_weapon_background",
+      "locKeys": [
+        {
+          "languageName": "English",
+          "name": "equipment_name_short_bow",
+          "info": "equipment_info_short_bow",
+          "tooltipLines": [
+            "pile_tooltip_info_ArmourPenetrationHigh",
+            "pile_tooltip_info_BonusHigherGround",
+            "pile_tooltip_info_ArmorDamageLow"
+          ]
+        }
+      ],
+      "prefabPileID": "base_equipment_pile",
+      "variationLists": [
+        {
+          "name": "QualityVariations",
+          "variations": [
+            {
+              "name": "quality01",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "baseMesh",
+                  "slotType": "Mesh",
+                  "value": "short_bow"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MaterialParameters",
+          "variations": [
+            {
+              "name": "defaultMaterialParametars",
+              "slots": [
+                {
+                  "id": "1",
+                  "slot": "albedo",
+                  "slotType": "Texture",
+                  "value": "bow_diffuse"
+                },
+                {
+                  "id": "2",
+                  "slot": "material_map",
+                  "slotType": "Texture",
+                  "value": "bow_material"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "equippedPrefabID": "base_skinned_bow",
+      "skinnedMeshID": "short_bow",
+      "transformSettingsArray": [
+        {
+          "id": "PileTransformSettings",
+          "positionOffset": {
+            "x": -0.06,
+            "y": 0.03,
+            "z": 0.08
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": -25
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "id": "EquippedTransformSettings",
+          "positionOffset": {
+            "x": -0.13,
+            "y": 0.01,
+            "z": 0
+          },
+          "rotationOffset": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+          },
+          "scaleOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "groupIdentifier": "short_bow",
+      "protoId": "short_bow",
+      "hasQuality": true,
+      "weight": 3,
+      "stackingLimit": 1,
+      "haulPriority": 15,
+      "hitpoints": 400,
+      "beautyInput": -4,
+      "beautyInputOnShelf": 5,
+      "flammability": 0.6,
+      "decomposeModifiersId": "default_equipment_decay",
+      "wealthPoints": 63,
+      "category": 65536,
+      "sortingGroup": "WeaponRanged",
+      "almanacTags": [
+        "almanac_group_name_Equipment",
+        "almanac_group_name_Ranged",
+        "almanac_group_name_Warfare"
+      ],
+      "itemMaterialCategory": 3,
+      "dismantledProducts": [
+        {
+          "key": "<materialOverride>",
+          "value": 3
+        }
+      ]
+    },
+    {
       "id": "reinforced_long_bow",
       "materials": [
         "steel"

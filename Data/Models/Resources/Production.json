@@ -1425,6 +1425,12 @@
           "value": 10
         }
       ],
+      "produced": [
+        {
+          "blueprintID": "wood_war_bow",
+          "amount": 1
+        }
+      ],
       "recipe": [
         {
           "key": "wood",
