@@ -52,7 +52,7 @@ Windows の既定保存先（**Foxy Voxel / Going Medieval**）:
 
 - 旧スキーマのトップレベル `range` / `damage` / `attackSpeed` は使わない（`primaryWeaponMode` / `secondaryWeaponMode` 配下）。`[CREATION_POLICY.md](CREATION_POLICY.md)`
 - `Research.json` / `Production.json` は原則置かない（**例外**: 制作不可武器のレシピ／研究解放を Mod で補うときのみ。`[CREATION_POLICY.md](CREATION_POLICY.md)`・`[docs/WEAPON_PRODUCTION_RESEARCH_AUDIT.md](../../docs/WEAPON_PRODUCTION_RESEARCH_AUDIT.md)`）。**`hand_ram` / `metal_hand_ram` は例外に含めない**（制作不可のまま）。**`macabre_*` / `forest_*` は敵専用のまま**（解禁対象にしない）。
-- `Constructables/ProductionComponentsRepository.json` は **バニラ既存 `id` を Mod 側で重複記載しない**。追記は **バニラ未接続（オーファン）装備の解禁時のみ**（`[CREATION_POLICY.md](CREATION_POLICY.md)`）。
+- `Constructables/ProductionComponentsRepository.json` は **バニラ上書き前提**。作業台 `productions` には **作成可能にする装備 `id` を全て記載**し、差分最小（オーファンのみ追記）運用はしない（`[CREATION_POLICY.md](CREATION_POLICY.md)`）。
 - 大容量 JSON は **候補検索→局所読込（`offset` / `limit`）→最小差分編集**を徹底し、詳細運用は `**[.cursor/rules/token-efficient-json-workflow.mdc](../../.cursor/rules/token-efficient-json-workflow.mdc)`** を正とする。
 - 浮動小数の装備パラメータは **小数第2位・四捨五入**（`[CREATION_POLICY.md](CREATION_POLICY.md)`）。
 - **Base 4.5 境界 / Steel 上限**: `CombatScore(Base)` は **4.5** を T5 の上限とし、金属武器は鋼製で性能が飽和するよう設計する（`[WEAPON_DESIGN_TIERS.md](WEAPON_DESIGN_TIERS.md)`）。
