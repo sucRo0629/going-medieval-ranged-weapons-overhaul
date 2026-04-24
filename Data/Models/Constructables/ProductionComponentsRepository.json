@@ -1,6 +1,52 @@
 {
   "repository": [
     {
+      "id": "armourer_table",
+      "productionSpeedMultiplier": {
+        "outside": 0.8,
+        "inside": 1.1,
+        "roofed": 1,
+        "outsideRain": 0.5,
+        "outsideSnow": 0.45,
+        "outsideFog": 0.75
+      },
+      "interactAnimation": "TableHammering",
+      "interactTool": "hammer_item",
+      "activeThermalModelID": "stove",
+      "canProtectAgainstPredatorsWhileActive": true,
+      "productions": [
+        "gambeson_armor",
+        "light_armor",
+        "mail_armor",
+        "plate_armor",
+        "light_helmet",
+        "kettle_helmet",
+        "mail_helmet",
+        "plate_helmet",
+        "buckler_shield",
+        "heater_shield",
+        "tower_shield",
+        "dismantle_metal",
+        "dismantle_cloth"
+      ],
+      "productionEffectPrefabId": "ArmourerTableProductionActive",
+      "productionSound": "ArmourerTable",
+      "productionMarkerOffset": {
+        "positionOffset": {
+          "x": 0,
+          "y": 1.5,
+          "z": 0
+        }
+      },
+      "effectTransformSettings": {
+        "positionOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
       "id": "fletchers_table",
       "productionSpeedMultiplier": {
         "outside": 0.8,

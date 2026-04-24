@@ -2613,7 +2613,7 @@
         "SunMaxProtectItem"
       ],
       "armorType": 1,
-      "armorRating": 0.13,
+      "armorRating": 0.3,
       "hideHair": true,
       "hideHead": false
     },

@@ -2077,6 +2077,56 @@
           "value": 5
         }
       ]
+    },
+    {
+      "id": "kettle_helmet",
+      "jobType": 256,
+      "requiredSkills": [
+        {
+          "key": "Smithing",
+          "value": 10
+        }
+      ],
+      "produced": [
+        {
+          "blueprintID": "kettle_helmet",
+          "amount": 1
+        }
+      ],
+      "recipe": [
+        {
+          "key": 2048,
+          "value": 35
+        },
+        {
+          "key": 131072,
+          "value": 20
+        }
+      ],
+      "productionSteps": [
+        {
+          "devName": "collectResources",
+          "type": "collect",
+          "interruptible": true
+        },
+        {
+          "devName": "makingHelmet",
+          "type": "workerProduce",
+          "productionTime": 600,
+          "modifyingAttribute": "SmithingSpeed",
+          "interruptible": true,
+          "experienceReward": [
+            {
+              "key": "Smithing",
+              "value": 250
+            }
+          ]
+        },
+        {
+          "devName": "spawnProduct",
+          "type": "spawnProduct"
+        }
+      ]
     }
   ]
 }
